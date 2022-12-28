@@ -9,7 +9,7 @@ const config = {
   title: 'Glific',
   tagline: 'An open source two way communication platform',
   url: 'https://github.com',
-  baseUrl: '/',
+  baseUrl: '/docs/',
   onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'ignore',
   favicon: 'img/favicon.ico',
@@ -90,7 +90,7 @@ const config = {
             items: [
               {
                 label: 'Documentation',
-                to: '/intro',
+                to: '/docs/intro',
               },
             ],
           },
