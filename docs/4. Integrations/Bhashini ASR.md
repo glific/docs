@@ -1,6 +1,6 @@
 > ### **4 minute read &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; `Advanced`**
 
-**“Bhashini” is a project or initiative aimed at providing easy access to the Internet and digital services for all Indians in their native languages. The primary goal of the project is to increase the amount of content available in Indian languages, thereby promoting digital inclusivity and accessibility for a broader population**
+**`Bhashini` is a project or initiative aimed at providing easy access to the Internet and digital services for all Indians in their native languages. The primary goal of the project is to increase the amount of content available in Indian languages, thereby promoting digital inclusivity and accessibility for a broader population**
 
 ---
 
