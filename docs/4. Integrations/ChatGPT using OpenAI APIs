@@ -5,7 +5,7 @@
 ## Using ChatGPT within Glific using the OpenAI APIs
 
 ## Pre-requisites 
-1. Should have acquired OpenAI platform 
+1. Should have acquired OpenAI (platform)[https://openai.com/product] 
 2. Should have created API keys
 3. Shuold have enough balance in the OpenAI account 
 
@@ -18,7 +18,7 @@
 1. Go to "Settings", find "OpenAI (ChatGPT) (Beta)" 
 2. Click on “is active” and paste the OpenAI API key from your OpenAI platform account 
 
-Sample flow 
+(Sample flow)[https://drive.google.com/file/d/1jl0NWn73YlK1qMRedaPnGCQwDKHfG_7j/view?usp=sharing]
 
 3. Get the user question 
 4. Use the webhook “parse_via_chat_gpt”
