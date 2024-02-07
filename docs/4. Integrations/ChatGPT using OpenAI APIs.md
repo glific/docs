@@ -10,7 +10,7 @@ _**Leverage the capabilities of GPT models developed by OpenAI by using OpenAI A
 3. Make sure there is enough credit in OpenAI account to allow usage.
 4. Pricing for API calls is as per OpenAI platform [pricing](https://openai.com/pricing)
    
-<img width="1060" alt="Screenshot 2024-02-07 at 10 50 58 AM" src="https://github.com/glific/docs/assets/141305477/d3c22780-a4ae-4aaa-b196-1d079fce7eb5">
+<img width="1060" alt="Screenshot 2024-02-07 at 10 50 58 AM" src="https://github.com/glific/docs/assets/141305477/d3c22780-a4ae-4aaa-b196-1d079fce7eb5" />
 
 _Above is a representative image from the OpenAI platform account_
 
@@ -25,11 +25,11 @@ _Above is a representative image from the OpenAI platform account_
 1. Go to `Settings`, find `OpenAI (ChatGPT) (Beta)`
 2. Click on `is active` and paste the OpenAI API key from your OpenAI platform account
 
-<img width="591" alt="Screenshot 2024-02-07 at 10 48 51 AM" src="https://github.com/glific/docs/assets/141305477/87adef8e-1858-4aa6-8b46-7f976cfbb9fb">
+<img width="591" alt="Screenshot 2024-02-07 at 10 48 51 AM" src="https://github.com/glific/docs/assets/141305477/87adef8e-1858-4aa6-8b46-7f976cfbb9fb" />
 
 ## Using the webhook for OpenAI API call in a Glific flow
 
-<img width="1069" alt="Screenshot 2024-02-07 at 9 59 24 AM" src="https://github.com/glific/docs/assets/141305477/babb9e27-fce5-4b2b-81d9-58017fd1a079">
+<img width="1069" alt="Screenshot 2024-02-07 at 9 59 24 AM" src="https://github.com/glific/docs/assets/141305477/babb9e27-fce5-4b2b-81d9-58017fd1a079" />
 
 _Representative image to explain the steps in OpenAI API calls in a simple flow_
 
@@ -39,7 +39,7 @@ _Representative image to explain the steps in OpenAI API calls in a simple flow_
 1. Get the user question 
 2. In `call a webhook` node, select `function` and paste function name as `parse_via_chat_gpt`
    
-  <img width="684" alt="Screenshot 2024-02-07 at 10 52 49 AM" src="https://github.com/glific/docs/assets/141305477/f1165b6b-483c-43b4-9e8d-7bb6044d6e24">
+  <img width="684" alt="Screenshot 2024-02-07 at 10 52 49 AM" src="https://github.com/glific/docs/assets/141305477/f1165b6b-483c-43b4-9e8d-7bb6044d6e24" />
 
 3. Share the following function body 
  ` {
@@ -50,7 +50,7 @@ _Representative image to explain the steps in OpenAI API calls in a simple flow_
 
 here `question_text` is the parameter name corresponding to user question. 
 
-<img width="711" alt="Screenshot 2024-02-07 at 10 53 21 AM" src="https://github.com/glific/docs/assets/141305477/65622c0e-2dfb-41fb-8f6d-a836e8a0f81d">
+<img width="711" alt="Screenshot 2024-02-07 at 10 53 21 AM" src="https://github.com/glific/docs/assets/141305477/65622c0e-2dfb-41fb-8f6d-a836e8a0f81d" />
   
 4. The response from GPT is shown as `@results.webhookresultname.parsed_msg`, in the given example `gpt_response` is the webhook result name. 
 
