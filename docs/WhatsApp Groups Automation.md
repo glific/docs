@@ -1,15 +1,17 @@
+> ### **5 minute read &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; `Beginner`**
+
 ## User Guide: WhatsApp Groups Automation
 
 ### Contents
-1. Pre-requisites 
-2. Set-up
-3. Group chats
-4. Group collections
-5. Sending messages
-6. Sending media
-7. Scheduling messages and media
-8. Pricing
-9. Video Showcase
+1. [Pre-requisites](#pre-requisites)
+2. [Set-up](#set-up)
+3. [Group chats](#group-chats)
+4. [Group collections](#group-collections)
+5. [Sending messages](#sending-messages)
+6. [Sending media](#sending-media)
+7. [Scheduling messages and media](#scheduling-messages-and-media)
+8. [Pricing](#pricing)
+9. [Video Showcase](#video-showcase)
 
 ### Pre-requisites
 1. Have a phone number on whatsapp
@@ -61,14 +63,14 @@ You should be able to see the whatsapp groups option in the left panel that the 
 1. Send message to the group via group chat
 <img width="1038" alt="Screenshot 2024-04-16 at 3 28 59 PM" src="https://github.com/glific/docs/assets/141305477/d972cf1b-1443-43df-b3fd-0119f63464cf" />
 
-2. Send message to a “Collection” by navigating to “Collections” list next to “Groups” window.
+2. Send message to a `Collection` by navigating to `Collections` list next to `Groups` window.
 
 ### Sending Media
 #### Prerequisite for sending media:
 
-1. Should have a google cloud storage account set up (refer here).
-2.  Within the google cloud storage, should have a public bucket setup (refer here)
-3.  Upload files to the google cloud storage and generate the links (refer here)
+1. Should have a google cloud storage account set up [refer here](https://glific.github.io/docs/docs/Onboarding/GCS%20Setup/Google%20Cloud%20Storage%20Setup).
+2.  Within the google cloud storage, should have a public bucket setup [refer here](https://glific.github.io/docs/docs/Onboarding/GCS%20Setup/Create%20an%20account%20in%20Google%20Cloud%20Storage%20GCS)
+3.  Upload files to the google cloud storage and generate the links [refer here](https://glific.github.io/docs/docs/Onboarding/GCS%20Setup/Upload%20files%20on%20GCS)
 
 ### Sending media in a group
 
@@ -82,7 +84,7 @@ You should be able to see the whatsapp groups option in the left panel that the 
 <img width="1051" alt="Screenshot 2024-04-16 at 4 26 48 PM" src="https://github.com/glific/docs/assets/141305477/57e72b41-cf08-4103-96ec-0b98a4d2b889" />
 
 ### Sending media to a collection  
-Follow the same steps as above under the “Groups Collection” menu in the “Group Chats” page
+Follow the same steps as above under the `Groups Collection` menu in the `Group Chats` page
 
 <img width="1058" alt="Screenshot 2024-04-16 at 4 28 01 PM" src="https://github.com/glific/docs/assets/141305477/7e1db214-baa8-41b3-9efb-7912906b1779"/>
 
@@ -93,15 +95,15 @@ Follow the same steps as above under the “Groups Collection” menu in the “
 3. Multiple such flows can be scheduled.
 
 #### Scheduling Messages
-1. Go to “Flows” and Create a flow, which contains just “send contact a message” node. 
+1. Go to `Flows` and Create a flow, which contains just `send contact a message` node. 
 <img width="1053" alt="Screenshot 2024-04-16 at 4 30 07 PM" src="https://github.com/glific/docs/assets/141305477/afd42691-ae36-4256-9081-99e97f79adc5" />
 
 2. Publish the flow
 3. Create a groups collection
-4. Go to “Triggers” menu under “Quick Tools”
-5. Select “Create”
+4. Go to `Triggers` menu under `Quick Tools`
+5. Select `Create`
 6. Choose the flow with one message from the drop down, and enter other details regarding the date range, and time.
-7. Select “WhatsApp Groups”
+7. Select `WhatsApp Groups`
 8. Select the collection of groups to send the message to
 9. Click save
 
