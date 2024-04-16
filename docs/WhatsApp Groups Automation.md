@@ -79,31 +79,33 @@ You should be able to see the whatsapp groups option in the left panel that the 
 5. Click ok
 6. Click on send button 
 
+<img width="1051" alt="Screenshot 2024-04-16 at 4 26 48 PM" src="https://github.com/glific/docs/assets/141305477/57e72b41-cf08-4103-96ec-0b98a4d2b889" />
+
 ### Sending media to a collection  
 Follow the same steps as above under the “Groups Collection” menu in the “Group Chats” page
 
+<img width="1058" alt="Screenshot 2024-04-16 at 4 28 01 PM" src="https://github.com/glific/docs/assets/141305477/7e1db214-baa8-41b3-9efb-7912906b1779"/>
 
 ### Scheduling Messages and Media
 
-Messages and media can be scheduled in advance.
-A flow having only one message or one media can be scheduled. (a flow with multiple messages or media cannot be scheduled for groups) 
-Multiple such flows can be scheduled.
+1. Messages and media can be scheduled in advance.
+2. A flow having only one message or one media can be scheduled. (a flow with multiple messages or media cannot be scheduled for groups)
+3. Multiple such flows can be scheduled.
 
-### Scheduling Messages
+#### Scheduling Messages
 1. Go to “Flows” and Create a flow, which contains just “send contact a message” node. 
+<img width="1053" alt="Screenshot 2024-04-16 at 4 30 07 PM" src="https://github.com/glific/docs/assets/141305477/afd42691-ae36-4256-9081-99e97f79adc5" />
 
-Publish the flow
-Create a groups collection 
-Go to “Triggers” menu under “Quick Tools”
-Select “Create”
-Choose the flow with one message from the drop down, and enter other details regarding the date range, and time.
-Select “WhatsApp Groups”
-Select the collection of groups to send the message to
-Click save
+2. Publish the flow
+3. Create a groups collection
+4. Go to “Triggers” menu under “Quick Tools”
+5. Select “Create”
+6. Choose the flow with one message from the drop down, and enter other details regarding the date range, and time.
+7. Select “WhatsApp Groups”
+8. Select the collection of groups to send the message to
+9. Click save
 
-
-
-
+<img width="653" alt="Screenshot 2024-04-16 at 4 31 14 PM" src="https://github.com/glific/docs/assets/141305477/99bf5651-985d-4a2e-a243-cdcf89a72887" />
 
 ### Pricing
 #### MayTapi
