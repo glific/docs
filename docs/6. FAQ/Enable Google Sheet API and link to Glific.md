@@ -22,7 +22,7 @@
 
 5) Enable the **Google Sheets API** from the enable button
 
-<img width="1460" alt="image" src="https://github.com/glific/docs/assets/143380171/de225da2-c51f-4e27-ab18-8f4c99175002">
+<img width="1460" alt="image" src="https://github.com/glific/docs/assets/143380171/de225da2-c51f-4e27-ab18-8f4c99175002"/>
 
 Please Note: The above screenshot has Manage Button as here the Google Sheet API is already enabled. If you are enabling it for first time instead of Manage Button you will find the Enable Button.
 
