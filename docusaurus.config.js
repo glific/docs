@@ -1,13 +1,16 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
-require('dotenv').config();
+require("dotenv").config();
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
     title: "Glific",
     tagline: "An open source two way communication platform",
     url: "https://glific.github.io",
-    baseUrl: "/docs/",
+    baseUrl: `/${process.env.BASE_URL ? process.env.BASE_URL : ""}`,
+    customFields: {
+        baseUrlRedirect: process.env.BASE_URL,
+    },
     onBrokenLinks: "ignore",
     onBrokenMarkdownLinks: "ignore",
     favicon: "img/favicon.ico",
