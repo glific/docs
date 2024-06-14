@@ -9,7 +9,7 @@
 
 
 <link rel="search" type="application/opensearchdescription+xml" title="Glific" href="/docs/opensearch.xml"><link rel="stylesheet" href="/docs/assets/css/styles.98cdb807.css">
-<script src="/docs/assets/js/runtime~main.59af25ff.js" defer="defer"></script>
+<script src="/docs/assets/js/runtime~main.72e8736f.js" defer="defer"></script>
 <script src="/docs/assets/js/main.ed57289d.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -79,6 +79,12 @@ If the name is not updated with the <code>@contact.fiels.name</code> variable, t
 <br>
 <p>It has been observed in some cases, beneficiaries have one phone number and there is more than one person who needs to have their profile created to access the Chat.</p>
 <p>In Glific we have introduced a multiple profile feature, which will help more than one person to create their profiles and use the chatbot to access the information with one phone number.</p>
+<img width="995" alt="image" src="https://github.com/glific/docs/assets/143380171/867d0ad7-d748-4eb4-b01a-d0e45ecf0ac1">
+<p>Profiles are like contacts, where contact fields are saved as key-value pairs in JSON format.</p>
+<p>A contact can have multiple profiles, but only one profile can be active at a time.</p>
+<p>When the active profile for a contact changes, the fields in the profile are swapped with the contact fields.</p>
+<p>At the flow level, the contact fields will be replaced with the values from the active profile&#x27;s fields.</p>
+<p>Profiles are synced to BigQuery in a separate table called &quot;profiles.&quot;</p>
 <p>Below are the steps on how to implement multiple profile features in your flow.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="advanced-feature-webinar">Advanced Feature Webinar<a href="#advanced-feature-webinar" class="hash-link" aria-label="Direct link to Advanced Feature Webinar" title="Direct link to Advanced Feature Webinar">​</a></h2>
 <iframe width="800" height="500" src="https://www.youtube.com/embed/csOGHfb4g3s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
