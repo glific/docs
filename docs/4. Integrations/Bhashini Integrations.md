@@ -78,7 +78,7 @@ here `text` is the text to be converted into voice note
 
 5. To get the translated text out, create another send message node, and call the `@results.bhasini_tts.translated_text`. Here `bhashini_tts` is the name for the webhook result. 
 
-<img width="589" alt="Screenshot 2024-06-27 at 4 25 50 PM" src="https://github.com/glific/docs/assets/141305477/56ea5b67-b164-4347-96ff-ba00c2d79d7c">
+<img width="589" alt="Screenshot 2024-06-27 at 4 25 50 PM" src="https://github.com/glific/docs/assets/141305477/56ea5b67-b164-4347-96ff-ba00c2d79d7c"/>
 
 
 ## Sample Flow Links
