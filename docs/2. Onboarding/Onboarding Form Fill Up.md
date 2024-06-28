@@ -3,8 +3,7 @@
 
 ## Video Tutorial
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/L8iEPfuR0zQ?si=9YuTB-IhInrNcBu4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
+Watch the video [here](https://www.youtube.com/watch?v=L8iEPfuR0zQ)
 
 
 **The Glific Onboarding Form is the final and crucial step in your setup process. 
