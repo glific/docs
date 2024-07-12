@@ -9,7 +9,7 @@
 
 
 <link rel="search" type="application/opensearchdescription+xml" title="Glific" href="/docs/opensearch.xml"><link rel="stylesheet" href="/docs/assets/css/styles.98cdb807.css">
-<script src="/docs/assets/js/runtime~main.32ff4d03.js" defer="defer"></script>
+<script src="/docs/assets/js/runtime~main.3533fc56.js" defer="defer"></script>
 <script src="/docs/assets/js/main.28fed2f2.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -101,7 +101,7 @@ Let us dive in a bit deeper by looking at the steps involved :</p>
 <p><img decoding="async" loading="lazy" src="https://user-images.githubusercontent.com/132430123/268221544-0320cd68-1fbd-42fb-9d98-fd3740acfe18.png" alt="Screenshot 2023-09-15 at 1 50 48 PM" class="img_ev3q"></p>
 <p>As you can see, the row input field is given an expression <code>@calendar.current_date</code> which tries to match the current date value with a <code>Key</code> value. If a match is found, then that row is chosen.</p>
 <ol start="5">
-<li>In the next step, <code>Send contact a message</code> is used and an expression is given in place of the template selection drop-down. The expression reads <code>&lt;%= Glific.Clients.ColoredCow.send_template(&quot;@results.sheet.template_uuid&quot;, [&quot;@contact.name&quot;]) %&gt;</code></li>
+<li>In the next step, <code>Send contact a message</code> is used and an expression is given in place of the template selection drop-down. The expression reads <code>&lt;%= Glific.send_template(&quot;{uuid}&quot;, [&quot;{variables}&quot;]) %&gt;</code></li>
 </ol>
 <p><img decoding="async" loading="lazy" src="https://user-images.githubusercontent.com/132430123/268223071-9f2730b9-9364-46fc-b062-1bbd39c102f9.png" alt="Screenshot 2023-09-15 at 1 56 54 PM" class="img_ev3q"></p>
 <p>In this expression, the <code>template_uuid</code> matching the row in the given date gets send to the user. The expression also passes the value of the contact&#x27;s name. You can pass multiple variables in this expression, if the template message demands it, using comma separation.</p>
