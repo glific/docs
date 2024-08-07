@@ -12,7 +12,7 @@ a) Template message is not enabled on Gupshup, To know more on how to enable it 
 
 b) It could also be because of the end-user not opting in (i.e their Constant Status >> Optin not updated)
  
-<img width="1393" alt="image" src="https://github.com/user-attachments/assets/f7560b2e-656d-485e-9855-4ddf3070af28">
+<img width="1393" alt="image" src="https://github.com/user-attachments/assets/f7560b2e-656d-485e-9855-4ddf3070af28" />
 
 2)**User is not valid. Recepient is not a valid WhatsApp User**:
 
