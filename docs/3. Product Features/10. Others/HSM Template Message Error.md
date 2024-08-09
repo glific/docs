@@ -10,7 +10,7 @@ a) Template message is not enabled on Gupshup, To know more on how to enable it 
 
 <img width="1363" alt="image" src="https://github.com/user-attachments/assets/ee889bfc-adbe-4296-93d5-126224e19625"/>
 
-b) It could also be because of the end-user not opting in (i.e their Constant Status >> Optin not updated)
+b) It could also be because of the end-user not opting in (i.e their Consent Status >> Optin not updated)
  
 <img width="1393" alt="image" src="https://github.com/user-attachments/assets/f7560b2e-656d-485e-9855-4ddf3070af28" />
 
