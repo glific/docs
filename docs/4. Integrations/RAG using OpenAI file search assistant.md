@@ -40,7 +40,7 @@ Following section shows how to use `filesearch-gpt` webhook function in Glific f
 
 1. Get the user question
 2. In call a webhook node, select function and paste function name as `filesearch-gpt`
-<img width="541" alt="Screenshot 2024-06-05 at 12 25 17 PM" src="https://github.com/glific/docs/assets/141305477/93b24d77-84c4-4981-8ae7-15f07f0dde02" />
+<img width="541" alt="Screenshot 2024-06-05 at 12 25 17 PM" src="https://github.com/glific/docs/assets/141305477/93b24d77-84c4-4981-8ae7-15f07f0dde02"/>
 
 3. Go to `function body` and pass the following parameter
 `{
@@ -60,7 +60,7 @@ Following section shows how to use `filesearch-gpt` webhook function in Glific f
 
 5. To answer the subsequent questions based on the context of the previous conversation, the subsequent webhook pass the additional parameter called `thread_id`. This parameter has to have the value of `@results.previouswebhookname.thread_id`. In the example shown, the previous webhook result name is "filesearch"
 
-<img width="620" alt="Screenshot 2024-07-11 at 5 07 58 PM" src="https://github.com/glific/docs/assets/141305477/40de9e15-07ec-41de-8294-64eb08d3c71e" />
+<img width="620" alt="Screenshot 2024-07-11 at 5 07 58 PM" src="https://github.com/glific/docs/assets/141305477/40de9e15-07ec-41de-8294-64eb08d3c71e"/>
 
 
 _this is the function body passed in the subsequent webhooks to answer follow up questions_
@@ -87,7 +87,7 @@ Following section shows how to use `voice-filesearch-gpt` webhook function to ta
  "target_language": "hindi" 
 }
 `
-<img width="548" alt="Screenshot 2024-08-21 at 12 21 57 PM" src="https://github.com/user-attachments/assets/d52c6ad5-7183-4bad-8572-a4b547add115" />
+<img width="548" alt="Screenshot 2024-08-21 at 12 21 57 PM" src="https://github.com/user-attachments/assets/d52c6ad5-7183-4bad-8572-a4b547add115"/>
 
 
 - `speech` is the result name which is storing the voice note sent by the user
@@ -97,7 +97,7 @@ Following section shows how to use `voice-filesearch-gpt` webhook function to ta
 - `remove_citation` pass as true to avoid citation marks to be part of the response voice note
 
 4. The text response generated will be printed as @results.webhookresultname.translated_text, in the given example `gpt_voice` is the webhook result name. 
- <img width="574" alt="Screenshot 2024-08-21 at 12 13 49 PM" src="https://github.com/user-attachments/assets/86d81c30-f9fc-4ad5-8d32-b2248491c315" />
+ <img width="574" alt="Screenshot 2024-08-21 at 12 13 49 PM" src="https://github.com/user-attachments/assets/86d81c30-f9fc-4ad5-8d32-b2248491c315"/>
 
 6. The voice note response will have to be added as an expression attachment in another send message node as @results.webhookresultname.media_url
 <img width="568" alt="Screenshot 2024-08-21 at 12 13 39 PM" src="https://github.com/user-attachments/assets/6aa18420-a158-43ff-b631-ad9f288c2135"/>
