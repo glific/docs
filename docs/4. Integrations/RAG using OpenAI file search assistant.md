@@ -70,6 +70,7 @@ _this is the function body passed in the subsequent webhooks to answer follow up
 Following section shows how to use `voice-filesearch-gpt` webhook function to take users' voice notes as inputs and provide a text and voice note output response in the desired langauge
 
 <img width="845" alt="Screenshot 2024-08-21 at 12 05 00 PM" src="https://github.com/user-attachments/assets/ce0c771a-c15b-4017-8e7f-10675e5f367c"/>
+
 0. Get the sample flow here [Sample flow
 ](https://drive.google.com/file/d/1nOch0H5JTLSasSddeGvggP44vH9IV8Vk/view?usp=sharing)
 
@@ -77,16 +78,15 @@ Following section shows how to use `voice-filesearch-gpt` webhook function to ta
 <img width="577" alt="Screenshot 2024-08-21 at 12 05 17 PM" src="https://github.com/user-attachments/assets/320d056e-4456-4ff2-be98-895fa4b5c926"/>
 
 2. Go to `function body` and pass the following parameter
-`
-{
+`{
   "contact": "@contact",
   "speech": "@results.audio_query.input",
- "assistant_id": "asst_xxxx",
+ "assistant_id": "asst_OvmKO60CQOnHlwmnpPqqzTel",
  "remove_citation": true,
  "source_language": "@contact.language",
  "target_language": "hindi" 
-}
-`
+
+}`
 <img width="548" alt="Screenshot 2024-08-21 at 12 21 57 PM" src="https://github.com/user-attachments/assets/d52c6ad5-7183-4bad-8572-a4b547add115"/>
 
 
