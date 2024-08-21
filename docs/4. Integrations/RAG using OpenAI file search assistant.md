@@ -84,9 +84,8 @@ Following section shows how to use `voice-filesearch-gpt` webhook function to ta
  "assistant_id": "asst_OvmKO60CQOnHlwmnpPqqzTel",
  "remove_citation": true,
  "source_language": "@contact.language",
- "target_language": "hindi" 
+ "target_language": "hindi" }`
 
-}`
 <img width="548" alt="Screenshot 2024-08-21 at 12 21 57 PM" src="https://github.com/user-attachments/assets/d52c6ad5-7183-4bad-8572-a4b547add115"/>
 
 
