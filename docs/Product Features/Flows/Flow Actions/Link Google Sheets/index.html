@@ -9,7 +9,7 @@
 
 
 <link rel="search" type="application/opensearchdescription+xml" title="Glific" href="/docs/opensearch.xml"><link rel="stylesheet" href="/docs/assets/css/styles.98cdb807.css">
-<script src="/docs/assets/js/runtime~main.f09f6298.js" defer="defer"></script>
+<script src="/docs/assets/js/runtime~main.e8293533.js" defer="defer"></script>
 <script src="/docs/assets/js/main.a03b4874.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -69,6 +69,8 @@
 <p>These all are the below calendar functions that can be used :
 <code>@calendar.current_date</code>,<code>@calendar.yesterday</code>,<code>@calendar.tomorrow</code>,<code>@calendar.current_day</code>,<code>@calendar.current_month</code>,
 <code>@calendar.current_year</code></p>
+<p>To write date and time, use the following expression:
+<code>&lt;%= DateTime.now!(&quot;Asia/Kolkata&quot;) |&gt; Calendar.strftime(&quot;%Y/%m/%d %H:%M:%S&quot;) %&gt;</code></p>
 <ol start="4">
 <li>
 <p>Click on <code>OK</code></p>
