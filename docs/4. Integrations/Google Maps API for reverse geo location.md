@@ -38,7 +38,7 @@ Here the `result_1` is the result storing the location pin shared by the user
 <img width="1030" alt="Screenshot 2024-08-29 at 3 46 00 PM" src="https://github.com/user-attachments/assets/44c0e6ad-5282-486f-90ad-86fd6e073543"/>
 
 5. Following parameters are the response 
-{
+`{
   "ward": "",
   "success": true,
   "state": "",
@@ -47,7 +47,7 @@ Here the `result_1` is the result storing the location pin shared by the user
   "country": "",
   "city": "",
   "address": ""
-}
+}`
 
 6. Use the following @results format to access the response of the api
 - to access country - @results.loc.country   
