@@ -9,7 +9,7 @@
 
 
 <link rel="search" type="application/opensearchdescription+xml" title="Glific" href="/docs/opensearch.xml"><link rel="stylesheet" href="/docs/assets/css/styles.98cdb807.css">
-<script src="/docs/assets/js/runtime~main.1b60cf4d.js" defer="defer"></script>
+<script src="/docs/assets/js/runtime~main.73083876.js" defer="defer"></script>
 <script src="/docs/assets/js/main.1386f896.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -109,9 +109,18 @@
 <p>17 . Click on the <code>Run</code> button. After successful execution a new Routine will be created with name <code>contact_collection</code> (refer image below)</p>
 <img width="1470" alt="Image 4" src="https://user-images.githubusercontent.com/119285990/217206706-0a8d37e6-ef58-46d5-b4e1-0a4ba458bcff.png">
 <p>18 . Go back to DataStudio and follow the same steps as we did for <code>contacts</code> (6 and 7) above to connect the <code>Contact Collection</code> data source.</p>
-<p>19 . Click <code>CLOSE</code> on the top right, and your reports will be ready</p>
+<p>19  . <strong>Masked Phone Numbers</strong></p>
+<img width="1028" alt="Screenshot 2024-09-16 at 3 21 29 PM" src="https://github.com/user-attachments/assets/6fa394c8-768d-4ac5-88df-1aa65793762c">
+<p>If you want to reveal the phone numbers in your dashboard</p>
+<ol>
+<li>In your dashboard, navigate to the table where you want to unmask the phone numbers.</li>
+<li>Click on the edit button, then select the table.</li>
+<li>On the right-hand side, under <code>Dimension</code>, click on <code>Add Dimension</code>.</li>
+<li>Search for <code>contact_phone</code> (in some cases, it may be listed as <code>Phone</code>) under the default group. Add it, then remove the previous <code>Phone</code> from the dimension.</li>
+</ol>
+<p>20 . Click <code>CLOSE</code> on the top right, and your reports will be ready</p>
 <img width="1468" alt="Image 5" src="https://user-images.githubusercontent.com/119285990/217206715-0c5bec40-8b91-437d-9155-5a001eb6c536.png">
-<p>20 . Your reports are ready for use.</p>
+<p>21 . Your reports are ready for use.</p>
 <hr>
 <p><strong><em>Note: To create your own custom reports follow the steps in the below document .</em></strong></p>
 <p><a href="https://support.google.com/datastudio/answer/6292570?hl=en" target="_blank" rel="noopener noreferrer">https://support.google.com/datastudio/answer/6292570?hl=en</a></p>
