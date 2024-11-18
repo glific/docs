@@ -25,8 +25,8 @@
 #### Step 2: Filling the Glific onboarding form
 1. Fill the Glific [onboarding form](https://prod.glific.com/organization-registration).
   - For "App Name" and "Gupshup API key" fill the following details respectively
-   - App name: 
-   - Gupshup API key:
+   - App name: 2023OBF1
+   - Gupshup API key: 9imaygevg6fuwa82s54hbuyoiuuohmug
   - Follow the rest of the onboarding form documentation [here](https://glific.github.io/docs/docs/Onboarding/Onboarding%20Form%20Fill%20Up/)   
 <img width="824" alt="Screenshot 2024-11-18 at 3 35 30 PM" src="https://github.com/user-attachments/assets/68ddcd1b-8872-4b92-b2ba-e0074d602f6e" />
 2. After completion of this step, Glific team will share the platform url, along with the log-in credentials.
@@ -34,11 +34,9 @@
 
 #### Step 3: Connecting Maytapi to Glific 
 
-1. In Maytapi go to webhook and enter the following webhook url 
+1. In Maytapi go to webhook and enter the following webhook url `https://api.**ngo-shortcode**.glific.com/maytapi`
 
-https://api.**ngo-shortcode**.glific.com/maytapi
-
-Ex, if your glific domain is www.xyz.glific.com then use the maytapi webhook url becomes https://api.xyz.glific.com/maytapi
+Ex, if your glific domain is `www.xyz.glific.com` then use the maytapi webhook url becomes `https://api.xyz.glific.com/maytapi`
 
 <img width="1274" alt="Screenshot 2024-11-18 at 3 59 18 PM" src="https://github.com/user-attachments/assets/a2ff1a6e-b034-47e5-90de-ce2bfe37df44" />
 
@@ -48,3 +46,15 @@ Ex, if your glific domain is www.xyz.glific.com then use the maytapi webhook url
 <img width="1277" alt="Screenshot 2024-11-18 at 3 57 07 PM" src="https://github.com/user-attachments/assets/b76f6415-4ee0-4d56-9555-1304886df5d5" />
 
 You should be able to see the whatsapp groups option in the left panel that the phone number is part of and perform operations like send, receive and schedule message to a group of groups. 
+
+### Pricing
+#### MayTapi
+1. Free trial for 3 days
+2. 30$ per month per phone being linked to Maytapi
+3. Upto 3 phones can be linked per Maytapi account 
+
+#### Messaging 
+No separate cost for messaging needs to be paid.
+
+### Video Showcase
+<iframe width="560" height="315" src="https://www.youtube.com/embed/RdYJTBmSXYs?si=r1lCTEq2eO18ZEXo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
