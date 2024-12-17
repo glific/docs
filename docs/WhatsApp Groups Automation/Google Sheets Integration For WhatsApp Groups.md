@@ -30,9 +30,8 @@ Some of the use cases where using google sheets integration to read the content 
 
 2. Creating the google sheet with “Key” and the custom content that needs to be sent
 - Following values can be used as keys
-  -   Group names (Here is a documentation to get an export of all the groups names)
-  -   Group ids
-  -   Custom created group fields.
+  -   Group names: Can be got by taking an export of field called `label` from the table named `wa_groups` from BigQuery tables. Use `group.label` as the parameter to be passed to the google sheet in the `Link google sheet` node
+  -   Custom created group fields: Read the next section to know how to create and update group fields.
  
 
 - The first columns of the google sheet has to have the header “Key” 
@@ -40,10 +39,19 @@ Some of the use cases where using google sheets integration to read the content 
 <img width="501" alt="Screenshot 2024-12-17 at 6 29 23 PM" src="https://github.com/user-attachments/assets/42d454d8-adfc-4378-a6b9-dd0b3329f36d" />
 
 
-3. Creating and updating the Group Field based on which the custom content will be sent. 
+3. Creating and updating the group fields based on which the custom content can be sent. 
 
 - Make sure the value of the group variable is initiated (using background flows) and is being updated at an appropriate point in the flow (if needed)
 <img width="700" alt="Screenshot 2024-12-17 at 6 32 48 PM" src="https://github.com/user-attachments/assets/ec98f8e5-04ca-4168-b18d-3c3bc64805de" />
+
+
+- To check if the group fields are created and initialized. Go to `Group Chats`, and go to find the `View Group Details`
+
+**<img width="1296" alt="Screenshot 2024-12-17 at 7 00 07 PM" src="https://github.com/user-attachments/assets/d559be9f-4904-4326-b216-93432a1e9b70" />
+
+- Click on `Details` to see the values of the group fields created and assiciated with the given group.
+
+<img width="965" alt="Screenshot 2024-12-17 at 6 59 21 PM" src="https://github.com/user-attachments/assets/94264381-10f4-4f97-9e23-d4f18634301f" />
 
 - Use the “Link Google Sheet” node and use the following options
 
