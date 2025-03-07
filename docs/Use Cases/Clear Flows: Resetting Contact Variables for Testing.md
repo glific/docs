@@ -15,8 +15,8 @@ Clearing the status of registration, in order to test the onboarding flow which 
 The screenshot shows implementation of the “spliy by a contact field” condition, which checks if the contact variable called “registered” has a value of “y”. And if this condition is met then the contact can bypass the flow. 
 
 For this logic to work, for the contacts who do not meet this condition, the contact variable called “registered” is updated using “update the contact” node. And the value of the contact variable is set to “y”
-<img width="378" alt="Screenshot 2025-03-07 at 3 26 07 PM" src="https://github.com/user-attachments/assets/9371d5f7-f50f-45ff-b00d-6f2790a270a3" />
 
+<img width="378" alt="Screenshot 2025-03-07 at 3 26 07 PM" src="https://github.com/user-attachments/assets/9371d5f7-f50f-45ff-b00d-6f2790a270a3" />
 
 This ensures that any contact who has gone through this part of the flow will not have to repeat the flow again. 
 
