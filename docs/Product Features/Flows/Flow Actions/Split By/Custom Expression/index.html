@@ -9,7 +9,7 @@
 
 
 <link rel="search" type="application/opensearchdescription+xml" title="Glific" href="/docs/opensearch.xml"><link rel="stylesheet" href="/docs/assets/css/styles.98cdb807.css">
-<script src="/docs/assets/js/runtime~main.7bdaad1d.js" defer="defer"></script>
+<script src="/docs/assets/js/runtime~main.eb5fd43f.js" defer="defer"></script>
 <script src="/docs/assets/js/main.60e7df10.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -34,12 +34,62 @@
 <code>&lt;%= DateTime.now!(&quot;Asia/Kolkata&quot;) |&gt; DateTime.to_string() %&gt;</code></p>
 </li>
 <li>
+<p>Adding the date and time stamp</p>
+</li>
+</ol>
+<p>Use case: @calendar.current_date does not add the time stamp. To capture the date and time. Ex start time of a flow and the end time of a flow, following custom expression can be used  <code>&lt;%= DateTime.now!(&quot;Asia/Kolkata&quot;) |&gt; Calendar.strftime(&quot;%H:%M:%S&quot;) %&gt;</code></p>
+<img width="654" alt="Screenshot 2025-03-31 at 9 06 22 PM" src="https://github.com/user-attachments/assets/1b582df3-5c3a-44a0-99c7-d809d07bbea9">
+<ol start="4">
+<li>Calculating the time difference</li>
+</ol>
+<p>Use case: to calculator the time taken by a contact to complete the flow. Considering the pre-requisite that the start time and end time are captured at the flow level in separate variables, the difference can be calculated by using the following expression.</p>
+<p><code>&lt;%= Time.diff(Time.from_iso8601!(&quot;@contact.fields.time_end&quot;), Time.from_iso8601!(&quot;@contact.fields.time_start&quot;), :second) %&gt;</code></p>
+<p>The above expression calculates the difference between @contact.fields.time_end and @contact.fields.time_start in seconds. And the screenshot below updates this difference to a contact variable @contact.fields.timer  using <code>update the contact</code> node.</p>
+<img width="655" alt="Screenshot 2025-03-31 at 9 06 53 PM" src="https://github.com/user-attachments/assets/45d0f3eb-e5f4-4f53-b6c7-8229abe51d4d">
+<ol start="5">
+<li>Doing calculations between dates</li>
+</ol>
+<p>Use case: Calculating the date difference between the present date and the a given date (ex batch start date or a date of onboarding the contact). Considering that @calendar.current_date is being used as the expression to store the batch start date at the time of onboarding.</p>
+<p>@calendar.current_date gets the date in the following format; D/0M/YYYY which translated to date without leading zero, month with a leading zero and full numeric year.</p>
+<p>This means 2nd january 2025 will be represented as 2/01/2025, and 11th Oct 2024 will be represented as 11/10/2024</p>
+<p>The following expression can then be used to calculate the difference in dates between any
+<code>&lt;%= &quot;@contact.fields.batch_start_date&quot;|&gt;Timex.parse!(&quot;{D}/{0M}/{YYYY}&quot;) |&gt; then(&amp;(Timex.diff(Timex.now(), &amp;1, :day))) %&gt;</code></p>
+<p>In the screenshot, the expression is used to calculate the date difference and the value of this calculation is updated to a new flow result @results.datediff</p>
+<img width="609" alt="Screenshot 2025-03-31 at 9 07 50 PM" src="https://github.com/user-attachments/assets/672afd83-b2a5-4f32-86eb-b83021927f31">
+<ol start="4">
+<li>
 <p><strong>String concatenation function</strong></p>
 <p>Put two variables in the results field in the update contact node.
 <strong><em>@results.Var1 @results.Var2</em></strong></p>
 </li>
 </ol>
 <img width="640" alt="Screenshot 2023-08-30 at 12 26 12 PM" src="https://github.com/glific/docs/assets/16541548/7e6ab494-27ad-4dd7-91ed-ba790ac60bc6">
+<ul>
+<li>Contactenation of multiple strings or flow results or contact variables can be done by simply adding those values in the <code>update the contact</code> or <code>update the flow result</code> node.</li>
+<li>By simply writing <code>Grade @results.grade.category ACP @contact.fields.s_acp </code> to update a contact field called <code>present_grade_acp</code>.</li>
+<li>Suppose @results.grade.category contains the value 2 and @contact.fields.s_acp contains the value 4, then the the value of the @contact,fields.present_grade_acp is updated to  value of “Grade 2 ACP 4” when the following node is encountered</li>
+</ul>
+<img width="609" alt="Screenshot 2025-03-31 at 9 10 05 PM" src="https://github.com/user-attachments/assets/1b87245b-c734-4e32-bf7d-de42ded6e122">
+<ul>
+<li>Similarly, other example of concatenating the node is the following node which
+Updates the value of @contact.fields.cumulative_acp</li>
+<li>By adding a comma and the value contained in @contact.fields.present_grade_acp to the already existing values in @contact.fields.cumulative_acp</li>
+<li>Suppose the @contact.fields.cumulative_acp is set to 0, and suppose the value of @contact.fields.present_grade_acp contains the value Grade 1 ACP 1, then after the node is encountered, the updated value of @contact.fields.cumulative_acp becomes “0, Grade 2 ACP 1”</li>
+<li>In the next flow, if the @contact.fields.present_grade_acp contains the value Grade 1 ACP 2, then after encountering the same node, the value of @contact.fields.cumulative_acp is updated to ‘0, Grade 1 ACP 1, Grade 2 ACP 1’</li>
+<li>In this way, a contact variable can be used to store the history of progression/ paths taken by a contact.</li>
+</ul>
+<img width="600" alt="Screenshot 2025-03-31 at 9 10 55 PM" src="https://github.com/user-attachments/assets/40e60fcc-a912-4197-aaee-0ade747ec73a">
+<ol start="5">
+<li>Converting a string to lowercase.</li>
+</ol>
+<p>Any input variable can be converted to lowercase by using the following expression:
+<code>&lt;%= String.downcase(“@result.resultname”) %&gt;</code>
+In the above expression @result.resultname can be replaced with the string or the flow variable or the contact variable containing the string that needs to be converted to lowercase.</p>
+<img width="604" alt="Screenshot 2025-03-31 at 9 14 06 PM" src="https://github.com/user-attachments/assets/83c8c265-64b6-4bb3-b5f5-5027df080f77">
+<p>In the screenshot shared, two tasks are happening at once
+The flow variable @results.flow_keyword.input is getting converted to the lowercase
+The lowercase value of flow variable @results.flow_keyword.input is getting saved to the contact variable keyword.</p>
+<p>Use case: Same flow can be started using multiple keywords. The keyword entered by a contact is used to determine which partner org, city and school is the contact representing. This data is picked up from a separate google sheet maintained by the NGO. Thus reducing the step by the contact to share details like org, school name, city.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="syntax-examples">Syntax Examples<a href="#syntax-examples" class="hash-link" aria-label="Direct link to Syntax Examples" title="Direct link to Syntax Examples">​</a></h2>
 <ol>
 <li>Syntax to <strong>check if contact belongs to collection 1 or collection 2</strong></li>
