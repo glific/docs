@@ -9,7 +9,7 @@
 
 
 <link rel="search" type="application/opensearchdescription+xml" title="Glific" href="/docs/opensearch.xml"><link rel="stylesheet" href="/docs/assets/css/styles.98cdb807.css">
-<script src="/docs/assets/js/runtime~main.7dc3d92c.js" defer="defer"></script>
+<script src="/docs/assets/js/runtime~main.2c44e841.js" defer="defer"></script>
 <script src="/docs/assets/js/main.25d09b7c.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -27,7 +27,78 @@
 </ul>
 <p>Below variable values will be updated once the user provides the response in the flow.</p>
 <ul>
-<li><strong>language</strong> - Can access the value of it in flow by <code>@contact.language</code></li>
+<li>
+<p><strong>language</strong> - Can access the value of it in flow by <code>@contact.language</code></p>
+</li>
+<li>
+<p><strong>gender</strong> - Can access the gender of the contact (Female/Male/Other) in a flow by referencing it with <code>@contact.gender</code></p>
+</li>
+<li>
+<p><strong>status</strong> - Can access the WhatsApp connection status of a contact in a flow by referencing it with <code>@contact.status</code></p>
+<p><em>Values</em>:</p>
+<ol>
+<li>
+<p>processing – Status is being verified.</p>
+</li>
+<li>
+<p>valid – Contact is active and reachable.</p>
+</li>
+<li>
+<p>invalid – Contact number is incorrect or unreachable.</p>
+</li>
+<li>
+<p>blocked – Contact has blocked the number.</p>
+</li>
+<li>
+<p>failed – Message delivery failed.</p>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>optin status</strong> - Can access the opt-in status of a contact in a flow by referencing it with<code>@contact.optin_status</code></p>
+</li>
+<li>
+<p><strong>optin time</strong> - Can access the contact&#x27;s opt-in time in a flow by referencing it with <code>@contact.optin_time</code></p>
+</li>
+<li>
+<p><strong>optout time</strong> - Can access the contact&#x27;s opt-out time in a flow by referencing it with <code>@contact.optout_time</code></p>
+</li>
+<li>
+<p><strong>optin method</strong> - Can access the mode of opt-in for a contact in a flow by referencing it with<code>@contact.optin_method</code></p>
+</li>
+<li>
+<p><strong>bsp status</strong> - Can access the Gupshup status of the current session in a flow by referencing it with <code>@contact.bsp_status</code></p>
+<p><em>Values:</em></p>
+<ol>
+<li>
+<p>none – No active session.</p>
+</li>
+<li>
+<p>session – Active session is ongoing.</p>
+</li>
+<li>
+<p>session_and_hsm – Active session with HSM (High-Structured Message).</p>
+</li>
+<li>
+<p>hsm – Only HSM messages are allowed.</p>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>contact fields</strong> Can access the custom field values of a contact in a flow <code>@contact.fields</code></p>
+</li>
+<li>
+<p><strong>list profiles</strong> - Can access all available profiles of a contact (all contact profiles of a user) in a flow by referencing them with <code>@contact.list_profiles</code></p>
+</li>
+<li>
+<p><strong>in groups</strong> - Can access the list of collections a contact is a member of in a flow by referencing it with <code>@contact.in_groups</code></p>
+</li>
+<li>
+<p><strong>active profile id</strong> - Can access the active profile ID of a contact in a flow by referencing it with<code>@contact.active_profile_id</code></p>
+</li>
+<li>
+<p><strong>last message</strong> - Can access the last inbound message time of a contact in a flow by referencing it with<code>@contact.last_message_at</code></p>
+</li>
 </ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="theme-doc-footer-edit-meta-row row"><div class="col"><a href="https://github.com/glific/docs/tree/main/docs/3. Product Features/03. Flows/3. Flow Variables/01. Predefined Contact Variables in Glific.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_vwxv"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/docs/category/flow-variables"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Flow Variables</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/docs/Product Features/Flows/Flow Variables/Flow variables vs Contact variables"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Flow variables vs Contact variables</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#1-minute-read---------------------------------------------------------intermediate" class="table-of-contents__link toc-highlight"><strong>1 minute read                                                                                                                  <code>Intermediate</code></strong></a></li><li><a href="#default-variables" class="table-of-contents__link toc-highlight">Default variables</a></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/Introduction">Documentation</a></li></ul></div><div class="col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://stackoverflow.com/questions/tagged/glific" target="_blank" rel="noopener noreferrer" class="footer__link-item">Stack Overflow<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li><li class="footer__item"><a href="https://discord.gg/rcBxTA4wnf" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div><div class="col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://glific.org/blogs" target="_blank" rel="noopener noreferrer" class="footer__link-item">Blog</a></li><li class="footer__item"><a href="https://github.com/glific" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 Glific, Inc. Built with Docusaurus.</div></div></div></footer></div>
 </body>
 </html>
