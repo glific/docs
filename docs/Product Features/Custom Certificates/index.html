@@ -9,7 +9,7 @@
 
 
 <link rel="search" type="application/opensearchdescription+xml" title="Glific" href="/docs/opensearch.xml"><link rel="stylesheet" href="/docs/assets/css/styles.98cdb807.css">
-<script src="/docs/assets/js/runtime~main.9c90f153.js" defer="defer"></script>
+<script src="/docs/assets/js/runtime~main.c26a5a22.js" defer="defer"></script>
 <script src="/docs/assets/js/main.1b98160d.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -59,7 +59,7 @@ Use this <a href="https://console.developers.google.com/start/api?id=drive.googl
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="aspect-ratios">Aspect Ratios<a href="#aspect-ratios" class="hash-link" aria-label="Direct link to Aspect Ratios" title="Direct link to Aspect Ratios">​</a></h2>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="for-best-results">For best results:<a href="#for-best-results" class="hash-link" aria-label="Direct link to For best results:" title="Direct link to For best results:">​</a></h3>
 <ul>
-<li><strong>Landscape certificates</strong>: Use a resolution of 2550 x 3300 px.</li>
+<li><strong>Landscape certificates</strong>: Use a resolution of 3300 x 2550 px.</li>
 <li><strong>Portrait certificates</strong>: Use resolution of 816 x 1056 px</li>
 <li><strong>Badges</strong>: Use a square format, resolution of 600 x 600 px.</li>
 </ul>
@@ -82,20 +82,20 @@ Use this <a href="https://console.developers.google.com/start/api?id=drive.googl
 <li>Go to “import slides” in “files”</li>
 <li>Select “upload” and “browse” to get the ppt file</li>
 <li>Import the file and see it as slide 2 on your ppt.</li>
-<li>Copy the url on the 2nd slide. This url will be used to create the certificate template on Glific.</li>
+<li>This url on 2nd slide will be used to create the certificate template on Glific.</li>
 </ol>
 <img width="634" alt="Screenshot 2025-04-07 at 3 10 53 PM" src="https://github.com/user-attachments/assets/89e4656d-1c03-4ebe-bc26-2608b540a7ef">
 <ol start="8">
-<li>Certificate url is the link to the google slide template taken by copying the link on the template</li>
+<li>Provide editor access to the google service account’s client email address.</li>
+</ol>
+<img width="544" alt="Screenshot 2025-04-07 at 3 12 14 PM" src="https://github.com/user-attachments/assets/bf05d262-36fc-4f11-b403-926bcbf17197">
+<ol start="9">
+<li>Certificate url is the link to the google slide template taken by copying the link.</li>
 </ol>
 <ul>
 <li>Ensure that the slide template does not end with “...slide=id.p1”</li>
 <li>Ensure that the slide template is saved on the Google Drive linked to organization email id.</li>
 </ul>
-<ol start="9">
-<li>Provide editor access to the google service account’s client email address.</li>
-</ol>
-<img width="544" alt="Screenshot 2025-04-07 at 3 12 14 PM" src="https://github.com/user-attachments/assets/bf05d262-36fc-4f11-b403-926bcbf17197">
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="2-save-the-certificate-template-in-glific">2. Save the certificate template in Glific<a href="#2-save-the-certificate-template-in-glific" class="hash-link" aria-label="Direct link to 2. Save the certificate template in Glific" title="Direct link to 2. Save the certificate template in Glific">​</a></h3>
 <ol>
 <li>On the Glific platform, go to <code>Flows</code> -&gt; <code>Certificates</code> -&gt; <code>Create</code> to add a new certificate template</li>
@@ -106,6 +106,7 @@ Use this <a href="https://console.developers.google.com/start/api?id=drive.googl
 <li>The design template is now saved.</li>
 <li>The placeholders need to be added as <!-- -->1<!-- --> or <!-- -->2<!-- -->. In single curly braces with the numbers.</li>
 <li>Ensure that the placeholders have a large enough text field to accommodate the information for contact being sent</li>
+<li>The certificate is saved, and the copy id button can be used to refer back to the template while using the webhook in Glific flow. (refer steps ahead)</li>
 </ol>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="3-use-the-certificate-template-in-the-flow">3. Use the certificate template in the flow<a href="#3-use-the-certificate-template-in-the-flow" class="hash-link" aria-label="Direct link to 3. Use the certificate template in the flow" title="Direct link to 3. Use the certificate template in the flow">​</a></h3>
 <ol>
@@ -161,7 +162,7 @@ Use this <a href="https://console.developers.google.com/start/api?id=drive.googl
 <p><strong>Steps to resolve</strong></p>
 <ul>
 <li>a. Copy the root slide as slide 2 and slide 3</li>
-<li>b. Delete the slide 1 and 3</li>
+<li>b. Delete the slide 1 and 2</li>
 <li>c. Refresh the page</li>
 <li>d. See the slide url is now changed.</li>
 <li>e. Use this new url</li>
