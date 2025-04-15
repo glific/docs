@@ -9,7 +9,7 @@
 
 
 <link rel="search" type="application/opensearchdescription+xml" title="Glific" href="/docs/opensearch.xml"><link rel="stylesheet" href="/docs/assets/css/styles.98cdb807.css">
-<script src="/docs/assets/js/runtime~main.c26a5a22.js" defer="defer"></script>
+<script src="/docs/assets/js/runtime~main.429cda77.js" defer="defer"></script>
 <script src="/docs/assets/js/main.1b98160d.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -134,22 +134,15 @@ Use this <a href="https://console.developers.google.com/start/api?id=drive.googl
 <img width="493" alt="Screenshot 2025-04-07 at 3 20 39 PM" src="https://github.com/user-attachments/assets/5f0d0268-be65-4f62-9245-2c57e6b4a00a">
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="1-use-the-following-validation-before-the-create_certificate-webhook-call-to-ensure-that-the-certificates-are-not-generated-for-contacts-for-whom-the-placeholder-parameters-value-is-not-present">1. Use the following validation before the <code>create_certificate</code> webhook call to ensure that the certificates are not generated for contacts for whom the placeholder parameters value is not present<a href="#1-use-the-following-validation-before-the-create_certificate-webhook-call-to-ensure-that-the-certificates-are-not-generated-for-contacts-for-whom-the-placeholder-parameters-value-is-not-present" class="hash-link" aria-label="Direct link to 1-use-the-following-validation-before-the-create_certificate-webhook-call-to-ensure-that-the-certificates-are-not-generated-for-contacts-for-whom-the-placeholder-parameters-value-is-not-present" title="Direct link to 1-use-the-following-validation-before-the-create_certificate-webhook-call-to-ensure-that-the-certificates-are-not-generated-for-contacts-for-whom-the-placeholder-parameters-value-is-not-present">​</a></h4>
 <ul>
-<li>
-<p>a. Use the below expression to check if the variables being sent in the webhook indeed have a value for the given contact and do not end up printing a certificate like error 1 shared above.
-<code>&lt;%=  [&quot;@contact.name&quot;, &quot;@contact.abcd&quot;] |&gt; Enum.any?(&amp;String.starts_with?(&amp;1, &quot;@&quot;)) %&gt;</code></p>
-</li>
-<li>
-<p>b. For more than 2 variables, add further commas in the first list and add the variable names in double quotes.</p>
-</li>
-<li>
-<p>c. For just one variable, use split by custom expression and plainly enter the name of the variable and check for the condition “has only the phrase” and the variable name as shown in the screenshot.</p>
-</li>
-<li>
-<p>d. The above expression returns the value true if any of the variables start with “@..” which indicates that the variable is empty.</p>
-</li>
-<li>
-<p>c. This method can be used to avoid sending certificates for contacts where the variable is not present.</p>
-</li>
+<li>a. Use the below expression to check if the variables being sent in the webhook indeed have a value for the given contact and do not end up printing a certificate like error 1 shared above.</li>
+</ul>
+<div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">&lt;%=  [&quot;@contact.name&quot;, &quot;@contact.abcd&quot;] |&gt; Enum.any?(&amp;String.starts_with?(&amp;1, &quot;@&quot;)) %&gt;</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p><img decoding="async" loading="lazy" src="https://github.com/user-attachments/assets/d1b0235d-7624-4f12-97b2-df70905641ef" alt="File → Page Setup (15)" class="img_ev3q"></p>
+<ul>
+<li>b. For more than 2 variables, add further commas in the first list and add the variable names in double quotes.</li>
+<li>c. For just one variable, use split by custom expression and plainly enter the name of the variable and check for the condition “has only the phrase” and the variable name as shown in the screenshot.</li>
+<li>d. The above expression returns the value true if any of the variables start with “@..” which indicates that the variable is empty.</li>
+<li>c. This method can be used to avoid sending certificates for contacts where the variable is not present.</li>
 </ul>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="2-to-catch-certificates-non-generation-due-to-api-level-problems">2. To catch certificates non-generation due to api level problems.<a href="#2-to-catch-certificates-non-generation-due-to-api-level-problems" class="hash-link" aria-label="Direct link to 2. To catch certificates non-generation due to api level problems." title="Direct link to 2. To catch certificates non-generation due to api level problems.">​</a></h4>
 <img width="601" alt="Screenshot 2025-04-07 at 3 23 14 PM" src="https://github.com/user-attachments/assets/0d924466-93a2-40ad-990f-1465a17bf556">
