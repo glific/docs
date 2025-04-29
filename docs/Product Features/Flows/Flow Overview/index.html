@@ -9,7 +9,7 @@
 
 
 <link rel="search" type="application/opensearchdescription+xml" title="Glific" href="/docs/opensearch.xml"><link rel="stylesheet" href="/docs/assets/css/styles.98cdb807.css">
-<script src="/docs/assets/js/runtime~main.7d583a3f.js" defer="defer"></script>
+<script src="/docs/assets/js/runtime~main.0a0ce8ac.js" defer="defer"></script>
 <script src="/docs/assets/js/main.1b98160d.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -64,6 +64,11 @@
 <li>
 <p><strong>Run this flow in the background + Background Flows</strong> : Sometimes, you might need to send automated messages alongside the usual flows or manual interactions. For instance, you may want to send weekly or bi-monthly updates while also allowing daily interactions with the bot. In such cases, you can plan these activities separately in the background while keeping the other flows unchanged.
 Read more <a href="https://glific.github.io/docs/docs/Product%20Features/Flows/Others/Background%20Flows/" target="_blank" rel="noopener noreferrer">here</a></p>
+</li>
+<li>
+<p><strong>Skip Validation</strong> : Check this box while sending results that are generated dynamically (not pre-defined in the flow).
+This is helpful while using the <a href="https://api.glific.com/#89f5f6e6-9bdc-48c2-96c5-ad8c1f7a834b" target="_blank" rel="noopener noreferrer">resume Flow API</a> and the flow doesn’t already have those results set up.
+It lets the flow continue without checking if those result fields were expected.</p>
 </li>
 </ul>
 </li>
