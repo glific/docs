@@ -24,8 +24,8 @@ m.media_url,
 m.is_hsm,
 m.contact_name,
 m.contact_phone
-FROM `tides-saas-309509.918657048982.messages` AS m
-JOIN `tides-saas-309509.918657048982.contact_collection` AS cc
+FROM `project-name.bot-number.messages` AS m
+JOIN `project-name.bot-number.contact_collection` AS cc
 ON JSON_EXTRACT_SCALAR(m.errors, '$.payload.destination') = cc.phone
 WHERE m.bsp_status = "error"
 GROUP BY
