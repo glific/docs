@@ -62,8 +62,16 @@ To change the page dimensions for a google slide
 3. It is advised to research on your own behalf for the most suitable aspect ratio of the base template that suits your use case. 
 
 ## Sending the certificates/badges to contacts
+**Note**: If you see the .PPTX label (like in the image below), your file is still in PowerPoint format and needs to be converted into Google Slides to work with custom certificates.
+
+
+**To convert it:**
+1. Right-click or command-click the PowerPoint file in your Google Drive.
+2. In the dropdown menu, hover over the “Open with” option and select Google Slides.
+3. Once the file opens in Google Slides, click File on the top toolbar and Save as Google Slides.
 
 ### 1. Create/ Import template design in Google Slides
+
 1. For certificates created on canva or other softwares, export the designs as “ppt” and save it on your computer
 2. The design template should have placeholders where the personalized information for the Glific contacts will be populated. 
 
