@@ -64,11 +64,11 @@ To change the page dimensions for a google slide
 ## Sending the certificates/badges to contacts
 **Note**: If you see the .PPTX label (like in the image below), your file is still in PowerPoint format and needs to be converted into Google Slides to work with custom certificates.
 
-<img width="580" alt="Screenshot_2025-06-20_at_7 03 33_PM" src="https://github.com/user-attachments/assets/473a6f80-8288-40f6-9f5c-02af74e1d50f" />
-
 **To convert it:**
 1. Open the PPT in Google Slides.
 2. Once the file opens, click File on the top toolbar and Save as Google Slides.
+   
+<img width="402" alt="Screenshot 2025-06-25 at 10 23 27 AM" src="https://github.com/user-attachments/assets/f4e1fe7d-8e6b-447c-96d6-42f5be1066d3" />
    
 The presentation will open in a new window and automatically save in your Google Drive as a Google Slides file
 
