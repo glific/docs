@@ -70,7 +70,7 @@ To change the page dimensions for a google slide
    
 <img width="402" alt="Screenshot 2025-06-25 at 10 23 27 AM" src="https://github.com/user-attachments/assets/f4e1fe7d-8e6b-447c-96d6-42f5be1066d3" />
    
-The presentation will open in a new window and automatically save in your Google Drive as a Google Slides file
+The presentation will open in a new window and automatically save in your Google Drive as a Google Slides file. We need to use the new slide in the certificates.
 
 ### 1. Create/ Import template design in Google Slides
 
