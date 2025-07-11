@@ -2,7 +2,9 @@
 
 ## Handling re-responses on the interactive messages
 
-**This is a flagged feature, and can be enabled for your organization’s glific instance upon request to Glific team. It is advisable to read up on how this feature works and take a decision based on your organization’s use case. This feature can be enabled for the organization upon request. Reach out to support@glific.org or on Discord NGO support channel with a message to “Enable the feature to handle interactive message re-response**
+> **Flagged feature — available on request**  
+This feature is disabled by default. Review the behaviour described below and, if it fits your use-case, ask the Glific team to enable it for your organisation.  
+Request access by emailing [support@glific.org](mailto:support@glific.org) or posting “Enable the feature to handle interactive-message re-response” in the **#ngo-support** Discord channel.
 
 <img width="619" height="465" alt="Screenshot 2025-07-11 at 11 31 45 AM" src="https://github.com/user-attachments/assets/87acb953-3f4c-4b1b-a2da-df5e5358dec2"/>
 
