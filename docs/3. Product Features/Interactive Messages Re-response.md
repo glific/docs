@@ -35,7 +35,7 @@ This feature handles re-response to interactive messages only within the same fl
 
 **2. When the flow is expired:** The flow expires after 5 days. Which means, that the Glific system stops expecting response from a contact after a period of 5 days of inactivity. This implies that if a contact responds to an inactive conversation after 5 days, the response will not be treated as a reply to the previous flow. 
 
-**3. When the contact is a child flow:** In case there is "enter another flow" node used, such a flow is called parent flow. When the contact moves from a parent flow to child flow, the active flow for the contact becomes chold flow, so responding to interactive messages from the parent flow will not work as expected. 
+**3. When the contact is a child flow:** In case there is "enter another flow" node used, such a flow is called parent flow. When the contact moves from a parent flow to child flow, the active flow for the contact becomes the child flow, so responding to interactive messages from the parent flow will not work as expected. 
 
 **4. Infinite Loop-y behaviour:** If a contact selects/ re-selects options from the same interactive message more than 4 times, then something called as an “infinite loop” is detected and all the flows are killed. This is an FYI, a user is not likely to re-select options more than 3 times back to back. 
 
