@@ -22,6 +22,8 @@ For a flow The user can scroll up in their WhatsApp chat and select another opti
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/NB-wDsYsm_Q?si=rrTx55KzCaII9YGQ&amp;start=2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+PS: Turn on the captions on the video and listen with ear phones for best clarity on the audio.
+
 As the contact is in the middle of a flow, the contact can select or re-select options from other previous interactive messages and be routed directly into the pathway of the selected response. 
 
 ### Limitations
