@@ -1,127 +1,227 @@
-###**3 minute read &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; `Advanced`**
 
-_**Provide your documents, and system prompt, get GPT model to answer questions of your users over WhatsApp from the provided documents, with the ability to handle the follow up questions asked by the users**_
 
-_This is the implementation of RAG system provided by OpenAI in Glific_
+<h3>
+  <table>
+    <tr>
+      <td><b>6 minutes read</b></td>
+      <td style="padding-left:40px;"><b> Level: Advanced</b></td>
+      <td style="padding-left:40px;"><b>Last Updated: August 2025</b></td>
+    </tr>
+  </table>
+</h3>
 
-## How to create an OpenAI Assistant from Glific UI
+# File Search Using OpenAI Assistants
 
-1. Go to the `Assistants` page from the left panel.
 
-<img width="1409" alt="Screenshot 2024-11-18 at 2 54 10 PM" src="https://github.com/user-attachments/assets/1aa8bcaa-b718-4c95-bca9-5b34059b077e" />
+Glific’s File Search using OpenAI Assistant enables users to upload documents and get AI-generated answers to user questions. The system uses a method called **Retrieval Augmented Generation (RAG)**, where the assistant searches through your files to give accurate, helpful responses, including answers to follow-up questions.
 
-4. Click on `Create`. This creates an blank assistant.
- 
-<img width="1200" alt="Screenshot 2024-11-18 at 2 55 05 PM" src="https://github.com/user-attachments/assets/1597c038-f87f-4ad0-ab81-9948368adfc5" />
+---
 
-6. Define the parameters for your assistant by
-   - Choosing the most relevant model from the first drop down.
-   - Provide a name to the assistant.
-   - Provide a system prompt in the "Instructions" field. Read more on prompt engineering [here](https://glific.org/a-simple-guide-to-using-large-language-models/).
-   - Set the temperature. (Temperature can be set between 0 to 2. Keeping a higher value for temperature setting increases the creativity or randomness with which the LLM generates a response. It is recommended to keep temperature at 0)
+### Use this when:
+- Users want to ask questions based on your PDFs, reports, or manuals.
+- There is a need to build an automated knowledge assistant for your organisation.
+- Help users get instant responses.
+
+### This document guides you through three main parts:
+- Creating an OpenAI Assistant  
+- Using the Assistant in your Flows (including handling follow-up questions)  
+- Handling Voice Inputs and Responses  
+
+---
+
+## How to Create an OpenAI Assistant in Glific
+
+#### Step 1: Create a new AI Assistant
+Click on `AI Assistant` from the left sidebar, then select `Create Assistant` to generate a blank assistant.
+
+<img width="633" height="367" alt="Screenshot 2025-08-09 at 12 35 30 AM" src="https://github.com/user-attachments/assets/6f33287c-1dd1-45af-8e57-f58c36b81cff" />
+
+
+#### Step 2: Fill in the Assistant Details
+
+Define the following parameters:
+
+- Choose the most relevant model from the first drop down.
+- Provide a name to the assistant.
+- Provide a system prompt in the `Instructions` field.  
+  *[Click Here](https://glific.org/a-simple-guide-to-using-large-language-models/#prompt) to read more on prompt engineering.*
+- Files (PDF, DOCX, etc.) can be uploaded by clicking on `Manage Files`. These files will be utilized by the assistant to generate responses.  
+  *[Click Here](https://platform.openai.com/docs/assistants/tools/file-search/supported-files#supported-files) to know the supported file formats by the OpenAI APIs.*
+- Set the `Temperature` (between 0 to 2). A higher value increases creativity/randomness.  
+  *Recommended: keep temperature at 0.*
+
+ **Note:** The quality of the bot’s response depends on the prompt. Give appropriate prompts based on your use case.
+
+
+#### Step 3: Save Your Assistant
+Once the files are added, click on `Add`. This completes the Assistant setup.  
+Click on the `Save` button after making any changes.
+<img width="656" height="405" alt="Screenshot 2025-08-09 at 12 43 48 AM" src="https://github.com/user-attachments/assets/f3e31a36-1c8e-4c2f-91d5-954c22fcb7d9" />
+
+
+#### Step 4: Copy the Assistant ID
+Once created, copy the `Assistant ID` shown below the assistant name.  
+This ID will be used in the webhook nodes in the flow editor.
+
+<img width="357" height="408" alt="Screenshot 2025-08-09 at 12 46 25 AM" src="https://github.com/user-attachments/assets/8d7556f0-827a-44ea-a2e5-881f2b61c2e1" />
+
+
+## Using the OpenAI Assistant in Floweditor
+The following sections explain how to use an assistant to answer questions or create conversations.
+
+
+## Handling text inputs and outputs
+
+This section explains how to:
+- Use the `filesearch-gpt` webhook function to pass a user’s question to the OpenAI Assistant.
+- Receive the assistant’s response.
+- Handle follow-up questions using conversational memory.
+
+
+#### Step 1: Get User Question
+
+- Create a flow where the user sends a question as text input.
+- Add `Send Message` node and receive user question as text.
+- This question will be passed to the assistant for a response.
+- Provide a `Result Name` for the `Wait for Response node.
+-  In the example below, the result name is set as `question`.
+
+_Screenshot of example flow set up is given below_
+
+<img width="633" height="501" alt="Screenshot 2025-08-09 at 12 51 47 AM" src="https://github.com/user-attachments/assets/6cb60c7a-6b75-4c96-8b78-88fa3318a8c2" />
+
+
+#### Step 2: Add a  Call Webhook node. This is where we integrate the OpenAI Assistant.
+
+- Select the `Function` from the dropdown.
+- In the `Function`  field, enter `filesearch-gpt`, this function name is pre-defined.
+- Give the webhook `Result Name` - you can use any name. In the screenshot example, it’s named as `gptresponse`.
+
+<img width="633" height="525" alt="Screenshot 2025-08-09 at 1 17 28 AM" src="https://github.com/user-attachments/assets/eead58e1-a32a-4aa9-9fb0-4e4de2fc16e5" />
+
+
+#### Step 3: Click on Function Body (top right corner) and pass the following parameter 
+`{ "question": "@results.question", "assistant_id": "asst_xxxxx", "remove_citation":true }`
+
+- In `question` parameter enter the flow variable containing the question asked by the user. In the given example `question` is the `result name`, hence provided `@result.question` in the question parameter.
+- In `assistant_id` enter the assistant id obtained in step 4 of "How to Create an OpenAI Assistant in Glific"
+- In `remove_citation` enter `true` to prevent cryptic citation marks from showing up in the response.
+
+  <img width="633" height="525" alt="Screenshot 2025-08-09 at 1 17 28 AM" src="https://github.com/user-attachments/assets/2b4d9c60-3a4e-4ba6-b63b-d221acf621ad" />
+
+#### Step 4:  Display the Assistant's response
+- Once the Webhook is updated, add a `Send Message` node and enter `@results.gptresponse.message` variable to receive the AI response.
+- In the given example  `gptresponse` is the `result name` (refer step2). If `AI_response` was the result name, the variable would be `@results.AI_response.message`.
+
+  <img width="643" height="498" alt="Screenshot 2025-08-09 at 1 28 11 AM" src="https://github.com/user-attachments/assets/6c4d143e-a1b9-4523-a684-8eae3e0e0e97" />
+
+  [Sample Flow](https://drive.google.com/file/d/1-RcFXdEpeuqlb27RWNRpWNdZ9PNZzBSz/view) Click on the Sample Flow link to import it and explore how it works.
+
+
+### Conversational Memory
+When a user asks a follow-up question, the assistant uses thread ID to remember the earlier conversation. This helps it give better answers by understanding the context of what was already asked.
+
+#### Step 5: Add `thread_id` in the next Webhook call
+- To answer the subsequent questions based on the context of a question already asked, in the next webhook call, an additional parameter called `thread_id` needs to be passed.
+- This parameter should be set to the value `@results.previouswebhookname.thread_id`.
+- In the example shown, the previous webhook result name is gptresponse. So the thread ID should be referenced as - `@results.gptresponse.thread_id`.
+
+<img width="644" height="452" alt="Screenshot 2025-08-09 at 1 33 23 AM" src="https://github.com/user-attachments/assets/fae67969-664d-4e56-89ea-5ba6adc74f6c" />
+
+- In question parameter enter the flow variable containing the follow up question asked by the user. In the given example `result_5` is the result name, hence provided `@results.result_5` in the question parameter.
+
+<img width="624" height="489" alt="Screenshot 2025-08-09 at 1 34 26 AM" src="https://github.com/user-attachments/assets/bd95bbfb-18e1-46d0-915a-fad38782b5d4" />
+
+---
+
+
+## Handling Voice Inputs and Responses
+Some beneficiaries may find it easier to talk instead of typing. This is helpful for people who are not comfortable reading or writing. With voice input, beneficiaries can send voice notes to ask questions and get answers as both text and voice.
+This section explains how to use the `voice-filesearch-gpt` webhook function in Glific flows to take a user’s voice note as input and return both text and voice note responses in the desired language.
+
+
+#### Step 1: Capture end user’s voice input
+- Create a `Send Message` node directing users to send their responses as audio messages, based on their preference.
+- In the `Wait for Response` node, select has audio as the message response type. Also, give a result name. In the screenshot below, `audio_query` is used as the result name.
+
+<img width="606" height="463" alt="Screenshot 2025-08-09 at 1 38 18 AM" src="https://github.com/user-attachments/assets/5805f7fd-f13f-4298-b9e3-bf63f235574c" />
+
+
+#### Step 2: Create Call a Webhook node
+- Select `Function` from the dropdown.
+- In the `Function` field, enter `voice-filesearch-gpt` , this function name is pre-defined.
+- Give the webhook result name - you can use any name. In the screenshot example, it’s named `gpt_voice`.
+
+<img width="615" height="512" alt="Screenshot 2025-08-09 at 1 40 02 AM" src="https://github.com/user-attachments/assets/c5375afe-9e30-4264-b4ab-0d0e9e83cd7b" />
+
+<img width="625" height="528" alt="Screenshot 2025-08-09 at 1 40 28 AM" src="https://github.com/user-attachments/assets/3ccb9af7-1a01-4fbb-9358-7a842c8c7960" />
+
+
+#### Step 3: Click on Function Body (top right corner) and pass the following parameter
+{ "contact": "@contact", "speech": "@results.audio_query.input", "assistant_id": "asst_xxxxxxxx", "remove_citation": true, "source_language": "@contact.language", "target_language": "hindi" }
+
+<img width="617" height="430" alt="Screenshot 2025-08-09 at 1 42 16 AM" src="https://github.com/user-attachments/assets/2f0e99f1-eb86-404b-9dc6-b7a97da944ce" />
+
+- `speech` is the result name which is storing the voice note sent by the user.
+- `assistant_id` is the assistant id obtained in step 4 of "How to Create an OpenAI Assistant in Glific.
+- `source_langauge` is the expected language of the user.
+- `target_language` is the language that the response voice note needs to be in.
+- `remove_citation` pass as `true` to avoid citation marks to be part of the response voice note.
+
+
+#### Step 4: Display the text response
+- Create a `Send Message node`.
+- Use `@results.webhook_result-name.translated_text` to show the text response.
+- In the given example `gpt_voice` is the webhook result name.
+
+<img width="622" height="473" alt="Screenshot 2025-08-09 at 1 45 38 AM" src="https://github.com/user-attachments/assets/bd42793c-f4a4-4326-814b-aea9ac7e7924" />
+
+
+#### Step 5: Send the voice note response
+- In a new `Send Message` node, go to `Attachments`.
+- Choose `Expression` from the dropdown.
+- Use  `@results.gpt_voice.media_url` (gpt_voice is the result name of webhook node)
+
+
+<img width="617" height="252" alt="Screenshot 2025-08-09 at 1 46 58 AM" src="https://github.com/user-attachments/assets/547eed06-5697-4379-95d2-0221dc6093e6" />
+
+
+
+[Sample Flow](https://drive.google.com/file/d/1jFwNoGiUCqalbC8K-slUnI5tt3fGyVRc/view) Click on the Sample Flow link to import it and explore how it works.
+
+---
+
+## Pricing
+NGOs can use AI features in Glific without any additional cost for inferencing. Glific is supported by OpenAI to help more NGOs experiment, pilot, and run programs using large language models (LLMs), enabling them to scale their impact without being limited by cost. Additionally NGOs can use up to $100 worth of credits until August 2026.
+
+---
+
+## Video of Showcase
+[Video Link](https://www.youtube.com/watch?v=J_sFgOUFFOA)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
-7. Add the files or knowledge base for the assistant to generate an answer from by uploading the files. Check here for the supported file formats by the OpenAI APIs. Click on add to complete the setup of the assistant.
-   
-  <img width="698" alt="Screenshot 2024-11-18 at 2 59 41 PM" src="https://github.com/user-attachments/assets/e45b7938-ce60-4040-90e9-685c52e75800" />
-
-9. The `assistant id` provided below the assistant name is the id that needs to be copied from this page. This id will be used in the webhook nodes in the flow editor.
-
-<img width="523" alt="Screenshot 2024-11-18 at 3 15 05 PM" src="https://github.com/user-attachments/assets/02c62482-0fd8-4948-96cc-847f8e7345be" />
-
-## Using the OpenAI assistant in floweditor 
-Following sections details how to use assistant to answer questions from the user or create conversations. 
-
-### Handling text inputs and outputs
-Following section shows how to use `filesearch-gpt` webhook function in Glific flows to take users' text responses as inputs and provide a text and response. 
-
-<img width="1144" alt="Screenshot 2025-02-13 at 4 41 05 PM" src="https://github.com/user-attachments/assets/5631cfbe-ecd5-40b7-8571-05289e34ec53" />
 
 
-0. Get the sample flow here [Sample flow
-](https://drive.google.com/file/d/1PBcaLT3paJ8gKAeJEdLUuSPf-nxpHYKe/view?usp=sharing)
-
-1. Get the user question
-2. In call a webhook node, select function and paste function name as `filesearch-gpt`
-<img width="541" alt="Screenshot 2024-06-05 at 12 25 17 PM" src="https://github.com/glific/docs/assets/141305477/93b24d77-84c4-4981-8ae7-15f07f0dde02"/>
-
-3. Go to `function body` and pass the following parameter
-`{
-  "question": "@results.flowresult",
-  "assistant_id": "asst_xxxxx",
-  "remove_citation":true
-}`
-
-- in `question` parameter pass the flow variable containing the question asked by the user
-- in `assistant_id` pass the assistant id obtained from Glific team in step 4 of "how to get started"
-- in `remove_citation` pass `true` to prevent cryptic citation marks from showing up in the response.
-
-<img width="624" alt="Screenshot 2024-07-11 at 5 06 50 PM" src="https://github.com/glific/docs/assets/141305477/8ce8eb0e-5cb9-492e-a3e7-fc52260fe24b"/>
 
 
-4. The response generated will be printed as @results.webhookresultname.message, in the given example filesearch is the webhook result name. (see the first image)
-
-### Conversational memory
-
-5. Conversational memory is retained and can be referenced using "thread_id"
- 
-5. To answer the subsequent questions based on the context of a question already asked, in next webhook call, an additional parameter called `thread_id` needs to be passed. This parameter has to have the value of `@results.previouswebhookname.thread_id`. In the example shown, the previous webhook result name is "filesearch"
-
-<img width="620" alt="Screenshot 2024-07-11 at 5 07 58 PM" src="https://github.com/glific/docs/assets/141305477/40de9e15-07ec-41de-8294-64eb08d3c71e"/>
-
-6. If the message body/content is different, the flow will continue without stopping due to a loop. However, if the same node_id and the same message are processed more than 3 times within the last 6 hours, the process will be terminated.
-
-<img width="1144" alt="Screenshot 2025-02-13 at 4 41 05 PM" src="https://github.com/user-attachments/assets/4f02c64d-55ad-4cd4-b97a-238c12ef1b67" />
-
-_this is the function body passed in the subsequent webhooks to answer follow up questions_
-
-### Handling voice inputs and outputs responses 
-
-Following section shows how to use `voice-filesearch-gpt` webhook function to take users' voice notes as inputs and provide a text and voice note output response in the desired langauge
-
-<img width="845" alt="Screenshot 2024-08-21 at 12 05 00 PM" src="https://github.com/user-attachments/assets/ce0c771a-c15b-4017-8e7f-10675e5f367c"/>
-
-1. Get the sample flow here [Sample flow
-](https://drive.google.com/file/d/1nOch0H5JTLSasSddeGvggP44vH9IV8Vk/view?usp=sharing)
-
-2. In call a webhook node, select function and paste function name as `voice-filesearch-gpt` as shown below
-<img width="577" alt="Screenshot 2024-08-21 at 12 05 17 PM" src="https://github.com/user-attachments/assets/320d056e-4456-4ff2-be98-895fa4b5c926"/>
-
-3. Go to `function body` and pass the following parameter
-
-`{
-  "contact": "@contact",
-  "speech": "@results.audio_query.input",
- "assistant_id": "asst_OvmKO60CQOnHlwmnpPqqzTel",
- "remove_citation": true,
- "source_language": "@contact.language",
- "target_language": "hindi" }`
-
-<img width="548" alt="Screenshot 2024-08-21 at 12 21 57 PM" src="https://github.com/user-attachments/assets/d52c6ad5-7183-4bad-8572-a4b547add115"/>
 
 
-- `speech` is the result name which is storing the voice note sent by the user
-- `assistant_id` is the assistant id created in OpenAI playground
-- `source_langauge` is the expected language of the user
-- `target_language` is the language that the response voice note needs to be in
-- `remove_citation` pass as true to avoid citation marks to be part of the response voice note
-
-4. The text response generated will be printed as @results.webhookresultname.translated_text, in the given example `gpt_voice` is the webhook result name. 
- <img width="574" alt="Screenshot 2024-08-21 at 12 13 49 PM" src="https://github.com/user-attachments/assets/86d81c30-f9fc-4ad5-8d32-b2248491c315"/>
-
-5. The voice note response will have to be added as an expression attachment in another send message node as @results.webhookresultname.media_url
-<img width="568" alt="Screenshot 2024-08-21 at 12 13 39 PM" src="https://github.com/user-attachments/assets/6aa18420-a158-43ff-b631-ad9f288c2135"/>
-
-6. Similar set-up of 2 webhooks, with the loop going over the 2nd webhook can be made (as shown in the handling of text messsages), to answer questions with the context of the ongoing conversation.
+  
+  
 
 
-### Pricing
-NGOs can use AI featuresin Glific without any extra associated cost of inferencing. Glific is supported by OpenAI to in turn enable more NGOs to experiment, pilot and run programs using LLMs in order to further the impact without being constrained by cost. 
-
-## Limitations
-2. To get the voice notes as a response, the Glific account must have google cloud platform linked.
-   
-
-## Video of showcase
-<iframe width="560" height="315" src="https://www.youtube.com/embed/J_sFgOUFFOA?si=KfDAPkoUreBudM8Z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-_Watch from 12 minute mark to know the exact steps to follow_
