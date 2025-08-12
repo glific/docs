@@ -1,5 +1,4 @@
 
-
 <h3>
   <table>
     <tr>
@@ -11,7 +10,6 @@
 </h3>
 
 # File Search Using OpenAI Assistants
-
 
 Glific’s File Search using OpenAI Assistant enables users to upload documents and get AI-generated answers to user questions. The system uses a method called **Retrieval Augmented Generation (RAG)**, where the assistant searches through your files to give accurate, helpful responses, including answers to follow-up questions.
 
@@ -98,6 +96,7 @@ _Screenshot of example flow set up is given below_
 - Give the webhook `Result Name` - you can use any name. In the screenshot example, it’s named as `gptresponse`.
 
 <img width="633" height="525" alt="Screenshot 2025-08-09 at 1 17 28 AM" src="https://github.com/user-attachments/assets/eead58e1-a32a-4aa9-9fb0-4e4de2fc16e5" />
+
 
 
 #### Step 3: Click on Function Body (top right corner) and pass the following parameter 
