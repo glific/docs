@@ -157,7 +157,15 @@ This section explains how to use the `voice-filesearch-gpt` webhook function in 
 
 
 #### Step 3: Click on Function Body (top right corner) and pass the following parameter
-{ "contact": "@contact", "speech": "@results.audio_query.input", "assistant_id": "asst_xxxxxxxx", "remove_citation": true, "source_language": "@contact.language", "target_language": "hindi" }
+```{
+  "contact": "@contact",
+  "speech": "@results.audio_query.input",
+  "assistant_id": "asst_xxxxxxxx",
+  "remove_citation": true,
+  "source_language": "@contact.language",
+  "target_language": "hindi"
+}
+```
 
 <img width="617" height="430" alt="Screenshot 2025-08-09 at 1 42 16 AM" src="https://github.com/user-attachments/assets/2f0e99f1-eb86-404b-9dc6-b7a97da944ce" />
 
@@ -197,30 +205,5 @@ NGOs can use AI features in Glific without any additional cost for inferencing. 
 
 ## Video of Showcase
 [Video Link](https://www.youtube.com/watch?v=J_sFgOUFFOA)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-  
-  
 
 
