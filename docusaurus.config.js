@@ -64,7 +64,7 @@ const config = {
       items: [
         {
           type: "doc",
-          docId: "Glific Overview",
+          docId: "intro,
           position: "left",
           label: "Documentation",
         },
