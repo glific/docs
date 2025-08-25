@@ -6,7 +6,7 @@ export default function Home(): JSX.Element {
     const { siteConfig } = useDocusaurusContext();
     return (
         <Redirect
-            to={`${siteConfig.customFields.baseUrlRedirect}/intro`}
+            to={`${siteConfig.customFields.baseUrlRedirect}/Glific%20Overview`}
         />
     );
 }
