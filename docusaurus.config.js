@@ -7,7 +7,7 @@ const config = {
   title: "Glific",
   tagline: "An open source two way communication platform",
   url: "https://glific.github.io",
-  baseUrl: `/${process.env.BASE_URL ? process.env.BASE_URL : ""}`,
+  baseUrl: "/",
   customFields: {
     baseUrlRedirect: process.env.BASE_URL,
   },
