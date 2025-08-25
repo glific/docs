@@ -69,11 +69,6 @@ const config = {
           label: "Documentation",
         },
         {
-          to: "https://glific.org/blogs",
-          label: "Blogs",
-          position: "left",
-        },
-        {
           href: "https://github.com/glific",
           label: "GitHub",
           position: "right",
