@@ -1,79 +1,183 @@
----
-sidebar_position: 0
----
-
-# Introduction
-
-> ### **3 minute read &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; `Beginner`**
-
-
-**Glific is a WhatsApp based open source communication platform for NGOs to have conversations with their community. It is being developed under Project Tech4Dev initiative of Chintu Gudiya Foundation.**
-
-**Glific aims to empower social organisations to act decisively and quickly on grassroots information through a range of host of features ranging from automated responses to comprehensive analytics.**
+> ### **5 minute read &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; `Beginner`**
 
 ___
+![image](https://user-images.githubusercontent.com/32592458/212236384-09147af2-3acf-45b0-a644-4aa090bdda1e.png)
 
-## Whatsapp Chatbot #101
+## Getting Started with Glific: Pre-Read before Onboarding
 
-**Here are a few things you should note when planning to use WhatsApp chatbot for your organization:**
+This documentation serves as a comprehensive guide for organizations looking to onboard onto [Glific](https://glific.org/).
+ 
+It outlines the various approaches to onboarding, the key steps involved, pricing details, training and support post-onboarding, and expectations from the organization.
 
-1. **WhatsApp Business API** <br />
-There are three ways to use WhatsApp, a basic app which we generally use to talk to our friends and family. WhatsApp business is meant for small businesses for small scale interactions with customers and allows basic automations like greeting and away messages. The third one is WhatsApp Business API which is meant for large scale two-way communication and it empowers businesses to do a lot more such as automate any amount of conversations, generate insights from it, schedule messages, send messages with buttons and a lot more - see here. WhatsApp Business API powers the WhatsApp based chatbots. When using WhatsApp chatbot, while end-users use their WhatsApp application, businesses log onto a different interface. 
-<br />
-2. **Conversation Types** <br />
-Whenever a user messages the chatbot, businesses have 24-hrs to respond to their query (this is where chatbot helps). If the 24-hrs window closes, businesses can nudge the users to re-initiate conversation with a pre-approved template message only. To send messages outside of 24-hrs, businesses also need to get users to opt-in(or subscribe) to their number. If the contacts are not opted in and the window has closed, then you can only interact with them when they message you.
-<br />
-3. **Conversation Costs** <br />
-With WhatsApp chatbot businesses have to incur costs to talk to their end-user, read in detail here. In addition to this, there’s also platform costs where the chatbot runs. 
-<br />
-4. **Chatbot Phone Number** <br />
-You can use any kind of phone number that is active - either a special number or any regular number works, it can also be a virtual or a landline number. You only need the number on the mobile phone during the initial set up phases for OTP verifications. You must not link the chatbot number with any WhatsApp or WhatsApp business application. It gets linked with WhatsApp business API when you set up the chatbot.
-<br />
-5. **Constraints & Features** <br />
-    a. **Optins:** Businesses must get end-users to initiate the first conversation and get them to explicitly mark that they are okay with receiving WhatsApp messages from your organization. This process can happen through forms, redirecting users from your Facebook page, or getting them to optin directly on whatsapp when they send you the first message (at Glific we enable you to do it easily on WhatsApp). <br />
-    b. **No Groups:** WhatsApp business API doesn’t support groups functionality. You can only talk to your end-users in a 1-to-1 manner. You can broadcast messages to a large number of contacts but the conversation will be 1-to-1. 
-<br />
-    
-    - Message Approvals: When sending messages outside of to opted-in users, you need to follow the guidelines set by WhatsApp and get your message approved by them. These messages are called HSM templates. Within 24-hrs you can send any message without approval.<br />
-6. **Messaging Limits**<br />
-    When you start your chatbot program, you can get as many end-users to send you a message as you want, but while sending a nudge message(HSM template) you can only send to 1000 contacts to begin with. When you messages to 2000 unique-contacts within a 7-days period, your messaging limit increases to 10,000 and similarly to 1,00,000.
-    <br />
-7. **Facebook Business Manager Verification** <br />
-    The most critical step to getting access to WhatsApp business API and starting your chatbot is to get your business verified from Meta. Your business should be registered, it should have a facebook page and a website. Read more here to know the complete process.
+## About Glific and how it works:
+
+Glific is a SaaS platform that enables NGOs to build and manage their own WhatsApp chatbot. 
+Glific is easy to use and can be set up in an easier manner with our detailed documentation. 
+We recommend having at least one dedicated team member to take ownership of the chatbot for a long term. 
+Our support team is available via an active Discord channel for queries related to the platform, features, or bugs, and we also host weekly support hour calls every Tuesday for all NGOs.
+ 
+If you need any additional support, it can be availed through consulting. Here are the charges:
+
+<img width="503" alt="image" src="https://github.com/user-attachments/assets/58f2a310-ceff-41b9-8730-08137eaeb8c4" />
+
+You can also refer to our detailed [consulting overview document](https://drive.google.com/file/d/1uUuD0GiGMZy7Jqzfi0VV6v2gvQH2NhD5/view?usp=sharing) for more information.
+
+## Before you get started on Glific:
+
+1) **A Facebook page and an active phone number which is not on WhatsApp to set up the chatbot.**
+
+2) **Funds to run the chatbot**- On an average an NGO spends between 10-15k per month if they are using the chatbot to run reminder messages to 500 people once a week. 
+
+3) **Clarity on the program** to run the WhatsApp chatbot on: For example- Build a teacher training chatbot to train teachers on basic computer literacy skills twice a week in a month or send reminders to target users to eat healthy meals once a week for a period of six months. 
+[Here’s](https://docs.google.com/document/d/1jQcSOLfASa_RR7f_JlZd7WT2INaSC9tTQCNdWI_EOOw/edit?tab=t.0) a reference use case document for you to start documenting your usecase.
+
+4) **A long-term dedicated team member to anchor the chatbot for you**. Please find the key skills required in the team member below:
+
+    a) **Program knowledge** - The person responsible should know the program well and has a fair understanding of how conversation works with the 
+       target users. Ensure chatbot aligns with the program’s on-ground operations and objectives.
+
+    b) **Basic tech & logic reasoning skills** - Setting up flows would require some logical reasoning, data and problem-solving skills.
+ 
+Refer to this [blog](https://glific.org/skills-and-knowledge-required-to-run-a-chatbot-effectively/) to know about more skills required
+
+
+
+## Onboarding Steps for Glific
+
+#### If you're setting up Glific for WhatsApp 1:1 Chatbot, please follow the onboarding steps outlined below:
+
+a. **Acquire an Active Phone Number:** Obtain a phone number to use as your bot number. Make sure it is not used on WhatsApp/WhatsApp Business
+
+b. **Verify Your Facebook Business Manager Page:** Facebook verification is an essential step in setting up your WhatsApp chatbot. Facebook Business Manager verification proves your business is genuine before you can use the WhatsApp Business API to run a WhatsApp chatbot. Please have any **two of the following documents** ready for upload- one to verify the legal name and another to confirm the legal address.
+
+- Certificate/Articles of incorporation
+- Business registration or licence document
+- Government-issued business tax document
+- Business bank statement
+- Utility bill
+
+c. **Set Up a Gupshup Account:** Gupshup is our Meta service provider, enabling WhatsApp messaging on our platform. Organizations need a credit card to recharge their Gupshup wallet, as Gupshup follows a prepaid "Pay as you use" model for messaging charges. This cost is separate from Glific’s charges and must be managed independently.
+
+d. **Complete the [Glific Onboarding Form](https://prod.glific.com/organization-registration)**
+
+e. **Setup Google CloudConsole (GCS)**
+
+The assigned POC from your organization will be expected to follow this process independently, using our [comprehensive documentation](https://glific.github.io/docs/docs/Onboarding/Glific%20Onboarding%20Toolkit), which includes detailed steps with images and videos.
+Our team will support you if you get stuck at any of these steps through call/Discord/email.
+
+### Training and Support Post-Onboarding
+
+Our support team will conduct three onboarding calls to get you started. These will cover:
+
+- Hands-on training on the Glific platform 
+- Best practices & introducing a few more features
+- Data and dashboard overview
+
+A detailed plan for these sessions will be shared during the onboarding process. Following this, your organization would be able to create flows and run chatbot independently using our platform features.
+
+**Support channels available with Glific:** As a SaaS platform, we provide ongoing support if you have a question/issues on platform-
+
+1) **Documentation** – Our [documentation](https://glific.github.io/docs/docs/intro/) usually will have 90% of the answers to your questions. 
+
+2) **Query resolution:** You can raise a query through our [Discord channel](https://discord.gg/gYHMRGQVpT), where our AI bot will provide an instant response. If needed, our team will follow up based on the type of request.
+ 
+3) **Support Hour Calls:** For facetime with our support team to get your queries resolved, you can join weekly support hour [group call](https://meet.google.com/ced-hbmr-suh) held on Tuesdays from 3:30 PM to 4:00 PM
+
+4) **Level Up Webinars:** We conduct an advanced webinar at the end of every month, where we share about new Glific features, encourage cross learning and also conduct sessions which will be helpful for your chatbot programs. 
+Topics and dates for this webinar will be communicated in advance via Email, [Monthly Newsletter](https://zcmp.in/E4S7),[Discord channel](https://discord.gg/gYHMRGQVpT), & [Glific Community WhatsApp Groups](https://chat.whatsapp.com/KxUanZQ8EKW81SO4x4pmKO).
+
+
+### Pricing Details
+
+**WhatsApp 1:1 Chatbot:**
+
+Our [pricing structure](https://glific.org/pricing/) for WhatsApp 1:1 automation includes four components:
+
+1) A one-time onboarding fee of INR 15,000 + taxes covers account setup, onboarding assistance, and platform training. 
+2)  A platform fee of INR 9,500/month + taxes.
+3)  WhatsApp messaging fees are charged, based on user-initiated (UI) and business-initiated (BI) conversations. Refer to the table below for 
+  detailed pricing:
+
+| Market  | Currency | Marketing | Utility | Authentication | Service |
+|---------|---------|-----------|---------|---------------|---------|
+| India, For other regions,refer to this [link](https://developers.facebook.com/docs/whatsapp/pricing/) | USD | 0.0107 | 0.0014 | 0.0014 | Free |                                           
+
+Gupshup charges a surcharge of 0.001 USD per message (Incoming & Outgoing) until you reach a volume of 75k messages in a month.
+Beyond that it charges a flat rate of $75 for a month.
+
+4) **Google Cloud Storage and BigQuery fees:**  Google BigQuery, used for storing and accessing chatbot data, provides new Google Cloud users with $300 in free credits valid for 90 days. The free tier is often sufficient for initial needs, covering up to 10GB of storage and 1TB of queries per month. You’ll only incur charges if your usage exceeds these free limits. For more details, see [Google’s pricing page](https://cloud.google.com/bigquery/pricing).
+
+### Defining Your Use Case and Workflow for Implementation
+
+1) **Your use case and how you plan to use it. For what programs, the scale, etc…**
+(The reason is that once the NGOs identified the process and have documented how communications will happen at their organisations, it will be easier to apply Glific or any relevant software solution for that. Identifying and refining the process is key and super important.) 
+ 
+2) **Your proposed workflow:** [**Example 1**](https://docs.google.com/document/d/1jQcSOLfASa_RR7f_JlZd7WT2INaSC9tTQCNdWI_EOOw/edit)**,** [**Example 2**](https://docs.google.com/document/d/1WxIWityZm3rEuQKM5m2U81gA7EhNgKrj/edit)
+
+(This a sample flow for ideas, your proposed workflow should be different from the example.)
+1. **Details and description of any previous pilot experiments(with 10-50 users)** 
+(Your NGO has done using your personal WhatsApp account.  This gives you a better idea of how you might want to structure the interaction, to begin with.)
+1. [Knowledge of WhatsApp Ecosystem](https://glific.org/7-things-you-must-know-about-using-whatsapp-chatbot/ )
+___
+# Additional Pointers
+
+These additional pointers may help you with the planning and piloting. The pilot can help you discover:
+
+- How similar or different are the questions asked by your beneficiaries
+- Identify a pattern in conversations
+- Try a question-answer process with at least 20 beneficiaries
+- Create an FAQ database based on your conversations
+- Create a set of data points you generally need to collect
+- [India Literacy Project Use Case Study](https://docs.google.com/document/d/1YnCnzfjxwPfOirJSgTE6_BQxkTpPKxbP_hP_6zXkNFY/edit), [Antarang Use case](https://docs.google.com/document/d/1jQcSOLfASa_RR7f_JlZd7WT2INaSC9tTQCNdWI_EOOw/edit?ts=5fe42228)
+___
+# Next Steps
+
+- [Get Facebook Business Manager Verified](https://glific.github.io/docs/docs/Onboarding/Facebook%20Verification%20Process%20for%20WhatsApp%20Business%20API) for your organisation
+- [Setup on Gupshup](https://glific.github.io/docs/docs/Onboarding/Setup%20an%20organisation%20on%20GupShup/)
+- [Submit your details here](https://glific.github.io/docs/docs/Onboarding/Onboarding%20Form%20Fill%20Up)  
+
+Note : When your Glific instance is set up, it is recommended that you provide us support access to your account. We generally name that support contact &quot;SaaS Admin&quot;. If this contact does not exist it might be harder for us to provide you the ideal turnaround on support issues.
+___
+# Setup and launch estimates
+
+| Getting a new number* | approx.     4 days | _(can be done in parallel during fb verification process)_ |
+| --- | --- | --- |
+| Program design | 3-4 days  | _(depends on the NGO speed)                     (can be done in parallel during fb and Gupshup process_) |
+| Get Facebook business manager verified | 5-20 days | _(5 days if all paperwork like branding, address proofs are in order, 20 days or more if it’s not)_ |
+| Setup Glific | 1 day |  |
+| GCS, BQ, DataStudio account creation and linking to Glific | 1 day | _(can be done in parallel during fb and Gupshup process)_ |
+| Setup flows on Glific | 6-8 days | _(depends on the complexity and volume of flow and messages)_ |
+| Test internally and with a ~20 end users | 3-4 days | _(test the flow plans before making it live for larger audience)_ |
+| Ready to launch |  |  |
+
+> *Please make sure to keep a check on the number&#39;s validity, inactive numbers might get shut down by your telecom service provider. You can recharge with a year-long plan or switch to a postpaid plan to avoid a shutdown.
+
+
+# Reference Article
+
+- [Arist: The Text Message Learning Platform](https://www.arist.co) - Gives good ideas on how to structure content and make it engaging
+- [FunDza Literacy Trust | Reading changes lives!](http://www.fundza.co.za) - A good example of how to use a highly structured menu and give access to lots of content. The WhatsApp number is at the bottom
+- [Turn.io Learn](https://learn.turn.io) - Training material from our friends at Turn
+
+# Important Points:
+
+1) **Billing Options:**
+
+- **Monthly:** Payment via credit card or bank transfer. Pre-biled for the month.
+- **Quarterly:** Payment via cheque, NEFT or Bank transfers. Pre-billed for the quarter.
+- **Annually:** Payment via cheque, NEFT or Bank transfers. Pre-billed for the year.
+
+
+**Please note:** The invoice for all billing options will be raised on the 1st of the month, and the payment must be cleared within 15 days. Failure to do so for 2 consecutive months will result in the account being moved to forced suspension until the payment is settled.
+
+2) Glific is a SaaS platform with a simple, continuous subscription model. Once an organization subscribes, the service remains **active unless they choose to pause or opt out**. This ensures uninterrupted access without the need for manual renewals, and billing continues automatically until a change is requested.
+
+**Please note:** The subscription fee for the Glific SaaS platform is charged in full, regardless of the platform’s usage.
+
+3) **Temporary Account Suspension:**
+
+If your organization is undergoing a strategizing phase, pausing operations, or has completed the program for which the WhatsApp chatbot was implemented, you can choose to temporarily suspend your account. Please notify us at least one month in advance. During suspension, access to the platform will be restricted, and the chatbot will not send or receive messages. 
+A subscription fee of INR 1500 per month + taxes will apply for the account maintenance.
+
 
 ___
-
-## Quick Links
-- Product Information
-  - [Glific Two Pager](https://drive.google.com/file/d/1jWlB4wh8ZsUVlQf4xZ3UOVUkmG5QgQYx/view?usp=sharing) (What you can do with Glific)
-  - [Product Video](https://www.youtube.com/watch?v=r6pI3YnINws) (5 min product overview video)
-  - [Detailed Product Demo](https://www.youtube.com/watch?v=EO-W0cFy_i8) (Deep dive into the Product)
-  - [Dashboard](https://datastudio.google.com/reporting/fdc97942-72e5-4d7d-92c4-4a4c7da9be86/page/p_t8287rtztc) (Sample)
-  - [Tutorial Videos](https://www.youtube.com/channel/UCIJfQhrbJSCWQtzdI484nng/playlists)
-  - [FAQ](https://chintugudiya.org/glific-faqs/)
-  - [Onboarding Support Docs](https://glific.github.io/docs/docs/category/onboarding/)
-  - [Platform Pricing](https://tides.coloredcow.com/pricing)
-- [Case Studies](https://glific.org/tag/case-study/) (What other NGOs have done)
-  - [Arogya World](https://glific.org/influencing-healthy-behaviours-on-whatsapp-through-ai-driven-nudges/)
-  - [Digital Green](https://glific.org/reaching-farmers-directly-scaling-reach-reducing-time-to-get-analytics-from-months-to-seconds/)
-  - [The Apprentice Project](https://glific.org/activities-quizzes-gamification-taps-education-program-on-whatsapp/)
-  - [Reap Benefit](https://glific.org/reap-benefit-glific-google-sheets-makes-a-great-chatbot-to-help-covid-affected-families/)
-  - [TAP](https://glific.org/activities-quizzes-gamification-taps-education-program-on-whatsapp/)
-  - [Antarang](https://glific.org/antarang-foundation-ab-tests-their-user-registration-process-using-the-split-randomly-node/)
-  - For more visit our [Blogs](https://glific.org/blogs/)
-  
-- VodCast 
-  - [TAP](https://www.youtube.com/watch?v=ixAF0XX9DRs)
-  - [Quest Alliance](https://www.youtube.com/watch?v=7tTLozX0fKE)
-  - [Arogya World](https://www.youtube.com/watch?v=nraet2442a0)
-  - [LAHI](https://www.youtube.com/watch?v=XsGIAYY4RVg)
-  - [VOPA](https://www.youtube.com/watch?v=Mv8H_6fbAlg)
-  - [STiR Education](https://www.youtube.com/watch?v=_LUuNTgIiPQ)
-  - [Antarang](https://www.youtube.com/watch?v=pqCb5SYcWzk)
-  - [Mukkamaar](https://www.youtube.com/watch?v=GyCONkQ1-vI)
-  - [Digital Green](https://www.youtube.com/watch?v=5leX9Wp53cw)
-  - [The Apprentice Project](https://www.youtube.com/watch?v=6n7jnEWByLo)
-  - [Dhwani RIS](https://www.youtube.com/watch?v=u4iyoDAezck)
-
-- Please checkout our [Discord Community](https://discord.gg/cHnTF9x) if you&#39;d like to see our support channel and interact with any of the NGO partners.
-
