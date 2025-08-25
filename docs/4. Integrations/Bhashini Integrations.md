@@ -2,8 +2,8 @@
   <table>
     <tr>
       <td><b>6 minutes read</b></td>
-      <td style="padding-left:40px;"><b> Level: Advanced</b></td>
-      <td style="padding-left:40px;"><b>Last Updated: August 2025</b></td>
+      <td style={{ paddingLeft: 40 }}><b>Level: Advanced</b></td>
+      <td style={{ paddingLeft: 40 }}><b>Last Updated: August 2025</b></td>
     </tr>
   </table>
 </h3>
