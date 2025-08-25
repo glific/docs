@@ -1,91 +1,121 @@
-> ### **4 minute read &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; `Advanced`**
+<h3>
+  <table>
+    <tr>
+      <td><b>6 minutes read</b></td>
+      <td style={{ paddingLeft: 40 }}><b>Level: Advanced</b></td>
+      <td style={{ paddingLeft: 40 }}><b>Last Updated: August 2025</b></td>
+    </tr>
+  </table>
+</h3>
 
-**`Bhashini` is an initiative aimed at providing easy access to the Internet and digital services for all Indians in their native languages. The primary goal of the project is to increase the amount of content available in Indian languages, thereby promoting digital inclusivity and accessibility for a broader population**
+# Bhashini Integration in Glific: Speech-to-Text and Text-to-Speech
+
+Bhashini is an initiative by the Government of India aimed at making digital services and the internet accessible in all Indian languages.
+The integration of Bhashini into Glific enables NGOs and organizations to offer real-time translation and transliteration capabilities in various Indian languages, ensuring effective communication with end users in their preferred languages.
 
 ---
 
-## Bhashini in Glific
-- Bhashini APIs are used in Glific for converting **speech to text** and **text to speech**
-- By using speech to text, voice notes sent by users to chatbot can be converted into texts by NGOs
-- By using text to speech, text messages being sent via Glific platform to users can also be converted to voice notes in respective indic languages 
+### This integration can be especially useful in use cases such as:
 
----
+- Translating chatbot content for multilingual campaigns.
+- Enabling users to respond in regional languages.
+- Transliteration helps convert text from one script to another, for example: writing Hindi words using English letters.
 
-## Steps to integrate Bhashini Speech To Text in Glific flows
+Bhashini specializes in Indic language translation and transliteration, supporting a wide range of languages and dialects. You can learn more about the platform [here](https://bhashini.gov.in)
 
-1. After the audio is captured, the Bhashini ASR API is called using a Webhook function called `speech_to_text_with_bhasini`. The response in the given example is stored as "bhashini_asr".
+## Steps to Integrate Bhashini Speech to Text in Glific Flows
 
-- The function name is pre-defined, you should always use the name ‘speech_to_text_with_bhasini’ to call the Bhashini API
-- The webhook result name could be given any name of your liking, just like any other flow variable
-  
-<img width="1301" alt="Screenshot 2024-06-27 at 3 59 52 PM" src="https://github.com/glific/docs/assets/141305477/7495a80a-7c27-400e-95c9-0a6ca866a903"/>
+`Speech-to-Text (STT)` function in Glific can be used to convert user-recorded audio messages into text. This is especially helpful when users prefer speaking over typing, or in cases where typing in local languages is difficult.
 
+#### Step 1: Create a `Send message` node directing users to send their responses as audio messages, based on their preference.
 
-7. The webhook body is shown below. Please update the parameters as shown :
+#### Step 2: In the `Wait for response` node, select `has audio` as the message response type. Also, give a Result Name. In the screenshot below, `speech` is used as the result name.
 
-<img width="556" alt="Screenshot 2024-06-27 at 4 00 41 PM" src="https://github.com/glific/docs/assets/141305477/5bdf92e6-dff4-47bc-8557-7fab17cd6384" />
+<img width="509" height="390" alt="Screenshot 2025-08-10 at 12 10 35 AM" src="https://github.com/user-attachments/assets/9a273e08-6860-41ca-b693-9c22d952a81a" />
 
-  
-- speech : It should be updated with the result name given for the audio file captured. Here, it is saved as ‘speech’ (Step 5), hence the value is @results.speech.input (If the audio note captured was saved as ‘query’, then the value will be @results.query.input)
-- contact : Keep the value as given in the screenshot below - “@contact”
+#### Step 3: Add a `Call Webhook` node. This is where we integrate the Bhashini service.
 
+- Select the `Function` from the dropdown.
+- In the `Function` field, enter `speech_to_text_with_bhasini`. The function name is pre-defined, you should always use the function `speech_to_text_with_bhasini` to call the Bhashini API for converting audio to text.
+- Give the webhook result name - you can use any name. In the screenshot example, it’s named `bhashini_asr`.
 
+  <img width="517" height="431" alt="Screenshot 2025-08-10 at 12 13 00 AM" src="https://github.com/user-attachments/assets/42e354bf-ec76-4d59-a1c0-1b610b45fcc3" />
 
-8. Once the webhook is updated, you could always refer to the translated text as `@results.bhashini_asr.asr_response_text` to use it inside the flow. 
+#### Step 4: Click on `Function Body` (top right corner) and add the parameters as shown in the screenshot below
+
+<img width="557" height="388" alt="Screenshot 2025-08-10 at 12 14 30 AM" src="https://github.com/user-attachments/assets/0130ebd7-cdf6-42e0-8505-a0c92821e990" />
+
+- `speech` : It should be updated with the result name given for the audio file captured. In this example, the variable is named `speech` (Step 2), hence the value is `@results.speech.input` (If the audio note captured was saved as `query`, then the value will be `@results.query.input`)
+- `contact` : Keep the value as given in the screenshot below - `@contact`
+
+#### Step 5: Once the webhook is updated, you could always refer to the translated text as `@results.bhashini_asr.asr_response_text` to use it inside the flow. Add a `Send Message` node and paste this variable to show the converted text to the user.
+
+<img width="636" height="458" alt="Screenshot 2025-08-10 at 12 18 22 AM" src="https://github.com/user-attachments/assets/a6e09ec4-1877-4462-8282-e3ede47125fe" />
 
 The output of the text response from the Bhashini depends on the language preference of the user. For instance if a user has selected Hindi language, the response from Glific will be in Hindi script.
 
-## Steps to integrate Bhashini Text To Speech in Glific flows
+[Sample Flow](https://drive.google.com/file/d/1qkNGzLCQacrlP96GCytCihRGM4LhfokL/view) Click on the Sample Flow link to import it and explore how it works.
 
-<img width="1075" alt="Screenshot 2024-06-27 at 4 19 36 PM" src="https://github.com/glific/docs/assets/141305477/c4c5c951-8ec7-4278-8d3c-e27e6f2aaca2" />
+---
 
-1. This webhook can be used to generated a voice note for any given text message, it can be user generated or NGO staff written. (Above screen shot is of an example flow which takes in a user input text, and converts it inot a text message and voice note in a desired langauge)
+## Steps to Integrate Bhashini Text To Speech in Glific Flows
 
-2. Call the webhook with function name as `nmt_tts_with_bhasini`. Give an appropriate name to the webhook result. In the shown example the result name is `bhashini_tts`
-  
-4. Go to function body and pass the following params
-`{
-"text": "@results.result_3",
-"source_language": "english",
-"target_language": "hindi"
-}`
-here `text` is the text to be converted into voice note
-`source_language` is the langauge of the text
-`target_language` is the language the voice notes need to be in
+Text-to-Speech (TTS) function in Glific can be used to generate a voice note for any text message, whether it's typed by the end user or written by NGO staff. This allows organizations to make information more accessible, especially for end users who prefer audio over text.
 
-- Keep source language and target language same if translation is not needed.
-- Following are the possible values for `target_language` as covered by Bhashini
-   ` "tamil" 
-    "kannada"
-    "malayalam"
-    "telugu" 
-    "assamese"
-    "gujarati" 
-    "bengali"
-    "punjabi" 
-    "marathi" 
-    "urdu" 
-    "spanish" 
-    "english"
-    "hindi"
-`
-<img width="568" alt="Screenshot 2024-06-27 at 4 12 20 PM" src="https://github.com/glific/docs/assets/141305477/6718032f-84de-493c-bde2-d3e302c9a0f2" />
+<img width="629" height="405" alt="Screenshot 2025-08-10 at 12 25 41 AM" src="https://github.com/user-attachments/assets/705f7aee-3e47-445a-b058-c79840e318f5" />
 
-4. To get the voice note output, create a send message node, go to attachments, select `Expression` from the dropdown of attachment types. Pass the variable `@results.bhasini_tts.media_url`. Here `bhashini_tts` is the name for the webhook result.
-<img width="592" alt="Screenshot 2024-06-27 at 4 20 30 PM" src="https://github.com/glific/docs/assets/141305477/975bab6d-6a41-4ef3-91a1-b611d74fbbab"/>
+#### Step 1: Create a `Send Message` node asking users to reply in text if they prefer.
 
-**Please note**: In order to get the voice notes as outputs, the Glific instance must be linked to the Google Cloud Storage for your organization. This is to facilitate storage of the voice notes generated by Bhashini as a result of the webhook call. To set up Google Cloud Storage go [here](https://glific.github.io/docs/docs/Onboarding/GCS%20Setup/Google%20Cloud%20Storage%20Setup)
+#### Step 2: In the `Wait for Response` node, select `has only the phrase` as the message response type. Also, give a Result Name. In the screenshot below, `result_3` is used as the result name.
 
-5. To get the translated text out, create another send message node, and call the `@results.bhasini_tts.translated_text`. Here `bhashini_tts` is the name for the webhook result. 
+<img width="620" height="432" alt="Screenshot 2025-08-10 at 12 27 34 AM" src="https://github.com/user-attachments/assets/2c2da4dc-39e9-43c0-9112-14b8138999cf" />
 
-<img width="589" alt="Screenshot 2024-06-27 at 4 25 50 PM" src="https://github.com/glific/docs/assets/141305477/56ea5b67-b164-4347-96ff-ba00c2d79d7c"/>
+#### Step 3: Create a 'Call Webhook' node.
 
+- Select the `Function` from the dropdown.
+- In the `Function` field, enter `nmt_tts_with_bhasini` The function name is pre-defined, you should always use the function `nmt_tts_with_bhasini` to call the Bhashini API for converting text to audio.
+- Give the webhook result name - you can use any name. In the screenshot example, it’s named `bhashini_tts`.
 
-## Sample Flow Links
-*Test some sample flows for yourself by importing these flows to your Glific instance.*
+<img width="619" height="515" alt="Screenshot 2025-08-10 at 12 32 29 AM" src="https://github.com/user-attachments/assets/58ecfb40-5a82-4ac0-b3cd-a5dddf35791d" />
 
-- [Bhashini Speech to Text](https://drive.google.com/file/d/1qkNGzLCQacrlP96GCytCihRGM4LhfokL/view?usp=sharing)
-- [Bhashini Text to Speech](https://drive.google.com/file/d/1WCOLQMF-OgLVR7PNHXbggMSeDXMJbui7/view?usp=drive_link)
+#### Step 4: Click Function Body (top right corner) and add the parameters as shown in the screenshot below.
 
-## Blogs
-- [Getting started with Bhashini ASR](https://glific.org/getting-started-using-asr-with-bhashini-api/)
+<img width="616" height="431" alt="Screenshot 2025-08-10 at 12 34 03 AM" src="https://github.com/user-attachments/assets/ce4a15ea-8eb7-4861-996a-03159e2bca96" />
+
+- `text` : It should be updated with the result name given for the response/query provided by the user.
+- `Source_language` : The original language of the text
+- `target_language` : The language in which the voice note will be generated
+- If translation is not needed, keep both `Source_language` and `target_language` the same.
+- Supported Target Languages: `"tamil" "kannada" "malayalam" "telugu" "assamese" "gujarati" "bengali" "punjabi" "marathi" "urdu" "spanish" "english" "hindi"`
+
+#### Step 5: Create a `send Message` node and paste the variable.
+
+`@results.bhasini_tts.media_url` for the voice input. `Bhasini_tts` is the webhook result name used in the given example.
+
+- Go to `Attachments` in the `Send Message` node
+- Select `Expression` from the dropdown.
+- Use the following expression: `@results.bhasini_tts.media_url`
+
+<img width="610" height="249" alt="Screenshot 2025-08-10 at 12 38 39 AM" src="https://github.com/user-attachments/assets/48fc86ca-dd21-47fb-9178-66eaee0553a7" />
+
+Please note: In order to get the voice notes as outputs, the Glific instance must be linked to the Google Cloud Storage for your organization. This is to facilitate storage of the voice notes generated by Bhashini as a result of the webhook call. To set up Google Cloud Storage [click here](https://glific.github.io/docs/docs/Onboarding/GCS%20Setup/Google%20Cloud%20Storage%20Setup/)
+
+#### Step 6: To get the translated text out, create another send message node, and call the `@results.bhasini_tts.translated_text`.
+
+<img width="549" height="416" alt="Screenshot 2025-08-10 at 12 41 10 AM" src="https://github.com/user-attachments/assets/77e31147-8e08-4db5-ba10-ce4b76552829" />
+
+[Sample Flow](https://drive.google.com/file/d/1WCOLQMF-OgLVR7PNHXbggMSeDXMJbui7/view) Click on the Sample Flow link to import it and explore how it works.
+
+---
+
+### Blogs
+
+[Blog Link](https://glific.org/the-importance-of-mother-language-in-the-indian-development-sector/)
+
+---
+
+### Video of Showcase
+
+[Video Link](https://www.youtube.com/watch?v=zS83U9OJJzk)
+
+_Watch from 25 minute mark to watch the Bhashini integration part_
