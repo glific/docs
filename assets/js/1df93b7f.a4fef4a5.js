@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[4583],{6866:(e,s,c)=>{c.r(s),c.d(s,{default:()=>u});c(6540);var t=c(6347),i=c(4586),r=c(4848);function u(){const{siteConfig:e}=(0,i.A)();return(0,r.jsx)(t.rd,{to:`${e.customFields.baseUrlRedirect}/Glific%20Overview`})}}}]);
