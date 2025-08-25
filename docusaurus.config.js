@@ -64,14 +64,9 @@ const config = {
       items: [
         {
           type: "doc",
-          docId: "intro",
+          docId: "Glific Overview",
           position: "left",
           label: "Documentation",
-        },
-        {
-          to: "https://glific.org/blogs",
-          label: "Blogs",
-          position: "left",
         },
         {
           href: "https://github.com/glific",
