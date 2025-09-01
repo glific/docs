@@ -104,6 +104,9 @@ The presentation will open in a new window and automatically save in your Google
 - Ensure that the slide template does not end with “...slide=id.p1”
 - Ensure that the slide template is saved on the Google Drive linked to organization email id.
 
+10. Create the slides inside a folder located in the shared drive. Then, share that folder with the service account
+ and assign it the Content Manager role.
+
 ### 2. Save the certificate template in Glific
 
 1. On the Glific platform, go to `Flows` -> `Certificates` -> `Create` to add a new certificate template
