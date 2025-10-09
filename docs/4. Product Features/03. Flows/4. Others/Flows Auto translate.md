@@ -111,8 +111,9 @@ Example of exported CSV file:
 
 ### Things to watch out
 
-* This is not instantaneous and will take some buffering time (5-7 mins) depending on the number of languages, the number of ‘send message nodes’ and the amount of content they contain.  
-* Only content present in send contact a message’ nodes from the flow are translated, which means at present \- content in ‘ wait for response’ nodes, is not translated and content in `interactive messages` is translated separately.  
+* This is not instantaneous and will take some buffering time (5-7 mins) depending on the number of languages, the number of `send message nodes` and the amount of content they contain.  
+* Only content present in send contact a message’ nodes from the flow are translated, which means at present - content in `wait for response` nodes are not translated and content in `interactive messages` is translated separately.
+* For interactive messages, if translations are not applied at the time of creation, the translations for buttons or options should be added in the `Wait for Response` node in the flow editor for each option.  
 * For flows with a large number of nodes, the translation may not complete in the first attempt. Running the translation process a second time will translate any remaining nodes.  
 * Exported CSVs of flows without translations can be automatically translated, and after proofreading, they can be imported back into the flow.  
 * While importing translations  
