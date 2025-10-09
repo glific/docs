@@ -12,12 +12,9 @@
 
 
 
-
 # Multilingual Flow Setup with Auto Translation
 
 This feature allows you to auto-translate content from the flow’s default language and populate translations in other languages enabled in your Glific instance. This helps you reach users in their preferred language without manually translating each message.
-
-Please Note: *This feature is currently in beta and can be enabled/disabled for your organization on request via the Glific Discord channel or by reaching out to your SPOC from the Glific team.*
 
 
 ### When and Why to Use
@@ -115,7 +112,7 @@ Example of exported CSV file:
 ### Things to watch out
 
 * This is not instantaneous and will take some buffering time (5-7 mins) depending on the number of languages, the number of ‘send message nodes’ and the amount of content they contain.  
-* Only content present in send contact a message’ nodes from the flow are translated, which means at present \- content in ‘ wait for response’ nodes, is not translated and content in “interactive messages” is translated separately.  
+* Only content present in send contact a message’ nodes from the flow are translated, which means at present \- content in ‘ wait for response’ nodes, is not translated and content in `interactive messages` is translated separately.  
 * For flows with a large number of nodes, the translation may not complete in the first attempt. Running the translation process a second time will translate any remaining nodes.  
 * Exported CSVs of flows without translations can be automatically translated, and after proofreading, they can be imported back into the flow.  
 * While importing translations  
