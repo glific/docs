@@ -21,7 +21,7 @@ This is for you if:
 ![3](https://user-images.githubusercontent.com/132430123/245516442-16892ecd-a3ea-46a5-a761-078a36c7073e.png)
 <br />
 
-5. When you drop it in place, you will see a new box opening up like below. Paste the link in this format – https://api.xxx.glific.com/webhook/exotel/optin where xxx is your org’s name. For example: https://api.staging.glific.com/webhook/exotel/optin
+5. When you drop it in place, you will see a new box opening up like below. Paste the link in this format – `https://api.xyz.glific.com/webhook/exotel/optin` where `xyz` is your org’s name. For example: `https://api.staging.glific.com/webhook/exotel/optin`
 
   <img width="859" alt="Screenshot 2024-03-07 at 4 22 00 PM" src="https://github.com/glific/docs/assets/141305477/f119c347-9bc7-462b-836d-2f67ceae135b" />
 
