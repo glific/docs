@@ -30,9 +30,9 @@ This document provides details on using basic features of syncing all the WhatsA
 ### Sending Media
 #### Prerequisite for sending media:
 
-1. Should have a google cloud storage account set up [refer here](https://glific.github.io/docs/docs/Onboarding/GCS%20Setup/Google%20Cloud%20Storage%20Setup).
-2.  Within the google cloud storage, should have a public bucket setup [refer here](https://glific.github.io/docs/docs/Onboarding/GCS%20Setup/Create%20an%20account%20in%20Google%20Cloud%20Storage%20GCS)
-3.  Upload files to the google cloud storage and generate the links [refer here](https://glific.github.io/docs/docs/Onboarding/GCS%20Setup/Upload%20files%20on%20GCS)
+1. Should have a google cloud storage storage set up [refer here](https://glific.github.io/docs/docs/Pre%20Onboarding/Google%20Cloud%20Storage%20Setup%20-%20GCS).
+2.  Within the google cloud platform, should have a public bucket setup [refer here](https://glific.github.io/docs/docs/Pre%20Onboarding/Google%20Cloud%20Storage%20Setup%20-%20GCS#step-4-create-a-storage-bucket)
+3.  Upload files to the google cloud storage and generate the links [refer here](https://glific.github.io/docs/docs/Pre%20Onboarding/GCS%20Setup/Upload%20files%20on%20GCS)
 
 ### Sending media in a group
 
