@@ -4,7 +4,8 @@
 This integration is to enable sending content from google sheets to WhatsApp Groups using the Glific flows.
 
 ## Prerequisites
-Google cloud platform set up should be completed as per this [document](https://glific.github.io/docs/docs/Onboarding/GCS%20Setup/Google%20Cloud%20Storage%20Setup) to enable reading of google sheets
+1. Google cloud platform set up should be completed as per this [document](https://glific.github.io/docs/docs/Pre%20Onboarding/Google%20Cloud%20Storage%20Setup%20-%20GCS)
+2. Set up for linking readable google sheets should be done as per this [document](https://glific.github.io/docs/docs/Product%20Features/Flows/Flow%20Actions/Link%20Google%20Sheets/#add-readable-google-sheet)
 
 ## Things to keep in mind
 1. For flows which are being created to send messages to WhatsApp Groups, 
