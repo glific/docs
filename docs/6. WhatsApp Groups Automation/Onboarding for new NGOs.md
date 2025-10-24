@@ -27,7 +27,7 @@
   - For "App Name" and "Gupshup API key" fill the following details respectively
    - App name: 2023OBF1
    - Gupshup API key: 9imaygevg6fuwa82s54hbuyoiuuohmug
-  - Follow the rest of the onboarding form documentation [here](https://glific.github.io/docs/docs/Onboarding/Onboarding%20Form%20Fill%20Up/)   
+  - Follow the rest of the onboarding form documentation [here](https://glific.github.io/docs/docs/Pre%20Onboarding/Onboarding%20Form%20Fill%20Up)   
 <img width="824" alt="Screenshot 2024-11-18 at 3 35 30 PM" src="https://github.com/user-attachments/assets/68ddcd1b-8872-4b92-b2ba-e0074d602f6e" />
 2. After completion of this step, Glific team will share the platform url, along with the log-in credentials.
 
