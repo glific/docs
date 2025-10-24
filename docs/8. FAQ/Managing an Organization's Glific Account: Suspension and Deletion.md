@@ -73,7 +73,7 @@ This document outlines the implications, processes, and key requirements related
 6) **Note:** Remaining Gupshup Wallet balance won’t be refundable as per Gupshup Policy. Please refer to this [documentation](https://glific.github.io/docs/docs/FAQ/Gupshup%20wallet%20balance%20and%20Usage/#gupshup-refund-policy) for more details on the Gupshup Refund Policy.
 
 
-**Important:**  [Email](support@glific.org) or [Discord](https://discord.gg/gYHMRGQVpT) intimation for account suspension and deletion must also be provided to the **Glific Support Team** at least **15** days in advance.
+**Important:**  Email support@glific.org or [Discord](https://discord.gg/gYHMRGQVpT) intimation for account suspension and deletion must also be provided to the **Glific Support Team** at least **15** days in advance.
  If not, the account will remain **active**, and the regular subscription fee will be **charged** for the next month.
 
 
