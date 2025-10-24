@@ -63,14 +63,14 @@ Links to bring a contact to your chatbot.
 
 1. To simply bring the contact to your chatbot
 
-https://api.whatsapp.com/send/?phone=91XXXXXXXXXX 
+`https://api.whatsapp.com/send/?phone=91XXXXXXXXXX` 
 
 
 Above links can be modified by replacing the number (91 is country code for India, followed by the 10 digit mobile number) with the chatbot number of the org to create links that re-direct the contact to the given number in the link.
 
 2. To bring the contact to your chatbot with a keyword typed.
 
-https://api.whatsapp.com/send/?phone=91XXXXXXXXXX&text=YYYYY 
+`https://api.whatsapp.com/send/?phone=91XXXXXXXXXX&text=YYYYY`
 
 Above link can be modified by replacing the number with the chatbot number of the org (explained above) , as well as replacing the text followed towards the end with the keywords that are enabled and linked to the specific flows. 
 
