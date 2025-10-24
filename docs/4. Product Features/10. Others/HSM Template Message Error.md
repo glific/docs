@@ -6,7 +6,7 @@
 
 If any of the end users encounters the below error while sending HSM messages, it could be due any of the two reasons.
 
-a) Template message is not enabled on Gupshup, To know more on how to enable it from Gupshup read [here](https://glific.github.io/docs/docs/Onboarding/Setup%20an%20organisation%20on%20GupShup/)
+a) Template message is not enabled on Gupshup.
 
 <img width="1363" alt="image" src="https://github.com/user-attachments/assets/ee889bfc-adbe-4296-93d5-126224e19625"/>
 
