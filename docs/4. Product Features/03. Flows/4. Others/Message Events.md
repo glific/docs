@@ -11,8 +11,8 @@ For sending messages, the message is routed through Gupshup, to WhatsApp Busines
 
 All messages being sent from Glific to Gupshup to WhatsApp are tracked and for each message sent, there are events returned to show the status of the message.  
 
-For the tracking to be enabled, please make sure that you have activated tracking of these events in your gupshup app. Refer [this documentation to configure the read receipts
-](https://glific.github.io/docs/docs/FAQ/Read%20Receipts/)
+For the tracking to be enabled, please make sure that you have activated tracking of these events in your gupshup app. Refer 26th step of [this documentation to configure the read receipts
+](https://glific.github.io/docs/docs/Pre%20Onboarding/Gupshup%20Setup)
 
 The status of each message can be found in the `messages` table, under the `bsp_status`in the organization’s BigQuery account. 
 
