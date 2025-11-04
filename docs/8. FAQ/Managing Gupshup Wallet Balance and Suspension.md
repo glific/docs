@@ -34,7 +34,15 @@
 
 - Gupshup gives an extra `$5`,when the wallet balance reaches `$0` so that there is no interuption in sending of messages until the balance hits `-$5`. The Organization should always ensure to recharge the Gupshup Wallet before the -$5 gets expired to continue sending messages.
 
-- Please [read here](https://glific.github.io/docs/docs/FAQ/Gupshup%20wallet%20balance%20and%20Usage/) to know how to recharge Gupshup Wallet Balance.
+#### How to Recharge Gupshub Wallet Balance
+- Log in to your Gupshup account  and navigate to the Wallet section and click on My Wallet.
+- Click the option to Add credits
+- Enter the amount.(Note that minimum recharge is often $10.)
+- Enter the necessary billing information to generate an invoice, such as your name, address, and email.
+- Choose your payment option and complete the payment
+
+ [read here](https://support.gupshup.io/hc/en-us/articles/33760266293529-Basics-of-Gupshup-Wallet-and-Billing-for-Prepaid-USD-Wallet) to know more about how to recharge Gupshup Wallet Balance.
+
 
 - If the balance goes below `-$5`,sending messages will give an error - **the wallet balance is low**. So in this scenario the messages will get delivered to the users until the Gupshup wallet balance reaches -5 $. 
 
