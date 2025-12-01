@@ -218,7 +218,7 @@ The responses captured from whatsapp forms are returned along with the index of 
 
 6. How much does it cost to send the form
 
-Using the form in Business Initiated Message scenarios incurs the cost of category of the HSM message the form is attached to. Using the form under service message type scenarios is free of charge. Service messages means when a user initiates the conversation by entering a keyword or clicking on the whatsapp keyword encoded link and starting the conversation with the chatbot of your organization. 
+Using the form in Business Initiated Message scenarios incurs the cost of category of the HSM message the form is attached to. Using the form under service message type scenarios is free of charge. Service messages means when a user initiates the conversation by entering a keyword or clicking on the WhatsApp keyword-encoded link and starting the conversation with the chatbot of your organization.
 
 7. Why can I not see WhatsApp forms option under Quick Tools?
 
