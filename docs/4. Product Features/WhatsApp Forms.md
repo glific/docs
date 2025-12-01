@@ -207,7 +207,7 @@ Draft state of the form is when the form entity is created in Glific and it can 
 
 3. What is the published state 
 
-Published state is when the form is published with Meta, and it can be used to create WhatsApp form linked HSM message and it can be sent to users via WhatsApp
+Published state is when the form is published with Meta and can be used to create a WhatsApp form-linked HSM message that can be sent to users via WhatsApp.
 
 4. What is the deactivated state
 
