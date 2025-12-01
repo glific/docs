@@ -210,7 +210,7 @@ Published state is when the form is published with Meta and can be used to creat
 
 4. What is the deactivated state
 
-Deactivated state of the form is when the form can no-longer be used for future HSMs. In this state the HSMs which have the form linked already will continue to remain operational.
+Deactivated state of the form is when the form can no longer be used for future HSMs. In this state, the HSMs which have the form linked already will remain operational.
 
 5. Why are there numbers at the beginning of the responses? 
 
