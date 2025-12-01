@@ -42,10 +42,10 @@ WhatsApp Forms reduce back-and-forth messaging and ensure clean, structured data
 Steps:
 1. Go to `Quick Tools` → `WhatsApp Forms` in Glific.
 2. Click `Create Form`
-3. Go to WhatsApp Flows Playground, to get the a friendly interface to create your form
+3. Go to WhatsApp Flows Playground to get a friendly interface to create your form
 4. Choose field types and design your form (text input, radio, multi-select, etc.)
 5. Click on `copy flow JSON` after completing the form design
-6. Paste the Flow json is to be pasted in the `form json` input field
+6. Paste the Flow JSON into the `form JSON` input field
 7. Give your form an appropriate `title`, `description` and `category`
 8. Click on `Save`
 9. This creates a draft of the form
