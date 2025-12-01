@@ -223,7 +223,7 @@ Using the form in Business Initiated Message scenarios incurs the cost of catego
 
 7. Why can I not see WhatsApp forms option under Quick Tools?
 
-WhatsApp forms is a trial feature released to a beta tester orgs, if you'd like to try this out please reach out to tejas@glific.org
+WhatsApp forms is a trial feature released to beta-tester organizations. If you'd like to try it out, please reach out to [tejas@glific.org](mailto:tejas@glific.org).
 
 
 
