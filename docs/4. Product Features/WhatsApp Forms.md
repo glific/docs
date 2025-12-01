@@ -178,18 +178,17 @@ In the above SQL snippet change the following
 3. Replace or add the variable names from your actual form under the `SELECT ...` statement for extracting the `JSON_VALUES` from the `raw_responses`
 
 ### Things to note: 
-1. Saving the form does not publish the form, the form has to `published` in order to be used in HSMs.
+1. Saving the form does not publish the form; it must be `published` to be used in HSMs.
 2. Once the form is published, it cannot be edited.
 3. Only after publishing the form, it can be used via WhatsApp. 
 4. One form can be linked to multiple HSM messages.
 5. Once the form is deactivated, the form cannot be used in new HSMs as long as the form stays in deactivated state
-6. Once a form is linked with an HSM message, even after it is deactivated, the HSM continues to remain valid for the users to fill.
+6. Once a form is linked with an HSM message, even after it is deactivated, the HSM remains valid for users.
 7. Once a form is filled by a user in response to a message, it cannot be filled again on the same message
 8. It is possible to change the form variables names, by altering the fields in the form json
 9. It is possible to change the screen names by altering the screen id in the form json 
-10. For multi-lingual use cases, for each language separate forms have to be created
-11. Each of these language variations of the forms have to be attached to language specific HSM. Follow this documentation to understand how to use [multi-lingual HSMs](https://glific.github.io/docs/docs/Product%20Features/HSM%20Templates/#approve-multi-lingual-hsm-templates)
-
+10. For multi-lingual use cases, separate forms must be created for each language.
+11. Each language variation must be attached to a language-specific HSM. Follow this [documentation on multi-lingual HSMs](https://glific.github.io/docs/docs/Product%20Features/HSM%20Templates/#approve-multi-lingual-hsm-templates) to learn more.
 ### FAQs
 
 1. Why do I need to use the Meta’s Playground to create the forms?
