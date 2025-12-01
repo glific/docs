@@ -132,7 +132,7 @@ To use this
   allowfullscreen>
 </iframe>
 
-```
+```sql
 WITH form_responses AS (
   SELECT
     wf.id AS form_id,
@@ -149,7 +149,7 @@ WITH form_responses AS (
   ON
     wf.id = CAST(wfr.whatsapp_form_id AS STRING)  
   WHERE
-    wf.name = form_name
+    wf.name = 'you_form_name'
 )
 
 SELECT
