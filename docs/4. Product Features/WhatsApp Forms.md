@@ -121,7 +121,7 @@ To use this
 4. ‘whatsapp_forms_responses`	stores the responses recorded on each user
 5. Each row in `whatsapp_forms_responses` is a new entry recorded from a user from whatsapp
 6. In `whatsapp_forms_responses`, there is a `raw_response` field which stores all the responses from a user.
-7. To get a SQL snippet to help you extract the form responses to a google sheet, refer the next section
+7. To get a SQL snippet to help you extract the form responses to a Google Sheet, refer to the next section
 
 <iframe
   width="560"
