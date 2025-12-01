@@ -99,10 +99,10 @@ The responses to the form can be captured, and used in the Glific for taking act
 
 To use this 
 1. The variable names for each field in the form come up on the “view” screen of the form
-2. These variable names follow the pattern of `screen_number_label”
+2. These variable names follow the pattern of `screen_number_label`
 3. Take a note of all the these form variable names from the form view page
 4. In the flow, use `wait for response` node after the `send contact a message` node which is sending the form HSM message
-5. Now to reference each of the variable in from the form response use the following syntax `@results.form.screen_0..`
+5. Now to reference each variable from the form response, use the following syntax: `@results.form.screen_0_<label>`
 
 
 <iframe
