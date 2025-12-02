@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.8.1">
 <title data-rh="true">Filesearch Using OpenAI Assistants | Glific</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://glific.github.io/docs/docs/Integrations/Filesearch Using OpenAI Assistants"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Filesearch Using OpenAI Assistants | Glific"><meta data-rh="true" name="description" content="6 minutes read"><meta data-rh="true" property="og:description" content="6 minutes read"><link data-rh="true" rel="icon" href="/docs/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://glific.github.io/docs/docs/Integrations/Filesearch Using OpenAI Assistants"><link data-rh="true" rel="alternate" href="https://glific.github.io/docs/docs/Integrations/Filesearch Using OpenAI Assistants" hreflang="en"><link data-rh="true" rel="alternate" href="https://glific.github.io/docs/docs/Integrations/Filesearch Using OpenAI Assistants" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://35GA1F1DHM-dsn.algolia.net" crossorigin="anonymous"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Integrations","item":"https://glific.github.io/docs/docs/category/integrations"},{"@type":"ListItem","position":2,"name":"Filesearch Using OpenAI Assistants","item":"https://glific.github.io/docs/docs/Integrations/Filesearch Using OpenAI Assistants"}]}</script><link rel="search" type="application/opensearchdescription+xml" title="Glific" href="/docs/opensearch.xml"><link rel="stylesheet" href="/docs/assets/css/styles.983e41a2.css">
-<script src="/docs/assets/js/runtime~main.fbf4c3ad.js" defer="defer"></script>
+<script src="/docs/assets/js/runtime~main.5af32aae.js" defer="defer"></script>
 <script src="/docs/assets/js/main.7a2b65db.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -87,10 +87,7 @@
 </li>
 <li>
 <p>In <code>assistant_id</code> enter the assistant id obtained in step 4 of &quot;How to Create an OpenAI Assistant in Glific&quot;</p>
-</li>
-<li>
-<p>In <code>remove_citation</code> enter <code>true</code> to prevent cryptic citation marks from showing up in the response.</p>
-<img width="633" height="525" alt="Screenshot 2025-08-09 at 1 17 28 AM" src="https://github.com/user-attachments/assets/2b4d9c60-3a4e-4ba6-b63b-d221acf621ad">
+<img width="623" height="438" alt="Screenshot 2025-12-02 at 9 18 23 AM" src="https://github.com/user-attachments/assets/880a4181-bd79-4d04-92aa-c0d502456bd5">
 </li>
 </ul>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="step-4--display-the-assistants-response">Step 4:  Display the Assistant&#x27;s response<a href="#step-4--display-the-assistants-response" class="hash-link" aria-label="Direct link to Step 4:  Display the Assistant&#x27;s response" title="Direct link to Step 4:  Display the Assistant&#x27;s response">​</a></h4>
@@ -99,9 +96,9 @@
 <p>Once the Webhook is updated, add a <code>Send Message</code> node and enter <code>@results.gptresponse.message</code> variable to receive the AI response.</p>
 </li>
 <li>
-<p>In the given example  <code>gptresponse</code> is the <code>result name</code> (refer step2). If <code>AI_response</code> was the result name, the variable would be <code>@results.AI_response.message</code>.</p>
+<p>In the given example <code>gptresponse</code> is the <code>result name</code> (refer to Step 2). If <code>ai_response</code> was the result name, the variable would be <code>@results.ai_response.message</code>.</p>
 <img width="643" height="498" alt="Screenshot 2025-08-09 at 1 28 11 AM" src="https://github.com/user-attachments/assets/6c4d143e-a1b9-4523-a684-8eae3e0e0e97">
-<p><a href="https://drive.google.com/file/d/1-RcFXdEpeuqlb27RWNRpWNdZ9PNZzBSz/view" target="_blank" rel="noopener noreferrer">Sample Flow</a> Click on the Sample Flow link to import it and explore how it works.</p>
+<p><a href="https://drive.google.com/file/d/10wGUil1l2SGfOZdWQQOO935OK-6BdZV1/view?usp=sharing" target="_blank" rel="noopener noreferrer">Sample Flow</a> Click on the Sample Flow link to import it and explore how it works.</p>
 </li>
 </ul>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="conversational-memory">Conversational Memory<a href="#conversational-memory" class="hash-link" aria-label="Direct link to Conversational Memory" title="Direct link to Conversational Memory">​</a></h3>
@@ -112,7 +109,7 @@
 <li>This parameter should be set to the value <code>@results.previouswebhookname.thread_id</code>.</li>
 <li>In the example shown, the previous webhook result name is gptresponse. So the thread ID should be referenced as - <code>@results.gptresponse.thread_id</code>.</li>
 </ul>
-<img width="644" height="452" alt="Screenshot 2025-08-09 at 1 33 23 AM" src="https://github.com/user-attachments/assets/fae67969-664d-4e56-89ea-5ba6adc74f6c">
+<img width="612" height="433" alt="Screenshot 2025-12-02 at 9 20 12 AM" src="https://github.com/user-attachments/assets/d9c58bdf-e2c3-4a72-b1a3-22b278e9d57e">
 <ul>
 <li>In question parameter enter the flow variable containing the follow up question asked by the user. In the given example <code>result_5</code> is the result name, hence provided <code>@results.result_5</code> in the question parameter.</li>
 </ul>
