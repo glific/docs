@@ -104,18 +104,16 @@ _Screenshot of example flow set up is given below_
 
 - In `question` parameter enter the flow variable containing the question asked by the user. In the given example `question` is the `result name`, hence provided `@result.question` in the question parameter.
 - In `assistant_id` enter the assistant id obtained in step 4 of "How to Create an OpenAI Assistant in Glific"
-- In `remove_citation` enter `true` to prevent cryptic citation marks from showing up in the response.
 
-  <img width="633" height="525" alt="Screenshot 2025-08-09 at 1 17 28 AM" src="https://github.com/user-attachments/assets/2b4d9c60-3a4e-4ba6-b63b-d221acf621ad" />
+  <img width="623" height="438" alt="Screenshot 2025-12-02 at 9 18 23 AM" src="https://github.com/user-attachments/assets/880a4181-bd79-4d04-92aa-c0d502456bd5" />
 
 #### Step 4:  Display the Assistant's response
 - Once the Webhook is updated, add a `Send Message` node and enter `@results.gptresponse.message` variable to receive the AI response.
-- In the given example  `gptresponse` is the `result name` (refer step2). If `AI_response` was the result name, the variable would be `@results.AI_response.message`.
+- In the given example  `gptresponse` is the `result name` (refer step2). If `ai_response` was the result name, the variable would be `@results.ai_response.message`.
 
   <img width="643" height="498" alt="Screenshot 2025-08-09 at 1 28 11 AM" src="https://github.com/user-attachments/assets/6c4d143e-a1b9-4523-a684-8eae3e0e0e97" />
 
-  [Sample Flow](https://drive.google.com/file/d/1-RcFXdEpeuqlb27RWNRpWNdZ9PNZzBSz/view) Click on the Sample Flow link to import it and explore how it works.
-
+  [Sample Flow](https://drive.google.com/file/d/10wGUil1l2SGfOZdWQQOO935OK-6BdZV1/view?usp=sharing) Click on the Sample Flow link to import it and explore how it works.
 
 ### Conversational Memory
 When a user asks a follow-up question, the assistant uses thread ID to remember the earlier conversation. This helps it give better answers by understanding the context of what was already asked.
@@ -125,7 +123,7 @@ When a user asks a follow-up question, the assistant uses thread ID to remember 
 - This parameter should be set to the value `@results.previouswebhookname.thread_id`.
 - In the example shown, the previous webhook result name is gptresponse. So the thread ID should be referenced as - `@results.gptresponse.thread_id`.
 
-<img width="644" height="452" alt="Screenshot 2025-08-09 at 1 33 23 AM" src="https://github.com/user-attachments/assets/fae67969-664d-4e56-89ea-5ba6adc74f6c" />
+<img width="612" height="433" alt="Screenshot 2025-12-02 at 9 20 12 AM" src="https://github.com/user-attachments/assets/d9c58bdf-e2c3-4a72-b1a3-22b278e9d57e" />
 
 - In question parameter enter the flow variable containing the follow up question asked by the user. In the given example `result_5` is the result name, hence provided `@results.result_5` in the question parameter.
 
