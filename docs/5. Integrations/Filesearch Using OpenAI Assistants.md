@@ -91,16 +91,23 @@ _Screenshot of example flow set up is given below_
 
 #### Step 2: Add a  Call Webhook node. This is where we integrate the OpenAI Assistant.
 
-- Select the `Function` from the dropdown.
-- In the `Function`  field, enter `filesearch-gpt`, this function name is pre-defined.
+- By default,  `Function`  would be selected. Leave this as it is.
+
+<img width="473" height="394" alt="Screenshot 2025-12-02 at 6 07 25 PM" src="https://github.com/user-attachments/assets/e9f685cb-910d-40ff-93a0-2f4688092ae2" />
+
+- In the `Function` field, select the pre-defined function name  `filesearch-gpt`, from the dropdown.
+
+<img width="452" height="377" alt="Screenshot 2025-12-02 at 6 08 30 PM" src="https://github.com/user-attachments/assets/3b03c3bf-ca5c-423b-b231-12849e147909" />
+
 - Give the webhook `Result Name` - you can use any name. In the screenshot example, it’s named as `gptresponse`.
 
-<img width="633" height="525" alt="Screenshot 2025-08-09 at 1 17 28 AM" src="https://github.com/user-attachments/assets/eead58e1-a32a-4aa9-9fb0-4e4de2fc16e5" />
+<img width="478" height="405" alt="Screenshot 2025-12-02 at 6 08 59 PM" src="https://github.com/user-attachments/assets/3aa57481-5aac-4106-980b-089c46e89744" />
 
 
 
-#### Step 3: Click on Function Body (top right corner) and pass the following parameter 
-`{ "question": "@results.question", "assistant_id": "asst_xxxxx", "remove_citation":true }`
+#### Step 3: Click on Function Body (top right corner). You would see the following.
+
+<img width="628" height="435" alt="Screenshot 2025-12-02 at 6 10 59 PM" src="https://github.com/user-attachments/assets/aff3ba8d-e5d0-4958-b10c-2bfa481d2128" />
 
 - In `question` parameter enter the flow variable containing the question asked by the user. In the given example `question` is the `result name`, hence provided `@result.question` in the question parameter.
 - In `assistant_id` enter the assistant id obtained in step 4 of "How to Create an OpenAI Assistant in Glific"
@@ -145,34 +152,33 @@ This section explains how to use the `voice-filesearch-gpt` webhook function in 
 
 
 #### Step 2: Create Call a Webhook node
-- Select `Function` from the dropdown.
-- In the `Function` field, enter `voice-filesearch-gpt` , this function name is pre-defined.
+- By default,`Function` would be selected. Leave this as it is.
+
+<img width="472" height="392" alt="Screenshot 2025-12-02 at 6 32 29 PM" src="https://github.com/user-attachments/assets/5203d925-ae4b-4397-8479-f774304e6454" />
+ 
+- In the `Function` field, select the pre-defined function name `voice-filesearch-gpt` , from the dropdown.
+
+<img width="523" height="431" alt="Screenshot 2025-12-02 at 6 33 32 PM" src="https://github.com/user-attachments/assets/fcf90118-6691-43f1-9f85-63a9ed3217c8" />
+
 - Give the webhook result name - you can use any name. In the screenshot example, it’s named `gpt_voice`.
 
-<img width="615" height="512" alt="Screenshot 2025-08-09 at 1 40 02 AM" src="https://github.com/user-attachments/assets/c5375afe-9e30-4264-b4ab-0d0e9e83cd7b" />
+<img width="499" height="420" alt="Screenshot 2025-12-02 at 6 33 52 PM" src="https://github.com/user-attachments/assets/eb62c32e-393b-433b-b971-27eeefcfaec4" />
 
 <img width="625" height="528" alt="Screenshot 2025-08-09 at 1 40 28 AM" src="https://github.com/user-attachments/assets/3ccb9af7-1a01-4fbb-9358-7a842c8c7960" />
 
+#### Step 3: Click on Function Body (top right corner). You would see the following.
 
-#### Step 3: Click on Function Body (top right corner) and pass the following parameter
-```{
-  "contact": "@contact",
-  "speech": "@results.audio_query.input",
-  "assistant_id": "asst_xxxxxxxx",
-  "remove_citation": true,
-  "source_language": "@contact.language",
-  "target_language": "hindi"
-}
-```
+<img width="486" height="344" alt="Screenshot 2025-12-02 at 6 39 47 PM" src="https://github.com/user-attachments/assets/3434febe-4df9-4d5d-9a4e-4fab424610cf" />
 
-<img width="617" height="430" alt="Screenshot 2025-08-09 at 1 42 16 AM" src="https://github.com/user-attachments/assets/2f0e99f1-eb86-404b-9dc6-b7a97da944ce" />
+Pass the following paramters in the function body.
 
+<img width="536" height="375" alt="Screenshot 2025-12-02 at 7 20 46 PM" src="https://github.com/user-attachments/assets/f107f0e2-3632-4b3c-8c1b-43224ab39c43" />
+
+- For `contact ` keep this value as `@contact` as mentioned in the screenshot.
 - `speech` is the result name which is storing the voice note sent by the user.
 - `assistant_id` is the assistant id obtained in step 4 of "How to Create an OpenAI Assistant in Glific.
 - `source_langauge` is the expected language of the user.
 - `target_language` is the language that the response voice note needs to be in.
-- `remove_citation` pass as `true` to avoid citation marks to be part of the response voice note.
-
 
 #### Step 4: Display the text response
 - Create a `Send Message node`.
@@ -191,8 +197,7 @@ This section explains how to use the `voice-filesearch-gpt` webhook function in 
 <img width="617" height="252" alt="Screenshot 2025-08-09 at 1 46 58 AM" src="https://github.com/user-attachments/assets/547eed06-5697-4379-95d2-0221dc6093e6" />
 
 
-
-[Sample Flow](https://drive.google.com/file/d/1jFwNoGiUCqalbC8K-slUnI5tt3fGyVRc/view) Click on the Sample Flow link to import it and explore how it works.
+[Sample Flow](https://drive.google.com/file/d/1EOXFnUqUPQz51xf3pYzhikkf_2VqXL4Z/view?usp=sharing) Click on the Sample Flow link to import it and explore how it works.
 
 ---
 
