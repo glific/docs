@@ -109,7 +109,7 @@ _Screenshot of example flow set up is given below_
 
 #### Step 4:  Display the Assistant's response
 - Once the Webhook is updated, add a `Send Message` node and enter `@results.gptresponse.message` variable to receive the AI response.
-- In the given example  `gptresponse` is the `result name` (refer step2). If `ai_response` was the result name, the variable would be `@results.ai_response.message`.
+- In the given example `gptresponse` is the `result name` (refer to Step 2). If `ai_response` was the result name, the variable would be `@results.ai_response.message`.
 
   <img width="643" height="498" alt="Screenshot 2025-08-09 at 1 28 11 AM" src="https://github.com/user-attachments/assets/6c4d143e-a1b9-4523-a684-8eae3e0e0e97" />
 
