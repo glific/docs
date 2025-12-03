@@ -1,4 +1,16 @@
-### **7 minute read &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; `Advanced`**
+
+# Custom Certificates
+
+<h4>
+ <table>
+  <tr>
+    <td><b>7 minutes read</b></td>
+    <td style={{ paddingLeft: '40px' }}><b>Level: Advanced</b></td>
+    <td style={{ paddingLeft: '40px' }}><b>Last Updated: December 2025</b></td>
+  </tr>
+</table>
+</h4>
+
 
 ## Overview
 
@@ -120,9 +132,26 @@ The presentation will open in a new window and automatically save in your Google
 
 ### 3. Use the certificate template in the flow
 
-1. Call the webhook with `function` name as `create_certificate` and give it an appropriate result name.
+1. Add a `Call a webhook` node.
 
-2. Go to `Function Body` and ensure that the following parameters are passed to the webhook
+- By default, `FUNCTION` would be selected. Leave this as it is.
+
+<img width="447" height="372" alt="Screenshot 2025-12-03 at 1 35 07 PM" src="https://github.com/user-attachments/assets/542e36de-6409-41d0-bfe2-7a26f888a6e0" />
+
+- In the `FUNCTION` field, select the pre-defined function `create_certificate` from the dropdown.
+
+<img width="581" height="480" alt="Screenshot 2025-12-03 at 1 35 41 PM" src="https://github.com/user-attachments/assets/e6957be3-69b5-4c6b-9c13-b48b44615579" />
+
+- Give it an appropriate result name.
+
+<img width="629" height="527" alt="Screenshot 2025-12-03 at 1 36 15 PM" src="https://github.com/user-attachments/assets/b66983ba-094c-4d79-98bc-5f05810f0a2a" />
+
+2. Add the parameters in the `FUNCTION Body`.
+- Go to `Function Body`  on top right corner. You would see the following.
+
+<img width="626" height="429" alt="Screenshot 2025-12-03 at 1 37 12 PM" src="https://github.com/user-attachments/assets/ea8232e0-5ab6-450f-80d5-d2907f78c221" />
+
+- Ensure that the following parameters are passed to the webhook
 
 ```
 {
