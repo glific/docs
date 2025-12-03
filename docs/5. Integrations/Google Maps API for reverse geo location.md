@@ -1,4 +1,14 @@
-### **3 minute read &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; `Intermediate`**
+# Google Maps API for reverse geo location
+
+<h4>
+ <table>
+  <tr>
+    <td><b>3 minutes read</b></td>
+    <td style={{ paddingLeft: '40px' }}><b>Level: Intermediate</b></td>
+    <td style={{ paddingLeft: '40px' }}><b>Last Updated: December 2025</b></td>
+  </tr>
+</table>
+</h4>
 
 ## How to use reverse geo location
 Use this integration to simplify getting the geographic information of users
@@ -16,18 +26,33 @@ Once the information is returned from the api response, it can be added to the c
 
 ### How to use in the flow 
 
-0. Sample flow to try out the feature.
+1. Sample flow to try out the feature.
    <img width="735" alt="Screenshot 2024-08-29 at 3 40 10 PM" src="https://github.com/user-attachments/assets/dbf359a6-b163-4496-b801-afb0641f6f48"/>
 
 
 2. Use the [location interactive message](https://glific.github.io/docs/docs/Product%20Features/Interactive%20Messages/#create-interactive-messages) to get the location of the user
    
-3. In call a webhook node, select `function` and enter `geolocation`
-<img width="550" alt="Screenshot 2024-08-29 at 3 39 50 PM" src="https://github.com/user-attachments/assets/346eaadf-9f19-4938-93d4-02fb081dcf1d"/>
+3. Add a `Call Webhook` node. 
 
+- By default, `FUNCTION` would be selected. Leave this as it is.
 
-    
-4. Go to `Function body` and pass the following parameters 
+<img width="445" height="370" alt="Screenshot 2025-12-03 at 11 50 25 AM" src="https://github.com/user-attachments/assets/9f6a47e7-d9ac-473b-9a20-357cce12b39b" />
+
+- In the `FUNCTION` field, select the pre-defined function `geolocation` from the dropdown.
+  
+<img width="490" height="410" alt="Screenshot 2025-12-03 at 11 51 00 AM" src="https://github.com/user-attachments/assets/b846470c-ded7-4c77-9cd6-64d98973d35f" />
+
+- Give the webhook result name - you can use any name. In the screenshot example, it’s named `loc`.
+
+<img width="523" height="436" alt="Screenshot 2025-12-03 at 11 51 34 AM" src="https://github.com/user-attachments/assets/8faddf50-86f2-4122-994b-ebd1e0058d7a" />
+ 
+4. Go to `FUNCTION Body` and pass the following parameters. Add the parameters in the `FUNCTION Body`.
+
+- Click on `FUNCTION Body` on the top right corner. You would see the following.
+
+<img width="475" height="331" alt="Screenshot 2025-12-03 at 11 52 43 AM" src="https://github.com/user-attachments/assets/a59e69e1-1b9d-4242-a3ac-8c0189308b9c" />
+
+- Pass the following parameters as mentioned below. 
 
 `{
  "lat": "@results.result_1.latitude",
