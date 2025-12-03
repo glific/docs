@@ -3,7 +3,7 @@
     <tr>
       <td><b>6 minutes read</b></td>
       <td style={{ paddingLeft: 40 }}><b>Level: Advanced</b></td>
-      <td style={{ paddingLeft: 40 }}><b>Last Updated: Septemper 2025</b></td>
+      <td style={{ paddingLeft: 40 }}><b>Last Updated: December 2025</b></td>
     </tr>
   </table>
 </h3>
@@ -37,13 +37,23 @@ Bhashini specializes in Indic language translation and transliteration, supporti
 
 #### Step 3: Add a `Call Webhook` node. This is where we integrate the Bhashini service.
 
-- Select the `Function` from the dropdown.
-- In the `Function` field, enter `speech_to_text_with_bhasini`. The function name is pre-defined, you should always use the function `speech_to_text_with_bhasini` to call the Bhashini API for converting audio to text.
+- By default, `Function` would be selected. Leave this as it is.
+
+<img width="471" height="390" alt="Screenshot 2025-12-03 at 9 13 38 AM" src="https://github.com/user-attachments/assets/557ab322-145a-4c58-a213-29af62deaa79" />
+
+- In the `Function` field, select the predefined function name  `speech_to_text_with_bhasini`, from the dropdown. This function is used to call Bhashini API for converting audio to text.
+
+<img width="462" height="381" alt="Screenshot 2025-12-03 at 9 14 39 AM" src="https://github.com/user-attachments/assets/efa4170e-a782-4bab-89cd-189f254dff21" />
+
 - Give the webhook result name - you can use any name. In the screenshot example, it’s named `bhashini_asr`.
+  
+<img width="431" height="361" alt="Screenshot 2025-12-03 at 9 14 59 AM" src="https://github.com/user-attachments/assets/87521a2a-7cf0-461b-8483-4ff9bca9b8fa" />
 
-  <img width="517" height="431" alt="Screenshot 2025-08-10 at 12 13 00 AM" src="https://github.com/user-attachments/assets/42e354bf-ec76-4d59-a1c0-1b610b45fcc3" />
+#### Step 4: Click on `Function Body` (top right corner). You would see the following.
 
-#### Step 4: Click on `Function Body` (top right corner) and add the parameters as shown in the screenshot below
+<img width="511" height="358" alt="Screenshot 2025-12-03 at 9 15 55 AM" src="https://github.com/user-attachments/assets/a50826ec-b036-4403-b275-c254b8fa7ca8" />
+
+Add the parameters as shown in the screenshot below.
 
 <img width="557" height="388" alt="Screenshot 2025-08-10 at 12 14 30 AM" src="https://github.com/user-attachments/assets/0130ebd7-cdf6-42e0-8505-a0c92821e990" />
 
@@ -76,13 +86,23 @@ Text-to-Speech (TTS) function in Glific can be used to generate a voice note for
 
 #### Step 3: Create a 'Call Webhook' node.
 
-- Select the `Function` from the dropdown.
-- In the `Function` field, enter `nmt_tts_with_bhasini` The function name is pre-defined, you should always use the function `nmt_tts_with_bhasini` to call the Bhashini API for converting text to audio.
+- By default, `Function` would be selected. Leave this as it is.
+
+<img width="472" height="394" alt="Screenshot 2025-12-03 at 9 20 23 AM" src="https://github.com/user-attachments/assets/fdae198c-9c27-40c5-8430-1ebc62851f67" />
+
+- In the `Function` field, select the predefined function name `nmt_tts_with_bhasini` from the dropdown. This function is used to call Bhashini API for converting text to audio.
+
+<img width="439" height="366" alt="Screenshot 2025-12-03 at 9 21 20 AM" src="https://github.com/user-attachments/assets/5466c6f8-4cc1-4545-a77b-03d5af145f25" />
+
 - Give the webhook result name - you can use any name. In the screenshot example, it’s named `bhashini_tts`.
 
-<img width="586" height="493" alt="Screenshot 2025-09-25 at 12 54 19 AM" src="https://github.com/user-attachments/assets/e43df145-63d8-43c0-aa87-e476798ea484" />
+<img width="548" height="461" alt="Screenshot 2025-12-03 at 9 21 53 AM" src="https://github.com/user-attachments/assets/0611aef2-4182-4952-9d40-a9b79715cfdb" />
 
-#### Step 4: Click Function Body (top right corner) and add the parameters as shown in the screenshot below.
+#### Step 4: Click Function Body (top right corner). You would see the following.
+
+<img width="516" height="357" alt="Screenshot 2025-12-03 at 9 22 32 AM" src="https://github.com/user-attachments/assets/84e25fde-53ec-4e6a-9dea-c2dd4d5bd243" />
+
+Add the parameters as shown in the screenshot below.
 
 <img width="616" height="431" alt="Screenshot 2025-08-10 at 12 34 03 AM" src="https://github.com/user-attachments/assets/ce4a15ea-8eb7-4861-996a-03159e2bca96" />
 
