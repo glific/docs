@@ -4,7 +4,7 @@
   <tr>
     <td><b>5 minutes read</b></td>
     <td style={{ paddingLeft: '40px' }}><b>Level: Advanced</b></td>
-    <td style={{ paddingLeft: '40px' }}><b>Last Updated: October 2025</b></td>
+    <td style={{ paddingLeft: '40px' }}><b>Last Updated: December 2025</b></td>
   </tr>
 </table>
 </h3>
@@ -40,11 +40,17 @@ With GPT’s image processing abilities, Glific makes it easy to automate tasks 
 
 
 #### Step 2: Add a Webhook Node to Process the Image
-- Select the `function` from the dropdown.
-- In the function field, enter `parse_via_gpt_vision`, this function name is pre-defined.
+- By default, `Function` would be selected. Leave this as it is.
+
+<img width="472" height="393" alt="Screenshot 2025-12-03 at 10 17 55 AM" src="https://github.com/user-attachments/assets/205719e3-7944-4553-ac0b-4880e8e94709" />
+
+- In the `FUNCTION` field, select the pre-defined function `parse_via_gpt_vision`, from the dropdown.
+
+<img width="505" height="419" alt="Screenshot 2025-12-03 at 10 18 49 AM" src="https://github.com/user-attachments/assets/cee6867c-aa07-4e32-9807-3147bdd2819e" />
+
 - Give the webhook result name - you can use any name. In the screenshot example, it’s named `gptvision`.
 
-<img width="493" height="408" alt="Screenshot 2025-09-29 at 1 46 28 AM" src="https://github.com/user-attachments/assets/1162f959-f923-4f5d-9214-3337456e8bda" />
+<img width="521" height="433" alt="Screenshot 2025-12-03 at 10 19 10 AM" src="https://github.com/user-attachments/assets/5a24d170-ec31-4ecf-bf87-ac5d782752f0" />
 
 ---
 
@@ -52,10 +58,13 @@ With GPT’s image processing abilities, Glific makes it easy to automate tasks 
 
 
 #### Step 3: Add Parameters in Function Body
-- Click on `Function Body` and pass the parameters as shown in the below screenshot.
+- Click on `FUNCTION Body` on the top right corner. You would see the following.
+  
+<img width="490" height="345" alt="Screenshot 2025-12-03 at 10 20 35 AM" src="https://github.com/user-attachments/assets/3a4d0248-7f0f-4921-ba91-1b7119b0ddb4" />
+
+- Pass the parameters as shown in the below screenshot.
 
 <img width="493" height="343" alt="Screenshot 2025-09-29 at 1 51 22 AM" src="https://github.com/user-attachments/assets/cfafbb40-04da-4321-9cf8-d457ff08835e" />
-
 
 - `Url`: in this field pass the flow variable accepting the image response from the user (In the given example `image` is the result name).
 - `prompt`: in this field pass the prompt, or instructions you wish to convey to the AI model towards processing the image input.
