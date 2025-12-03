@@ -1,6 +1,15 @@
-### **5 minute read &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; `Beginner`**
 
 ## Sending Polls to WhatsApp Group Collections. 
+
+<h4>
+ <table>
+  <tr>
+    <td><b>5 minutes read</b></td>
+    <td style={{ paddingLeft: '40px' }}><b>Level: Beginner</b></td>
+    <td style={{ paddingLeft: '40px' }}><b>Last Updated: December 2025</b></td>
+  </tr>
+</table>
+</h4>
 
 Glific platform can be used to create polls. Send or scheudule the polls in advance to multiple groups. 
 
@@ -24,24 +33,40 @@ Glific platform can be used to create polls. Send or scheudule the polls in adva
 
 ### Create a flow to send the poll
 1. Create a new flow
-2. Use `Call a webhook` node. Select `Function` from the dropdown and type the following function name to send the poll `send_wa_group_poll`
+2. Add a `call a webhook` node. 
 
-<img width="711" alt="Screenshot 2025-02-14 at 2 49 58 PM" src="https://github.com/user-attachments/assets/67334573-d4b4-456d-8f27-50249e6126a0" />
+- By default, `FUNCTION` would be selected. Leave this as it is.
 
-Go to Function `FUNCTION body` and pass the following parameters
+<img width="446" height="372" alt="Screenshot 2025-12-03 at 12 45 20 PM" src="https://github.com/user-attachments/assets/7e55f3ac-0bf3-4634-8084-92ac9caa2001" />
+
+- In the `FUNCTION` field, select the pre-defined function `send_wa_group_poll` from the dropdown and give the result name.
+
+<img width="586" height="487" alt="Screenshot 2025-12-03 at 12 46 01 PM" src="https://github.com/user-attachments/assets/ccf0745b-bdf1-4f62-8cf4-4e889c94cd98" />
+
+<img width="632" height="529" alt="Screenshot 2025-12-03 at 12 46 54 PM" src="https://github.com/user-attachments/assets/39dd1da6-6d1d-4ab5-ab1f-eacd2e368e91" />
+
+3. Add the parameters in the FUNCTION Body.
+
+- Go to `FUNCTION Body` on top right corner. You would see the following.
+
+<img width="629" height="449" alt="Screenshot 2025-12-03 at 12 48 56 PM" src="https://github.com/user-attachments/assets/cb5dd8a6-fa4c-4e11-8c5f-7952baceb021" />
+
+- Pass the following parameters.
+
 `{
   "wa_group": "@wa_group",
  "poll_uuid": ""
 }`
+
 <img width="703" alt="Screenshot 2025-02-14 at 2 50 43 PM" src="https://github.com/user-attachments/assets/1972b5da-1e94-489d-af94-d3d53e2b0b02" />
 
-- “poll_uuid”: "" from the polls list paging by selecting on `Copy UUID`.
-- “wa_group”: “@wa_group” will remain as is.
+- `“poll_uuid”: ""` from the polls list paging by selecting on `Copy UUID`.
+- `“wa_group”: “@wa_group”` will remain as is.
 
-3. This completes the flow
+4. This completes the flow
 <img width="850" alt="Screenshot 2025-02-14 at 4 08 36 PM" src="https://github.com/user-attachments/assets/717abce9-faf1-496e-b051-d2831fd4fa7f" />
 
-**4. Please note: No further `send message node` is needed to send the poll to WhatsApp group. The webhook success response sends the poll with the given poll uuid to the groups.**
+**5. Please note: No further `send message node` is needed to send the poll to WhatsApp group. The webhook success response sends the poll with the given poll uuid to the groups.**
 
 Here is a [SAMPLE FLOW](https://drive.google.com/file/d/13CyRD8Gmq0J1J_lICrwIq55TBbwHND90/view?usp=sharing). To use this flow, go to the link, download the csv, and upload this flow using `import a flow` in your Glific instance. Change the `poll_uuid` in the webhook function body to match the `poll_uuid` of the poll you have created in your Glific instace.
 
