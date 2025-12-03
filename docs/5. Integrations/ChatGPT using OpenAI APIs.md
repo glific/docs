@@ -1,8 +1,17 @@
-> ###**3 minute read &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; `Advanced`**
 
 ## Using ChatGPT within Glific using the OpenAI APIs
 
 _**Leverage the capabilities of GPT models developed by OpenAI by using OpenAI APIs.**_
+
+<h4>
+ <table>
+  <tr>
+    <td><b>3 minutes read</b></td>
+    <td style={{ paddingLeft: '40px' }}><b>Level: Advanced</b></td>
+    <td style={{ paddingLeft: '40px' }}><b>Last Updated: December 2025</b></td>
+  </tr>
+</table>
+</h4>
 
 
 ## How it will work 
@@ -22,22 +31,39 @@ _Representative image to explain the steps in OpenAI API calls in a simple flow_
 [Sample flow](https://drive.google.com/file/d/1r2dKE1i95lKrz6V1BiEyvZTXgxXgX87N/view?usp=sharing)
 
 1. Get the user question 
-2. In `call a webhook` node, select `function` and paste function name as `parse_via_chat_gpt`
+2. Add a `call a webhook` node.
    
-  <img width="684" alt="Screenshot 2024-02-07 at 10 52 49 AM" src="https://github.com/glific/docs/assets/141305477/f1165b6b-483c-43b4-9e8d-7bb6044d6e24" />
+- By default, `FUNCTION` would be selected. Leave this as it is.
 
-3. Share the following function body 
+<img width="444" height="368" alt="Screenshot 2025-12-03 at 11 13 18 AM" src="https://github.com/user-attachments/assets/5d5ba026-f515-4d3a-93c8-8108e68b4094" />
+
+ - In the `FUNCTION` field, select the pre-defined function `parse_via_chat_gpt` from the dropdown.
+
+<img width="475" height="399" alt="Screenshot 2025-12-03 at 11 14 05 AM" src="https://github.com/user-attachments/assets/6cb069f4-45ce-4ed7-8614-fb6b49a2e594" />
+
+- Give the webhook result name - you can use any name. In the screenshot example, it’s named `gpt_response`.
+  
+<img width="564" height="464" alt="Screenshot 2025-12-03 at 11 14 44 AM" src="https://github.com/user-attachments/assets/85241beb-c873-414b-b8ab-edb3eabd68eb" />
+
+3. Add the parameters in the `FUNCTION Body`.
+
+- Click on `Function Body` on the top right corner. You would see the following.
+
+<img width="631" height="440" alt="Screenshot 2025-12-03 at 11 16 57 AM" src="https://github.com/user-attachments/assets/ac874d38-7fed-49a1-8b67-dfd8df439d4c" />
+
+- Pass the following parameters as mentioned below. 
+
  ` {
-  "question_text": "@results.question",
+  "question_text": "@results.question_1",
    "gpt_model":"gpt-4o",
-   "prompt":"Provide an additional prompt for the model"
+   "prompt":"Answer in less than 5 sentences."
   }`
 
 here `question_text` is the parameter name corresponding to user question. 
 
 `gpt_model` is the parameter to help you select the best model for performing the given task. The model name must correspond to the text models given in the OpenAI API documentation here [here](https://platform.openai.com/docs/models) 
 
-<img width="671" alt="Screenshot 2024-05-22 at 3 52 18 PM" src="https://github.com/glific/docs/assets/141305477/09211b9a-132b-4964-9388-a1aa00ed28bc" />
+<img width="590" height="408" alt="Screenshot 2025-12-03 at 11 25 27 AM" src="https://github.com/user-attachments/assets/90ba56c3-1565-46bb-b3f0-180172a35bc6" />
 
 
 4. The response from GPT is shown as `@results.webhookresultname.parsed_msg`, in the given example `gpt_response` is the webhook result name. (see the first image)
