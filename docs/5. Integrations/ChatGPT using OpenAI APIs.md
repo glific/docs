@@ -53,7 +53,7 @@ _Representative image to explain the steps in OpenAI API calls in a simple flow_
 
 - Pass the following parameters as mentioned below. 
 
- ` {
+ `{
   "question_text": "@results.question_1",
    "gpt_model":"gpt-4o",
    "prompt":"Answer in less than 5 sentences."
