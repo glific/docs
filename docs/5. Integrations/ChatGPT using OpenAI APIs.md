@@ -61,7 +61,7 @@ _Representative image to explain the steps in OpenAI API calls in a simple flow_
 
 here `question_text` is the parameter name corresponding to user question. 
 
-`gpt_model` is the parameter to help you select the best model for performing the given task. The model name must correspond to the text models given in the OpenAI API documentation here [here](https://platform.openai.com/docs/models) 
+`gpt_model` is the parameter to help you select the best model for performing the given task. The model name must correspond to the text models given in the OpenAI API documentation. See [OpenAI models documentation](https://platform.openai.com/docs/models)
 
 <img width="590" height="408" alt="Screenshot 2025-12-03 at 11 25 27 AM" src="https://github.com/user-attachments/assets/90ba56c3-1565-46bb-b3f0-180172a35bc6" />
 
