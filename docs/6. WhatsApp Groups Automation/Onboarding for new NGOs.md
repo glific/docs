@@ -32,7 +32,7 @@
 
 #### Step 2: Filling the Glific onboarding form
 
-1. You will receive the Onboarding Form link from the Glific Team. You can refer to this [documentation ](https://glific.github.io/docs/docs/Pre%20Onboarding/Onboarding%20Form%20Fill%20Up) to learn more about this.
+1. You will receive the Onboarding Form link from the Glific Team. You can refer to this [documentation](https://glific.github.io/docs/docs/Pre%20Onboarding/Onboarding%20Form%20Fill%20Up) to learn more about this.
 
 2. After completion of this step, Glific team will share the platform url, along with the log-in credentials.
 
