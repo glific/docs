@@ -1,4 +1,12 @@
-### **5 minute read &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; `Beginner`**
+<h3>
+ <table>
+  <tr>
+    <td><b>5 minutes read</b></td>
+    <td style={{ paddingLeft: '40px' }}><b>Level: Beginner </b></td>
+    <td style={{ paddingLeft: '40px' }}><b>Last Updated: December 2025</b></td>
+  </tr>
+</table>
+</h3>
 
 ### Contents
 1. [Pre-requisites](#pre-requisites)
@@ -11,7 +19,12 @@
 
 
 ### Set-up
-#### Step 1: Linking phone number to Maytapi account
+
+#### Step 1: Filling the Glific onboarding form
+
+1. You will receive the Onboarding Form link from the Glific Team. You can refer to this [documentation](https://glific.github.io/docs/docs/Pre%20Onboarding/Onboarding%20Form%20Fill%20Up) for guidance on how to complete the form.
+
+#### Step 2: Linking phone number to Maytapi account
 
 
 1. Create maytapi account https://console.maytapi.com/login
@@ -22,14 +35,6 @@
 <img width="1276" alt="Screenshot 2024-11-18 at 3 52 57 PM" src="https://github.com/user-attachments/assets/408e6382-4c49-4a6c-ab51-67c185ff59b7" />
 
 
-#### Step 2: Filling the Glific onboarding form
-1. Fill the Glific [onboarding form](https://prod.glific.com/organization-registration).
-  - For "App Name" and "Gupshup API key" fill the following details respectively
-   - App name: 2023OBF1
-   - Gupshup API key: 9imaygevg6fuwa82s54hbuyoiuuohmug
-  - Follow the rest of the onboarding form documentation [here](https://glific.github.io/docs/docs/Pre%20Onboarding/Onboarding%20Form%20Fill%20Up)   
-<img width="824" alt="Screenshot 2024-11-18 at 3 35 30 PM" src="https://github.com/user-attachments/assets/68ddcd1b-8872-4b92-b2ba-e0074d602f6e" />
-2. After completion of this step, Glific team will share the platform url, along with the log-in credentials.
 
 
 #### Step 3: Connecting Maytapi to Glific 
