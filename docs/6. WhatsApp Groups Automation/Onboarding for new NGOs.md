@@ -31,7 +31,8 @@
 2. Log in with google id and link a phone number (follow instructions given on Maytapi page)
 3. Set up the payment option (~30$ per phone per month) in Maytapi. (For difficulties with the payments reach out directly to Maytapi team on info@maytapi.com keeping your Glific team POC in loop.)
 4. Or proceed with free trial which disables the connection in 3 days.
-5. Make a note of the "product id" and "token" given by Maytapi. This needs to be shared with the Glific team. 
+5. Copy of the "product id" and "token" given by Maytapi and then login to Glific account, go to settings >> Maytpayi and paste the product id and token id and click on save.
+
 <img width="1276" alt="Screenshot 2024-11-18 at 3 52 57 PM" src="https://github.com/user-attachments/assets/408e6382-4c49-4a6c-ab51-67c185ff59b7" />
 
 
@@ -45,9 +46,7 @@ Ex, if your glific domain is `www.xyz.glific.com` then use the maytapi webhook u
 
 <img width="1274" alt="Screenshot 2024-11-18 at 3 59 18 PM" src="https://github.com/user-attachments/assets/a2ff1a6e-b034-47e5-90de-ce2bfe37df44" />
 
-2. In Glific, go to setting, go to maytapi, and check if the product and token id as provided my Maytapi is added. 
-3. If it is not, then add the product and token it from Maytapi and click save.
-4. This completes the set-up
+2. This completes the set-up
 <img width="1277" alt="Screenshot 2024-11-18 at 3 57 07 PM" src="https://github.com/user-attachments/assets/b76f6415-4ee0-4d56-9555-1304886df5d5" />
 
 You should be able to see the whatsapp groups option in the left panel that the phone number is part of and perform operations like send, receive and schedule message to a group of groups. 
