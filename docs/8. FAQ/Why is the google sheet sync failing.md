@@ -11,7 +11,7 @@ This happens when the `Key` columns is either empty or contains a few blank cell
 
 ## 2. Unknown error or empty content 
 
-This happens when the sheet is empty or if the sheet does not contain `Key` column. In case the sheet is not empty, and this error condition is still displaying, it is likely because the the google sheet contains a very large amount of data. In case the google sheet contains a vast amount data, this google sheet has to be added as a table to the org's Big Query and a serverless webhook has be deployed in Google Cloud Run to query the information from the table when the webhook is called form Glific. Read a use case [here](https://docs.google.com/document/d/1C5FHnZuK38ukcR88ToVR689CHm6m6ijQ3zMxg6J5MRI/edit?tab=t.0#heading=h.e7zpjexh7kel)
+This happens when the sheet is empty or if the sheet does not contain a `Key` column. If the sheet is not empty and this error condition persists, it is likely because the Google Sheet contains a large amount of data. In such cases, the Google Sheet should be added as a table to the organization's BigQuery, and a serverless webhook should be deployed in Google Cloud Run to query the information when called from Glific. Refer to [this BigQuery and Cloud Run integration guide](https://docs.google.com/document/d/1C5FHnZuK38ukcR88ToVR689CHm6m6ijQ3zMxg6J5MRI/edit?tab=t.0#heading=h.e7zpjexh7kel) for implementation details.
 
 ## 3. Key: has already been taken
 
