@@ -1,4 +1,4 @@
-# Why is the google sheet sync failing? 
+# Why is the Google Sheet sync failing?
 
 Google sheets on read mode with auto-sync functionality turned on sync once in every 24 hours. The sync operations happens around 5-6 am IST. If google sheet fails to sync, there is an error condition that is displayed on the google sheets page. 
 
