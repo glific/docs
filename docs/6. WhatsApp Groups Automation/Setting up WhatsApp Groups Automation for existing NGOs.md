@@ -25,9 +25,12 @@
 2. Log in with google id and link a phone number (follow instructions given on Maytapi page)
 3. Set up the payment option (~30$ per phone per month) in Maytapi.
 4. Or proceed with free trial which disables the connection in 3 days.
-5. Copy of the "product id" and "token" given by Maytapi and then login to Glific account, go to settings >> Maytpayi and paste the product id and token id and click on save.
+5. Copy of the `product id` and `token` given by `Maytapi` and then login to `Glific` account >> Go to `Settings` >> `Maytpayi` and paste the `product id` and `token id` and click on `save`.
 
 <img width="1276" alt="Screenshot 2024-11-18 at 3 52 57 PM" src="https://github.com/user-attachments/assets/86b89bfb-4d7d-414b-93b2-ad4305122093" />
+
+<img width="1277" alt="Screenshot 2024-11-18 at 3 57 07 PM" src="https://github.com/user-attachments/assets/59cf5745-bed1-4d88-8bb9-128816653c6e" />
+
 
 #### Step 2: Connecting Maytapi to Glific 
 
