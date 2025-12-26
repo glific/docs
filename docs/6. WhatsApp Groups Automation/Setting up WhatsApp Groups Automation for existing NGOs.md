@@ -21,7 +21,7 @@
 
 #### Step 1: Connecting Phone number to Maytapi 
 
-1. Create Maytapi account at https://console.maytapi.com/login 
+1. Create Maytapi account at [https://console.maytapi.com/login](https://console.maytapi.com/login)
 2. Log in with google id and link a phone number (follow instructions given on Maytapi page)
 3. Set up the payment option (~30$ per phone per month) in Maytapi.
 4. Or proceed with free trial which disables the connection in 3 days.
