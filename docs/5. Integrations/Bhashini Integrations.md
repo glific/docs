@@ -136,10 +136,13 @@ Please note: In order to get the voice notes as outputs, the Glific instance mus
 Apart from Bhashini, the OpenAI speech engine can also be used to generate text-to-speech (TTS) responses. Since we are also experimenting with Bhashini, the response quality may sometimes be inconsistent or unreliable in a few languages.This is another alternative, users can try both options to see which gives better results for their audience and language preferences.
 
 ### How to configure:
-- In the `Function Body`, set the speech engine to `open-ai`.
-- Keep the remaining steps the same as those mentioned in the Speech-to-Text section above.
+- In the `Function Body`, set the speech engine to `open_ai`.
+
+Please note that, currently this alternative is supported only when both **the source and target language are the same**.
+
+- Keep the remaining steps the same as those mentioned in the Text-to-Speech section above.
   
-<img width="590" height="412" alt="Screenshot 2025-09-25 at 1 00 36 AM" src="https://github.com/user-attachments/assets/1111db5f-137d-4825-8ca9-d3e6a00fe53f" />
+<img width="624" height="433" alt="Screenshot 2025-12-31 at 4 42 02 PM" src="https://github.com/user-attachments/assets/61d2884a-4dc4-4e36-bbe6-f8aa895a0cc1" />
 
 ---
 
