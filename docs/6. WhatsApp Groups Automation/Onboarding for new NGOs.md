@@ -3,7 +3,7 @@
   <tr>
     <td><b>5 minutes read</b></td>
     <td style={{ paddingLeft: '40px' }}><b>Level: Beginner </b></td>
-    <td style={{ paddingLeft: '40px' }}><b>Last Updated: December 2025</b></td>
+    <td style={{ paddingLeft: '40px' }}><b>Last Updated: February 2026 </b></td>
   </tr>
 </table>
 </h3>
@@ -50,6 +50,13 @@ Ex, if your glific domain is `www.xyz.glific.com` then use the maytapi webhook u
 <img width="1277" alt="Screenshot 2024-11-18 at 3 57 07 PM" src="https://github.com/user-attachments/assets/b76f6415-4ee0-4d56-9555-1304886df5d5" />
 
 You should be able to see the whatsapp groups option in the left panel that the phone number is part of and perform operations like send, receive and schedule message to a group of groups. 
+
+### Step 4: Google Cloud Storage Setup
+
+Google Cloud Storage (GCS) is a cloud service offered by Google Cloud Platform (GCP) that enables you to save and access data—like files, images and large datasets—on Google’s secure servers rather than on your own devices. GCS is used for various tasks, such as storing WhatsApp group media and making data available for reporting or analysis through BigQuery.
+
+Please refer to the detailed instructions on how to configure and set up Google Cloud Storage (GCS) [here:](https://glific.github.io/docs/docs/Pre%20Onboarding/Google%20Cloud%20Storage%20Setup%20-%20GCS/)
+
 
 ### Pricing
 #### MayTapi
