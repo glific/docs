@@ -9,9 +9,9 @@
 </h3>
 
 ### Contents
-1. [Pre-requisites](#pre-requisites)
-2. [Set-up](#set-up)
-8. [Pricing](#pricing)
+1. Pre-requisites
+2. Set-up
+3. Pricing
 
 ### Pre-requisites
 1. Have an active phone number with a normal WhatsApp account linked to it.
