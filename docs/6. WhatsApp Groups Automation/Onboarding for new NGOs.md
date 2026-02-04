@@ -15,7 +15,7 @@
 
 ### Pre-requisites
 1. Have an active phone number with a normal WhatsApp account linked to it.
-3. Should have the WhatsApp groups created and the phone number should be part of the WhatsApp groups. (it is advised to have the WhatsApp Groups named in an appropriate manner)
+3. Should have the WhatsApp groups created and the phone number should be part of the WhatsApp groups. (it is advised to have the WhatsApp Groups named in an appropriate manner example: Delhi Volunteers,HealthTeam – Field,Workshop 2026 – Logistics etc.
 
 
 ### Set-up
@@ -42,7 +42,7 @@
 
 1. In Maytapi go to webhook and enter the following webhook url `https://api.**ngo-shortcode**.glific.com/maytapi`
 
-Ex, if your glific domain is `www.xyz.glific.com` then use the maytapi webhook url becomes `https://api.xyz.glific.com/maytapi`
+For example, if your Glific domain is www.xyz.glific.com, then the Maytapi webhook URL becomes https://api.xyz.glific.com/maytapi
 
 <img width="1274" alt="Screenshot 2024-11-18 at 3 59 18 PM" src="https://github.com/user-attachments/assets/a2ff1a6e-b034-47e5-90de-ce2bfe37df44" />
 
