@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.8.1">
 <title data-rh="true">HSM Templates | Glific</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://glific.github.io/docs/docs/Product Features/HSM Templates"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="HSM Templates | Glific"><meta data-rh="true" name="description" content="10 minutes read"><meta data-rh="true" property="og:description" content="10 minutes read"><link data-rh="true" rel="icon" href="/docs/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://glific.github.io/docs/docs/Product Features/HSM Templates"><link data-rh="true" rel="alternate" href="https://glific.github.io/docs/docs/Product Features/HSM Templates" hreflang="en"><link data-rh="true" rel="alternate" href="https://glific.github.io/docs/docs/Product Features/HSM Templates" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://35GA1F1DHM-dsn.algolia.net" crossorigin="anonymous"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Product Features","item":"https://glific.github.io/docs/docs/category/product-features"},{"@type":"ListItem","position":2,"name":"HSM Templates","item":"https://glific.github.io/docs/docs/Product Features/HSM Templates"}]}</script><link rel="search" type="application/opensearchdescription+xml" title="Glific" href="/docs/opensearch.xml"><link rel="stylesheet" href="/docs/assets/css/styles.983e41a2.css">
-<script src="/docs/assets/js/runtime~main.83104aaf.js" defer="defer"></script>
+<script src="/docs/assets/js/runtime~main.7c3f28cf.js" defer="defer"></script>
 <script src="/docs/assets/js/main.4f32ccdb.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -26,6 +26,9 @@ Templates can include placeholders for personalized content and are essential fo
 </li>
 <li>
 <p>For broadcasting standardized updates, like activity schedules, weather alerts, crop advisories, appointment confirmations, service announcements,programs and events</p>
+</li>
+<li>
+<p>Please Note: The next node after an HSM must always be Wait for Response.This ensures the system waits for user interaction before continuing the flow.</p>
 </li>
 </ul>
 <hr>
@@ -50,34 +53,35 @@ Templates can include placeholders for personalized content and are essential fo
 <br>
 <br>
 <ol start="4">
-<li>
-<p>Fill in the following details in the form.</p>
+<li>Fill in the following details in the form.</li>
+</ol>
 <p>a.<code>Is Active</code>- the check box is by default checked. Keep it checked.</p>
-<p>b. <code>Language</code> - Select the preferred language from the dropdown to ensure the template gets approved in that specific language.</p>
+<p>b.<code>Language</code> - Select the preferred language from the dropdown to ensure the template gets approved in that specific language.</p>
 <img width="517" height="216" alt="image" src="https://github.com/user-attachments/assets/fc0e56bd-a743-4b04-91e4-378e351fb2b9">
-<p>c. <code>Translate existing HSM</code> - Select this if the HSM template you are trying to apply has a language variant of an existing HSM template in a different language. If not then no need to enable it.</p>
-<p>d. <code>Element Name</code> - Provide a title for WABA namespace for the HSM template. Incase the translate existing HSM is selected, this field becomes a drop down. From the list select the element name of the HSM template for which the language variant is being applied.</p>
+<p>c.<code>Translate existing HSM</code> - Select this if the HSM template you are trying to apply has a language variant of an existing HSM template in a different language. If not then no need to enable it.</p>
+<p>d.<code>Element Name</code> - Provide a title for WABA namespace for the HSM template. Incase the translate existing HSM is selected, this field becomes a drop down. From the list select the element name of the HSM template for which the language variant is being applied.</p>
 <p>e. <code>Title</code> - Enter the name you want for your HSM Template as it would appear in Glific (It should be what use case does this template serves eg. OTP, Optin,
 Activity Preference).</p>
 <img width="410" height="337" alt="image" src="https://github.com/user-attachments/assets/9e45eae4-6a92-4058-8083-9963e380afe9">
-<p><em>(Ensure Title and Template Name are not identical to avoid mapping issues.)</em></p>
-<p>f. <code>Message</code> - Type the message you want to send to users in this HSM template.</p>
+<p>(Ensure Title and Template Name are not identical to avoid mapping issues.)</p>
+<p>f.<code>Message</code> - Type the message you want to send to users in this HSM template.</p>
 <p>g. <code>Add Variable</code> - Click on add variable if you&#x27;d like to insert a variable values (ex- preferred names, locations, any other value being captured in flow or contact variables). This provides further fields below to enter a sample value for the variables.</p>
 <img width="401" height="360" alt="image" src="https://github.com/user-attachments/assets/aa9960c3-1d6c-4e75-9c60-71598eccf293">
 <p>h. <code>Footer</code> - Add the message which you want to act like a subtext.</p>
 <p>i. <code>Add Buttons</code> - You can use <code>Add Buttons</code> checkbox to use buttons in HSM templates.</p>
 <ul>
-<li>Call to Action is selected by default. Click the dropdown and select the Quick Replies option.</li>
+<li>
+<p>Call to Action is selected by default. Click the dropdown and select the Quick Replies option.</p>
+</li>
 </ul>
 <img width="389" height="212" alt="Screenshot 2025-12-09 at 1 40 59 PM" src="https://github.com/user-attachments/assets/ba9a52ae-b85a-4aa9-bbf5-de326270766d">
 <ul>
-<li>You can add up to 10 buttons in the Quick Reply option.</li>
-</ul>
-<img width="398" height="746" alt="Screenshot 2025-12-09 at 1 43 19 PM" src="https://github.com/user-attachments/assets/8a60319d-1d42-46df-94e0-46b13c3773e4">
+<li>
+<p>You can add up to 10 buttons in the Quick Reply option.</p>
 </li>
-</ol>
-<ul>
-<li>Call to action buttons: Add a Call to Action (CTA) button in an HSM (template) message when the recipient is expected to take a specific action directly from the message.</li>
+<li>
+<p>Call to action buttons: Add a Call to Action (CTA) button in an HSM (template) message when the recipient is expected to take a specific action directly from the message.</p>
+</li>
 </ul>
 <img width="366" height="326" alt="Screenshot 2025-12-09 at 1 52 47 PM" src="https://github.com/user-attachments/assets/bdc55bb6-64f6-4d04-9430-3d19ee4acce5">
 <ul>
@@ -92,6 +96,9 @@ Activity Preference).</p>
 </li>
 <li>
 <p>If selected <strong>URL</strong>, must choose between <strong>Static</strong> and <strong>Dynamic</strong> links.</p>
+</li>
+<li>
+<p>Please Note : HSM templates support upto 2 URL buttons 1 Phone number button</p>
 </li>
 </ul>
 </li>
@@ -305,39 +312,90 @@ Matched placeholders</p>
 <img decoding="async" loading="lazy" src="https://user-images.githubusercontent.com/40158831/218453349-087e3e8a-bc55-4ce2-9b8a-301a8c0fbefe.jpeg" alt="image" class="img_ev3q"></p>
 </li>
 <li>
-<p>Fill in details for templates in rows. Here&#x27;s what each column represent in the sheet</p>
+<p>Fill in details for templates in rows. Here&#x27;s what each column represent in the sheet.</p>
 <ol>
-<li><code>Language:</code> Select the language from the dropdown you want in your HSM template message.
-<code>Title:</code> Enter the name you want for your HSM Template as it would appear in Glific (It should be what use case does this template serve eg. OTP, Optin, Activity Preference).</li>
-<li><code>Message:</code> Type the message you want to send to users in this HSM template. You can use Variables and interactive actions in your message. Follow the syntax below in your message.<!-- -->
+<li>
+<p><code>Language:</code> Select the language from the dropdown you want in your HSM template message.</p>
+</li>
+<li>
+<p><code>Title:</code> Enter the name you want for your HSM Template as it would appear in Glific (It should be what use case does this template serve eg. OTP, Optin, Activity Preference).</p>
+</li>
+<li>
+<p><code>Message:</code> Type the message you want to send to users in this HSM template. You can use Variables and interactive actions in your message. Follow the syntax below in your message.</p>
 <ol>
 <li>Variable format - <strong>{{1}}</strong></li>
 <li>Button format - <strong>[Button text, Value]</strong> (where value can be <strong>URL</strong> or <strong>phone number</strong>)</li>
 </ol>
 </li>
-<li><code>Sample Message:</code> Replace the variables in the message content with actual values to show a complete message.</li>
-<li><code>Element Name:</code> The name of a template that is unique for a WABAs namespace.</li>
-<li><code>Category:</code> The category of HSM template. Values can be either UTILITY, MARKETING or AUTHENTICATION.</li>
-<li><code>Attachment Type:</code> The Attachment type of template can be either image, video or document</li>
-<li><code>Attachment URL:</code> The Attachment URL should be public URL of a file that follows these facebook <a href="https://developers.facebook.com/docs/whatsapp/on-premises/reference/media" target="_blank" rel="noopener noreferrer">guidelines</a></li>
-<li><code>Has Buttons:</code> If the template has buttons, change the value from dropdown to <code>TRUE</code> else <code>FALSE</code></li>
-<li><code>Button Type:</code> Button Type can be either <code>CALL_TO_ACTION</code> or <code>QUICK_REPLY</code></li>
-<li><code>CTA Button 1 Type:</code> When button type is <code>CALL_TO_ACTION</code> this can be either <code>Phone Number</code> or <code>URL</code></li>
-<li><code>CTA Button 1 Title:</code> Text that would appear in button e.g. <code>Call us here</code></li>
-<li><code>CTA Button 1 Value:</code> Value of button e.g. Phone number</li>
-<li><code>CTA Button 2 Type:</code> When button type is <code>CALL_TO_ACTION</code> this can be either <code>Phone Number</code> or <code>URL</code></li>
-<li><code>CTA Button 2 Title:</code> Text that would appear in button e.g. <code>Visit us here</code></li>
-<li><code>CTA Button 2 Value:</code> Value of button e.g. <code>https://glific.org/</code></li>
-<li><code>Quick Reply 1 Title:</code> Add Text that would appear on first button when button type is <code>QUICK_REPLY</code></li>
-<li><code>Quick Reply 2 Title:</code> Add Text that would appear on second button when button type is <code>QUICK_REPLY</code></li>
-<li><code>Quick Reply 3 Title:</code> Add Text that would appear on third button when button type is <code>QUICK_REPLY</code></li>
-<li><code>Quick Reply 4 Title:</code> Add Text that would appear on fourth button when button type is <code>QUICK_REPLY</code></li>
-<li><code>Quick Reply 5 Title:</code> Add Text that would appear on fifth button when button type is <code>QUICK_REPLY</code></li>
-<li><code>Quick Reply 6 Title:</code> Add Text that would appear on sixth button when button type is <code>QUICK_REPLY</code></li>
-<li><code>Quick Reply 7 Title:</code> Add Text that would appear on seventh button when button type is <code>QUICK_REPLY</code></li>
-<li><code>Quick Reply 8 Title:</code> Add Text that would appear on eight button when button type is <code>QUICK_REPLY</code></li>
-<li><code>Quick Reply 9 Title:</code> Add Text that would appear on ninth button when button type is <code>QUICK_REPLY</code></li>
-<li><code>Quick Reply 10 Title:</code> Add Text that would appear on tenth button when button type is <code>QUICK_REPLY</code></li>
+<li>
+<p><code>Sample Message:</code> Replace the variables in the message content with actual values to show a complete message.</p>
+</li>
+<li>
+<p><code>Element Name:</code> The name of a template that is unique for a WABAs namespace.</p>
+</li>
+<li>
+<p><code>Category:</code> The category of HSM template. Values can be either UTILITY, MARKETING or AUTHENTICATION.</p>
+</li>
+<li>
+<p><code>Attachment Type:</code> The Attachment type of template can be either image, video or document</p>
+</li>
+<li>
+<p><code>Attachment URL:</code> The Attachment URL should be public URL of a file that follows these facebook <a href="https://developers.facebook.com/docs/whatsapp/on-premises/reference/media" target="_blank" rel="noopener noreferrer">guidelines</a></p>
+</li>
+<li>
+<p><code>Has Buttons:</code> If the template has buttons, change the value from dropdown to <code>TRUE</code> else <code>FALSE</code></p>
+</li>
+<li>
+<p><code>Button Type:</code> Button Type can be either <code>CALL_TO_ACTION</code> or <code>QUICK_REPLY</code></p>
+</li>
+<li>
+<p><code>CTA Button 1 Type:</code> When button type is <code>CALL_TO_ACTION</code> this can be either <code>Phone Number</code> or <code>URL</code></p>
+</li>
+<li>
+<p><code>CTA Button 1 Title:</code> Text that would appear in button e.g. <code>Call us here</code></p>
+</li>
+<li>
+<p><code>CTA Button 1 Value:</code> Value of button e.g. Phone number</p>
+</li>
+<li>
+<p><code>CTA Button 2 Type:</code> When button type is <code>CALL_TO_ACTION</code> this can be either <code>Phone Number</code> or <code>URL</code></p>
+</li>
+<li>
+<p><code>CTA Button 2 Title:</code> Text that would appear in button e.g. <code>Visit us here</code></p>
+</li>
+<li>
+<p><code>CTA Button 2 Value:</code> Value of button e.g. <code>https://glific.org/</code></p>
+</li>
+<li>
+<p><code>Quick Reply 1 Title:</code> Add Text that would appear on first button when button type is <code>QUICK_REPLY</code></p>
+</li>
+<li>
+<p><code>Quick Reply 2 Title:</code> Add Text that would appear on second button when button type is <code>QUICK_REPLY</code></p>
+</li>
+<li>
+<p><code>Quick Reply 3 Title:</code> Add Text that would appear on third button when button type is <code>QUICK_REPLY</code></p>
+</li>
+<li>
+<p><code>Quick Reply 4 Title:</code> Add Text that would appear on fourth button when button type is <code>QUICK_REPLY</code></p>
+</li>
+<li>
+<p><code>Quick Reply 5 Title:</code> Add Text that would appear on fifth button when button type is <code>QUICK_REPLY</code></p>
+</li>
+<li>
+<p><code>Quick Reply 6 Title:</code> Add Text that would appear on sixth button when button type is <code>QUICK_REPLY</code></p>
+</li>
+<li>
+<p><code>Quick Reply 7 Title:</code> Add Text that would appear on seventh button when button type is <code>QUICK_REPLY</code></p>
+</li>
+<li>
+<p><code>Quick Reply 8 Title:</code> Add Text that would appear on eight button when button type is <code>QUICK_REPLY</code></p>
+</li>
+<li>
+<p><code>Quick Reply 9 Title:</code> Add Text that would appear on ninth button when button type is <code>QUICK_REPLY</code></p>
+</li>
+<li>
+<p><code>Quick Reply 10 Title:</code> Add Text that would appear on tenth button when button type is <code>QUICK_REPLY</code></p>
+</li>
 </ol>
 </li>
 <li>
