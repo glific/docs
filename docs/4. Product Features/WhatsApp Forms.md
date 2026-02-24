@@ -2,7 +2,7 @@
     <tr>
       <td><b>3 minute read</b></td>
           <td style={{ paddingLeft: 40 }}><b>Level: Intermediate</b></td>
-          <td style={{ paddingLeft: 40 }}><b>Last updated: December 2025</b></td>
+          <td style={{ paddingLeft: 40 }}><b>Last updated: February 2026</b></td>
     </tr>
   </table>
 
@@ -41,39 +41,101 @@ WhatsApp Forms reduce back-and-forth messaging and ensure clean, structured data
 
 Steps:
 1. Go to `Quick Tools` → `WhatsApp Forms` in Glific.
-2. Click `Create Form`
-3. Go to WhatsApp Flows Playground to get a friendly interface to create your form
-4. Choose field types and design your form (text input, radio, multi-select, etc.)
-5. Click on `copy flow JSON` after completing the form design
-6. Paste the Flow JSON into the `form JSON` input field
-7. Give your form an appropriate `title`, `description` and `category`
-8. Click on `Save`
-9. This creates a draft of the form
-10. On the `WhatsApp Forms` Listing page, click on the publish icon to publish the form.
+2. Click `Create` Form
+3. Provide a form `title` and `category`
+4. For data storage, add a `google sheet` with write access to the google service account to automatically capture the responses to the form. This step is optional. A google sheet can be added before the form is `submitted to Meta`
+6. Click on Save and go to the form builder interface
+<img width="568" height="386" alt="Screenshot 2026-02-24 at 3 51 24 PM" src="https://github.com/user-attachments/assets/15e81cc8-0da5-43a0-95fd-298177bb567a" />
 
-<iframe
-  width="560"
-  height="315"
-  src="https://drive.google.com/file/d/1PxitFQIRKBrpvmOzbM4ZSd4WIUFCCoK9/preview"
-  frameborder="0"
-  allow="autoplay"
-  allowfullscreen>
-</iframe>
+### Navigating the form builder interface.
+The form builder interface can be used to create forms
+
+There are 3 major actions:
+
+1. Form Json - this allows you to toggle to the from json view, and edit things in the form json as it gets developed by adding screens and components from 
+2. Save Draft - while the changes being made are auto-saved, this button is provided as a back-up.
+3. Submit to Meta - this is the final step of form creation. Click on `Submit to meta` once the form is ready to be used by over WhatsApp. Please note: once the form is submitted to meta, it cannot be changed further. To make changes, a new form will need to be created and modified.
+
+<img width="570" height="365" alt="Screenshot 2026-02-24 at 3 54 14 PM" src="https://github.com/user-attachments/assets/08b36aa4-3d3b-46f0-8251-db54da39f050" />
+
+Other details: 
+
+1. There is a form builder section with buttons to add content to the form like dropdowns, checkboxes, date fields, titles, captions, images and new screens to build out the form with required fields.
+2. The preview section allows you to get glimpse of how the form will turn out on WhatsApp. The preview has tabs to `preview`, see the `field names` and the `revision history` of the form. 
+4.  Please note, the preview mode is not fully representative of how the form will look on WhatsApp of your beneficiaries, as this varies a lot based on the version of WhatsApp and the device type such as android, ios etc. 
+
+### Form Builder Action
+1. Adding screens: Use `Add new` button to the in line of the Screens header to add new screens. Screen title can be added in the `Screen Name` entry field
+2. Building the form: click on `Add Content` to select the type of data collection field you’d like to add under a particular screen.
+<img width="696" height="788" alt="Screenshot 2026-02-24 at 5 02 06 PM" src="https://github.com/user-attachments/assets/6064456a-b3b0-480a-9c1c-96d9dbd245c7" />
+
+### Types of content that can be added 
+1. **Titles and Captions**: Under the `Text` content, heading, subheading, captions, and texts can be added to the form.
+
+<img width="1165" height="813" alt="Screenshot 2026-02-24 at 5 00 45 PM" src="https://github.com/user-attachments/assets/19b33e4a-48b5-4450-af39-976c9104dd44" />
+2. **Media**: An image file, of type JPEG, PNG can be added upto 300kb in size. 
+<img width="543" height="367" alt="Screenshot 2026-02-24 at 4 42 06 PM" src="https://github.com/user-attachments/assets/5ef5b08f-6b38-4b6f-842f-bc94845d29f0" />
+
+3. **Text answer**: A short answer, paragraph answer of date field can be captured using this type. 
+<img width="581" height="381" alt="Screenshot 2026-02-24 at 4 42 30 PM" src="https://github.com/user-attachments/assets/c3d56c7c-07fc-4b39-9286-485a892c8704" />
+
+4. **Selection**: Dropdown, Single choice, multiple choice, opt-in can be collected using the selection type of content
+
+<img width="561" height="384" alt="Screenshot 2026-02-24 at 4 42 45 PM" src="https://github.com/user-attachments/assets/589faff4-47b8-4edb-b382-967caecc5815" />
+
+#### What are field names and how to use them?
+Field name the the mandatory captions/ titles that appear above the input field in the form. This serves 2 function 
+1. To appear as the caption for the user to see in the WhatsApp Form
+2. To appear as the header under which the responses are being captured. The header can be seen by toggling to `Field Names` section next to `Preview` button
+<img width="561" height="385" alt="Screenshot 2026-02-24 at 4 43 45 PM" src="https://github.com/user-attachments/assets/6bb2c0d4-e877-42d1-bcaf-13bfdd551e51" />
+
+
+The header name can be changed by clicking on the edit button
+<img width="566" height="386" alt="Screenshot 2026-02-24 at 4 44 32 PM" src="https://github.com/user-attachments/assets/f7068240-3f09-44c0-8df7-89b2cccfffef" />
+
+Field names are useful to refer to any response from the form, and also the field names appear as the headers in the attached google sheet. 
+
+#### How to use field names in the flow
+1. A form message should be always followed by a `wait for response` node. As shown in the screenshot below.
+<img width="323" height="442" alt="Screenshot 2026-02-24 at 4 46 46 PM" src="https://github.com/user-attachments/assets/1d3db195-b770-42d7-9780-0fbf941a0e74" />
+
+2. The send message node 89e6 sends the HSM with form to the user,
+3. Wait for response node ad02 with the result name `result_1` captures all the responses to the form questions by the user
+4. The send message node 888f, is used to display back to the user one of the responses, by going into the responses and referring to the particular field name in this case - `preferred_mode_of_payment` by printing `@results.result_1.preferred_mode_of_payment`
+
+
+#### What are Option Ids and how to use them 
+
+The options listed under selection type of the content - dropdown or single choice or multiple choice show up in the form json. Each option has a `title` which is text that appears to the user in the whatsapp interface to select. There is also an `id`, this id is what gets returned as the response and remains invisible to the user.
+
+<img width="609" height="406" alt="Screenshot 2026-02-24 at 4 49 39 PM" src="https://github.com/user-attachments/assets/e5bb5a8f-4584-4148-9086-d5e53a2d647b" />
+
+- In the above screenshot, a short section of the form json can be seen corresponding to the question of preferred mode of payment, and the list of options. 
+
+- The options show a distinct `title` which corresponds to what can be seen on the form page, and an `id`which is different from the title. 
+
+- Renaming the `option id`  in the form json is an important step to ensure data captured is clean and as per the requirements of the program.
+  
+<img width="1242" height="833" alt="Screenshot 2026-02-24 at 4 51 15 PM" src="https://github.com/user-attachments/assets/650469e6-9068-4434-9ecf-149df19d11ca" />
+
+**Implications of the id **
+- This can help with multi-lingual forms by having the titles in local language, while the response getting captured and stored to be in english to help with collecting clean data. 
+- This can help with usecases where title and responses need to be abstracted away. 
+
+### Form creation checklist
+
+Checklist to make sure the form is completed
+1. There is a google sheet attached to the form for ease of collecting responses. While the responses to the form are synced to your bigquery by default, having a google sheet attached will help you to see responses quickly and easily.
+2. The `field names` under which the responses will be captured is appropriate
+3.The `option ids` for the fields with options are re-named in the flow json  to reflect appropriate values that need to be collected in responses. 
+4. The form is `submitted to meta`
 
 ### How to Send WhatsApp Forms to users on WhatsApp
 
-WhatsApp forms can be sent as HSM messages. 
-<iframe
-  width="560"
-  height="315"
-  src="https://drive.google.com/file/d/1YZGHR0ulaDnUcIBXKn3aj4HpMQS9jLww/preview"
-  frameborder="0"
-  allow="autoplay"
-  allowfullscreen>
-</iframe>
+WhatsApp forms can be sent to users when the forms are attached to HSM messages. 
 
 Steps: 
-1. Ensure that the form is in `published`
+1. Ensure that the form is `submitted to meta`
 2. Navigate to `Quick Tools` -> `HSM Templates` -> `Create`
 3. Follow the steps to create the HSM template, by giving it a `title`, `element name`, `body` of the message, 
 4. Click on `Add buttons` and select `WhatsApp Forms`
@@ -84,35 +146,16 @@ Steps:
 9. Use this HSM message inside the Glific flow.
 10. Like any other HSM or send message node, ensure that this HSM follows a `wait for response` node. This node will help to record the response to the form fields.
 
-<iframe
-  width="560"
-  height="315"
-  src="https://drive.google.com/file/d/1B4EnVGJ9cqinMw73kXudzYcm2bcEAiEJ/preview"
-  frameborder="0"
-  allow="autoplay"
-  allowfullscreen>
-</iframe>
 
 ### How the WhatsApp Form results can be used in the Glific flow
 
 The responses to the form can be captured, and used in the Glific for taking actions such as write to google sheet or can be used  in split by logic to create separate branches in the glific flow based on the responses received to any particular fields on the form. 
 
 To use this 
-1. The variable names for each field in the form come up on the “view” screen of the form
-2. These variable names follow the pattern of `screen_number_label`
-3. Take a note of all the these form variable names from the form view page
+1. The field names for each field in the form come up on the “field names” screen of the form
+3. Take a note of all the these form field names 
 4. In the flow, use `wait for response` node after the `send contact a message` node which is sending the form HSM message
-5. Now to reference each variable from the form response, use the following syntax: `@results.form.screen_0_<label>`
 
-
-<iframe
-  width="560"
-  height="315"
-  src="https://drive.google.com/file/d/1Uedfm3JDLnkhSHjVcUrLZolUixo4RUkX/preview"
-  frameborder="0"
-  allow="autoplay"
-  allowfullscreen>
-</iframe>
 
 ### How WhatsApp Form Results Come to BigQuery
 1. Ensure your Glific account is connected to BigQuery instance
@@ -191,16 +234,9 @@ In the above SQL snippet change the following
 11. Each language variation must be attached to a language-specific HSM. Follow this [documentation on multi-lingual HSMs](https://glific.github.io/docs/docs/Product%20Features/HSM%20Templates/#approve-multi-lingual-hsm-templates) to learn more.
 ### FAQs
 
-1. Why do I need to use the Meta’s Playground to create the forms?
 
-Glific currently uses the Meta WhatsApp Flows Playground to
-- Get a cleaner UI to create the form
-- Preview the form structure
-- Validate form structure
-- Test multi-screen navigation
-- Get the final JSON code required for Glific
 
-2. What is the draft state of the form
+1. What is the draft state of the form
 
 Draft state of the form is when the form entity is created in Glific and it can be edited to improve the UI, but the form is not yet published with Meta, therefore it cannot be used in HSMs and it is not yet available to use via WhatsApp 
 
@@ -220,9 +256,6 @@ The responses captured from whatsapp forms are returned along with the index of 
 
 Using the form in Business Initiated Message scenarios incurs the cost of category of the HSM message the form is attached to. Using the form under service message type scenarios is free of charge. Service messages means when a user initiates the conversation by entering a keyword or clicking on the WhatsApp keyword-encoded link and starting the conversation with the chatbot of your organization.
 
-7. Why can I not see WhatsApp forms option under Quick Tools?
-
-WhatsApp forms is a trial feature released to beta-tester organizations. If you'd like to try it out, please reach out to [tejas@glific.org](mailto:tejas@glific.org).
 
 
 
