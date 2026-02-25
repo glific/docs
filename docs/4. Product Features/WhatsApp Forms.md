@@ -118,7 +118,7 @@ The options listed under selection type of the content - dropdown or single choi
   
 <img width="1242" height="833" alt="Screenshot 2026-02-24 at 4 51 15 PM" src="https://github.com/user-attachments/assets/650469e6-9068-4434-9ecf-149df19d11ca" />
 
-**Implications of the id **
+**Implications of the id**
 - This can help with multi-lingual forms by having the titles in local language, while the response getting captured and stored to be in english to help with collecting clean data. 
 - This can help with usecases where title and responses need to be abstracted away. 
 
