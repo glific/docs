@@ -76,7 +76,7 @@ Other details:
 2. **Media**: An image file, of type JPEG, PNG can be added upto 300kb in size. 
 <img width="543" height="367" alt="Screenshot 2026-02-24 at 4 42 06 PM" src="https://github.com/user-attachments/assets/5ef5b08f-6b38-4b6f-842f-bc94845d29f0" />
 
-3. **Text answer**: A short answer, paragraph answer of date field can be captured using this type. 
+3. **Text answer**: A short answer, paragraph answer or date field can be captured using this type. 
 <img width="581" height="381" alt="Screenshot 2026-02-24 at 4 42 30 PM" src="https://github.com/user-attachments/assets/c3d56c7c-07fc-4b39-9286-485a892c8704" />
 
 4. **Selection**: Dropdown, Single choice, multiple choice, opt-in can be collected using the selection type of content
@@ -84,7 +84,7 @@ Other details:
 <img width="561" height="384" alt="Screenshot 2026-02-24 at 4 42 45 PM" src="https://github.com/user-attachments/assets/589faff4-47b8-4edb-b382-967caecc5815" />
 
 #### What are field names and how to use them?
-Field name the the mandatory captions/ titles that appear above the input field in the form. This serves 2 function 
+Field names are the captions/ titles that appear above the input field in the form. This serves 2 function 
 1. To appear as the caption for the user to see in the WhatsApp Form
 2. To appear as the header under which the responses are being captured. The header can be seen by toggling to `Field Names` section next to `Preview` button
 <img width="561" height="385" alt="Screenshot 2026-02-24 at 4 43 45 PM" src="https://github.com/user-attachments/assets/6bb2c0d4-e877-42d1-bcaf-13bfdd551e51" />
