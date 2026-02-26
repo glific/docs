@@ -61,7 +61,7 @@ There are 3 major actions:
 Other details: 
 
 1. There is a form builder section with buttons to add content to the form like dropdowns, checkboxes, date fields, titles, captions, images and new screens to build out the form with required fields.
-2. The preview section allows you to get glimpse of how the form will turn out on WhatsApp. The preview has tabs to `preview`, see the `field names` and the `revision history` of the form. 
+2. The preview section allows you to get a glimpse of how the form will turn out on WhatsApp. The preview has tabs to `preview`, see the `field names` and the `revision history` of the form. 
 4.  Please note, the preview mode is not fully representative of how the form will look on WhatsApp of your beneficiaries, as this varies a lot based on the version of WhatsApp and the device type such as android, ios etc. 
 
 ### Form Builder Action
