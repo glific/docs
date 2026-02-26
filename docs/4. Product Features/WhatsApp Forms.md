@@ -127,8 +127,8 @@ The options listed under selection type of the content - dropdown or single choi
 Checklist to make sure the form is completed
 1. There is a google sheet attached to the form for ease of collecting responses. While the responses to the form are synced to your bigquery by default, having a google sheet attached will help you to see responses quickly and easily.
 2. The `field names` under which the responses will be captured is appropriate
-3.The `option ids` for the fields with options are re-named in the flow json  to reflect appropriate values that need to be collected in responses. 
-4. The form is `submitted to meta`
+3. The `option ids` for fields with options are renamed in the form JSON to reflect the values that need to be collected.
+4. The form is `submitted to Meta`.
 
 ### How to Send WhatsApp Forms to users on WhatsApp
 
