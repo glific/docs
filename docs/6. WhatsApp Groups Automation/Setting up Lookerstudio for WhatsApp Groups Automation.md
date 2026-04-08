@@ -12,7 +12,7 @@
 
 The documentation lists the steps to be followed to set up a template dashboard to get insights from the WhatsApp Groups Automation within Glific. 
 
-This can help the org get an overview of the engagement (total groups, total contacts, sending and receiving messages, weekly patterns and errors) from the groups linked to your Glific. For program specific outputs/outcomes tracking, please talk to the glific team or explore the BigQuery tables yourself. 
+This can help the org get an overview of the engagement (total groups, total contacts, sending and receiving messages, weekly patterns and errors) from the groups linked to your Glific. For program-specific outputs/outcomes tracking, please talk to the Glific team or explore the BigQuery tables yourself.
 
 ### Pre-requisites
 
@@ -107,7 +107,7 @@ After replacing, they should look like:
 - `your-project-id.your_dataset.wa_messages`
 - `your-project-id.your_dataset.wa_groups`
 
-    d) Save the query as a “View”, save it in under the same dataset and name the view as `group_poll
+    d) Save the query as a “View”, save it in under the same dataset and name the view as `group_poll`
 
 
 <img width="653" height="620" alt="image" src="https://github.com/user-attachments/assets/c3cd1736-9c1a-49be-bf32-fa86acc6dca6" />
@@ -173,7 +173,7 @@ After replacing, they should look like:
            
 3. Section 3: Polls Engagement: Shows the total outgoing polls, total votes and a table showing breakdown of the polls, options and votes.
 
-4. Section 4: Week on week activity: shows weekly active contacts and number of incoming messages.
+4. Section 4: Week-on-week activity: shows weekly active contacts and number of incoming messages.
 
 5. Section 5: Activity patterns: Shows active time of day and day of week based on incoming messages.
 
