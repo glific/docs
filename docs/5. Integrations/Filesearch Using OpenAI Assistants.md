@@ -41,7 +41,7 @@ Define the following parameters:
 
 - Provide a name to the assistant.
 
-- Choose the model from the drop down list.
+- Choose the model from the drop-down list.
 
 <img width="490" height="207" alt="image" src="https://github.com/user-attachments/assets/29577251-c967-438a-b2d4-ffb702ffe650" />
 
