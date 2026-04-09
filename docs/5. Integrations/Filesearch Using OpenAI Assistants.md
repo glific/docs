@@ -59,7 +59,7 @@ These files will be utilized by the assistant to generate responses and each fil
 
 #### Step 3: Save Your Assistant
 
-- Click on upload files button to add files, Do remebers each file can be uploaded on by one.
+- Click on the upload files button to add files. Remember that each file can be uploaded one by one.
 
 <img width="474" height="309" alt="image" src="https://github.com/user-attachments/assets/f43bc8aa-a30f-4615-af7a-9c96d1d82bc2" />
 
