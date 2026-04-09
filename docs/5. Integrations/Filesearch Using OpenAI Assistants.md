@@ -48,7 +48,7 @@ Define the following parameters:
 
 - Provide a system prompt in the `Instructions` field.  
   *[Click Here](https://glific.org/a-simple-guide-to-using-large-language-models/#prompt) to read more on prompt engineering.*
-- Files (sv, .doc, .docx, .html, .java, .md, .pdf, .pptx,.txt) can be uploaded by clicking on `Manage Files`. 
+- Files (.csv, .doc, .docx, .html, .java, .md, .pdf, .pptx, .txt) can be uploaded by clicking on `Manage Files`. 
 These files will be utilized by the assistant to generate responses and each file will take approx 15 secs to upload.  
   
 - Set the `Temperature` (between 0 to 1). A higher value increases creativity/randomness.  
