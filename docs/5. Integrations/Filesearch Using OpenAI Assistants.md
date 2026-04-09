@@ -63,7 +63,7 @@ These files will be utilized by the assistant to generate responses and each fil
 
 <img width="474" height="309" alt="image" src="https://github.com/user-attachments/assets/f43bc8aa-a30f-4615-af7a-9c96d1d82bc2" />
 
-- Once the files are added, click on `Save`. This will show the status of the the Assistant setup. 
+- Once the files are added, click on `Save`. This will show the status of the Assistant setup. 
     - Ready — assistant is live and usable
     - In Progress — a new version is being prepared
 
