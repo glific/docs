@@ -130,7 +130,7 @@ Please note: In order to get the voice notes as outputs, the Glific instance mus
 
 ## Using OpenAI Speech Engine for Text-to-Speech
 
-Apart from Gemini, OpenAI can also be used as the speech engine for engine can also be used to generate text-to-speech (TTS) responses. This is another alternative, users can try both options to see which gives better results for their audience and language preferences.
+Apart from Gemini, OpenAI can also be used as the speech engine to generate text-to-speech (TTS) responses. This is another alternative; users can try both options to see which gives better results for their audience and language preferences.
 
 ### How to configure:
 - In the `Function Body`, set the speech engine to `open_ai`.
