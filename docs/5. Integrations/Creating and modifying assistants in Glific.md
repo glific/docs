@@ -11,7 +11,7 @@
 # Creating and modifying assistants in Glific 
 This doc details how to create new assistants, modify the created assistants and how to use these in your Glific flows. 
 
-##Creating a new assistant
+## Creating a new assistant
 1. From the assistant list page, click on “Create new assistant”
 <img width="1406" height="765" alt="Screenshot 2026-04-14 at 2 46 48 PM" src="https://github.com/user-attachments/assets/3ac96677-8fe2-46b3-bff6-b5c26e1ccfb6" />
 
