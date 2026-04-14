@@ -10,7 +10,7 @@
 
 # Speech-to-Text and Text-to-Speech Capabilities in Glific
 
-This integration into Glific enables NGOs and organizations to offer real-time translation and transliteration capabilities in various Indian languages, ensuring effective communication with end users in their preferred languages. While the webhook names are referring to "Bhashini" as the service provider, but since January of 2026, Google's Gemini 2.5 pro is being used as the provider to enable both speech-to-text and text-to-speech capabilities.
+This integration in Glific enables NGOs and organizations to offer real-time translation and transliteration in various Indian languages, ensuring effective communication with end users in their preferred languages. Webhook names still reference "Bhashini," but since January 2026, Google Gemini 2.5 Pro has been the provider for both speech-to-text and text-to-speech capabilities.
 
 ---
 
