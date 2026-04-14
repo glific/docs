@@ -1,3 +1,13 @@
+<h4>
+ <table>
+  <tr>
+    <td><b>3 minutes read</b></td>
+    <td style={{ paddingLeft: '40px' }}><b>Level: Advanced</b></td>
+    <td style={{ paddingLeft: '40px' }}><b>Last Updated: April 2026</b></td>
+  </tr>
+</table>
+</h4>
+
 # Creating and modifying assistants in Glific 
 This doc details how to create new assistants, modify the created assistants and how to use these in your Glific flows. 
 
