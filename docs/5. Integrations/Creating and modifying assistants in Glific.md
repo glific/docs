@@ -57,11 +57,11 @@ This doc details how to create new assistants, modify the created assistants and
 
 ### Main points to note
 1. The assistant id being used in the flow does not need to be modified, 
-2. You can choose which version of the assistant gets used in the flow by using the “Set as LIVE” button 
-3. Be default, the new changes are not directly used in the flow, in order to use assistant with the latest modifications made, “Set as LIVE” action has to be performed explicitly. 
+2. You can choose which version of the assistant gets used in the flow by using the "Set as LIVE" button 
+3. By default, new changes are not used directly in the flow. To use an assistant with the latest modifications, you must explicitly click "Set as LIVE".
 
 ### Why are versions created on modifications? and why do you need to "set as LIVE"
-1. In order to provide the flexibility to easily revert back the changes from previous versions, incase making new modifications 
+1. To provide flexibility to easily revert to previous versions when making new modifications.
 2. Any new updates can be evaluated (evaluations feature coming soon in Glific) before deploying to live assistants.
 
 ### How to use the assistants in the Glific flow?
