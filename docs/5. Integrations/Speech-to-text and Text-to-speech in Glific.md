@@ -3,7 +3,7 @@
     <tr>
       <td><b>6 minutes read</b></td>
       <td style={{ paddingLeft: 40 }}><b>Level: Advanced</b></td>
-      <td style={{ paddingLeft: 40 }}><b>Last Updated: April 2025</b></td>
+      <td style={{ paddingLeft: 40 }}><b>Last Updated: April 2026</b></td>
     </tr>
   </table>
 </h3>
