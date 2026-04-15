@@ -3,15 +3,14 @@
     <tr>
       <td><b>6 minutes read</b></td>
       <td style={{ paddingLeft: 40 }}><b>Level: Advanced</b></td>
-      <td style={{ paddingLeft: 40 }}><b>Last Updated: December 2025</b></td>
+      <td style={{ paddingLeft: 40 }}><b>Last Updated: April 2026</b></td>
     </tr>
   </table>
 </h3>
 
-# Bhashini Integration in Glific: Speech-to-Text and Text-to-Speech
+# Speech-to-Text and Text-to-Speech Capabilities in Glific
 
-Bhashini is an initiative by the Government of India aimed at making digital services and the internet accessible in all Indian languages.
-The integration of Bhashini into Glific enables NGOs and organizations to offer real-time translation and transliteration capabilities in various Indian languages, ensuring effective communication with end users in their preferred languages.
+This integration in Glific enables NGOs and organizations to offer real-time translation and transliteration in various Indian languages, ensuring effective communication with end users in their preferred languages. Webhook names still reference "Bhashini," but since January 2026, Google Gemini 2.5 Pro has been the provider for both speech-to-text and text-to-speech capabilities.
 
 ---
 
@@ -21,11 +20,9 @@ The integration of Bhashini into Glific enables NGOs and organizations to offer 
 - Enabling users to respond in regional languages.
 - Transliteration helps convert text from one script to another, for example: writing Hindi words using English letters.
 
-Bhashini specializes in Indic language translation and transliteration, supporting a wide range of languages and dialects. You can learn more about the platform [here](https://bhashini.gov.in)
 
-**Note: Bhashini integration is still in an experimental phase. While it enables powerful multilingual speech capabilities, users may occasionally notice variations in response quality or stability. As development continues, these aspects are expected to improve over time.**
 
-## Steps to Integrate Bhashini Speech to Text in Glific Flows
+## Steps to use Speech to Text in Glific Flows
 
 `Speech-to-Text (STT)` function in Glific can be used to convert user-recorded audio messages into text. This is especially helpful when users prefer speaking over typing, or in cases where typing in local languages is difficult.
 
@@ -71,7 +68,7 @@ Add a `Send Message` node and paste this variable to show the converted text to 
 
 ---
 
-## Steps to Integrate Bhashini Text To Speech in Glific Flows
+## Steps to Integrate Text To Speech in Glific Flows
 
 Text-to-Speech (TTS) function in Glific can be used to generate a voice note for any text message, whether it's typed by the end user or written by NGO staff. This allows organizations to make information more accessible, especially for end users who prefer audio over text.
 
@@ -133,7 +130,7 @@ Please note: In order to get the voice notes as outputs, the Glific instance mus
 
 ## Using OpenAI Speech Engine for Text-to-Speech
 
-Apart from Bhashini, the OpenAI speech engine can also be used to generate text-to-speech (TTS) responses. Since we are also experimenting with Bhashini, the response quality may sometimes be inconsistent or unreliable in a few languages.This is another alternative, users can try both options to see which gives better results for their audience and language preferences.
+Apart from Gemini, OpenAI can also be used as the speech engine to generate text-to-speech (TTS) responses. This is another alternative; users can try both options to see which gives better results for their audience and language preferences.
 
 ### How to configure:
 - In the `Function Body`, set the speech engine to `open_ai`.
@@ -143,12 +140,6 @@ Please note that, currently this alternative is supported only when both **the s
 - Keep the remaining steps the same as those mentioned in the Text-to-Speech section above.
   
 <img width="624" height="433" alt="Screenshot 2025-12-31 at 4 42 02 PM" src="https://github.com/user-attachments/assets/61d2884a-4dc4-4e36-bbe6-f8aa895a0cc1" />
-
----
-
-### Blogs
-
-[Blog Link](https://glific.org/the-importance-of-mother-language-in-the-indian-development-sector/)
 
 ---
 
