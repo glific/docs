@@ -31,7 +31,7 @@ This can help the org get an overview of the engagement (total groups, total con
 
 <img width="211" height="472" alt="image" src="https://github.com/user-attachments/assets/9a9666bc-de49-4481-9644-0e22a3ba8a78" />
 
-2. Set up the `group_polls` tables
+2. Set up the `group_polls` view
 
    a) **Copy the following query and run it in your BigQuery**
 
