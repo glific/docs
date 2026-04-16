@@ -163,7 +163,7 @@ After replacing, they should look like:
    b. Outgoing messages—indicator of activity by the organization
          - Total outgoing messages 
          - Total outgoing media
-         - Total going texts 
+         - Total outgoing texts 
 
     c. Contacts 
            - Total contacts messaging 
