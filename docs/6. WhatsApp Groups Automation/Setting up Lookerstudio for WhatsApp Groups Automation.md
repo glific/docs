@@ -107,7 +107,7 @@ After replacing, they should look like:
 - `your-project-id.your_dataset.wa_messages`
 - `your-project-id.your_dataset.wa_groups`
 
-    d) Save the query as a “View”, save it in under the same dataset and name the view as `group_poll`
+    d) Save the query as a “View”, save it in under the same dataset and name the view as `group_polls`
 
 
 <img width="653" height="620" alt="image" src="https://github.com/user-attachments/assets/c3cd1736-9c1a-49be-bf32-fa86acc6dca6" />
