@@ -38,7 +38,7 @@ This integration in Glific enables NGOs and organizations to offer real-time tra
 
 <img width="471" height="390" alt="Screenshot 2025-12-03 at 9 13 38 AM" src="https://github.com/user-attachments/assets/557ab322-145a-4c58-a213-29af62deaa79" />
 
-- In the `Function` field, select the predefined function name  `speech_to_text_with_bhasini`, from the dropdown. This function is used to call Bhashini API for converting audio to text.
+- In the `Function` field, select the predefined function name  `speech_to_text_with_bhasini`, from the dropdown. This function calls Gemini 2.5 pro model for converting audio to text.
 
 <img width="462" height="381" alt="Screenshot 2025-12-03 at 9 14 39 AM" src="https://github.com/user-attachments/assets/efa4170e-a782-4bab-89cd-189f254dff21" />
 
@@ -87,7 +87,7 @@ Text-to-Speech (TTS) function in Glific can be used to generate a voice note for
 
 <img width="472" height="394" alt="Screenshot 2025-12-03 at 9 20 23 AM" src="https://github.com/user-attachments/assets/fdae198c-9c27-40c5-8430-1ebc62851f67" />
 
-- In the `Function` field, select the predefined function name `nmt_tts_with_bhasini` from the dropdown. This function is used to call Bhashini API for converting text to audio.
+- In the `Function` field, select the predefined function name `nmt_tts_with_bhasini` from the dropdown. This function calls Gemini 2.5 pro model for converting text to audio.
 
 <img width="439" height="366" alt="Screenshot 2025-12-03 at 9 21 20 AM" src="https://github.com/user-attachments/assets/5466c6f8-4cc1-4545-a77b-03d5af145f25" />
 
