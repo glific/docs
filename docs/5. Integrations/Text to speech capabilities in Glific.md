@@ -50,7 +50,7 @@ Default Values (If a parameter is not specified, the following defaults are used
 
 - model: gemini-2.5-flash-preview-tts (Google)
 - voice: Kore
-- language" Auto-detect (not set)
+- language: Auto-detect (not set)
 
 
 ## Variations in model and voice parameters 
