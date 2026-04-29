@@ -16,14 +16,15 @@ Text-to-Speech (TTS) function in Glific can be used to generate a voice note for
 
 #### Step 2: In the `Wait for Response` node, to store the response in a result  In the screenshot above, `result_1` is used as the result name.
 
-#### Step 3: Create a `Call Webhook`<img width="666" height="558" alt="Screenshot 2026-04-27 at 11 06 42 AM" src="https://github.com/user-attachments/assets/8dc1cd7c-069a-4a9a-ba4b-5f58b5988560" />
-  node.
+#### Step 3: Create a `Call Webhook` node.
 
 <img width="463" height="388" alt="Screenshot 2026-04-27 at 11 03 06 AM" src="https://github.com/user-attachments/assets/1d7771b5-1c62-49c1-8937-d68130ead013" />
 
 By default, Function would be selected. Leave this as it is.
 
 In the Function field, select the predefined function name `text_to_speech` from the dropdown. This function calls Google's Gemini models by default for converting text to audio.
+
+<img width="666" height="558" alt="Screenshot 2026-04-27 at 11 06 42 AM" src="https://github.com/user-attachments/assets/8dc1cd7c-069a-4a9a-ba4b-5f58b5988560" />
 
 Give the webhook result name - you can use any name. In the screenshot example, it’s named `voice`.
 
@@ -49,11 +50,11 @@ Add the parameters as shown in the screenshot.
 
 - Set up instructions: [Google Cloud Storage integration](https://glific.github.io/docs/docs/Pre%20Onboarding/Google%20Cloud%20Storage%20Setup%20-%20GCS).
 
-Default Values (If a parameter is not specified, the following defaults are used)
+#### Default parameters for speech_to_text node 
+When only `text` parameter is passed the following default values of model and voice are used 
 
 - model: gemini-2.5-flash-preview-tts (Google)
 - voice: Kore
-- language: Auto-detect (not set)
 
 
 ## Variations in model and voice parameters 
@@ -73,12 +74,12 @@ Within Google Gemini's text to speech capabilities, following are the available 
 
 ### Google (Gemini) Voices
 
-| Voice Name | Characteristics | Gender | Best For | Available Languages |
-|---|---|---|---|---|
-| **Kore** (Default) | Clear, professional, engaging | Female | General purpose, professional content | All supported |
-| **Orus** | Warm, friendly, approachable | Male | Conversational content, customer service | All supported |
-| **Leda** | Neutral, calm, authoritative | Female | News, educational content, announcements | All supported |
-| **Charon** | Deep, formal, articulate | Male | Formal documents, corporate content | All supported |
+| Voice Name | Characteristics | Gender | Best For | 
+|---|---|---|---|
+| **Kore** (Default) | Clear, professional, engaging | Female | General purpose, professional content | 
+| **Orus** | Warm, friendly, approachable | Male | Conversational content, customer service | 
+| **Leda** | Neutral, calm, authoritative | Female | News, educational content, announcements | 
+| **Charon** | Deep, formal, articulate | Male | Formal documents, corporate content | 
 
 Glific defaults to `Kore` voice, but any of the above model and voices can be specifically called from the webhook by explicitly passing additional parameters of 
 
@@ -87,6 +88,9 @@ Glific defaults to `Kore` voice, but any of the above model and voices can be sp
 "model" : "gemini-2.5-flash-preview-tts",
 "voice" : "Orus"
 ```
+Please note: **`provider` and `model` must always be specified together.** If you set one, you must set the other — specifying only a provider or only a model will cause a webhook error.
+
+
 <img width="619" height="436" alt="Screenshot 2026-04-27 at 12 02 08 PM" src="https://github.com/user-attachments/assets/c6a772b1-51f2-465e-8eb0-a29079165e94" />
 
 
@@ -116,6 +120,8 @@ Above are the additional parameters that can be passed via the function body to 
 
 <img width="620" height="441" alt="Screenshot 2026-04-27 at 12 10 26 PM" src="https://github.com/user-attachments/assets/1987831c-28a0-44f5-ab22-aa243bed0d2d" />
 
+Please note: **`provider` and `model` must always be specified together.** If you set one, you must set the other — specifying only a provider or only a model will cause a webhook error.
+
 
 #### Google (Gemini) & ElevenLabs Supported Languages
 
@@ -131,3 +137,4 @@ Above are the additional parameters that can be passed via the function body to 
 - Punjabi 
 - Odia (works best with elevenlabs)
 - Sindhi 
+
