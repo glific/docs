@@ -8,7 +8,7 @@
 </table>
 </h4>
 
-# Creating and modifying assistants in Glific 
+# Creating and modifying AI assistants in Glific 
 This doc details how to create new assistants, modify the created assistants and how to use these in your Glific flows. 
 
 ## Creating a new assistant
@@ -44,8 +44,8 @@ This doc details how to create new assistants, modify the created assistants and
 
 7. To use the version with the latest modifications in the flow, simply click on “set as LIVE” to make sure that the given version is getting used in the flow.
 
+<img width="1228" height="718" alt="Screenshot 2026-04-14 at 3 04 25 PM" src="https://github.com/user-attachments/assets/ba351b06-8b51-4094-8556-cb603cf71263" />
 
-<img width="1234" height="750" alt="Screenshot 2026-04-14 at 3 01 21 PM" src="https://github.com/user-attachments/assets/162ecd64-8e1e-4a8a-8eb0-cfaedd40e988" />
 
 ## Copying the assistants
 1. In the assistants list page, there is an action to “copy” the assistants
@@ -55,7 +55,7 @@ This doc details how to create new assistants, modify the created assistants and
 3. This action is needed in order to modify knowledge bases associated with assistants created before 10th March 2026. 
 
 
-### Main points to note
+### Main points to note about assistant id and set as live action
 1. The assistant id being used in the flow does not need to be modified, 
 2. You can choose which version of the assistant gets used in the flow by using the "Set as LIVE" button 
 3. By default, new changes are not used directly in the flow. To use an assistant with the latest modifications, you must explicitly click "Set as LIVE".
@@ -65,4 +65,4 @@ This doc details how to create new assistants, modify the created assistants and
 2. Any new updates can be evaluated (evaluations feature coming soon in Glific) before deploying to live assistants.
 
 ### How to use the assistants in the Glific flow?
-The workflow on using the assistants remains the same, can be seen [here](https://glific.github.io/docs/docs/Integrations/Filesearch%20Using%20OpenAI%20Assistants#using-the-openai-assistant-in-floweditor!)
+The workflow on using the assistants remains the same, can be seen [here](https://glific.github.io/docs/docs/Integrations/Filesearch%20Using%20OpenAI%20Assistants/#using-the-openai-assistant-in-floweditor)
