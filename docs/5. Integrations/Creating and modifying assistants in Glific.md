@@ -65,4 +65,4 @@ This doc details how to create new assistants, modify the created assistants and
 2. Any new updates can be evaluated (evaluations feature coming soon in Glific) before deploying to live assistants.
 
 ### How to use the assistants in the Glific flow?
-The workflow on using the assistants remains the same, can be seen [here](https://glific.github.io/docs/docs/Integrations/Filesearch%20Using%20OpenAI%20Assistants/#using-the-openai-assistant-in-floweditor)
+The workflow on using the assistants remains the same, can be seen in [Using the OpenAI assistant in the flow editor](https://glific.github.io/docs/docs/Integrations/Filesearch%20Using%20OpenAI%20Assistants/#using-the-openai-assistant-in-floweditor)
