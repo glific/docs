@@ -17,7 +17,16 @@ def get_changed_md_files():
         capture_output=True, text=True
     )
     files = result.stdout.strip().splitlines()
-    return [f for f in files if f.endswith(".md") and os.path.exists(f)]
+    return [
+        f for f in files
+        if f.endswith(".md") and f.startswith("docs/") and os.path.exists(f)
+    ]
+
+
+def to_doc_name(file_path):
+    # Use the full repo-relative path so files with the same basename
+    # in different folders don't overwrite each other in Dify.
+    return file_path.replace("/", "__")
 
 
 def get_existing_documents():
@@ -40,31 +49,31 @@ def get_existing_documents():
 
 
 def create_document(file_path, content):
-    filename = os.path.basename(file_path)
+    doc_name = to_doc_name(file_path)
     resp = requests.post(
         f"{BASE_URL}/datasets/{DATASET_ID}/document/create-by-file",
         headers=HEADERS,
-        files={"file": (filename, content.encode("utf-8"), "text/markdown")},
+        files={"file": (doc_name, content.encode("utf-8"), "text/markdown")},
         data={
             "data": '{"indexing_technique":"high_quality","process_rule":{"mode":"automatic"}}'
         }
     )
     resp.raise_for_status()
-    print(f"  ✅ Created: {filename}")
+    print(f"  ✅ Created: {doc_name}")
 
 
 def update_document(doc_id, file_path, content):
-    filename = os.path.basename(file_path)
+    doc_name = to_doc_name(file_path)
     resp = requests.post(
         f"{BASE_URL}/datasets/{DATASET_ID}/documents/{doc_id}/update-by-file",
         headers=HEADERS,
-        files={"file": (filename, content.encode("utf-8"), "text/markdown")},
+        files={"file": (doc_name, content.encode("utf-8"), "text/markdown")},
         data={
             "data": '{"indexing_technique":"high_quality","process_rule":{"mode":"automatic"}}'
         }
     )
     resp.raise_for_status()
-    print(f"  🔄 Updated: {filename}")
+    print(f"  🔄 Updated: {doc_name}")
 
 
 def main():
@@ -77,17 +86,26 @@ def main():
     print(f"Found {len(changed_files)} changed file(s). Fetching existing Dify docs...")
     existing_docs = get_existing_documents()
 
+    failures = []
     for file_path in changed_files:
-        filename = os.path.basename(file_path)
+        doc_name = to_doc_name(file_path)
         print(f"\nProcessing: {file_path}")
 
-        with open(file_path, "r", encoding="utf-8") as f:
-            content = f.read()
+        try:
+            with open(file_path, "r", encoding="utf-8") as f:
+                content = f.read()
 
-        if filename in existing_docs:
-            update_document(existing_docs[filename], file_path, content)
-        else:
-            create_document(file_path, content)
+            if doc_name in existing_docs:
+                update_document(existing_docs[doc_name], file_path, content)
+            else:
+                create_document(file_path, content)
+        except Exception as e:
+            print(f"  ❌ Failed: {file_path} — {e}")
+            failures.append(file_path)
+
+    if failures:
+        print(f"\n⚠️  Sync finished with {len(failures)} failure(s): {failures}")
+        raise SystemExit(1)
 
     print("\n✅ Sync complete!")
 
