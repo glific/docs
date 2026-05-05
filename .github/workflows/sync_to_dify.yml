@@ -1,5 +1,8 @@
 name: Sync Docs to Dify Knowledge Base
 
+permissions:
+  contents: read
+
 on:
   push:
     branches:
