@@ -23,6 +23,15 @@ def get_changed_md_files():
     ]
 
 
+def get_all_md_files():
+    files = []
+    for root, _, names in os.walk("docs"):
+        for n in names:
+            if n.endswith(".md"):
+                files.append(os.path.join(root, n))
+    return sorted(files)
+
+
 def to_doc_name(file_path):
     # Use the full repo-relative path so files with the same basename
     # in different folders don't overwrite each other in Dify.
@@ -77,13 +86,18 @@ def update_document(doc_id, file_path, content):
 
 
 def main():
-    changed_files = get_changed_md_files()
+    event = os.environ.get("GITHUB_EVENT_NAME", "")
+    if event == "workflow_dispatch":
+        print("Manual run: syncing ALL markdown files under docs/")
+        changed_files = get_all_md_files()
+    else:
+        changed_files = get_changed_md_files()
 
     if not changed_files:
         print("No markdown files changed. Nothing to sync.")
         return
 
-    print(f"Found {len(changed_files)} changed file(s). Fetching existing Dify docs...")
+    print(f"Found {len(changed_files)} file(s) to sync. Fetching existing Dify docs...")
     existing_docs = get_existing_documents()
 
     failures = []
