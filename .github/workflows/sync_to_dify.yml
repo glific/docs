@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - dify-workflow
     paths:
       - "docs/**"
   workflow_dispatch:
