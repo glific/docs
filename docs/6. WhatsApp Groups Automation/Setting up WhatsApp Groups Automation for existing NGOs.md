@@ -1,4 +1,12 @@
-### **5 minute read &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; `Beginner`**
+<h3>
+ <table>
+  <tr>
+    <td><b>5 minutes read</b></td>
+    <td style={{paddingLeft: '40px'}}><b>Level: Beginner</b></td>
+    <td style={{paddingLeft: '40px'}}><b>Last Updated: January 2026</b></td>
+  </tr>
+</table>
+</h3>
 
 ### Pre-requisites
 1. Have an active phone number with a normal WhatsApp account linked to it.
@@ -9,15 +17,20 @@
 
 
 ### Set-up
+
+
 #### Step 1: Connecting Phone number to Maytapi 
 
-1. Create Maytapi account at https://console.maytapi.com/login 
+1. Create Maytapi account at [https://console.maytapi.com/login](https://console.maytapi.com/login)
 2. Log in with google id and link a phone number (follow instructions given on Maytapi page)
 3. Set up the payment option (~30$ per phone per month) in Maytapi.
 4. Or proceed with free trial which disables the connection in 3 days.
-5. Make a note of the "product id" and "token" given by Maytapi. This needs to be shared with the Glific team.
+5. Copy of the `product id` and `token` given by `Maytapi` and then login to `Glific` account >> Go to `Settings` >> `Maytpayi` and paste the `product id` and `token id` and click on `save`.
 
 <img width="1276" alt="Screenshot 2024-11-18 at 3 52 57 PM" src="https://github.com/user-attachments/assets/86b89bfb-4d7d-414b-93b2-ad4305122093" />
+
+<img width="1277" alt="Screenshot 2024-11-18 at 3 57 07 PM" src="https://github.com/user-attachments/assets/59cf5745-bed1-4d88-8bb9-128816653c6e" />
+
 
 #### Step 2: Connecting Maytapi to Glific 
 
@@ -27,11 +40,8 @@
 
 Ex, if your glific domain is `www.xyz.glific.com` then use the maytapi webhook url becomes `https://api.xyz.glific.com/maytapi`
 
-2. In Glific, go to setting, go to Maytapi, add product and token id from the Maytapi
-<img width="1277" alt="Screenshot 2024-11-18 at 3 57 07 PM" src="https://github.com/user-attachments/assets/59cf5745-bed1-4d88-8bb9-128816653c6e" />
-
-4. Click on save
-5. This completes the set-up
+2. Click on save
+3. This completes the set-up
 
 You should be able to see the whatsapp groups option in the left panel that the phone number is part of and perform operations like send, receive and schedule message to a group of groups. 
 

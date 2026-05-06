@@ -3,15 +3,14 @@
     <tr>
       <td><b>6 minutes read</b></td>
       <td style={{ paddingLeft: 40 }}><b>Level: Advanced</b></td>
-      <td style={{ paddingLeft: 40 }}><b>Last Updated: December 2025</b></td>
+      <td style={{ paddingLeft: 40 }}><b>Last Updated: April 2026</b></td>
     </tr>
   </table>
 </h3>
 
-# Bhashini Integration in Glific: Speech-to-Text and Text-to-Speech
+# Speech-to-Text and Text-to-Speech Capabilities in Glific
 
-Bhashini is an initiative by the Government of India aimed at making digital services and the internet accessible in all Indian languages.
-The integration of Bhashini into Glific enables NGOs and organizations to offer real-time translation and transliteration capabilities in various Indian languages, ensuring effective communication with end users in their preferred languages.
+This integration in Glific enables NGOs and organizations to offer real-time translation and transliteration in various Indian languages, ensuring effective communication with end users in their preferred languages. Webhook names still reference "Bhashini," but since January 2026, Google Gemini 2.5 Pro has been the provider for both speech-to-text and text-to-speech capabilities.
 
 ---
 
@@ -21,11 +20,9 @@ The integration of Bhashini into Glific enables NGOs and organizations to offer 
 - Enabling users to respond in regional languages.
 - Transliteration helps convert text from one script to another, for example: writing Hindi words using English letters.
 
-Bhashini specializes in Indic language translation and transliteration, supporting a wide range of languages and dialects. You can learn more about the platform [here](https://bhashini.gov.in)
 
-**Note: Bhashini integration is still in an experimental phase. While it enables powerful multilingual speech capabilities, users may occasionally notice variations in response quality or stability. As development continues, these aspects are expected to improve over time.**
 
-## Steps to Integrate Bhashini Speech to Text in Glific Flows
+## Steps to use Speech to Text in Glific Flows
 
 `Speech-to-Text (STT)` function in Glific can be used to convert user-recorded audio messages into text. This is especially helpful when users prefer speaking over typing, or in cases where typing in local languages is difficult.
 
@@ -41,7 +38,7 @@ Bhashini specializes in Indic language translation and transliteration, supporti
 
 <img width="471" height="390" alt="Screenshot 2025-12-03 at 9 13 38 AM" src="https://github.com/user-attachments/assets/557ab322-145a-4c58-a213-29af62deaa79" />
 
-- In the `Function` field, select the predefined function name  `speech_to_text_with_bhasini`, from the dropdown. This function is used to call Bhashini API for converting audio to text.
+- In the `Function` field, select the predefined function name  `speech_to_text_with_bhasini`, from the dropdown. This function calls Gemini 2.5 pro model for converting audio to text.
 
 <img width="462" height="381" alt="Screenshot 2025-12-03 at 9 14 39 AM" src="https://github.com/user-attachments/assets/efa4170e-a782-4bab-89cd-189f254dff21" />
 
@@ -71,7 +68,7 @@ Add a `Send Message` node and paste this variable to show the converted text to 
 
 ---
 
-## Steps to Integrate Bhashini Text To Speech in Glific Flows
+## Steps to Integrate Text To Speech in Glific Flows
 
 Text-to-Speech (TTS) function in Glific can be used to generate a voice note for any text message, whether it's typed by the end user or written by NGO staff. This allows organizations to make information more accessible, especially for end users who prefer audio over text.
 
@@ -90,7 +87,7 @@ Text-to-Speech (TTS) function in Glific can be used to generate a voice note for
 
 <img width="472" height="394" alt="Screenshot 2025-12-03 at 9 20 23 AM" src="https://github.com/user-attachments/assets/fdae198c-9c27-40c5-8430-1ebc62851f67" />
 
-- In the `Function` field, select the predefined function name `nmt_tts_with_bhasini` from the dropdown. This function is used to call Bhashini API for converting text to audio.
+- In the `Function` field, select the predefined function name `nmt_tts_with_bhasini` from the dropdown. This function calls Gemini 2.5 pro model for converting text to audio.
 
 <img width="439" height="366" alt="Screenshot 2025-12-03 at 9 21 20 AM" src="https://github.com/user-attachments/assets/5466c6f8-4cc1-4545-a77b-03d5af145f25" />
 
@@ -133,19 +130,16 @@ Please note: In order to get the voice notes as outputs, the Glific instance mus
 
 ## Using OpenAI Speech Engine for Text-to-Speech
 
-Apart from Bhashini, the OpenAI speech engine can also be used to generate text-to-speech (TTS) responses. Since we are also experimenting with Bhashini, the response quality may sometimes be inconsistent or unreliable in a few languages.This is another alternative, users can try both options to see which gives better results for their audience and language preferences.
+Apart from Gemini, OpenAI can also be used as the speech engine to generate text-to-speech (TTS) responses. This is another alternative; users can try both options to see which gives better results for their audience and language preferences.
 
 ### How to configure:
-- In the `Function Body`, set the speech engine to `open-ai`.
-- Keep the remaining steps the same as those mentioned in the Speech-to-Text section above.
+- In the `Function Body`, set the speech engine to `open_ai`.
+
+Please note that, currently this alternative is supported only when both **the source and target language are the same**.
+
+- Keep the remaining steps the same as those mentioned in the Text-to-Speech section above.
   
-<img width="590" height="412" alt="Screenshot 2025-09-25 at 1 00 36 AM" src="https://github.com/user-attachments/assets/1111db5f-137d-4825-8ca9-d3e6a00fe53f" />
-
----
-
-### Blogs
-
-[Blog Link](https://glific.org/the-importance-of-mother-language-in-the-indian-development-sector/)
+<img width="624" height="433" alt="Screenshot 2025-12-31 at 4 42 02 PM" src="https://github.com/user-attachments/assets/61d2884a-4dc4-4e36-bbe6-f8aa895a0cc1" />
 
 ---
 
