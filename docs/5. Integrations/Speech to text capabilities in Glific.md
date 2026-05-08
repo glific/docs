@@ -25,7 +25,7 @@ Speech-to-Text (STT) can be used to convert user-recorded audio messages into te
 ### Step 3: Add a Call Webhook node.
 
 - By default, `Function` would be selected. Leave this as it is. 
-- In the Function field, select the predefined function name `speech_to_text`, from the dropdown. This function calls Gemini 2.5 model for converting audio to text.
+- In the Function field, select the predefined function name `speech_to_text`, from the dropdown. This function calls the Gemini 2.5 Pro model for converting audio to text.
 
 <img width="555" height="461" alt="Screenshot 2026-05-08 at 4 22 06 PM" src="https://github.com/user-attachments/assets/d5924491-af72-4b13-a4ce-7fe8664ea5c9" />
 
