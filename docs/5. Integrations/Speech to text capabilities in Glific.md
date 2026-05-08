@@ -8,7 +8,7 @@
   </table>
 </h3>
 
-# Speech-to-Text and Text-to-Speech Capabilities in Glific
+# Speech-to-Text Capabilities in Glific
 This integration in Glific enables NGOs and organizations to offer real-time transcriptions of incoming voice notes from the user in various Indian languages, and translation to a common language. Glific uses Google’s gemini models as default to accomplish these tasks 
 
 This integration can be especially useful in use cases requiring beneficiaries to respond in voice notes in their regional languages, and being able to have the voice notes transcribed in text format in a uniform common output language (ex- english)
