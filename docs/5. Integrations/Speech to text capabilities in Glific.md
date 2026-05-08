@@ -48,8 +48,8 @@ Add a Send Message node and paste this variable to show the converted text to th
 <img width="683" height="621" alt="Screenshot 2026-05-08 at 4 25 19 PM" src="https://github.com/user-attachments/assets/adb845df-0339-4ce3-a47b-e15aef8ce8be" />
 
 
-# Default behaviour for speech to text webhook calls 
-- By default, the speech to text function performs transcription of the incoming voice note only using `gemini-2.5-pro` model and gives a text output in the same language as the language of the incoming voice note.
+# Default behaviour for speech-to-text webhook calls 
+- By default, the speech-to-text function performs transcription of the incoming voice note only using the `gemini-2.5-pro` model and gives a text output in the same language as the language of the incoming voice note.
 
 # Additional parameters for performing transcription + translation 
 To get the output text of the voice notes translated to a desired output language (ex- hindi or english) an additional parameter specifying `output_language` can be passed like shown below 
