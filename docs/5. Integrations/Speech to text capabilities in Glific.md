@@ -63,7 +63,7 @@ By specifying the `output_language` parameter, this configuration ensures that a
 
 
 ## Using other providers 
-Apart from Gemini which is the default speech engine used by Glific. Eleven Labs can be used as a provider. This can be configured as the provider to use for transcription purposes be explicitly providing additional parameters of `provider` and `model` 
+Apart from Gemini which is the default speech engine used by Glific, Eleven Labs can be used as a provider. This can be configured as the provider to use for transcription purposes by explicitly providing additional parameters of `provider` and `model`.
 
 ### Eleven Labs
 
