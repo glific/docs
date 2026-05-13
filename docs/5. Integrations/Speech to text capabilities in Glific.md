@@ -59,7 +59,7 @@ Expected values for `output_langauge` parameter is the language name ex- `hindi`
 <img width="676" height="477" alt="Screenshot 2026-05-08 at 4 26 18 PM" src="https://github.com/user-attachments/assets/6e35b738-182c-4de2-99a7-1c1017d72dd7" />
 
 
-By specifying the `output_language` parameter, this configuration ensures that all voice notes are transcribed and the final text is available consistently in the same language, no matter the language of the incoming voice note. 
+By specifying the `output_language` parameter, this configuration ensures that all voice notes are transcribed and the final text is available consistently in the specified language, no matter the language of the incoming voice note. 
 
 
 ## Using other providers 
@@ -75,7 +75,7 @@ To reference the eleven labs provider, pass the following additional parameters 
 ```
 <img width="678" height="484" alt="Screenshot 2026-05-08 at 4 26 45 PM" src="https://github.com/user-attachments/assets/9f35331c-7f39-44ad-9471-8042281acfa8" />
 
-Eleven labs integration does not support translation to any specified output language.
+**Eleven labs integration does not support translation to any specified output language.**
 
 ## Main differences between Gemini and Eleven Labs:
 #### Translation Support
