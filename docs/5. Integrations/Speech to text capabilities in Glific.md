@@ -16,7 +16,7 @@ This integration can be especially useful in use cases requiring beneficiaries t
 # Steps to use Speech to Text in Glific Flows
 Speech-to-Text (STT) can be used to convert user-recorded audio messages into text. This is especially helpful when users prefer speaking over typing, or in cases where typing in local languages is difficult.
 
-## Step 1: Create a Send message node directing users to send their responses as audio messages, based on their preference.
+### Step 1: Create a Send message node directing users to send their responses as audio messages, based on their preference.
 
 ### Step 2: In the Wait for response node, select has audio as the message response type. Also, give a Result Name. In the screenshot below, speech is used as the result name.
 
