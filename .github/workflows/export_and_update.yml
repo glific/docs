@@ -1,7 +1,7 @@
 name: Consolidate and Update Documentation
 
 on:
-  push:
+  pull_request:
     branches: [main]
 
 jobs:
@@ -114,3 +114,11 @@ jobs:
                   file_id=file_id )
 
           EOF
+
+      # Step 6: Upload merged documentation as artifact
+      - name: Upload merged documentation
+        uses: actions/upload-artifact@v4
+        with:
+          name: merged-documentation
+          path: merged_documentation.md
+          retention-days: 30
