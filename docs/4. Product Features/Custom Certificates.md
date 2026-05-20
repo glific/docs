@@ -18,9 +18,9 @@ This feature enables the organization using Glific to provide personalized certi
 
 Using this feature organizations can upload multiple certificate or badge templates, and share these for the contacts having their personalized information such as "name", or "course participation", "course completion" details or any other such contact specific details be printed on the certificates and have the certificate shared with the contacts through the flows.
 
-## Pre-requisites
+In effect, this feature also enables users to create visual gamified elements such as leaderboards, progress ring/bar, progression to milestones etc, that can be sent out through flows. 
 
-Custom certificates feature is released as a trial feature and as a result cannot be accessed by all orgs using Glific out of the box. For being part of the beta program and trying out this feature, please write to tejas@glific.org. The feature has to be enabled for a particular account in order to access the screens where certificate templates can be added in the Glific platform.
+## Pre-requisites
 
 ### Google Cloud Studio Setup
 

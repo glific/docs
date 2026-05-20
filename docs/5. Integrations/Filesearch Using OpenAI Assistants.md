@@ -4,7 +4,7 @@
     <tr>
       <td><b>6 minutes read</b></td>
       <td style={{ paddingLeft: 40 }}><b> Level: Advanced</b></td>
-      <td style={{ paddingLeft: 40 }}><b>Last Updated: December 2025</b></td>
+      <td style={{ paddingLeft: 40 }}><b>Last Updated: April 2026</b></td>
     </tr>
   </table>
 </h3>
@@ -27,42 +27,63 @@ Glific’s File Search using OpenAI Assistant enables users to upload documents 
 
 ---
 
-## How to Create an OpenAI Assistant in Glific
+## How to Create an Assistant in Glific
 
 #### Step 1: Create a new AI Assistant
 Click on `AI Assistant` from the left sidebar, then select `Create Assistant` to generate a blank assistant.
 
-<img width="633" height="367" alt="Screenshot 2025-08-09 at 12 35 30 AM" src="https://github.com/user-attachments/assets/6f33287c-1dd1-45af-8e57-f58c36b81cff" />
+<img width="1464" height="833" alt="Screenshot 2026-04-09 at 2 26 06 PM" src="https://github.com/user-attachments/assets/74d8515e-aed1-4267-95ea-fe33b421ce9c" />
 
 
 #### Step 2: Fill in the Assistant Details
 
 Define the following parameters:
 
-- Choose the most relevant model from the first drop down.
 - Provide a name to the assistant.
+
+- Choose the model from the drop-down list.
+
+<img width="490" height="207" alt="image" src="https://github.com/user-attachments/assets/29577251-c967-438a-b2d4-ffb702ffe650" />
+
+
 - Provide a system prompt in the `Instructions` field.  
   *[Click Here](https://glific.org/a-simple-guide-to-using-large-language-models/#prompt) to read more on prompt engineering.*
-- Files (PDF, DOCX, etc.) can be uploaded by clicking on `Manage Files`. These files will be utilized by the assistant to generate responses.  
-  *[Click Here](https://platform.openai.com/docs/assistants/tools/file-search/supported-files#supported-files) to know the supported file formats by the OpenAI APIs.*
-- Set the `Temperature` (between 0 to 2). A higher value increases creativity/randomness.  
+- Files (.csv, .doc, .docx, .html, .java, .md, .pdf, .pptx, .txt) can be uploaded by clicking on `Manage Files`. 
+These files will be utilized by the assistant to generate responses and each file will take approx 15 secs to upload.  
+  
+- Set the `Temperature` (between 0 to 1). A higher value increases creativity/randomness.  
   *Recommended: keep temperature at 0.*
 
  **Note:** The quality of the bot’s response depends on the prompt. Give appropriate prompts based on your use case.
 
 
 #### Step 3: Save Your Assistant
-Once the files are added, click on `Add`. This completes the Assistant setup.  
-Click on the `Save` button after making any changes.
-<img width="656" height="405" alt="Screenshot 2025-08-09 at 12 43 48 AM" src="https://github.com/user-attachments/assets/f3e31a36-1c8e-4c2f-91d5-954c22fcb7d9" />
+
+- Click on the upload files button to add files. Remember that each file can be uploaded one by one.
+
+<img width="474" height="309" alt="image" src="https://github.com/user-attachments/assets/f43bc8aa-a30f-4615-af7a-9c96d1d82bc2" />
+
+- Once the files are added, click on `Save`. This will show the status of the Assistant setup. 
+    - Ready — assistant is live and usable
+    - In Progress — a new version is being prepared
+
+
+<img width="1033" height="635" alt="image" src="https://github.com/user-attachments/assets/8087fe11-4022-4e5d-8751-6a3124e8147c" />
 
 
 #### Step 4: Copy the Assistant ID
-Once created, copy the `Assistant ID` shown below the assistant name.  
-This ID will be used in the webhook nodes in the flow editor.
 
-<img width="357" height="408" alt="Screenshot 2025-08-09 at 12 46 25 AM" src="https://github.com/user-attachments/assets/8d7556f0-827a-44ea-a2e5-881f2b61c2e1" />
+- Once created, copy the `Assistant ID` shown below the assistant name. 
 
+- This ID will be used in the webhook nodes in the flow editor.
+
+<img width="650" height="748" alt="Screenshot 2026-04-09 at 2 43 40 PM" src="https://github.com/user-attachments/assets/6be25951-9c1f-417d-ae76-2b9735d361ca" />
+
+**Please Note:** Assistants created before 10 March 2026 that include a Knowledge Base will have a Clone button. This allows you to create a copy of the assistant, make edits, add a new files, and reuse it as needed.
+Assistants created without a Knowledge Base will not have the Clone option available.
+If you need to update such assistants, you may have to create a new one with the required Knowledge Base configuration.
+
+<img width="524" height="675" alt="image" src="https://github.com/user-attachments/assets/e68cda40-fadd-46cd-bb1b-c988a612731d" />
 
 ## Using the OpenAI Assistant in Floweditor
 The following sections explain how to use an assistant to answer questions or create conversations.
