@@ -91,7 +91,7 @@ Open the results CSV in a Google spreadsheet to perform further analysis and int
 
 Through comparing the golden answer (ground_truth_answer) with the generated answers (llm_answer), isolating the rows with lower scores (less than 0.3), you should be able to understand what to change in your assistant (either the prompt or the knowledge base) to get better answers from the AI assistant. 
 
-In the results csv "question_id" is referring to the question number from the golden QA list. This means question id of the question in the first roq of the Golden QA csv will be 1 and so on. 
+In the results csv "question_id" is referring to the question number from the golden QA list. This means question id of the question in the first row of the Golden QA csv will be 1 and so on.
 
 ## Understanding Cosine Similarity
 The Cosine Similarity score tells you how meaningfully similar the AI Assistant's actual answers were to the expected "golden" answers. You can hover over the ⓘ icon next to the column header to see an explanation for what cosine similarity means.
