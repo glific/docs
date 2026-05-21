@@ -50,7 +50,7 @@ Under the Select Golden QA section, you have two options:
 
 Duplication factor is the number of times the golden questions are repeated in the given dataset while running the evaluation. Allowed values 1-5. 
 
-Tip: Your CSV must follow the format question, answer with one pair per row. Access the template from the link [here](https://docs.google.com/spreadsheets/d/198UpOMeU53s9O-fwbIl0DIJLuD3l24jgkq74CoDfSQM/copy) 
+Tip: Your CSV must follow the format question, answer with one pair per row. Access the [Golden QA CSV template](https://docs.google.com/spreadsheets/d/198UpOMeU53s9O-fwbIl0DIJLuD3l24jgkq74CoDfSQM/copy) to get started.
 
 #### Step 3: Select an AI Assistant
 Click the "Search or select an AI assistant" dropdown under AI Assistant and choose the specific assistant (and its version) you want to evaluate.
