@@ -39,7 +39,7 @@ You will be taken to the Create AI Evaluation page.
 
 <img width="909" height="773" alt="Screenshot 2026-05-21 at 11 02 42 AM" src="https://github.com/user-attachments/assets/239207ab-1459-4384-b62a-b33e18a06ff0" />
 
-#### Step 2: Select or Upload a Golden QA Dataset
+### Step 2: Select or Upload a Golden QA Dataset
 Under the Select Golden QA section, you have two options:
 <img width="703" height="764" alt="Screenshot 2026-05-21 at 11 07 46 AM" src="https://github.com/user-attachments/assets/9457aea0-dccc-4181-92f4-74a5902588c3" />
 
@@ -52,14 +52,14 @@ Duplication factor is the number of times the golden questions are repeated in t
 
 Tip: Your CSV must follow the format question, answer with one pair per row. Access the [Golden QA CSV template](https://docs.google.com/spreadsheets/d/198UpOMeU53s9O-fwbIl0DIJLuD3l24jgkq74CoDfSQM/copy) to get started.
 
-#### Step 3: Select an AI Assistant
+### Step 3: Select an AI Assistant
 Click the "Search or select an AI assistant" dropdown under AI Assistant and choose the specific assistant (and its version) you want to evaluate.
 
 <img width="940" height="832" alt="Screenshot 2026-05-21 at 11 08 55 AM" src="https://github.com/user-attachments/assets/357aee0f-1c06-4fe7-a245-5ac8173f0f02" />
 
 Note: Each AI Assistant can have multiple versions. Make sure you select the correct version you want to test — this is especially useful when comparing how a newer version performs versus an older one.
 
-#### Step 4: Enter an Evaluation Name
+### Step 4: Enter an Evaluation Name
 Under Evaluation Details, type a unique, descriptive name for this evaluation run in the Evaluation Name field.
 <img width="804" height="763" alt="Screenshot 2026-05-21 at 11 10 21 AM" src="https://github.com/user-attachments/assets/b8c04eb0-613c-4b8b-bdf9-d90640df63a8" />
 
@@ -67,7 +67,7 @@ Under Evaluation Details, type a unique, descriptive name for this evaluation ru
 Tip: Use a name that helps you identify the test later, such as v2-assistant-may-test or knowledge-base-check-q1.
 
 
-#### Step 5: Run the Evaluation
+### Step 5: Run the Evaluation
 Click the "Run Evaluation" button to start the evaluation.
 
 Glific will now send each question from your Golden QA dataset to the selected AI Assistant and compare the responses against the expected answers. The evaluation will appear in the AI Evaluations list with a "**Completed**" status once it finishes. Time taken to complete the evaluation run depends on the number of golden questions and answers. A good estimation of time range would be 15-30 mins, can even go to 45 mins. 
