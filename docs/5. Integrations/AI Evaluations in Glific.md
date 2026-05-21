@@ -85,7 +85,7 @@ Each evaluation row shows:
 Click the "Download Results" button on any completed evaluation to download a detailed CSV file with a row-by-row breakdown of each question, the AI's actual response, the expected answer, and the individual similarity score. 
 
 
-Open the results CSV in a google spreadsheet to perform further analysis and interpret the results of the evaluation. 
+Open the results CSV in a Google spreadsheet to perform further analysis and interpret the results of the evaluation.
 
 <img width="654" height="393" alt="Screenshot 2026-05-21 at 11 19 17 AM" src="https://github.com/user-attachments/assets/46aeab60-7da7-4c44-8dec-8b7534ef1348" />
 
