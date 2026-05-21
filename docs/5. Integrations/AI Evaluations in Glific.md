@@ -31,7 +31,7 @@ The page shows a table of all past evaluations with the following columns:
 - Actions — A button to download the detailed results.
 
 ## Part 1: Running an AI Evaluation
-#### Step 1: Click "+ Create AI Evaluation"
+### Step 1: Click "+ Create AI Evaluation"
 From the AI Evaluations page, click the + Create AI Evaluation button in the top right corner.
 <img width="1214" height="698" alt="Screenshot 2026-05-21 at 10 57 19 AM" src="https://github.com/user-attachments/assets/f0659836-b8ab-413b-9159-d8fe10eab271" />
 
