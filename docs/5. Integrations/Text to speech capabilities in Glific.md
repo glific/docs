@@ -96,7 +96,6 @@ Please note: **`provider` and `model` must always be specified together.** If yo
 
 Here, the `model` or `voice` parameters can be mixed and matched from the values mentioned in the table above.
 
-**Note:** It is possible to use ElevenLabs, Sarvam and other providers can be used through this webhook instead of Google Gemini  if the organization has acquired credits from any of these providers. Reach out to the Glific team at support@glific.org to know more.
 
 #### Supported Languages
 
@@ -113,3 +112,5 @@ Here, the `model` or `voice` parameters can be mixed and matched from the values
 - Odia (works best with elevenlabs)
 - Sindhi 
 
+## Using other providers 
+It is possible to use ElevenLabs, Sarvam and other providers, through this webhook instead of Google Gemini, if the organization has acquired credits from any of these providers. Reach out to the Glific team at support@glific.org to know more.
