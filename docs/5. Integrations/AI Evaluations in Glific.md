@@ -24,7 +24,7 @@ Before running an AI Evaluation, make sure you have:
 <img width="1408" height="771" alt="Screenshot 2026-05-21 at 10 50 06 AM" src="https://github.com/user-attachments/assets/4601f2e2-23b0-49f2-9507-fc8fbbe334ca" />
 
 The page shows a table of all past evaluations with the following columns:
-- Evaluation Name — The name you gave the evaluation, along with the AI Assistant version and Golden QA dataset used along with its duplication factor.extra “.”.
+- Evaluation Name — The name you gave the evaluation, along with the AI Assistant version and Golden QA dataset used along with its duplication factor.
 - Status — Whether the evaluation is Completed, Running, or Failed.
 - Cosine Similarity — A score indicating how semantically close the AI's answers were to the expected answers (more on this below).
 - Completed at — The date and time when the evaluation finished.
