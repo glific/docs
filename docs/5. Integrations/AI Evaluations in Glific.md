@@ -16,7 +16,7 @@ AI Evaluations allow your organization to test and measure how accurately your A
 1. Navigate to `AI Toolkit` -> `AI Evals`, you should see the button to `Request Access`
 <img alt="Screenshot 2026-06-12 at 10 31 40 AM" src="https://github.com/user-attachments/assets/36b38dc8-77cb-40e8-8e2d-cfe35f89ab8d" />
 
-2. CLick on the button to raise the request to enable the feature
+2. Click on the button to raise the request to enable the feature
 3. Glific team will enable this feature within 24 hours.
 4. Once enabled the `AI Evals` page is visible 
 
