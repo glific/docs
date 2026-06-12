@@ -12,6 +12,14 @@
 
 AI Evaluations allow your organization to test and measure how accurately your AI Assistant responds to questions, by comparing its answers against a trusted set of "golden" question-answer pairs. This helps NGOs ensure their AI Assistants are performing well and giving the right information to beneficiaries before deploying them at scale.
 
+## Raising the request
+1. Navigate to `AI Toolkit` -> `AI Evals`, you should see the button to `Request Access`
+<img alt="Screenshot 2026-06-12 at 10 31 40 AM" src="https://github.com/user-attachments/assets/36b38dc8-77cb-40e8-8e2d-cfe35f89ab8d" />
+
+2. CLick on the button to raise the request to enable the feature
+3. Glific team will enable this feature within 24 hours.
+4. Once enabled the `AI Evals` page is visible 
+
 ## Prerequisites
 Before running an AI Evaluation, make sure you have:
 1. At least one AI Assistant configured in Glific (see: AI Assistants [documentation](https://glific.github.io/docs/docs/Integrations/Creating%20and%20modifying%20assistants%20in%20Glific))
@@ -21,7 +29,7 @@ Before running an AI Evaluation, make sure you have:
 1. Log in to your Glific account.
 2. On the left sidebar, click on `AI Toolkit`
 3. Click on `AI Evals`
-<img width="1408" height="771" alt="Screenshot 2026-05-21 at 10 50 06 AM" src="https://github.com/user-attachments/assets/4601f2e2-23b0-49f2-9507-fc8fbbe334ca" />
+<img  alt="Screenshot 2026-05-21 at 10 50 06 AM" src="https://github.com/user-attachments/assets/4601f2e2-23b0-49f2-9507-fc8fbbe334ca" />
 
 The page shows a table of all past evaluations with the following columns:
 - Evaluation Name — The name you gave the evaluation, along with the AI Assistant version and Golden QA dataset used along with its duplication factor.
@@ -33,20 +41,20 @@ The page shows a table of all past evaluations with the following columns:
 ## Part 1: Running an AI Evaluation
 ### Step 1: Click "+ Create AI Evaluation"
 From the AI Evaluations page, click the + Create AI Evaluation button in the top right corner.
-<img width="1214" height="698" alt="Screenshot 2026-05-21 at 10 57 19 AM" src="https://github.com/user-attachments/assets/f0659836-b8ab-413b-9159-d8fe10eab271" />
+<img  alt="Screenshot 2026-05-21 at 10 57 19 AM" src="https://github.com/user-attachments/assets/f0659836-b8ab-413b-9159-d8fe10eab271" />
 
 You will be taken to the Create AI Evaluation page.
 
-<img width="909" height="773" alt="Screenshot 2026-05-21 at 11 02 42 AM" src="https://github.com/user-attachments/assets/239207ab-1459-4384-b62a-b33e18a06ff0" />
+<img  alt="Screenshot 2026-05-21 at 11 02 42 AM" src="https://github.com/user-attachments/assets/239207ab-1459-4384-b62a-b33e18a06ff0" />
 
 ### Step 2: Select or Upload a Golden QA Dataset
 Under the Select Golden QA section, you have two options:
-<img width="703" height="764" alt="Screenshot 2026-05-21 at 11 07 46 AM" src="https://github.com/user-attachments/assets/9457aea0-dccc-4181-92f4-74a5902588c3" />
+<img alt="Screenshot 2026-05-21 at 11 07 46 AM" src="https://github.com/user-attachments/assets/9457aea0-dccc-4181-92f4-74a5902588c3" />
 
 - Option A — Use an existing dataset: Click the "Search or select a Golden QA dataset" dropdown and choose from your previously uploaded datasets.
 - Option B — Upload a new dataset: Click the "Upload Golden QA" button to upload a new CSV file. Provide the duplication factor for the uploaded data set. 
 
-<img width="615" height="481" alt="Screenshot 2026-05-21 at 11 07 14 AM" src="https://github.com/user-attachments/assets/8371611a-12d0-4ff7-a34f-b44ce9ab313b" />
+<img alt="Screenshot 2026-05-21 at 11 07 14 AM" src="https://github.com/user-attachments/assets/8371611a-12d0-4ff7-a34f-b44ce9ab313b" />
 
 Duplication factor is the number of times the golden questions are repeated in the given dataset while running the evaluation. Allowed values 1-5. 
 
@@ -55,13 +63,13 @@ Tip: Your CSV must follow the format question, answer with one pair per row. Acc
 ### Step 3: Select an AI Assistant
 Click the "Search or select an AI assistant" dropdown under AI Assistant and choose the specific assistant (and its version) you want to evaluate.
 
-<img width="940" height="832" alt="Screenshot 2026-05-21 at 11 08 55 AM" src="https://github.com/user-attachments/assets/357aee0f-1c06-4fe7-a245-5ac8173f0f02" />
+<img alt="Screenshot 2026-05-21 at 11 08 55 AM" src="https://github.com/user-attachments/assets/357aee0f-1c06-4fe7-a245-5ac8173f0f02" />
 
 Note: Each AI Assistant can have multiple versions. Make sure you select the correct version you want to test — this is especially useful when comparing how a newer version performs versus an older one.
 
 ### Step 4: Enter an Evaluation Name
 Under Evaluation Details, type a unique, descriptive name for this evaluation run in the Evaluation Name field.
-<img width="804" height="763" alt="Screenshot 2026-05-21 at 11 10 21 AM" src="https://github.com/user-attachments/assets/b8c04eb0-613c-4b8b-bdf9-d90640df63a8" />
+<img  alt="Screenshot 2026-05-21 at 11 10 21 AM" src="https://github.com/user-attachments/assets/b8c04eb0-613c-4b8b-bdf9-d90640df63a8" />
 
 
 Tip: Use a name that helps you identify the test later, such as v2-assistant-may-test or knowledge-base-check-q1.
@@ -87,7 +95,7 @@ Click the "Download Results" button on any completed evaluation to download a de
 
 Open the results CSV in a Google spreadsheet to perform further analysis and interpret the results of the evaluation.
 
-<img width="654" height="393" alt="Screenshot 2026-05-21 at 11 19 17 AM" src="https://github.com/user-attachments/assets/46aeab60-7da7-4c44-8dec-8b7534ef1348" />
+<img  alt="Screenshot 2026-05-21 at 11 19 17 AM" src="https://github.com/user-attachments/assets/46aeab60-7da7-4c44-8dec-8b7534ef1348" />
 
 Through comparing the golden answer (ground_truth_answer) with the generated answers (llm_answer), isolating the rows with lower scores (less than 0.3), you should be able to understand what to change in your assistant (either the prompt or the knowledge base) to get better answers from the AI assistant. 
 
@@ -122,7 +130,7 @@ Each dataset is a CSV file containing a set of questions paired with their ideal
 ## How to Use It
 **Uploading a Golden QA Dataset** Golden QA datasets can be uploaded from the Create AI Evaluation form (accessed via the `+ Create AI Evaluation` button on the AI Evaluations tab). On that form, click Upload Golden QA to upload a new CSV file. A template is available via link on the create form to help you get started quickly.
 
-<img width="689" height="393" alt="Screenshot 2026-05-21 at 11 24 42 AM" src="https://github.com/user-attachments/assets/643af63b-d8eb-4092-a5c5-a4082358b644" />
+<img  alt="Screenshot 2026-05-21 at 11 24 42 AM" src="https://github.com/user-attachments/assets/643af63b-d8eb-4092-a5c5-a4082358b644" />
 Once uploaded, the dataset will appear in the Golden QA tab and remain available for future evaluations.
 
 **Browsing and Searching Datasets** On the Golden QA tab, all previously uploaded datasets are listed in a table sorted by creation date (newest first). Use the Search bar at the top right to filter datasets by name if you have a large library. You can also click the Created On column header to toggle the sort order.
