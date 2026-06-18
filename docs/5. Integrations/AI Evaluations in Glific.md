@@ -3,7 +3,7 @@
   <tr>
     <td><b>3 minutes read</b></td>
     <td style={{ paddingLeft: '40px' }}><b>Level: Advanced</b></td>
-    <td style={{ paddingLeft: '40px' }}><b>Last Updated: May 2026</b></td>
+    <td style={{ paddingLeft: '40px' }}><b>Last Updated: June 2026</b></td>
   </tr>
 </table>
 </h4>
@@ -18,7 +18,7 @@ AI Evaluations allow your organization to test and measure how accurately your A
 
 2. Click on the button to raise the request to enable the feature
 3. Glific team will enable this feature within 24 hours.
-4. Once enabled the `AI Evals` page is visible 
+4. Once enabled the `AI Evals` page is visible after logging in the platform. No other notification outside the Glific platform will be sent. 
 
 ## Prerequisites
 Before running an AI Evaluation, make sure you have:
