@@ -96,34 +96,8 @@ Please note: **`provider` and `model` must always be specified together.** If yo
 
 Here, the `model` or `voice` parameters can be mixed and matched from the values mentioned in the table above.
 
-## Using Elevenlabs model and voices as alternative to google gemini
-- **Provider Name**: `elevenlabs`
-### ElevenLabs TTS Models
-| Model Name | Description |
-|---|---|
-| `eleven_v3` | Latest ElevenLabs TTS model | 
 
-### ElevenLabs Voices
-| Voice Name | Characteristics | Gender | Best For |
-|---|---|---|---|
-| **Sarah** | Clear, professional, warm | Female | Professional, educational content |
-| **George** | Deep, authoritative, formal | Male | Formal documents, corporate content |
-| **Callum** | Bright, friendly, youthful | Male | Casual, conversational content |
-| **Liam** | Neutral, clear, balanced | Male | General purpose content |
-
-```
-"provider" : "elevenlabs",
-"model" : "eleven_v3",
-"voice" : "Liam"
-```
-Above are the additional parameters that can be passed via the function body to explicitly call elevenlabs' model and voices.
-
-<img width="620" height="441" alt="Screenshot 2026-04-27 at 12 10 26 PM" src="https://github.com/user-attachments/assets/1987831c-28a0-44f5-ab22-aa243bed0d2d" />
-
-Please note: **`provider` and `model` must always be specified together.** If you set one, you must set the other — specifying only a provider or only a model will cause a webhook error.
-
-
-#### Google (Gemini) & ElevenLabs Supported Languages
+#### Supported Languages
 
 - English
 - Hindi
@@ -138,3 +112,5 @@ Please note: **`provider` and `model` must always be specified together.** If yo
 - Odia (works best with elevenlabs)
 - Sindhi 
 
+## Using other providers 
+It is possible to use ElevenLabs, Sarvam and other providers, through this webhook instead of Google Gemini, if the organization has acquired credits from any of these providers. Reach out to the Glific team at support@glific.org to know more.
