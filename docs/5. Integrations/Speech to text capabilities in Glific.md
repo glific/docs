@@ -63,33 +63,4 @@ By specifying the `output_language` parameter, this configuration ensures that a
 
 
 ## Using other providers 
-Apart from Gemini which is the default speech engine used by Glific, Eleven Labs can be used as a provider. This can be configured as the provider to use for transcription purposes by explicitly providing additional parameters of `provider` and `model`.
-
-### Eleven Labs
-
-To reference the eleven labs provider, pass the following additional parameters in the webhook body
-```
-"provider":"elevenlabs",
-"model":"scribe_v2"
-
-```
-<img width="678" height="484" alt="Screenshot 2026-05-08 at 4 26 45 PM" src="https://github.com/user-attachments/assets/9f35331c-7f39-44ad-9471-8042281acfa8" />
-
-**Eleven labs integration does not support translation to any specified output language.**
-
-## Main differences between Gemini and Eleven Labs:
-#### Translation Support
-
-- Gemini: Full translation support - can transcribe audio in one language and translate to another (e.g., Hindi audio → English text)
-- ElevenLabs: No translation - only transcribes audio in its original language. Good for transcription-only use cases
-
-#### Language Support & Flexibility
-
-- Gemini: Supports auto-language detection AND explicit language specification. More flexible for mixed-language or unknown audio
-- ElevenLabs: Limited to 13 specific languages (mostly Indic languages + English). Requires knowing or auto-detecting the language beforehand
-
-## Decision Guide:
-
-- Choose ElevenLabs if: You only need simple, fast transcription of supported languages (mainly Indic languages) and want a lightweight solution
-- Else continue to stick with the default model of gemini provided by Glific 
-
+It is possible to use ElevenLabs, Sarvam and other providers, through this webhook instead of Google Gemini, if the organization has acquired credits from any of these providers. Reach out to the Glific team at support@glific.org to know more.
