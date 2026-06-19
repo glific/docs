@@ -1,0 +1,67 @@
+name: hsm-templates
+output_dir: hsm-templates
+flows:
+  - name: hsm_list
+    description: Templates list page with filter bar and action buttons
+    required: true
+    steps:
+      - navigate: /template
+      - wait: '[data-testid="createTemplate"]'
+      - snap: hsm-templates_list.png
+
+  - name: hsm_list_filters
+    description: Category and tag filter dropdowns visible in the filter bar
+    required: false
+    steps:
+      - navigate: /template
+      - wait: '[data-testid="categoryFilter"]'
+      - snap: hsm-templates_list_filters.png
+
+  - name: hsm_create_form
+    description: Create HSM Template page — full two-column view
+    required: false
+    steps:
+      - navigate: /template-v2/add
+      - wait: '[data-testid="shortcodeInput"]'
+      - snap: hsm-templates_create_form.png
+
+  - name: hsm_create_category
+    description: Category selection cards (Utility / Marketing / Authentication)
+    required: false
+    steps:
+      - navigate: /template-v2/add
+      - wait: '[data-testid="category-UTILITY"]'
+      - snap: hsm-templates_create_category.png
+
+  - name: hsm_create_body
+    description: Message body field with formatting toolbar and Add Variable button
+    required: false
+    steps:
+      - navigate: /template-v2/add
+      - wait: '[data-testid="bodyInput"]'
+      - snap: hsm-templates_create_body.png
+
+  - name: hsm_create_buttons
+    description: Interactive Buttons card with button-type toggle cards
+    required: false
+    steps:
+      - navigate: /template-v2/add
+      - wait: '[data-testid="btnType-CALL_TO_ACTION"]'
+      - snap: hsm-templates_create_buttons.png
+
+  - name: hsm_create_media
+    description: Media Attachment card with Image / Document / Video options
+    required: false
+    steps:
+      - navigate: /template-v2/add
+      - wait: '[data-testid="media-IMAGE"]'
+      - snap: hsm-templates_create_media.png
+
+  - name: hsm_shortcode_available
+    description: Element Name field showing the available status indicator
+    required: false
+    steps:
+      - navigate: /template-v2/add
+      - wait: '[data-testid="shortcodeInput"]'
+      - click: '[data-testid="shortcodeInput"]'
+      - snap: hsm-templates_shortcode_check.png
