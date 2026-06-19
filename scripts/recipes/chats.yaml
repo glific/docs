@@ -1,0 +1,30 @@
+name: chats
+output_dir: chats
+flows:
+  - name: chat_interface
+    description: The main chat interface with contact list
+    required: true
+    steps:
+      - navigate: /chat
+      - wait: '.chat-container, [class*="ChatInterface"]'
+      - snap: chats_interface.png
+
+  - name: chat_window
+    description: An open chat conversation
+    required: false
+    steps:
+      - navigate: /chat
+      - wait: '[class*="ContactCard"], [class*="contactCard"]'
+      - click: '[class*="ContactCard"]:first-child, [class*="contactCard"]:first-child'
+      - sleep: 1000
+      - snap: chats_conversation_window.png
+
+  - name: chat_shortcuts
+    description: The Speed Send / Template shortcuts at the bottom of the chat
+    required: false
+    steps:
+      - navigate: /chat
+      - wait: '[class*="ContactCard"], [class*="contactCard"]'
+      - click: '[class*="ContactCard"]:first-child, [class*="contactCard"]:first-child'
+      - wait_text: Speed Send
+      - snap: chats_shortcuts_bar.png
