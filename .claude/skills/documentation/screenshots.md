@@ -73,7 +73,29 @@ flows:
 | `wait_text: 'text'` | Wait for visible text to appear on the page |
 | `click: 'selector'` | Click a CSS selector |
 | `snap: filename.png` | Take a full-viewport screenshot |
+| `snap: filename.png` + `element: 'selector'` | Crop to that element only — hides sidebar, nav, unrelated UI |
 | `sleep: 500` | Wait N milliseconds (use sparingly, prefer `wait`) |
+
+### Element cropping
+
+**Always add `element:` when the screenshot should show only one section.** This keeps docs focused and avoids capturing sidebar/nav that may change independently.
+
+```yaml
+# Full viewport — only for canvas/editor views where context matters
+- snap: flows_editor_canvas.png
+
+# Cropped to element — use for lists, forms, dialogs, cards
+- snap: flows_list.png
+  element: '[data-testid="flow-list"]'
+
+- snap: flows_create_dialog.png
+  element: '[role="dialog"]'
+```
+
+Common element selectors:
+- Dialog/modal → `[role="dialog"]`
+- Named section → `[data-testid="..."]`
+- Main content only (no sidebar) → `main`
 
 ### Selector strategy
 

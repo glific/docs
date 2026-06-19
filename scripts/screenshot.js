@@ -79,8 +79,13 @@ async function runStep(page, step, outputDir) {
 
   } else if (step.snap !== undefined) {
     const snapPath = path.join(outputDir, step.snap);
-    await page.screenshot({ path: snapPath, fullPage: false });
-    console.log(`    ✓ ${step.snap}`);
+    if (step.element) {
+      // Crop to a specific element — hides sidebar, nav, and unrelated UI
+      await page.locator(step.element).screenshot({ path: snapPath });
+    } else {
+      await page.screenshot({ path: snapPath, fullPage: false });
+    }
+    console.log(`    ✓ ${step.snap}${step.element ? ` (cropped to ${step.element})` : ''}`);
   }
 }
 
