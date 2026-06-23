@@ -46,9 +46,9 @@ if (!GLIFIC_PHONE || !GLIFIC_PASSWORD) {
 
 async function authenticate(page) {
   console.log("  Authenticating...");
-  await page.goto(`${GLIFIC_URL}/login`, { waitUntil: "domcontentloaded" });
+  await page.goto(`${GLIFIC_URL}/login`, { waitUntil: "networkidle" });
   await page.waitForSelector('[data-testid="AuthContainer"]', {
-    timeout: 20000,
+    timeout: 10000,
   });
 
   // PhoneInput renders a text input with name="phoneNumber"
@@ -64,7 +64,7 @@ async function authenticate(page) {
 async function runStep(page, step, outputDir) {
   if (step.navigate !== undefined) {
     await page.goto(`${GLIFIC_URL}${step.navigate}`, {
-      waitUntil: "domcontentloaded",
+      waitUntil: "networkidle",
     });
   } else if (step.wait !== undefined) {
     await page.waitForSelector(step.wait, { timeout: 8000 });
@@ -88,15 +88,6 @@ async function runStep(page, step, outputDir) {
     }
     console.log(
       `    ✓ ${step.snap}${step.element ? ` (cropped to ${step.element})` : ""}`
-    );
-    if (step.element) {
-      // Screenshot only the specified element, not the full viewport
-      await page.locator(step.element).screenshot({ path: snapPath });
-    } else {
-      await page.screenshot({ path: snapPath, fullPage: false });
-    }
-    console.log(
-      `    ✓ ${step.snap}${step.element ? ` (${step.element})` : ""}`
     );
   }
 }

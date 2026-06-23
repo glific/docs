@@ -1,4 +1,12 @@
-> ### **5 minute read &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; `Beginner`**
+<h3>
+ <table>
+  <tr>
+    <td><b>10 minutes read</b></td>
+    <td style={{ paddingLeft: '40px' }}><b>Level: Beginner </b></td>
+    <td style={{ paddingLeft: '40px' }}><b>Last Updated: January 2026</b></td>
+  </tr>
+</table>
+</h3>
 
 ## Troubleshooting HSM Message Errors
 
@@ -23,3 +31,18 @@ When this error message appears, check if the WhatsApp app is installed and in u
 3)**Message Undeliverable**:
 
 Unable to deliver message  to the end-user and there are various reason on this please read [here](https://developers.facebook.com/docs/whatsapp/cloud-api/support/error-codes/)
+
+4)**Message was not delivered to maintain healthy ecosystem engagement:**
+
+This error occurs when a message is not delivered to maintain healthy ecosystem engagement. Meta applies frequency capping, which limits the number of High-Quality Service Messages (HSMs) a user can receive on WhatsApp within a certain period.
+
+**Key points:**
+
+- The message is dynamically blocked by Meta if the user has reached the capped limit.
+
+- Simply resending the same template immediately may trigger the same error. Wait at least 24 hours before retrying.
+
+- For details on WhatsApp’s frequency capping rules, see [Gupshup Blog: All You Need to Know About WhatsApp Frequency Capping](https://www.gupshup.ai/resources/blog/all-you-need-to-know-about-whatsapp-business-api-frequency-capping/) and check the 
+ [Per-User Marketing Template Message Limits](https://developers.facebook.com/documentation/business-messaging/whatsapp/support/error-codes)
+
+<img width="921" height="717" alt="image" src="https://github.com/user-attachments/assets/e897a19f-1c41-4913-9052-f5025cfc5e7e" />
