@@ -14,15 +14,15 @@ Glific writes every message and contact update into your BigQuery account in rea
 
 ## Why this happens
 
-BigQuery has a generous free tier for storage and queries (refer [BigQuery Setup and link with Glific](https://glific.github.io/docs/docs/Product%20Features/Reporting%20&%20Dashboard/BigQuery%20Setup%20and%20link%20with%20Glific/) to know more), but streaming inserts are a separate, billable feature. Google requires a project to have an active, upgraded billing account before it will accept streaming inserts - even if your actual usage stays well within the free tier limits. This error usually means one of the following:
+BigQuery has a generous free tier for storage and queries (refer to the BigQuery Setup and link with Glific page to know more), but streaming inserts are a separate, billable feature. Google requires a project to have an active, upgraded billing account before it will accept streaming inserts - even if your actual usage stays well within the free tier limits. This error usually means one of the following:
 
 - No billing account is linked to the Google Cloud project connected to Glific, or
 - The project is still on Google Cloud's 90-day free trial, which has not been upgraded to a full billing account.
 
 ## How to fix this
 
-1. Go to [Google Cloud Console](https://console.cloud.google.com/) and sign in with the account used to set up BigQuery for your organization.
-2. Select the same project that is linked to Glific for BigQuery (refer [BigQuery Setup and link with Glific](https://glific.github.io/docs/docs/Product%20Features/Reporting%20&%20Dashboard/BigQuery%20Setup%20and%20link%20with%20Glific/) if you're not sure which project this is).
+1. Go to Google Cloud Console (console.cloud.google.com) and sign in with the account used to set up BigQuery for your organization.
+2. Select the same project that is linked to Glific for BigQuery (refer to the BigQuery Setup and link with Glific page if you're not sure which project this is).
 3. From the left navigation menu, select `Billing`.
 4. If you see an option to `Upgrade`, select it and complete the steps to convert your free trial to a full Cloud Billing account. If no billing account is linked at all, select `Link a billing account` and either choose an existing one or create a new one.
 5. Add a valid payment method when prompted, and confirm.
