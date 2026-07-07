@@ -1,3 +1,15 @@
+<h3>
+ <table>
+  <tr>
+    <td><b>5 minutes read</b></td>
+    <td style={{ paddingLeft: '40px' }}><b>Level: Advanced</b></td>
+    <td style={{ paddingLeft: '40px' }}><b>Last Updated: July 2026</b></td>
+  </tr>
+</table>
+</h3>
+
+
+
 ## Why do I get a 400 error when resuming a flow via API?
 
 If your flow uses the **Wait for Results** node, you pause the flow and resume it later (for example, once a long-running webhook on your backend finishes) by calling Glific's `resumeContactFlow` API. A common mistake when calling this API results in an HTTP `400 Bad Request`, instead of the expected `200` response.
