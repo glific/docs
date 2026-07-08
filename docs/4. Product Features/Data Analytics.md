@@ -40,9 +40,10 @@ At the very top of the dashboard sits a bar with four controls: Time, Time Grain
 
 1. Dropdown controls the bucket size used for the trend-line charts (for ex- charts with bars across a timeline, like "Contacts Broadcasted To" or "Message Delivery Trend").
 2. From the dropdown, the data trends can be broken down at weekly, monthly, quarterly, yearly level.
-3. Choosing Week groups data into weekly bars (labeled by day, e.g., "Wed 15," "Wed 22"), which is useful for spotting short-term spikes, such as the single week that jumps to 43 contacts broadcasted.
-4. Choosing Month collapses the same data into monthly bars (labeled "May," "June," "July"), which smooths out day-to-day noise and is better for spotting longer trends, as seen when the weekly bars roll up into three larger monthly bars (19, 23, 7). Note that this setting only affects the trend charts' grouping, not the underlying date range.
-5. After changing either control, you need to click Apply for the dashboard to refresh with the new settings — until then, Apply stays greyed out if nothing has changed, and turns solid green once there's a pending change to apply. Clear All resets any filters you've adjusted back to the dashboard's defaults.
+3. Choosing Week groups data into weekly bars, which is useful for spotting short-term spikes
+4. Choosing Month collapses the same data into monthly bars, which smooths out day-to-day noise and is better for spotting longer trends
+5. After changing either control, you need to click `Apply` for the dashboard to refresh with the new settings — until then, Apply stays greyed out if nothing has changed, and turns solid green once there's a pending change to apply.
+6. Clear All resets any filters you've adjusted back to the dashboard's defaults.
 
 <img width="" height="466" alt="Screenshot 2026-07-08 at 4 20 49 PM" src="https://github.com/user-attachments/assets/8f8003f4-db25-451b-b294-823bdadc4ced" />
 
@@ -70,7 +71,13 @@ This tab answers "of the people I'm reaching, how many are actually engaging bac
 
 2. **The Active Contacts Trend** card shows the count of active contacts in the most recent period (9, in the example) with a period-over-period percentage change and sparkline, similar in format to the "New Contacts Acquired" card on the other tab. A steep negative change (-40.0% here) flags a recent drop in conversational activity worth investigating.
 
-3. **The Engagement Overview** horizontal bar chart lays out five metrics side-by-side on a shared scale so you can compare them directly: Total contacts , Contacts Broadcasted To , Active users , Returning users, and Responded to Broadcast. 
+3. **The Engagement Overview** horizontal bar chart lays out five metrics side-by-side on a shared scale so you can compare them directly:
+- Total contacts, (this is the universe of contacts on your chatbot)
+- Contacts Broadcasted To, (these are the contacts you have reached out to in the time period)
+- Active users, (these are the users who have messaged atleast once in the time period)
+- Returning users, (these are the users who have messaged more than once in the time period)
+- Responded to Broadcast. (these are the users who responded to broadcast on the same day)
+  
 Reading this chart top to bottom shows the engagement funnel — for example, only 17 out of 83 broadcast contacts responded the same day, which is a same-day response rate you could use to gauge broadcast effectiveness. This chart does reflect the Time filter, but note it is not time-grain-bucketed like the trend charts — it's a single snapshot of totals for the selected date range.
 
 ## Message Errors
@@ -80,12 +87,36 @@ This tab answers "are messages actually getting delivered, and where are the fai
 
 1. **The Errors Overview** card summarizes the Message Error Rate, total Errors, total Messages sent, and Contacts Impacted for the selected time range. The error rate is simply errors divided by total messages, so even a small error count can look proportionally significant if overall message volume is low, and vice versa.
 
-2. **The Message Delivery Trend** stacked bar chart breaks down every message sent, per time bucket, into its delivery status: delivered, enqueued, read, sent, error, and null (uncategorized/unknown status). Each color in the legend can be toggled — clicking a legend item isolates or hides that category, and the "All" / "Inv" (invert) buttons next to the legend let you quickly select all series or invert your current selection. Below the main chart is a range-slider/brush control (the small shaded area chart with draggable handles) that lets you zoom into a narrower slice of the timeline without changing the global Time filter — drag the handles inward to focus on a specific stretch of weeks. 
+2. **The Message Delivery Trend** stacked bar chart breaks down every message sent, per time bucket, into its delivery status:
 
-3. **The Message Delivery Errors Trend** chart (further down the same tab) isolates just the error-type events and classifies them into specific failure reasons: Healthy ecosystem limit reached (WhatsApp throttling due to frequency capping), Message undeliverable, Programmatic error (a bug or misconfiguration in a flow), and Media URL download failure (an attached image/file/audio couldn't be fetched). This chart also has the same legend toggle, All/Inv buttons, and a zoomable range slider underneath. This is the most actionable chart on the page for troubleshooting: a recurring "Healthy ecosystem limit reached" bar suggests you need to slow down broadcast pacing, while repeated "Programmatic error" bars point to a flow that needs debugging, and "Media URL download" failures point to broken or expired media links in your content.
+- enqueued, (to be sent)
+- sent, (equivalent to single tick- sent by you)
+- delivered, (equivalent to double ticks - delivered to users whatsapp no)
+- read, (equivalent to blue ticks, this status is returned only when a user has read receipts enabled on their personal whatsapp)
+- error, (when message is not delivered due to an error condition)
+- null (uncategorized/unknown status).
+
+Each color in the legend can be toggled — clicking a legend item isolates or hides that category, and the "All" / "Inv" (invert) buttons next to the legend let you quickly select all series or invert your current selection. Below the main chart is a range-slider/brush control (the small shaded area chart with draggable handles) that lets you zoom into a narrower slice of the timeline without changing the global Time filter — drag the handles inward to focus on a specific stretch of weeks. 
+
+4. **The Message Delivery Errors Trend** chart (further down the same tab) isolates just the error-type events and classifies them into specific failure reasons:
+
+- Healthy ecosystem limit reached or user in meta experiment (WhatsApp throttling due to frequency capping),
+- Message undeliverable (contact no longer on whatsapp, or contact has opted-out or blocked you etc)
+- Message undeliverable could be because of programmatic error (a bug or misconfiguration in a flow), 
+- Media URL failure (an attached image/file/audio couldn't be fetched).
+
+This chart also has the same legend toggle, All/Inv buttons, and a zoomable range slider underneath. 
+This is the most actionable chart on the page for troubleshooting: a recurring "Healthy ecosystem limit reached" bar suggests you need to slow down broadcast pacing, while repeated "Programmatic error" bars point to a flow that needs debugging, and "Media URL download" failures point to broken or expired media links in your content.
 
 ## Practical tips for interpreting the dashboard
 
-Because "Contacts Broadcasted To," "Engagement Overview," and the error charts are cumulative for whatever range you've picked, always check the Time field first before comparing numbers across different visits to the dashboard — the same chart can look very different depending on whether it's summarizing one week or three months. When investigating a specific spike or dip, switch the Time Grain to Week for granularity, then widen it to Month once you want the bigger-picture trend. And for the Message Errors tab specifically, use the legend toggles to isolate one status or error type at a time — it's much easier to spot a slow buildup of a specific problem (like programmatic errors) when the other, larger categories aren't visually dominating the chart.
+1. Review dashboard weekly to look for trends over the last week, last month, last 3 months
+2. Try to match the contacts onboarded to the onboarding campaigns, events, activities planned
+3. Engagement quality can help you get a very quick overview of how engaged your users are, this can help you to set targets for active users and returning users
 
+## Other tips for using the dashboard
+1. Because "Contacts Broadcasted To," "Engagement Overview," and the error charts are cumulative for whatever range you've picked, always check the Time field first before comparing numbers across different visits to the dashboard — the same chart can look very different depending on whether it's summarizing one week or three months.
+2. Longer time ranges will take longer to load so try reducing time range
 
+## Note
+We are actively working towards gathering feedback towards improving this page, please reach out to info@glific.org or on the [NGO support channel](https://discord.gg/YWgGxWJsMh) on discord to share specific feedback or ask questions in case of questions on the charts or data being presented. 
