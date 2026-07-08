@@ -24,9 +24,13 @@ BigQuery has a generous free tier for storage and queries (refer [BigQuery Setup
 1. Go to [Google Cloud Console](https://console.cloud.google.com/) and sign in with the account used to set up BigQuery for your organization.
 2. Select the same project that is linked to Glific for BigQuery (refer [BigQuery Setup and link with Glific](https://glific.github.io/docs/docs/Product%20Features/Reporting%20&%20Dashboard/BigQuery%20Setup%20and%20link%20with%20Glific/) if you're not sure which project this is).
 3. From the left navigation menu, select Billing.
+
+<img width="271" height="381" alt="image" src="https://github.com/user-attachments/assets/34e61468-afae-4062-af24-75967e055ca4" />
+
 4. If you see an option to Upgrade, select it and complete the steps to convert your free trial to a full Cloud Billing account. If no billing account is linked at all, select Link a billing account and either choose an existing one or create a new one.
 5. Add a valid payment method when prompted, and confirm.
 
 Once billing is upgraded/linked, streaming inserts into BigQuery will resume automatically. You don't need to change anything in Glific - Glific will keep sending data as soon as your Google Cloud project accepts it.
 
-Please Note : Upgrading or linking a billing account does not mean you'll be charged immediately. BigQuery's free tier (10GB storage and 1TB of queries per month) still applies - you'll only be billed if you exceed those limits, and Google notifies you before that happens.
+Please Note : Upgrading or linking a billing account does not mean you will be charged immediately. 
+BigQuery's free tier (10GB storage and 1TB of queries per month) still applies - you will only be billed if you exceed those limits, and Google notifies you before that happens.
