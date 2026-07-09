@@ -26,6 +26,7 @@ jobs:
           ALGOLIA_API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
           ALGOLIA_INDEX_NAME: ${{ secrets.ALGOLIA_INDEX_NAME }}
           BASE_URL: ${{ secrets.BASE_URL }}
+          POSTHOG_API_KEY: ${{ secrets.POSTHOG_API_KEY }}
         run: yarn build
 
       # Popular action to deploy to GitHub Pages:
