@@ -1,4 +1,12 @@
-<img width="588" height="486" alt="Screenshot 2026-07-15 at 6 42 09 PM" src="https://github.com/user-attachments/assets/cf102a7a-9ca9-43f2-8614-f284a7ba43ce" />### **5 minute read &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; `Beginner`**
+<h3>
+ <table>
+  <tr>
+    <td><b>5 minutes read</b></td>
+    <td style={{paddingLeft: '40px'}}><b>Level: Beginner</b></td>
+    <td style={{paddingLeft: '40px'}}><b>Last Updated: July 2026</b></td>
+  </tr>
+</table>
+</h3>
 
 ## User Guide: WhatsApp Groups Automation Features: Basic
 This document provides details on using basic features of syncing all the WhatsApp Groups, sending messages and media to the groups from the Glific interface, creating collections or groups of groups to send targetted messages to a large number of groups and scheduling messages to the collections in advance. 
@@ -66,10 +74,10 @@ Use this to spin up a new WhatsApp group from Glific and add members in bulk, in
 <img width="" height="420" alt="Screenshot 2026-07-15 at 6 16 19 PM" src="https://github.com/user-attachments/assets/fd2343c1-02d9-4cb8-8038-dab26c6fe13d" />
 
 4. Create WhatsApp group dialog
-  1. Group name — the name of the WhatsApp group as it will appear on WhatsApp.
-  2. Creator phone — the managed phone number that creates the group on WhatsApp; it becomes the group's primary phone in Glific.
-  3. Upload File — upload a CSV of members to add to the group. Must include a phone column; a name column is optional.
-  4. View Sample — opens a [template Google Sheet](https://docs.google.com/spreadsheets/d/1-oupACzXqNWURa9nUv0rvpLrBNRTMRMN5EG-mY3zCvg/copy) showing the expected CSV format (see below).
+   - Group name — the name of the WhatsApp group as it will appear on WhatsApp.
+   - Creator phone — the managed phone number that creates the group on WhatsApp; it becomes the group's primary phone in Glific.
+   - Upload File — upload a CSV of members to add to the group. Must include a phone column; a name column is optional.
+   - View Sample — opens a [template Google Sheet](https://docs.google.com/spreadsheets/d/1-oupACzXqNWURa9nUv0rvpLrBNRTMRMN5EG-mY3zCvg/copy) showing the expected CSV format (see below).
 
 5. CSV Template for Bulk Member Import, add the names and phone numbers with the country code this template and export the file as a csv
 <img width="" height="264" alt="Screenshot 2026-07-15 at 6 19 01 PM" src="https://github.com/user-attachments/assets/14fd19a6-4c00-4def-8fc0-fd8d39f3efdf" />
