@@ -128,8 +128,10 @@ Use this to set one phone as primary across every group in a collection in a sin
 4. Apply — confirms the change. The phone becomes primary in every group in the collection where it is an active member; groups where it isn't a member are skipped (and reported, so nothing fails silently).
 
 
-- Note: If the selected phone isn't a member of a particular group at all, that group's primary phone is left unchanged — it's only updated where the phone is already an active member.
+- Note: If the selected phone isn't a member of a particular group at all, that group's primary phone is left unchanged — or the next available phone in the groups is marked as primary.
 - Note: If a group belongs to more than one collection, whichever collection-level primary-phone action was applied most recently is the one that takes effect for that group.
+- Note: Setting primary for a collection happens in the bg and once done you get a notification with the status report because sometimes the phone might not be present in one of the groups
+
 #### Setting a Primary Phone for a Single Group
 The same change can be made at the individual group level, which is useful when you only need to switch one group over — for example, to route around a number that Meta has temporarily blocked.
 
