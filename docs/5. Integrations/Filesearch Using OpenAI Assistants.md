@@ -4,7 +4,7 @@
     <tr>
       <td><b>6 minutes read</b></td>
       <td style={{ paddingLeft: 40 }}><b> Level: Advanced</b></td>
-      <td style={{ paddingLeft: 40 }}><b>Last Updated: April 2026</b></td>
+      <td style={{ paddingLeft: 40 }}><b>Last Updated: July 2026</b></td>
     </tr>
   </table>
 </h3>
@@ -30,7 +30,7 @@ Glific’s File Search using OpenAI Assistant enables users to upload documents 
 ## How to Create an Assistant in Glific
 
 #### Step 1: Create a new AI Assistant
-Click on `AI Assistant` from the left sidebar, then select `Create Assistant` to generate a blank assistant.
+Click on `AI Assistant` from the left sidebar, then select `Create Assistant`. This opens the assistant creation form - nothing is created until you fill it in and save.
 
 <img width="1464" height="833" alt="Screenshot 2026-04-09 at 2 26 06 PM" src="https://github.com/user-attachments/assets/74d8515e-aed1-4267-95ea-fe33b421ce9c" />
 
@@ -41,7 +41,7 @@ Define the following parameters:
 
 - Provide a name to the assistant.
 
-- Choose the model from the drop-down list.
+- Choose the model from the drop-down list. This list shows a fixed set of supported models (currently `gpt-4o`, `gpt-4o-mini`, `gpt-4.1`, `gpt-4.1-mini`) rather than every model available on the provider's account.
 
 <img width="490" height="207" alt="image" src="https://github.com/user-attachments/assets/29577251-c967-438a-b2d4-ffb702ffe650" />
 
@@ -66,6 +66,7 @@ These files will be utilized by the assistant to generate responses and each fil
 - Once the files are added, click on `Save`. This will show the status of the Assistant setup. 
     - Ready — assistant is live and usable
     - In Progress — a new version is being prepared
+    - Failed — the last update didn't complete successfully; the assistant keeps running on its previous live version
 
 
 <img width="1033" height="635" alt="image" src="https://github.com/user-attachments/assets/8087fe11-4022-4e5d-8751-6a3124e8147c" />
