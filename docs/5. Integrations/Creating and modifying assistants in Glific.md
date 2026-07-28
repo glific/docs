@@ -13,7 +13,8 @@ This doc details how to create new assistants, modify the created assistants and
 
 ## Creating a new assistant
 1. From the assistant list page, click on “Create new assistant”. This opens a blank creation form - no assistant is created yet at this point.
-<img width="1406" height="765" alt="Screenshot 2026-04-14 at 2 46 48 PM" src="https://github.com/user-attachments/assets/3ac96677-8fe2-46b3-bff6-b5c26e1ccfb6" />
+
+<img width="1464" height="833" alt="image" src="https://github.com/user-attachments/assets/acef01c0-c6dd-48eb-86b6-fd29edb5f150" />
 
 2. Fill out the details needed,
 - Name of the assistant 
@@ -23,11 +24,12 @@ This doc details how to create new assistants, modify the created assistants and
 - Set the temperature
 
 Note: The model dropdown shows a fixed list of supported models (currently `gpt-4o`, `gpt-4o-mini`, `gpt-4.1`, `gpt-4.1-mini`), rather than fetching every model available on the provider's account. If you need a model that isn't listed, reach out to the Glific team.
-<img width="711" height="835" alt="Screenshot 2026-04-14 at 2 58 36 PM" src="https://github.com/user-attachments/assets/5e2c0741-28ce-4e63-b545-0de08ba866cf" />
+
+<img width="1467" height="838" alt="image" src="https://github.com/user-attachments/assets/280a164e-dfca-4cb1-839b-2a9eab077602" />
 
 3. Click on save. This is the point the assistant is actually created - nothing is saved to Glific until you click save here.
 4. This navigates to the assistant versions listing page. 
-<img width="1233" height="750" alt="Screenshot 2026-04-14 at 2 59 16 PM" src="https://github.com/user-attachments/assets/9078b2a2-24d4-4621-895b-c3f84f257caf" />
+<img width="1458" height="838" alt="image" src="https://github.com/user-attachments/assets/64fee444-59d7-4b49-b35f-b5486bee3348" />
 
 5. From here, copy the assistant id and use it in the flow.
 
