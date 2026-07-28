@@ -20,71 +20,13 @@ Glific’s File Search using OpenAI Assistant enables users to upload documents 
 - There is a need to build an automated knowledge assistant for your organisation.
 - Help users get instant responses.
 
-### This document guides you through three main parts:
-- Creating an OpenAI Assistant  
+### This document guides you through:
 - Using the Assistant in your Flows (including handling follow-up questions)  
 - Handling Voice Inputs and Responses  
 
+To create or modify an assistant, see [Creating and modifying AI assistants in Glific](https://glific.github.io/docs/docs/Integrations/Creating%20and%20modifying%20assistants%20in%20Glific/).
+
 ---
-
-## How to Create an Assistant in Glific
-
-#### Step 1: Create a new AI Assistant
-Click on `AI Assistant` from the left sidebar, then select `Create Assistant`. This opens the assistant creation form - nothing is created until you fill it in and save.
-
-<img width="1464" height="833" alt="Screenshot 2026-04-09 at 2 26 06 PM" src="https://github.com/user-attachments/assets/74d8515e-aed1-4267-95ea-fe33b421ce9c" />
-
-
-#### Step 2: Fill in the Assistant Details
-
-Define the following parameters:
-
-- Provide a name to the assistant.
-
-- Choose the model from the drop-down list. This list shows a fixed set of supported models (currently `gpt-4o`, `gpt-4o-mini`, `gpt-4.1`, `gpt-4.1-mini`) rather than every model available on the provider's account.
-
-<img width="490" height="207" alt="image" src="https://github.com/user-attachments/assets/29577251-c967-438a-b2d4-ffb702ffe650" />
-
-
-- Provide a system prompt in the `Instructions` field.  
-  *[Click Here](https://glific.org/a-simple-guide-to-using-large-language-models/#prompt) to read more on prompt engineering.*
-- Files (.csv, .doc, .docx, .html, .java, .md, .pdf, .pptx, .txt) can be uploaded by clicking on `Manage Files`. 
-These files will be utilized by the assistant to generate responses and each file will take approx 15 secs to upload.  
-  
-- Set the `Temperature` (between 0 to 1). A higher value increases creativity/randomness.  
-  *Recommended: keep temperature at 0.*
-
- **Note:** The quality of the bot’s response depends on the prompt. Give appropriate prompts based on your use case.
-
-
-#### Step 3: Save Your Assistant
-
-- Click on the upload files button to add files. Remember that each file can be uploaded one by one.
-
-<img width="474" height="309" alt="image" src="https://github.com/user-attachments/assets/f43bc8aa-a30f-4615-af7a-9c96d1d82bc2" />
-
-- Once the files are added, click on `Save`. This will show the status of the Assistant setup. 
-    - Ready — assistant is live and usable
-    - In Progress — a new version is being prepared
-    - Failed — the last update didn't complete successfully; the assistant keeps running on its previous live version
-
-
-<img width="1033" height="635" alt="image" src="https://github.com/user-attachments/assets/8087fe11-4022-4e5d-8751-6a3124e8147c" />
-
-
-#### Step 4: Copy the Assistant ID
-
-- Once created, copy the `Assistant ID` shown below the assistant name. 
-
-- This ID will be used in the webhook nodes in the flow editor.
-
-<img width="650" height="748" alt="Screenshot 2026-04-09 at 2 43 40 PM" src="https://github.com/user-attachments/assets/6be25951-9c1f-417d-ae76-2b9735d361ca" />
-
-**Please Note:** Assistants created before 10 March 2026 that include a Knowledge Base will have a Clone button. This allows you to create a copy of the assistant, make edits, add a new files, and reuse it as needed.
-Assistants created without a Knowledge Base will not have the Clone option available.
-If you need to update such assistants, you may have to create a new one with the required Knowledge Base configuration.
-
-<img width="524" height="675" alt="image" src="https://github.com/user-attachments/assets/e68cda40-fadd-46cd-bb1b-c988a612731d" />
 
 ## Using the OpenAI Assistant in Floweditor
 The following sections explain how to use an assistant to answer questions or create conversations.
@@ -132,7 +74,7 @@ _Screenshot of example flow set up is given below_
 <img width="628" height="435" alt="Screenshot 2025-12-02 at 6 10 59 PM" src="https://github.com/user-attachments/assets/aff3ba8d-e5d0-4958-b10c-2bfa481d2128" />
 
 - In `question` parameter enter the flow variable containing the question asked by the user. In the given example `question` is the `result name`, hence provided `@result.question` in the question parameter.
-- In `assistant_id` enter the assistant id obtained in step 4 of "How to Create an OpenAI Assistant in Glific"
+- In `assistant_id` enter the assistant ID, copied as described in [Creating and modifying AI assistants in Glific](https://glific.github.io/docs/docs/Integrations/Creating%20and%20modifying%20assistants%20in%20Glific/)
 
   <img width="623" height="438" alt="Screenshot 2025-12-02 at 9 18 23 AM" src="https://github.com/user-attachments/assets/880a4181-bd79-4d04-92aa-c0d502456bd5" />
 
@@ -198,7 +140,7 @@ Pass the following paramters in the function body.
 
 - For `contact ` keep this value as `@contact` as mentioned in the screenshot.
 - `speech` is the result name which is storing the voice note sent by the user.
-- `assistant_id` is the assistant id obtained in step 4 of "How to Create an OpenAI Assistant in Glific.
+- `assistant_id` is the assistant ID, copied as described in [Creating and modifying AI assistants in Glific](https://glific.github.io/docs/docs/Integrations/Creating%20and%20modifying%20assistants%20in%20Glific/).
 - `source_langauge` is the expected language of the user.
 - `target_language` is the language that the response voice note needs to be in.
 
