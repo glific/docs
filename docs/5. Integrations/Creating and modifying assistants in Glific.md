@@ -3,7 +3,7 @@
   <tr>
     <td><b>3 minutes read</b></td>
     <td style={{ paddingLeft: '40px' }}><b>Level: Advanced</b></td>
-    <td style={{ paddingLeft: '40px' }}><b>Last Updated: April 2026</b></td>
+    <td style={{ paddingLeft: '40px' }}><b>Last Updated: July 2026</b></td>
   </tr>
 </table>
 </h4>
@@ -28,6 +28,47 @@ This doc details how to create new assistants, modify the created assistants and
 <img width="1233" height="750" alt="Screenshot 2026-04-14 at 2 59 16 PM" src="https://github.com/user-attachments/assets/9078b2a2-24d4-4621-895b-c3f84f257caf" />
 
 5. From here, copy the assistant id and use it in the flow.
+
+## Writing effective instructions
+
+The `Instructions` field you fill in when creating or editing an assistant is its system prompt - it tells the assistant how to behave, what it knows, and what to do when it doesn't know something. A clear, specific prompt makes a real difference in the quality of your assistant's answers.
+
+A good prompt usually covers:
+
+- Role and audience - who the assistant is for and what it should help with.
+- Source of truth - tell it to answer only using the uploaded knowledge base, rather than general knowledge, if that's what you want.
+- Tone and format - how formal or casual, how long the answers should be, and any language requirements.
+- What to do when it doesn't know - a clear fallback instruction (for example, ask it to say so honestly instead of guessing). This also makes it possible to detect and route unanswered questions to a human agent - see [Open a ticket with a human agent](https://glific.github.io/docs/docs/Product%20Features/Flows/Flow%20Actions/Open%20a%20ticket%20with%20a%20human%20agent/).
+
+### Example template
+
+```
+You are a helpful assistant for [organization name]. You help [describe your users, e.g. "farmers enrolled in our program"] with questions about [topic].
+
+Answer only using the information in your knowledge base. Do not guess or make up information.
+
+If you don't know the answer, reply exactly with: "[fallback phrase]"
+
+Keep answers under [N] sentences unless the user asks for more detail. Respond in [language(s)].
+```
+
+### Example filled in
+
+```
+You are a helpful assistant for Kaivalya Education. You help Panchayati Raj Institution (PRI) members with questions about local governance and Viksit Panchayat guidelines.
+
+Answer only using the information in your knowledge base. Do not guess or make up information.
+
+If you don't know the answer, reply exactly with: "I'm not able to help with that yet."
+
+Keep answers under 3 sentences unless the user asks for more detail. Respond in Hindi.
+```
+
+### Tips for improving your prompt over time
+
+- Add a couple of example question-and-answer pairs directly in the prompt if the assistant's responses don't match the format you want.
+- Use [AI Evaluations](https://glific.github.io/docs/docs/Integrations/AI%20Evaluations%20in%20Glific/) to test your prompt against a Golden Set of questions, and refine it based on where it scores poorly.
+- Keep the fallback phrase consistent - it's easier to track and route unanswered questions if the assistant always says the same thing when it doesn't know.
 
 ## Modifying an assistant 
 1. From the assistant list page, click on “edit” the assistant action.

@@ -4,7 +4,7 @@
     <tr>
       <td><b>6 minutes read</b></td>
       <td style={{ paddingLeft: 40 }}><b> Level: Advanced</b></td>
-      <td style={{ paddingLeft: 40 }}><b>Last Updated: April 2026</b></td>
+      <td style={{ paddingLeft: 40 }}><b>Last Updated: July 2026</b></td>
     </tr>
   </table>
 </h3>
@@ -47,7 +47,7 @@ Define the following parameters:
 
 
 - Provide a system prompt in the `Instructions` field.  
-  *[Click Here](https://glific.org/a-simple-guide-to-using-large-language-models/#prompt) to read more on prompt engineering.*
+  *[Click Here](https://glific.org/a-simple-guide-to-using-large-language-models/#prompt) to read more on prompt engineering, or see [Writing effective instructions](https://glific.github.io/docs/docs/Integrations/Creating%20and%20modifying%20assistants%20in%20Glific/#writing-effective-instructions) for a prompt template and examples.*
 - Files (.csv, .doc, .docx, .html, .java, .md, .pdf, .pptx, .txt) can be uploaded by clicking on `Manage Files`. 
 These files will be utilized by the assistant to generate responses and each file will take approx 15 secs to upload.  
   
