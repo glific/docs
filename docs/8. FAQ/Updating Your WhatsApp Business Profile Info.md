@@ -18,7 +18,7 @@ When a contact taps on your chatbot's name in WhatsApp, they see a business prof
 - Business description (the short summary shown at the top of the profile)
 - Website URLs (your primary website, plus any additional ones)
 - Business email address
-- Physical business address
+- Business address
 - Business category
 - Contact details (phone number)
 
