@@ -1,0 +1,36 @@
+name: hsm-templates
+output_dir: hsm-templates
+flows:
+  - name: hsm_list
+    description: The HSM Templates list page showing status, languages, category, and actions
+    required: true
+    steps:
+      - navigate: /template-v2
+      - wait: '[data-testid="listHeader"]'
+      - wait: '[data-testid="view-icon"]'
+      - snap: hsm-templates_list.png
+        element: main
+
+  - name: hsm_list_status_filter
+    description: Filtering the list by template status
+    required: false
+    steps:
+      - navigate: /template-v2
+      - wait: '[data-testid="view-icon"]'
+      - click: '[data-testid="dropdown-template"]'
+      - wait: '[role="listbox"]'
+      - sleep: 300
+      - snap: hsm-templates_list_status_filter.png
+        element: main
+
+  - name: hsm_list_expand_languages
+    description: Expanding a template to see its language variants
+    required: false
+    steps:
+      - navigate: /template-v2
+      - wait: '[data-testid="view-icon"]'
+      - click: '[data-testid="expand-toggle"]'
+      - click: '[data-testid="listHeader"]'
+      - sleep: 500
+      - snap: hsm-templates_list_language_variants.png
+        element: main
