@@ -1,3 +1,16 @@
+<h3>
+ <table>
+  <tr>
+    <td><b> 5 minutes read</b></td>
+    <td style={{ paddingLeft: '40px' }}><b>Level: Intermediate </b></td>
+    <td style={{ paddingLeft: '40px' }}><b>Last Updated: June 2026</b></td>
+  </tr>
+</table>
+</h3>
+
+
+
+
 # Why is the Google Sheet sync failing?
 
 Google sheets on read mode with auto-sync functionality turned on sync once in every 24 hours. The sync operations happens around 5-6 am IST. If google sheet fails to sync, there is an error condition that is displayed on the google sheets page. 
@@ -32,4 +45,30 @@ This condition happens when there are headers which are repeated, or if there ar
 To solve this, make sure that the headers have unique names. Also, ensure that all columns where content is present have a named header.
 
 
+## 6. Media Validation Failed
 
+This error occurs when one or more media URLs provided in the Google Sheet do not meet the required validation criteria.
+
+<img width="1466" height="97" alt="image" src="https://github.com/user-attachments/assets/fad98846-25f6-4d19-9f0d-0532f64d3eec" />
+
+
+Ensure that all media URLs added in the sheet:
+
+- Are valid, non-empty URLs (URI).
+- Return a successful HTTP response (2xx status code) within 10 seconds.
+- Have a content type that matches the file extension:
+  - Images → image/*
+  - Videos → video/*
+  - Audio → audio/*
+  -  Documents → application/*
+  - Stickers → image/webp
+  
+- Are within the supported file size limits:
+
+  - Images: Up to 5 MB
+  - Videos: Up to 16 MB
+  - Audio: Up to 16 MB
+  - Documents: Up to 100 MB
+  - Stickers: Up to 100 KB
+
+To solve this review the media URLs in the Google Sheet and ensure they satisfy all the above requirements. Update any invalid, inaccessible, incorrectly formatted, or oversized media files before retrying the import.
