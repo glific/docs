@@ -23,12 +23,14 @@ Read what's needed for the task:
 3. Read `../glific-frontend/src/routes/AuthenticatedRoute/AuthenticatedRoute.tsx` to find the URL route
 4. Check existing docs in `docs/` for the feature (search for the feature name in file names and content)
 5. Optionally read `../glific-frontend/src/graphql/queries/{Feature}.ts` to understand what data the feature displays
+6. If user-observable behavior is unclear from the UI alone (defaults, validation rules, limits, why an action is blocked/allowed), read the backend: `../glific/lib/glific/{feature}/` and `../glific/lib/glific/{feature}.ex` for domain logic, `../glific/lib/glific_web/resolvers/{feature}.ex` and `../glific/lib/glific_web/schema/{feature}_types.ex` for what each query/mutation exposes. Translate findings into plain user-facing language — never document internal architecture.
 
 **Mode B — PR Number:**
 1. `gh pr diff #PR_NUMBER --repo glific/glific-frontend` to see what changed
 2. Identify affected containers from the changed file paths
 3. Read the changed files in full to understand new behavior
 4. Check existing docs for the affected area
+5. If the PR is in the backend repo (`glific/glific`) or the frontend change depends on backend behavior, run `gh pr diff #PR_NUMBER --repo glific/glific` and/or read the relevant `../glific/lib/...` files (see the backend paths above) to understand the user-observable change
 
 ## 4. Determine Placement
 
