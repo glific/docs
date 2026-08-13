@@ -71,6 +71,7 @@ You can monitor your Gupshup wallet balance in two ways:
 When your wallet balance reaches the configured **Low Balance Threshold** (for example, **$1**), Glific automatically sends a warning email.
 
 > **Note:** The threshold amount is configurable and can be changed based on your organisation's requirements.
+More details on who receives these notifications and how wallet balance alerts work are covered in the sections below
 
 
 The warning email is sent to the **email address that was used while creating your Glific app (during the Glific onboarding form submission).**
