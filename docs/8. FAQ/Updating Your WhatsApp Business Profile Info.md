@@ -3,14 +3,15 @@
   <tr>
     <td><b>3 minutes read</b></td>
     <td style={{ paddingLeft: '40px' }}><b>Level: Beginner </b></td>
-    <td style={{ paddingLeft: '40px' }}><b>Last Updated: July 2026</b></td>
+    <td style={{ paddingLeft: '40px' }}><b>Last Updated: August 2026</b></td>
   </tr>
 </table>
 </h3>
 
 # Updating Your WhatsApp Business Profile Info
 
-When a contact taps on your chatbot's name in WhatsApp, they see a business profile - your description, address, email, and website links. This information isn't managed in Glific. It's part of your WhatsApp Business Profile, which you manage through Meta's [WhatsApp Manager](https://business.facebook.com/latest/whatsapp_manager/phone_numbers/) - using the same Meta Business Account connected to your chatbot's WhatsApp number when you [set up Gupshup](https://glific.github.io/docs/docs/Pre%20Onboarding/Gupshup%20Setup/) (the WhatsApp Business API provider Glific uses to send and receive messages).
+When a contact taps on your chatbot's name in WhatsApp, they see a business profile—including your description, address, email, and website links. 
+This information isn't managed in Glific. It's part of your WhatsApp Business Profile, which you manage through  [WhatsApp Manager](https://business.facebook.com/latest/whatsapp_manager/phone_numbers/).
 
 ## What you can update
 
