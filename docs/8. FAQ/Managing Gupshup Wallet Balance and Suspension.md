@@ -1,57 +1,168 @@
-> ### **3 minute read &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; `Beginner`**
+<h3>
+ <table>
+  <tr>
+    <td><b>3 minutes read</b></td>
+    <td style={{ paddingLeft: '40px' }}><b>Level: Beginner </b></td>
+    <td style={{ paddingLeft: '40px' }}><b>Last Updated: August 2026</b></td>
+  </tr>
+</table>
+</h3>
 
-## Managing Gupshup Low Wallet Balance & Glific Suspensions
+## Managing Gupshup Wallet Balance and Glific Suspension:
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/RKUUIxl_fYc?si=T-Bl6xLiebUNCNiY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+### Overview:
+
+Your organisation's **Gupshup Wallet** is used to send WhatsApp messages through Glific. Maintaining a sufficient wallet balance is essential to ensure uninterrupted message delivery.
+
+Glific monitors your wallet balance and notifies to the registered email address added in Glific while filing the onboarding form when it falls below a configured threshold. If the wallet balance is not recharged in time, your organisation may eventually be suspended from sending messages through Glific.
+
+
+### How to Recharge Your Gupshup Wallet:
+
+1. Log in to your [Gupshup account](https://www.gupshup.ai/) with your registered Gupshup email address (used during app creation)
+<img width="502" height="306" alt="image" src="https://github.com/user-attachments/assets/02b5e4e5-9ba1-4520-bc94-afbc98bad8a2" />
+
+
+2. Navigate to **Wallet** → **My Wallet**.
+
+
+3. Click **Add Credits**.
+
+<img width="498" height="286" alt="image" src="https://github.com/user-attachments/assets/1f15904f-294a-43bd-98cc-52e462372816" />
+
+
+4. Enter the recharge amount.
+   - The minimum recharge amount is generally **$10**.
+5. Provide the required billing information.
+
+<img width="478" height="320" alt="image" src="https://github.com/user-attachments/assets/a0d70912-e5ea-4004-9c0b-322ed1837b09" />
+
+
+6. Select your preferred payment method.
+
+7. Complete the payment.
+
+
+## Supported Payment Methods for Gupshup Wallet Recharge
+
+The available payment methods may vary depending on your region, but commonly include:
+
+- Credit Cards
+- Debit Cards
+- Net Banking (where available)
+- Other payment options supported by Gupshup
+
+
+## Monitoring Your Gupshup Wallet Balance
+
+You can monitor your Gupshup wallet balance in two ways:
+
+- **On the Glific platform**, where the current wallet balance is displayed.
 
 
 <img width="499" alt="image" src="https://github.com/glific/docs/assets/143380171/10aa2a07-ba85-4c3f-974a-cbdd41f71845"/>
 
-- When the `Gupshup wallet balance` drops to around `$1` an email is sent to the Organization from Glific letting them know the balance is low. 
+- **Through low balance warning emails** sent by Glific.
 
-- The setting of `$1` or any specific amount  is configurable at Glific’s end. 
+### Low Balance Warning Emails
 
-## Below are the steps on how this can be configured.
+When your wallet balance reaches the configured **Low Balance Threshold** (for example, **$1**), Glific automatically sends a warning email.
 
-1) Login to the `Glific Account`
+> **Note:** The threshold amount is configurable and can be changed based on your organisation's requirements.
+More details on who receives these notifications and how wallet balance alerts work are covered in the sections below
 
-2) Go to `Settings`
 
-<img width="265" alt="image" src="https://github.com/glific/docs/assets/143380171/990b7b56-c801-4ca2-a099-74f8135674b6"/>
+The warning email is sent to the **email address that was used while creating your Glific app (during the Glific onboarding form submission).**
 
-3) Click on `Organization>> Scroll down`
+If this email address is no longer accessible or needs to be updated, please contact the Glific Support Team on support@gliifc.org with the new email address that should receive these notifications.
+
+### Configuring the Low Balance Threshold
+
+To update the low balance threshold:
+
+1. Log in to your Glific account.
+
+2. Navigate to **Settings**.
+
+<img width="189" height="181" alt="image" src="https://github.com/user-attachments/assets/839b140e-376a-437e-aa22-a3d84a1180ec" />
+
+3) Click on `Organisation>> Scroll down`
    
 4) See the `Low Balance threshold`
 
-<img width="485" alt="image" src="https://github.com/glific/docs/assets/143380171/6d0e9325-b73c-497d-af42-a90c47a71f6c"/>
+<img width="427" height="302" alt="image" src="https://github.com/user-attachments/assets/b5aa3eb4-6e21-432c-96c1-c6043dcab913" />
 
-### Essential Guidelines
+5. Enter the desired amount.
 
-- The pre-configured number on the low balance threshold can to be changed according to the Organization need,just edit the number and hit on `Save`.
+6. Click **Save**.
 
-- This low wallet balance warning emails will be sent to the email address which was initially provided while filling the Glific Form.
+> Adjust this value based on how frequently your organisation recharges the wallet.
+### Understanding the Wallet Balance
 
-- If in case the previous email address is not accessible or needs to be modified. Please reach out to the `Support Team` sharing the email address which needs to be set on the  warning mails.
+When your wallet balance reaches **$0**, Gupshup automatically provides an additional **$5 credit**.
 
-- Gupshup gives an extra `$5`,when the wallet balance reaches `$0` so that there is no interuption in sending of messages until the balance hits `-$5`. The Organization should always ensure to recharge the Gupshup Wallet before the -$5 gets expired to continue sending messages.
+This allows your organisation to continue sending WhatsApp messages until the balance reaches **-$5**.
 
-#### How to Recharge Gupshub Wallet Balance
-- Log in to your Gupshup account  and navigate to the Wallet section and click on My Wallet.
-- Click the option to Add credits
-- Enter the amount.(Note that minimum recharge is often $10.)
-- Enter the necessary billing information to generate an invoice, such as your name, address, and email.
-- Choose your payment option and complete the payment
+### Example
 
- [read here](https://support.gupshup.io/hc/en-us/articles/33760266293529-Basics-of-Gupshup-Wallet-and-Billing-for-Prepaid-USD-Wallet) to know more about how to recharge Gupshup Wallet Balance.
+- Wallet Balance: **$0**
+- Gupshup allows messaging using an additional **$5 credit**
+- Messages continue to be delivered until the balance reaches **-$5**
+
+> **Important:** Recharge your wallet before it reaches **-$5** to avoid interruptions.
+
+If your wallet already shows a **negative balance**, any recharge amount is first used to clear the outstanding balance. The remaining amount is then added as your available wallet balance.
+
+For example:
+
+- Current Balance: **-$3**
+- Recharge: **$20**
+- Available Balance after recharge: **$17**
+
+---
+
+### Minimum Wallet Balance
+
+To avoid any disruption in message delivery:
+
+- Regularly monitor your wallet balance.
+- Recharge before the balance reaches **-$5**.
+- Keep sufficient funds in the wallet based on your expected messaging volume.
 
 
-- If the balance goes below `-$5`,sending messages will give an error - **the wallet balance is low**. So in this scenario the messages will get delivered to the users until the Gupshup wallet balance reaches -5 $. 
+---
+### What Happens When the Balance Falls Below -$5?
 
-- Glific gets a **balance is not present** error from Gupshup as soon as the wallent balance for an Organization goes `-$5`.
+Once the wallet balance reaches **-$5**:
 
-- At any moment of time if Glific gets a significant amount of errors,the organization will get suspended on Glific and won't be allowed to send any messages.
+- Gupshup stops processing outgoing messages.Incoming messages still functions as expected? Might be good to add about this too.
+- Message sending fails due to insufficient wallet balance.
+- Glific begins receiving wallet balance errors from Gupshup.
 
-- Once the organization is suspended it won't get unsuspend automatically on Glific,even if the recharge is done on the Gupshup Wallet.
+If Glific receives a significant number of these errors, your organisation is automatically **suspended** to prevent continuous message failures.
 
-- To `unsuspend` the Glific account please reach out to the `Support Team`.
- 
+### Glific Suspension
+
+Once your organisation is suspended:
+
+- You will no longer be able to send messages from Glific.
+- Recharging the Gupshup wallet **does not automatically remove the suspension**.
+
+To restore messaging:
+
+1. Recharge your Gupshup wallet.
+2. Contact the **Glific Support Team** on support@gliifc.org
+3. The support team will manually unsuspend your organisation.
+
+---
+
+### Best Practices
+
+- Monitor your wallet balance regularly.
+- Configure an appropriate low balance threshold.
+- Recharge before the balance reaches **-$0**.
+- Ensure the registered notification email (used while creating the Glific app) is accessible.
+- Keep enough balance based on your expected messaging usage instead of relying on the temporary $5 credit.
 
