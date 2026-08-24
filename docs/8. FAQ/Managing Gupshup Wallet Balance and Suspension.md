@@ -61,8 +61,7 @@ You can monitor your Gupshup wallet balance in two ways:
 
 - **On the Glific platform**, where the current wallet balance is displayed.
 
-
-<img width="499" alt="image" src="https://github.com/glific/docs/assets/143380171/10aa2a07-ba85-4c3f-974a-cbdd41f71845"/>
+    <img width="499" alt="image" src="https://github.com/glific/docs/assets/143380171/10aa2a07-ba85-4c3f-974a-cbdd41f71845"/>
 
 - **Through low balance warning emails** sent by Glific.
 
