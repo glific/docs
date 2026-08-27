@@ -52,7 +52,7 @@ The available payment methods may vary depending on your region, but commonly in
 - Credit Cards
 - Debit Cards
 - Net Banking (where available)
-- Other payment options supported by Gupshup
+- Other payment options supported by Gupshup such as (Razorpay, Stripe)
 
 
 ## Monitoring Your Gupshup Wallet Balance
@@ -87,30 +87,24 @@ To update the low balance threshold:
 
 <img width="189" height="181" alt="image" src="https://github.com/user-attachments/assets/839b140e-376a-437e-aa22-a3d84a1180ec" />
 
-3) Click on `Organisation>> Scroll down`
+3. Click on `Organisation>> Scroll down`
    
-4) See the `Low Balance threshold`
+4. See the `Low Balance threshold`
 
-<img width="427" height="302" alt="image" src="https://github.com/user-attachments/assets/b5aa3eb4-6e21-432c-96c1-c6043dcab913" />
+<img width="470" height="359" alt="image" src="https://github.com/user-attachments/assets/ec580492-4407-4f96-b8d9-c284f2e0272c" />
 
-5. Enter the desired amount.
+5. Receive warning mails — Receive warning mails - Toggle on this checkbox to receive automatic email alerts about your Gupshup wallet balance. If the checkbox is un-checked,then no alerts would be sent.These warning emails are sent to the registered email address provided while filling out the Glific Onboarding Form at the start.
+Incase you want to change the added email address please do reach out to Glific support on support@glific.org 
 
-6. Click **Save**.
+6. Low balance threshold for warning emails — Set a desired number, for example 10. If your Gupshup wallet balance drops below this amount (e.g., 10 USD), the system will send you a warning email. These emails will be sent once a week until you recharge your wallet above 10 USD.
+
+7. Critical balance threshold for warning emails - Set a desired number, for example 3. Once your balance drops to or below this lower amount, you'll receive warning emails more often - every two days - since your balance is close to running out.
+
+8. Click **Save**.
 
 > Adjust this value based on how frequently your organisation recharges the wallet.
-### Understanding the Wallet Balance
 
-When your wallet balance reaches **$0**, Gupshup automatically provides an additional **$5 credit**.
-
-This allows your organisation to continue sending WhatsApp messages until the balance reaches **-$5**.
-
-### Example
-
-- Wallet Balance: **$0**
-- Gupshup allows messaging using an additional **$5 credit**
-- Messages continue to be delivered until the balance reaches **-$5**
-
-> **Important:** Recharge your wallet before it reaches **-$5** to avoid interruptions.
+> **Important:** Recharge your wallet before it reaches **-$1** to avoid interruptions.
 
 If your wallet already shows a **negative balance**, any recharge amount is first used to clear the outstanding balance. The remaining amount is then added as your available wallet balance.
 
