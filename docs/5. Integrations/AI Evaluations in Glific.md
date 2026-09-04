@@ -3,147 +3,85 @@
   <tr>
     <td><b>3 minutes read</b></td>
     <td style={{ paddingLeft: '40px' }}><b>Level: Advanced</b></td>
-    <td style={{ paddingLeft: '40px' }}><b>Last Updated: June 2026</b></td>
+    <td style={{ paddingLeft: '40px' }}><b>Last Updated: Sept 2026</b></td>
   </tr>
 </table>
 </h4>
 
-# AI Evaluations
+# Running AI evaluations 
+Evaluations can be run through on by navigating to `Golden Q&A Evaluation` tab within the AI Assistant page. AI Evaluations score a version against a Golden Q&A — a fixed set of questions paired with ideal answers. The AI evaluations return 3 scores, a reason for the score, and an overall summary and next steps based on all the scores from the evaluation run. 
 
-AI Evaluations allow your organization to test and measure how accurately your AI Assistant responds to questions, by comparing its answers against a trusted set of "golden" question-answer pairs. This helps NGOs ensure their AI Assistants are performing well and giving the right information to beneficiaries before deploying them at scale.
-
-## Raising the request
-1. Navigate to `AI Toolkit` -> `AI Evals`, you should see the button to `Request Access`
-<img alt="Screenshot 2026-06-12 at 10 31 40 AM" src="https://github.com/user-attachments/assets/36b38dc8-77cb-40e8-8e2d-cfe35f89ab8d" />
-
-2. Click on the button to raise the request to enable the feature
-3. Glific team will enable this feature within 24 hours.
-4. Once enabled the `AI Evals` page is visible after logging in the platform. No other notification outside the Glific platform will be sent. 
-
-## Prerequisites
-Before running an AI Evaluation, make sure you have:
-1. At least one AI Assistant configured in Glific (see: AI Assistants [documentation](https://glific.github.io/docs/docs/Integrations/Creating%20and%20modifying%20assistants%20in%20Glific))
-2. A Golden QA dataset — a CSV file containing benchmark questions and their expected answers
-
-## Navigating to AI Evaluations
-1. Log in to your Glific account.
-2. On the left sidebar, click on `AI Toolkit`
-3. Click on `AI Evals`
-<img  alt="Screenshot 2026-05-21 at 10 50 06 AM" src="https://github.com/user-attachments/assets/4601f2e2-23b0-49f2-9507-fc8fbbe334ca" />
-
-The page shows a table of all past evaluations with the following columns:
-- Evaluation Name — The name you gave the evaluation, along with the AI Assistant version and Golden QA dataset used along with its duplication factor.
-- Status — Whether the evaluation is Completed, Running, or Failed.
-- Cosine Similarity — A score indicating how semantically close the AI's answers were to the expected answers (more on this below).
-- Completed at — The date and time when the evaluation finished.
-- Actions — A button to download the detailed results.
-
-## Part 1: Running an AI Evaluation
-### Step 1: Click "+ Create AI Evaluation"
-From the AI Evaluations page, click the + Create AI Evaluation button in the top right corner.
-<img  alt="Screenshot 2026-05-21 at 10 57 19 AM" src="https://github.com/user-attachments/assets/f0659836-b8ab-413b-9159-d8fe10eab271" />
-
-You will be taken to the Create AI Evaluation page.
-
-<img  alt="Screenshot 2026-05-21 at 11 02 42 AM" src="https://github.com/user-attachments/assets/239207ab-1459-4384-b62a-b33e18a06ff0" />
-
-### Step 2: Select or Upload a Golden QA Dataset
-Under the Select Golden QA section, you have two options:
-<img alt="Screenshot 2026-05-21 at 11 07 46 AM" src="https://github.com/user-attachments/assets/9457aea0-dccc-4181-92f4-74a5902588c3" />
-
-- Option A — Use an existing dataset: Click the "Search or select a Golden QA dataset" dropdown and choose from your previously uploaded datasets.
-- Option B — Upload a new dataset: Click the "Upload Golden QA" button to upload a new CSV file. Provide the duplication factor for the uploaded data set. 
-
-<img alt="Screenshot 2026-05-21 at 11 07 14 AM" src="https://github.com/user-attachments/assets/8371611a-12d0-4ff7-a34f-b44ce9ab313b" />
-
-Duplication factor is the number of times the golden questions are repeated in the given dataset while running the evaluation. Allowed values 1-5. 
-
-Tip: Your CSV must follow the format question, answer with one pair per row. Access the [Golden QA CSV template](https://docs.google.com/spreadsheets/d/198UpOMeU53s9O-fwbIl0DIJLuD3l24jgkq74CoDfSQM/copy) to get started.
-
-### Step 3: Select an AI Assistant
-Click the "Search or select an AI assistant" dropdown under AI Assistant and choose the specific assistant (and its version) you want to evaluate.
-
-<img alt="Screenshot 2026-05-21 at 11 08 55 AM" src="https://github.com/user-attachments/assets/357aee0f-1c06-4fe7-a245-5ac8173f0f02" />
-
-Note: Each AI Assistant can have multiple versions. Make sure you select the correct version you want to test — this is especially useful when comparing how a newer version performs versus an older one.
-
-### Step 4: Enter an Evaluation Name
-Under Evaluation Details, type a unique, descriptive name for this evaluation run in the Evaluation Name field.
-<img  alt="Screenshot 2026-05-21 at 11 10 21 AM" src="https://github.com/user-attachments/assets/b8c04eb0-613c-4b8b-bdf9-d90640df63a8" />
+<img width="" height="" alt="Screenshot 2026-09-03 at 8 20 00 AM" src="https://github.com/user-attachments/assets/49099ad5-d2fa-4886-a7db-491d2b5f5216" />
 
 
-Tip: Use a name that helps you identify the test later, such as v2-assistant-may-test or knowledge-base-check-q1.
+The evaluation scores answer on three independent metrics: 
+1. **Adherence to Ground Truth**: is AI generated answer correct in meaning against the golden answer?
+2. **Adherence to Knowledge Base**: is every claim in AI generated answer grounded in the information retrieved from knowledge base, or hallucinated?
+3. **Adherence to Prompt**: does AI generated answer follow the configured language, tone, and answer-vs-refuse behaviour?
 
+- each of these metrics is a score between 0 to 5, plus a plain-language reasoning by the judge. 
 
-### Step 5: Run the Evaluation
-Click the "Run Evaluation" button to start the evaluation.
+The result is that a wrong-but-similar sounding answer can be caught by adherence to ground truth , hallucinations get flagged with the specific unsupported claim named by adherence to knowledge base, and all results (scores, reasoning) are stored and accessible in the assistant's history of runs to enable comparison between versions. 
 
-Glific will now send each question from your Golden QA dataset to the selected AI Assistant and compare the responses against the expected answers. The evaluation will appear in the AI Evaluations list with a "**Completed**" status once it finishes. Time taken to complete the evaluation run depends on the number of golden questions and answers. A good estimation of time range would be 15-30 mins, can even go to 45 mins. 
+## Set up a Golden Q&A set
 
-## Part 2: Reviewing Results
-### Viewing Evaluation Results
-Once an evaluation is complete, it appears in the AI Evaluations tab with its status, cosine similarity score, and completion timestamp.
+1. On the `Golden Q&A Evaluation` tab, 
+2. Click `Manage Golden Q&A`.
+  <img width="" height="" alt="Screenshot 2026-09-02 at 1 49 17 PM" src="https://github.com/user-attachments/assets/39709c45-eed2-4b55-8202-5cf2df979286" />
 
-Each evaluation row shows:
-- The evaluation name 
-- The AI Assistant that was tested 
-- The name of Golden QA file used along with its duplication factor
-- Action to download the results
+4. You’ll see existing sets, if you have run evaluations in past; else,
+5. You can use `Add Golden Q&A` button. To create one,
+  <img width="" height="" alt="Screenshot 2026-09-02 at 1 50 12 PM" src="https://github.com/user-attachments/assets/1680c0b3-89d8-4da3-870d-882546b8d9b4" />
 
-Click the "Download Results" button on any completed evaluation to download a detailed CSV file with a row-by-row breakdown of each question, the AI's actual response, the expected answer, and the individual similarity score. 
+7. Click Add Golden Q&A, give it a name, and upload a CSV with two columns: question and answer.
+8. There’s a [Google Sheet template link](https://docs.google.com/spreadsheets/d/198UpOMeU53s9O-fwbIl0DIJLuD3l24jgkq74CoDfSQM/copy) to help format the file.
+9. Click `Add` to save it.
 
+<img width="" height="" alt="Screenshot 2026-09-02 at 1 47 45 PM" src="https://github.com/user-attachments/assets/900d2b76-7a5c-421c-a56c-6ece572cbe38" />
 
-Open the results CSV in a Google spreadsheet to perform further analysis and interpret the results of the evaluation.
+To learn more on how to create good set of golden Q&As, go [here](https://glific.github.io/docs/docs/FAQ/About%20Golden%20QnA)
 
-<img  alt="Screenshot 2026-05-21 at 11 19 17 AM" src="https://github.com/user-attachments/assets/46aeab60-7da7-4c44-8dec-8b7534ef1348" />
+## Run the evaluation
+1. On the `Golden Q&A Evaluation` tab, 
+2. Click `Run evaluation` (or Run another evaluation if the version was evaluated before).
+   <img width="" height="" alt="Screenshot 2026-09-02 at 1 53 20 PM" src="https://github.com/user-attachments/assets/486437e2-3876-4047-a1e1-a887e0397b79" />
 
-Through comparing the golden answer (ground_truth_answer) with the generated answers (llm_answer), isolating the rows with lower scores (less than 0.3), you should be able to understand what to change in your assistant (either the prompt or the knowledge base) to get better answers from the AI assistant. 
+4. In the dialog, choose the `Golden Q&A` set from the dropdown (the last-used set is marked),
+5. Then choose how many times to send each question: 1x (Quick smoke test) asks each question once — the fastest way to check things broadly work; or 5x (Consistency check) asks each question five times to catch answers that change between attempts.
+6. Click `Run evaluation`.
+7. Evaluations run in the background, and can take upto 10-15 mins depending on the number of questions and duplication factor used. So you can keep working and come back — the result appears when it completes.
 
-In the results csv "question_id" is referring to the question number from the golden QA list. This means question id of the question in the first row of the Golden QA csv will be 1 and so on.
+## Interpreting the results
+Once an evaluation finishes, the `Run` sub-tab shows the latest run for that version (with the Golden set name, duplication factor, and timestamp). A dial shows the OVERALL score out of 5 with a health badge (e.g. “Could improve”) and an AI-written summary highlighting strengths, weaknesses, and the top questions worth checking. Treat the summary as a guide - and use it to find the top 3 things to inspect from the results of the given evaluation run.
 
-## Understanding Cosine Similarity
-The Cosine Similarity score tells you how meaningfully similar the AI Assistant's actual answers were to the expected "golden" answers. You can hover over the ⓘ icon next to the column header to see an explanation for what cosine similarity means.
+The overall score is a weighted average of three checks, each scored 0–5: 
 
-Here's a quick guide to interpreting the score:
+1. Adherence to ground truth (weight 50%, how closely answers matches the facts shared in the golden answers),
+2. Adherence to prompt (weight 20%, how well answers follow the instructions), and
+3. Adherence to knowledge base (weight 30%, how well answers stay grounded in the attached documents).
 
-| Score | Meaning |
-|-------|---------|
-| > 0.7 | Answers convey similar intent and information as the golden answer |
-| 0.3 – 0.7 | Moderate alignment — some drift in meaning, worth reviewing |
-| < 0.3 | The response has drifted significantly in meaning, even if some words overlap — the assistant may need tuning |
+- Score colours: 0–1 needs improvement (red), 2–3 could improve (amber), 4–5 good (green).
 
+<img width="" height="" alt="Screenshot 2026-09-02 at 2 00 59 PM" src="https://github.com/user-attachments/assets/00c976ed-0f98-422f-8316-e4c880ead262" />
 
-- **Analyze answers that are below 0.3** —  Cosine similarity can be good starting indicator to weed out answers that are not aligned at all. So starting with answers that are low scoring and figuring out how to improve the scores on these is a great start. Consistently scoring above 0.7 is a good indicator that the AI answers are aligned to your expectations. However, following nuances can be kept in mind: 
-- **Low-scoring evaluations don't always mean failure** — review the downloaded results to identify which specific questions scored poorly. You may find patterns that can guide improvements to your assistant's knowledge base or prompt instructions. For some questions, it may be ok to get lower scores ex- your AI assistant is catching edge cases and not answering to harmful or potentially misleading questions. 
-- **High-scoring evaluations more than 0.7 don’t always mean correct answers** — review the results to identify if the answers are also complete. Once the majority of the answers are scoring high on cosine similarity more evaluators can be added to help further improve the correctness and completeness of answers. Connect with Glific team to understand how this can be enabled. 
+## Question-level results and comparing versions
 
-## Tips and Best Practices
-- **Run evaluations regularly** — especially after making changes to your AI Assistant's knowledge base, instructions, or model settings. This helps you track whether changes improved or worsened performance.
-- **Compare versions** — use the same Golden QA dataset across different AI Assistant versions to directly compare their performance scores.
-- **Build a strong Golden QA** — the quality of your evaluation depends on the quality of your Golden QA dataset. Include diverse, representative questions that your beneficiaries actually ask.
+<img width="" height="" alt="Screenshot 2026-09-02 at 2 01 16 PM" src="https://github.com/user-attachments/assets/868a4e5b-1d83-4fbf-b461-abfb47901da6" />
+ 
+Below the summary, every question is listed. Two views are available:
+1. Individual Rows (a table with columns for Question, Expected Answer, Assistant Answer, and the three per-question scores) and
+2. Group By Questions (groups each question with its answer(s) and per-metric score chips — especially useful for 5x runs where each question has several answers).
+3. Use these to pinpoint where the assistant is weak,
+4. And `Export CSV` to further analyse each question, generated answer, the rating and reason behind the rating in google sheets.
 
+The `History` sub-tab lists all past runs in one comparison table (Version, Golden Q&A, Duplication Factor, Overall, and the per-metric scores), with the same colour coding. This is how you tell whether a prompt or model change actually improved the assistant before you publish it.
 
-## Golden QA
-The Golden QA tab is part of Glific's AI Evals section, found under the AI toolkit in the left navigation menu. It serves as a library of curated question-and-answer datasets — called "Golden QA" — that are used as the reference benchmarks when evaluating an AI Assistant's performance.
-Each dataset is a CSV file containing a set of questions paired with their ideal (or "golden") answers with a certain duplication factor. Once a dataset has been uploaded, it can be seen here and can be re-used from for multiple eval runs.
-
-## How to Use It
-**Uploading a Golden QA Dataset** Golden QA datasets can be uploaded from the Create AI Evaluation form (accessed via the `+ Create AI Evaluation` button on the AI Evaluations tab). On that form, click Upload Golden QA to upload a new CSV file. A template is available via link on the create form to help you get started quickly.
-
-<img  alt="Screenshot 2026-05-21 at 11 24 42 AM" src="https://github.com/user-attachments/assets/643af63b-d8eb-4092-a5c5-a4082358b644" />
-Once uploaded, the dataset will appear in the Golden QA tab and remain available for future evaluations.
-
-**Browsing and Searching Datasets** On the Golden QA tab, all previously uploaded datasets are listed in a table sorted by creation date (newest first). Use the Search bar at the top right to filter datasets by name if you have a large library. You can also click the Created On column header to toggle the sort order.
-
-**Downloading a Dataset** Each row in the table has a download icon (↓) in the Actions column. Clicking it downloads the corresponding CSV file, which is useful for reviewing or auditing the question-answer pairs, or for making edits before re-uploading a revised version.
-
-**Using a Dataset in an Evaluation** When creating an AI Evaluation, use the "Search or select a Golden QA" dropdown to pick an existing dataset from the Golden QA library. Combine it with an AI Assistant selection and an Evaluation Name, then click Run Evaluation. The platform will send each question in the dataset to the chosen AI Assistant, compare the responses to the golden answers, and report a cosine similarity score once the run is complete.
-
-## Tips 
-- Use descriptive, version-stamped names for your datasets (e.g., knowledge_goldenqa_v2_20260512) so they are easy to identify and trace over time.
-- Keep your golden answers concise and precise — the cosine similarity metric performs best when the reference answers are well-defined rather than overly verbose.
-- Reuse the same dataset across different evaluation runs to isolate the variable being tested (e.g., a different AI Assistant version or knowledge base), making comparisons meaningful.
+<img width="" height="" alt="Screenshot 2026-09-02 at 2 13 20 PM" src="https://github.com/user-attachments/assets/77a8187e-c2c4-4811-8af0-c5d8a155a567" />
 
 
 
+## Going live
+When you’re satisfied with a version’s evaluation results and sandbox testing, select that version in the version dropdown and click Go Live (top right). This publishes it as the next major version and makes it the version served to real users in every Glific flow that references this assistant’s ID. The button is disabled when the selected version is already the live one.
 
+## Recommended workflow
+Edit or create new version → Save (creates a new draft version) → test in Try It Out → Run an evaluation → check History to confirm it beat the previous version → only then Go Live.

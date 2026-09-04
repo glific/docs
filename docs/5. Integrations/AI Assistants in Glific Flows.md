@@ -4,7 +4,7 @@
     <tr>
       <td><b>6 minutes read</b></td>
       <td style={{ paddingLeft: 40 }}><b> Level: Advanced</b></td>
-      <td style={{ paddingLeft: 40 }}><b>Last Updated: July 2026</b></td>
+      <td style={{ paddingLeft: 40 }}><b>Last Updated: Sept 2026</b></td>
     </tr>
   </table>
 </h3>
@@ -50,39 +50,39 @@ This section explains how to:
 
 _Screenshot of example flow set up is given below_
 
-<img width="633" height="501" alt="Screenshot 2025-08-09 at 12 51 47 AM" src="https://github.com/user-attachments/assets/6cb60c7a-6b75-4c96-8b78-88fa3318a8c2" />
+<img width="" height="" alt="Screenshot 2025-08-09 at 12 51 47 AM" src="https://github.com/user-attachments/assets/6cb60c7a-6b75-4c96-8b78-88fa3318a8c2" />
 
 
 #### Step 2: Add a  Call Webhook node. This is where we integrate the OpenAI Assistant.
 
 - By default,  `Function`  would be selected. Leave this as it is.
 
-<img width="473" height="394" alt="Screenshot 2025-12-02 at 6 07 25 PM" src="https://github.com/user-attachments/assets/e9f685cb-910d-40ff-93a0-2f4688092ae2" />
+<img width="" height="" alt="Screenshot 2025-12-02 at 6 07 25 PM" src="https://github.com/user-attachments/assets/e9f685cb-910d-40ff-93a0-2f4688092ae2" />
 
 - In the `Function` field, select the pre-defined function name  `filesearch-gpt`, from the dropdown.
 
-<img width="452" height="377" alt="Screenshot 2025-12-02 at 6 08 30 PM" src="https://github.com/user-attachments/assets/3b03c3bf-ca5c-423b-b231-12849e147909" />
+<img width="" height="" alt="Screenshot 2025-12-02 at 6 08 30 PM" src="https://github.com/user-attachments/assets/3b03c3bf-ca5c-423b-b231-12849e147909" />
 
 - Give the webhook `Result Name` - you can use any name. In the screenshot example, it’s named as `gptresponse`.
 
-<img width="478" height="405" alt="Screenshot 2025-12-02 at 6 08 59 PM" src="https://github.com/user-attachments/assets/3aa57481-5aac-4106-980b-089c46e89744" />
+<img width="" height="" alt="Screenshot 2025-12-02 at 6 08 59 PM" src="https://github.com/user-attachments/assets/3aa57481-5aac-4106-980b-089c46e89744" />
 
 
 
 #### Step 3: Click on Function Body (top right corner). You would see the following.
 
-<img width="628" height="435" alt="Screenshot 2025-12-02 at 6 10 59 PM" src="https://github.com/user-attachments/assets/aff3ba8d-e5d0-4958-b10c-2bfa481d2128" />
+<img width="" height="" alt="Screenshot 2025-12-02 at 6 10 59 PM" src="https://github.com/user-attachments/assets/aff3ba8d-e5d0-4958-b10c-2bfa481d2128" />
 
 - In `question` parameter enter the flow variable containing the question asked by the user. In the given example `question` is the `result name`, hence provided `@result.question` in the question parameter.
 - In `assistant_id` enter the assistant ID, copied as described in [Creating and modifying AI assistants in Glific](https://glific.github.io/docs/docs/Integrations/Creating%20and%20modifying%20assistants%20in%20Glific/)
 
-  <img width="623" height="438" alt="Screenshot 2025-12-02 at 9 18 23 AM" src="https://github.com/user-attachments/assets/880a4181-bd79-4d04-92aa-c0d502456bd5" />
+  <img width="" height="" alt="Screenshot 2025-12-02 at 9 18 23 AM" src="https://github.com/user-attachments/assets/880a4181-bd79-4d04-92aa-c0d502456bd5" />
 
 #### Step 4:  Display the Assistant's response
 - Once the Webhook is updated, add a `Send Message` node and enter `@results.gptresponse.message` variable to receive the AI response.
 - In the given example `gptresponse` is the `result name` (refer to Step 2). If `ai_response` was the result name, the variable would be `@results.ai_response.message`.
 
-  <img width="643" height="498" alt="Screenshot 2025-08-09 at 1 28 11 AM" src="https://github.com/user-attachments/assets/6c4d143e-a1b9-4523-a684-8eae3e0e0e97" />
+  <img width="" height="" alt="Screenshot 2025-08-09 at 1 28 11 AM" src="https://github.com/user-attachments/assets/6c4d143e-a1b9-4523-a684-8eae3e0e0e97" />
 
   [Sample Flow](https://drive.google.com/file/d/10wGUil1l2SGfOZdWQQOO935OK-6BdZV1/view?usp=sharing) Click on the Sample Flow link to import it and explore how it works.
 
@@ -94,11 +94,11 @@ When a user asks a follow-up question, the assistant uses thread ID to remember 
 - This parameter should be set to the value `@results.previouswebhookname.thread_id`.
 - In the example shown, the previous webhook result name is gptresponse. So the thread ID should be referenced as - `@results.gptresponse.thread_id`.
 
-<img width="612" height="433" alt="Screenshot 2025-12-02 at 9 20 12 AM" src="https://github.com/user-attachments/assets/d9c58bdf-e2c3-4a72-b1a3-22b278e9d57e" />
+<img width="" height="" alt="Screenshot 2025-12-02 at 9 20 12 AM" src="https://github.com/user-attachments/assets/d9c58bdf-e2c3-4a72-b1a3-22b278e9d57e" />
 
 - In question parameter enter the flow variable containing the follow up question asked by the user. In the given example `result_5` is the result name, hence provided `@results.result_5` in the question parameter.
 
-<img width="624" height="489" alt="Screenshot 2025-08-09 at 1 34 26 AM" src="https://github.com/user-attachments/assets/bd95bbfb-18e1-46d0-915a-fad38782b5d4" />
+<img width="" height="" alt="Screenshot 2025-08-09 at 1 34 26 AM" src="https://github.com/user-attachments/assets/bd95bbfb-18e1-46d0-915a-fad38782b5d4" />
 
 ---
 
@@ -112,31 +112,31 @@ This section explains how to use the `voice-filesearch-gpt` webhook function in 
 - Create a `Send Message` node directing users to send their responses as audio messages, based on their preference.
 - In the `Wait for Response` node, select has audio as the message response type. Also, give a result name. In the screenshot below, `audio_query` is used as the result name.
 
-<img width="606" height="463" alt="Screenshot 2025-08-09 at 1 38 18 AM" src="https://github.com/user-attachments/assets/5805f7fd-f13f-4298-b9e3-bf63f235574c" />
+<img width="" height="" alt="Screenshot 2025-08-09 at 1 38 18 AM" src="https://github.com/user-attachments/assets/5805f7fd-f13f-4298-b9e3-bf63f235574c" />
 
 
 #### Step 2: Create Call a Webhook node
 - By default,`Function` would be selected. Leave this as it is.
 
-<img width="472" height="392" alt="Screenshot 2025-12-02 at 6 32 29 PM" src="https://github.com/user-attachments/assets/5203d925-ae4b-4397-8479-f774304e6454" />
+<img width="" height="" alt="Screenshot 2025-12-02 at 6 32 29 PM" src="https://github.com/user-attachments/assets/5203d925-ae4b-4397-8479-f774304e6454" />
  
 - In the `Function` field, select the pre-defined function name `voice-filesearch-gpt` , from the dropdown.
 
-<img width="523" height="431" alt="Screenshot 2025-12-02 at 6 33 32 PM" src="https://github.com/user-attachments/assets/fcf90118-6691-43f1-9f85-63a9ed3217c8" />
+<img width="" height="" alt="Screenshot 2025-12-02 at 6 33 32 PM" src="https://github.com/user-attachments/assets/fcf90118-6691-43f1-9f85-63a9ed3217c8" />
 
 - Give the webhook result name - you can use any name. In the screenshot example, it’s named `gpt_voice`.
 
-<img width="499" height="420" alt="Screenshot 2025-12-02 at 6 33 52 PM" src="https://github.com/user-attachments/assets/eb62c32e-393b-433b-b971-27eeefcfaec4" />
+<img width="" height="" alt="Screenshot 2025-12-02 at 6 33 52 PM" src="https://github.com/user-attachments/assets/eb62c32e-393b-433b-b971-27eeefcfaec4" />
 
-<img width="625" height="528" alt="Screenshot 2025-08-09 at 1 40 28 AM" src="https://github.com/user-attachments/assets/3ccb9af7-1a01-4fbb-9358-7a842c8c7960" />
+<img width="" height="" alt="Screenshot 2025-08-09 at 1 40 28 AM" src="https://github.com/user-attachments/assets/3ccb9af7-1a01-4fbb-9358-7a842c8c7960" />
 
 #### Step 3: Click on Function Body (top right corner). You would see the following.
 
-<img width="486" height="344" alt="Screenshot 2025-12-02 at 6 39 47 PM" src="https://github.com/user-attachments/assets/3434febe-4df9-4d5d-9a4e-4fab424610cf" />
+<img width="" height="" alt="Screenshot 2025-12-02 at 6 39 47 PM" src="https://github.com/user-attachments/assets/3434febe-4df9-4d5d-9a4e-4fab424610cf" />
 
 Pass the following paramters in the function body.
 
-<img width="536" height="375" alt="Screenshot 2025-12-02 at 7 20 46 PM" src="https://github.com/user-attachments/assets/f107f0e2-3632-4b3c-8c1b-43224ab39c43" />
+<img width="" height="" alt="Screenshot 2025-12-02 at 7 20 46 PM" src="https://github.com/user-attachments/assets/f107f0e2-3632-4b3c-8c1b-43224ab39c43" />
 
 - For `contact ` keep this value as `@contact` as mentioned in the screenshot.
 - `speech` is the result name which is storing the voice note sent by the user.
@@ -149,7 +149,7 @@ Pass the following paramters in the function body.
 - Use `@results.webhook_result-name.translated_text` to show the text response.
 - In the given example `gpt_voice` is the webhook result name.
 
-<img width="622" height="473" alt="Screenshot 2025-08-09 at 1 45 38 AM" src="https://github.com/user-attachments/assets/bd42793c-f4a4-4326-814b-aea9ac7e7924" />
+<img width="" height="" alt="Screenshot 2025-08-09 at 1 45 38 AM" src="https://github.com/user-attachments/assets/bd42793c-f4a4-4326-814b-aea9ac7e7924" />
 
 
 #### Step 5: Send the voice note response
@@ -158,7 +158,7 @@ Pass the following paramters in the function body.
 - Use  `@results.gpt_voice.media_url` (gpt_voice is the result name of webhook node)
 
 
-<img width="617" height="252" alt="Screenshot 2025-08-09 at 1 46 58 AM" src="https://github.com/user-attachments/assets/547eed06-5697-4379-95d2-0221dc6093e6" />
+<img width="" height="" alt="Screenshot 2025-08-09 at 1 46 58 AM" src="https://github.com/user-attachments/assets/547eed06-5697-4379-95d2-0221dc6093e6" />
 
 
 [Sample Flow](https://drive.google.com/file/d/1EOXFnUqUPQz51xf3pYzhikkf_2VqXL4Z/view?usp=sharing) Click on the Sample Flow link to import it and explore how it works.
