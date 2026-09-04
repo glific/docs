@@ -14,7 +14,7 @@ The AI Assistants page (`AI toolkit` → `AI Assistant`) is where you build, tes
 
 # Creating and editing an assistant
 1. To create an assistant, go to `AI toolkit` → `AI Assistant`
-2. click `Create New Assistant` (top right).
+2. Click `Create New Assistant` (top right).
 3. This opens a blank “Untitled assistant”. Rename it with the pencil icon, then configure it using the tabs below.
 <img width="" height="" alt="Screenshot 2026-09-03 at 7 55 03 AM" src="https://github.com/user-attachments/assets/40af2160-a06e-4532-8c0d-0b9c6970f042" />
 
@@ -41,19 +41,20 @@ Examples of settings associated with the model:
 
 <img width="1223" height="714" alt="Screenshot 2026-09-03 at 8 36 42 AM" src="https://github.com/user-attachments/assets/e51f86ce-4f52-48d4-ac04-197a11a55433" />
 
-Model settings are dependent on the model. To learn more about the models, settings and which is suitable for your use case, go [here](https://developers.openai.com/api/docs/models/compare)
+Available model settings vary by model. To learn more about the models, settings and which is suitable for your use case, go [here](https://developers.openai.com/api/docs/models/compare)
 
 ## Knowledge Base tab
 1. Click `+ Add files` to attach documents the assistant can search when answering (supports PDF, DOC, DOCX, TXT, MD, HTML, and CSV, up to 20MB per file). A Knowledge Base ID is also shown here. Changes apply when you save a version.
 2. Files can be removed individually or downloaded.
 
-<img width="" height="" alt="Screenshot 2026-09-02 at 3 00 47 PM" src="https://github.com/user-attachments/assets/85cf701e-7f1b-4eeb-b8db-292dd679e1f9" />
+<img width="" height="" alt="Screenshot 2026-09-03 at 8 01 44 AM" src="https://github.com/user-attachments/assets/918f9631-11b9-4834-b8a2-653c9fd821ed" />
+
 
 To learn more about how to structure the knowledge base go [here](https://glific.github.io/docs/docs/FAQ/AI%20Chatbot%20Implementation%20Guidelines#1-knowledge-base)
 ## Try It Out tab
 A sandbox chat to test the currently selected version before going live with it to quickly test how the assistant answers are changing. It labels which version you’re testing and notes it’s sandbox-only, so real users are unaffected.
+<img width="" height="" alt="Screenshot 2026-09-02 at 3 09 25 PM" src="https://github.com/user-attachments/assets/47a4e41b-0c15-42b9-9d45-5db971e5c4a7" />
 
-<img width="" height="" alt="Screenshot 2026-09-03 at 8 01 44 AM" src="https://github.com/user-attachments/assets/918f9631-11b9-4834-b8a2-653c9fd821ed" />
 
 # Key concept: versions, Save, and Go Live
 Two actions drive the whole lifecycle. 
@@ -65,11 +66,14 @@ Two actions drive the whole lifecycle.
 3. **Go Live (publishing)** promotes the current version to the next major version (for example 1.2 → 2.0) and marks it LIVE. The live version is the one actually used in your Glific flows wherever that assistant ID is referenced. Until you Go Live, real users stay on the previously published version.
 
 <img width="" height="" alt="Screenshot 2026-09-03 at 7 52 16 AM" src="https://github.com/user-attachments/assets/07a0c44f-47f3-47a1-9ce9-9739e1eccc06" />
+
 ### Main points to note about assistant id and Go live action
-1. Making edits to an assistant does not change its assistant ID. Therefore, the assistant ID does not need to be updated each time a new version is published. 
-2. You can choose which version of the assistant gets used in the flow by using the `Go Live` button on that particular assistant version
-3. By default, new changes are not used directly in the flow.
-4. To use an assistant with the latest modifications, you must explicitly click `Go Live`.
+
+1. Making edits to an assistant and saving a new version does not change its assistant ID.
+2. Therefore, the assistant ID does not need to be updated in the flows each time a new version is saved or made live. 
+3. You can choose which version of the assistant gets used in the flow by using the `Go Live` button on that particular assistant version. 
+4. By default, new changes are not made live directly in the flow.
+5. To use an assistant with the latest modifications, you must explicitly click `Go Live`.
 
 ## Recommended workflow
 Edit or create new version of an assistant → Save (creates a new draft version of the assistant) → test in `Try It Out` → Run an evaluation → check `History` to compare scores with previous versions → only then Go Live.
