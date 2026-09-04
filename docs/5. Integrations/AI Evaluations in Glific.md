@@ -15,9 +15,9 @@ Evaluations can be run through on by navigating to `Golden Q&A Evaluation` tab w
 
 
 The evaluation scores answer on three independent metrics: 
-1. **Adherence to Ground Truth**: is AI generated answer correct in meaning against the golden answer?,
-2. **Adherence to Knowledge Base**: is every claim in AI generated answer grounded in the information retrieved from knowledge base, or hallucinated?, and
-3. **Adherence to Prompt**: does AI generated answer follow the configured language, tone, and answer-vs-refuse behaviour?,
+1. **Adherence to Ground Truth**: is AI generated answer correct in meaning against the golden answer?
+2. **Adherence to Knowledge Base**: is every claim in AI generated answer grounded in the information retrieved from knowledge base, or hallucinated?
+3. **Adherence to Prompt**: does AI generated answer follow the configured language, tone, and answer-vs-refuse behaviour?
 
 - each of these metrics is a score between 0 to 5, plus a plain-language reasoning by the judge. 
 
@@ -55,7 +55,8 @@ To learn more on how to create good set of golden Q&As, go [here](https://glific
 Once an evaluation finishes, the `Run` sub-tab shows the latest run for that version (with the Golden set name, duplication factor, and timestamp). A dial shows the OVERALL score out of 5 with a health badge (e.g. “Could improve”) and an AI-written summary highlighting strengths, weaknesses, and the top questions worth checking. Treat the summary as a guide - and use it to find the top 3 things to inspect from the results of the given evaluation run.
 
 The overall score is a weighted average of three checks, each scored 0–5: 
-1. Adherence to ground truth (weight 50%, how well answers match the golden answers),
+
+1. Adherence to ground truth (weight 50%, how closely answers matches the facts shared in the golden answers),
 2. Adherence to prompt (weight 20%, how well answers follow the instructions), and
 3. Adherence to knowledge base (weight 30%, how well answers stay grounded in the attached documents).
 
