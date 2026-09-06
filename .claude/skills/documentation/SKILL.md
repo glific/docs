@@ -37,6 +37,17 @@ The Glific frontend lives at `../glific-frontend/` relative to this repo.
 | `../glific-frontend/src/routes/AuthenticatedRoute/AuthenticatedRoute.tsx` | All route paths (maps feature name → URL) |
 | `../glific-frontend/src/graphql/queries/` | GraphQL queries (understand data a feature displays) |
 
+### Backend code location
+
+The Glific backend (Elixir/Phoenix, repo `glific/glific`) lives at `../glific/` relative to this repo. Read it only to confirm **user-observable behavior** the frontend doesn't make obvious — defaults, validation rules, limits, what a setting actually does, why an action is blocked. Do **not** document internal architecture (see the anti-patterns in `style-writing.md`).
+
+| Path | What it contains |
+|------|-----------------|
+| `../glific/lib/glific/{feature}/` | Domain logic for a feature — defaults, validations, business rules |
+| `../glific/lib/glific/{feature}.ex` | The feature's public context module (entry-point functions) |
+| `../glific/lib/glific_web/resolvers/{feature}.ex` | GraphQL resolvers — what each query/mutation actually does |
+| `../glific/lib/glific_web/schema/{feature}_types.ex` | GraphQL types, fields, and args exposed for the feature |
+
 ## File index
 
 | File | Purpose |
