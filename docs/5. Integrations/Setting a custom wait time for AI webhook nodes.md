@@ -91,7 +91,7 @@ To handle this gracefully:
 
 ## Choosing a good value
 
-A longer wait time is not always better — the contact sits in silence while the flow is paused, and no other flow can take over for them during that time.
+A longer wait time is not always better — the contact sits in silence for the whole time the flow is paused at that node.
 
 - **Text question over a small knowledge base (`filesearch-gpt`)**: the default 60 seconds is usually enough.
 - **Long documents, large knowledge bases or detailed answers**: try 120 seconds.
