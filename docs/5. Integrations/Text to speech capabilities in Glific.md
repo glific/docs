@@ -52,16 +52,13 @@ Add the parameters as shown in the screenshot.
 
 ## Setting the wait time for the response
 
-Glific pauses the flow at the `text_to_speech` node while the voice note is being generated, and waits **60 seconds** by default. Generating audio for a long message can take longer than that, and when the wait is over the flow moves ahead without the voice note.
+Glific pauses the flow at the `text_to_speech` node while the voice note is generated, and waits **60 seconds** by default. Audio for a long message can take longer than that, and once the wait is over the flow moves ahead without the voice note.
 
-To wait longer, add a `wait_time` parameter (in **seconds**) to the `Function Body`:
+To wait longer, add a `wait_time` parameter, in **seconds**, to the `Function Body`.
 
-```
-"text" : "@results.result_1",
-"wait_time" : 120
-```
+![The text_to_speech Function Body with a wait_time of 120 seconds](/img/integrations/speech/text_to_speech_wait_time.png)
 
-The maximum allowed value is 300 seconds (5 minutes). Leaving it blank keeps the default of 60 seconds. Read more in [Setting a custom wait time for AI webhook nodes](https://glific.github.io/docs/docs/Integrations/Setting%20a%20custom%20wait%20time%20for%20AI%20webhook%20nodes/).
+The maximum is 300 seconds (5 minutes). Leave it blank and the default of 60 seconds applies. Read more in [Call a webhook](https://glific.github.io/docs/docs/Product%20Features/Flows/Flow%20Actions/Call%20a%20webhook/#wait-time-for-ai-function-webhooks).
 
 #### Default parameters for speech_to_text node 
 When only `text` parameter is passed the following default values of model and voice are used 
