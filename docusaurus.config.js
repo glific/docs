@@ -54,6 +54,17 @@ const config = {
     ],
   ],
 
+  plugins: [
+    [
+      "posthog-docusaurus",
+      {
+        apiKey: process.env.POSTHOG_API_KEY,
+        appUrl: process.env.POSTHOG_HOST || "https://us.i.posthog.com",
+        enableInDevelopment: false,
+      },
+    ],
+  ],
+
   themeConfig: {
     navbar: {
       title: "Glific",
@@ -83,7 +94,7 @@ const config = {
           items: [
             {
               label: "Documentation",
-              to: "/docs/Introduction",
+              to: "/docs",
             },
           ],
         },
