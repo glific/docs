@@ -39,7 +39,7 @@ You can now set your own wait time on these nodes, **up to 5 minutes (300 second
 
 For these four functions, the pre-filled body already contains an empty `wait_time` field.
 
-<!-- SCREENSHOT: Function Body of a filesearch-gpt node showing the pre-filled "wait_time": "" field -->
+![Function Body of a filesearch-gpt node with a blank wait_time field](./images/ai-webhook-wait-time/function-body-wait-time-blank.png)
 
 #### Step 3: Enter the number of **seconds** you want Glific to wait.
 
@@ -53,7 +53,11 @@ For example, to wait 3 minutes for the assistant to answer:
 }
 ```
 
-<!-- SCREENSHOT: Same Function Body with "wait_time": 180 filled in -->
+![Function Body of a filesearch-gpt node with wait_time set to 180 seconds](./images/ai-webhook-wait-time/function-body-wait-time-180.png)
+
+For a voice node (`voice-filesearch-gpt`), the same parameter goes at the end of the body:
+
+![Function Body of a voice-filesearch-gpt node with wait_time set to 180 seconds](./images/ai-webhook-wait-time/voice-filesearch-wait-time.png)
 
 #### Step 4: Click `OK` and publish the flow.
 
