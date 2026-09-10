@@ -3,7 +3,7 @@
     <tr>
       <td><b>6 minutes read</b></td>
       <td style={{ paddingLeft: 40 }}><b>Level: Advanced</b></td>
-      <td style={{ paddingLeft: 40 }}><b>Last Updated: April 2026</b></td>
+      <td style={{ paddingLeft: 40 }}><b>Last Updated: September 2026</b></td>
     </tr>
   </table>
 </h3>
@@ -56,6 +56,7 @@ Add the parameters as shown in the screenshot below.
 
 - `speech` : It should be updated with the result name given for the audio file captured. In this example, the variable is named `speech` (Step 2), hence the value is `@results.speech.input` (If the audio note captured was saved as `query`, then the value will be `@results.query.input`)
 - `contact` : Keep the value as given in the screenshot below - `@contact`
+- `wait_time` : Optional. The number of **seconds** Glific waits for the converted text before moving ahead in the flow. The default is 60 seconds, which can be short for voice notes longer than a minute - in that case set a higher value such as `120`. The maximum allowed value is 300 seconds (5 minutes). Read more in [Setting a custom wait time for AI webhook nodes](https://glific.github.io/docs/docs/Integrations/Setting%20a%20custom%20wait%20time%20for%20AI%20webhook%20nodes/).
 
 #### Step 5: Once the webhook is updated, you could always refer to the translated text as `@results.bhashini_asr.asr_response_text` to use it inside the flow. 
 Add a `Send Message` node and paste this variable to show the converted text to the user.
@@ -108,6 +109,7 @@ Add the parameters as shown in the screenshot below.
 - `target_language` : The language in which the voice note will be generated
 - If translation is not needed, keep both `Source_language` and `target_language` the same.
 - Supported Target Languages: `"tamil" "kannada" "malayalam" "telugu" "assamese" "gujarati" "bengali" "punjabi" "marathi" "urdu" "spanish" "english" "hindi"`
+- `wait_time` : Optional. The number of **seconds** Glific waits for the voice note to be generated before moving ahead in the flow. The default is 60 seconds. Generating audio for long messages can take longer, so set a higher value such as `120` if the voice note does not reach the user. The maximum allowed value is 300 seconds (5 minutes). Read more in [Setting a custom wait time for AI webhook nodes](https://glific.github.io/docs/docs/Integrations/Setting%20a%20custom%20wait%20time%20for%20AI%20webhook%20nodes/).
 
 #### Step 5: Create a `send Message` node and paste the variable.
 
