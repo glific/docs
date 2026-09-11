@@ -77,7 +77,7 @@ _Screenshot of example flow set up is given below_
 - In `assistant_id` enter the assistant ID, copied as described in [Creating and modifying AI assistants in Glific](https://glific.github.io/docs/docs/Integrations/AI%20Assistants/)
 - `wait_time` is optional. It is the number of **seconds** Glific waits for the assistant to answer before it moves ahead in the flow. Leave it blank and Glific waits 60 seconds. Large knowledge bases or long answers can take longer, so set a higher value such as `120`. The maximum is 300 seconds (5 minutes).
 
-![The filesearch-gpt Function Body with a wait_time of 180 seconds](/img/integrations/openai/openai_filesearch_wait_time.png)
+![The filesearch-gpt Function Body with a wait_time of 180 seconds](../../static/img/integrations/openai/openai_filesearch_wait_time.png)
 
   Read more about the wait time in [Call a webhook](https://glific.github.io/docs/docs/Product%20Features/Flows/Flow%20Actions/Call%20a%20webhook/#wait-time-for-ai-function-webhooks).
 
@@ -150,7 +150,7 @@ Pass the following paramters in the function body.
 - `target_language` is the language that the response voice note needs to be in.
 - `wait_time` is optional. It is the number of **seconds** Glific waits for the response before it moves ahead in the flow. The default is 60 seconds. Voice takes longer than text, so `120` to `180` is a good starting point here. The maximum is 300 seconds (5 minutes). Read more in [Call a webhook](https://glific.github.io/docs/docs/Product%20Features/Flows/Flow%20Actions/Call%20a%20webhook/#wait-time-for-ai-function-webhooks).
 
-![The voice-filesearch-gpt Function Body with a wait_time of 180 seconds](/img/integrations/openai/openai_voice_filesearch_wait_time.png)
+![The voice-filesearch-gpt Function Body with a wait_time of 180 seconds](../../static/img/integrations/openai/openai_voice_filesearch_wait_time.png)
 
 #### Step 4: Display the text response
 - Create a `Send Message node`.

@@ -54,7 +54,7 @@ Glific pauses the flow at the `speech_to_text` node while the voice note is tran
 
 To wait longer, add a `wait_time` parameter, in **seconds**, to the `Function Body`.
 
-![The speech_to_text Function Body with a wait_time of 120 seconds](/img/integrations/speech/speech_to_text_wait_time.png)
+![The speech_to_text Function Body with a wait_time of 120 seconds](../../static/img/integrations/speech/speech_to_text_wait_time.png)
 
 The maximum is 300 seconds (5 minutes). Leave it blank and the default of 60 seconds applies. Read more in [Call a webhook](https://glific.github.io/docs/docs/Product%20Features/Flows/Flow%20Actions/Call%20a%20webhook/#wait-time-for-ai-function-webhooks).
 
