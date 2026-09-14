@@ -3,7 +3,7 @@
   <tr>
     <td><b>3 minutes read</b></td>
     <td style={{ paddingLeft: '40px' }}><b>Level: Beginner </b></td>
-    <td style={{ paddingLeft: '40px' }}><b>Last Updated: August 2026</b></td>
+    <td style={{ paddingLeft: '40px' }}><b>Last Updated: September 2026</b></td>
   </tr>
 </table>
 </h3>
@@ -83,7 +83,7 @@ To update the low balance threshold:
 
 1. Log in to your Glific account.
 
-2. Navigate to **Settings**.
+2. Navigate to **Settings**.(Go to the bottom left where you login name would appear, click that and select Settings)
 
 <img width="189" height="181" alt="image" src="https://github.com/user-attachments/assets/839b140e-376a-437e-aa22-a3d84a1180ec" />
 
@@ -93,12 +93,14 @@ To update the low balance threshold:
 
 <img width="470" height="359" alt="image" src="https://github.com/user-attachments/assets/ec580492-4407-4f96-b8d9-c284f2e0272c" />
 
-5. Receive warning mails — Receive warning mails - Toggle on this checkbox to receive automatic email alerts about your Gupshup wallet balance. If the checkbox is un-checked,then no alerts would be sent.These warning emails are sent to the registered email address provided while filling out the Glific Onboarding Form at the start.
+5. Receive warning mails — Receive warning mails - Enable this checkbox to receive automatic email alerts about your Gupshup wallet balance. If the checkbox is un-checked,Glific will send alerts only if your Gupshup wallet balance goes below $1.
+
+These warning emails are sent to the registered email address provided while filling out the Glific Onboarding Form at the start.
 Incase you want to change the added email address please do reach out to Glific support on support@glific.org 
 
 6. Low balance threshold for warning emails — Set a desired number, for example 10. If your Gupshup wallet balance drops below this amount (e.g., 10 USD), the system will send you a warning email. These emails will be sent once a week until you recharge your wallet above 10 USD.
 
-7. Critical balance threshold for warning emails - Set a desired number, for example 3. Once your balance drops to or below this lower amount, you'll receive warning emails more often - every two days - since your balance is close to running out.
+7. Critical balance threshold for warning emails - Set a desired number, for example 3. Once your balance drops below this amount (eg., 3 USD) or lower to this amount, you will receive warning emails more often - every two days - since your balance is close to running out.
 
 8. Click **Save**.
 
@@ -130,7 +132,7 @@ To avoid any disruption in message delivery:
 
 Once the wallet balance reaches **-$5**:
 
-- Gupshup stops processing outgoing messages.Incoming messages still functions as expected? Might be good to add about this too.
+- Gupshup stops processing outgoing messages.Incoming messages will still functions as expected.
 - Message sending fails due to insufficient wallet balance.
 - Glific begins receiving wallet balance errors from Gupshup.
 
@@ -152,6 +154,7 @@ To restore messaging:
 ---
 
 ### Best Practices
+
 
 - Monitor your wallet balance regularly.
 - Configure an appropriate low balance threshold.
