@@ -93,7 +93,7 @@ To update the low balance threshold:
 
 <img width="470" height="359" alt="image" src="https://github.com/user-attachments/assets/ec580492-4407-4f96-b8d9-c284f2e0272c" />
 
-5. Receive warning mails — Receive warning mails - Enable this checkbox to receive automatic email alerts about your Gupshup wallet balance. If the checkbox is un-checked,Glific will send alerts only if your Gupshup wallet balance goes below $1.
+5. Receive warning mails - Enable this checkbox to receive automatic email alerts about your Gupshup wallet balance. If the checkbox is un-checked,Glific will send alerts only if your Gupshup wallet balance goes below $1.
 
 These warning emails are sent to the registered email address provided while filling out the Glific Onboarding Form at the start.
 Incase you want to change the added email address please do reach out to Glific support on support@glific.org 
