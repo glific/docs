@@ -3,7 +3,7 @@
   <tr>
     <td><b>3 minutes read</b></td>
     <td style={{ paddingLeft: '40px' }}><b>Level: Advanced</b></td>
-    <td style={{ paddingLeft: '40px' }}><b>Last Updated: Sept 2026</b></td>
+    <td style={{ paddingLeft: '40px' }}><b>Last Updated: September 2026</b></td>
   </tr>
 </table>
 </h4>
@@ -44,7 +44,7 @@ Examples of settings associated with the model:
 Available model settings vary by model. To learn more about the models, settings and which is suitable for your use case, go [here](https://developers.openai.com/api/docs/models/compare)
 
 ## Knowledge Base tab
-1. Click `+ Add files` to attach documents the assistant can search when answering (supports PDF, DOC, DOCX, TXT, MD, HTML, and CSV, up to 20MB per file). A Knowledge Base ID is also shown here. Changes apply when you save a version.
+1. Click `+ Add files` to attach documents the assistant can search when answering (supports PDF, DOC, DOCX, TXT, MD,and HTML, up to 20MB per file). A Knowledge Base ID is also shown here. Changes apply when you save a version.
 2. Files can be removed individually or downloaded.
 
 <img width="" height="" alt="Screenshot 2026-09-03 at 8 01 44 AM" src="https://github.com/user-attachments/assets/918f9631-11b9-4834-b8a2-653c9fd821ed" />
