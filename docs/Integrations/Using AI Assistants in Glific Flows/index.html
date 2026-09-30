@@ -6,7 +6,7 @@
 <title data-rh="true">Using AI Assistants in Glific Flows | Glific</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://glific.github.io/docs/docs/Integrations/Using AI Assistants in Glific Flows"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Using AI Assistants in Glific Flows | Glific"><meta data-rh="true" name="description" content="6 minutes read"><meta data-rh="true" property="og:description" content="6 minutes read"><link data-rh="true" rel="icon" href="/docs/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://glific.github.io/docs/docs/Integrations/Using AI Assistants in Glific Flows"><link data-rh="true" rel="alternate" href="https://glific.github.io/docs/docs/Integrations/Using AI Assistants in Glific Flows" hreflang="en"><link data-rh="true" rel="alternate" href="https://glific.github.io/docs/docs/Integrations/Using AI Assistants in Glific Flows" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://35GA1F1DHM-dsn.algolia.net" crossorigin="anonymous"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Integrations","item":"https://glific.github.io/docs/docs/category/integrations"},{"@type":"ListItem","position":2,"name":"Using AI Assistants in Glific Flows","item":"https://glific.github.io/docs/docs/Integrations/Using AI Assistants in Glific Flows"}]}</script><link rel="search" type="application/opensearchdescription+xml" title="Glific" href="/docs/opensearch.xml">
 <link rel="preconnect" href="https://us.i.posthog.com">
 <script>!function(t,e){var o,s,r,a;e.__SV||(window.posthog=e,e._i=[],e.init=function(n,i,p){function c(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(r=t.createElement("script")).type="text/javascript",r.async=!0,r.src=i.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(a=t.getElementsByTagName("script")[0]).parentNode.insertBefore(r,a);var g=e;for(void 0!==p?g=e[p]=[]:p="posthog",g.people=g.people||[],g.toString=function(t){var e="posthog";return"posthog"!==p&&(e+="."+p),t||(e+=" (stub)"),e},g.people.toString=function(){return g.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys onSessionId".split(" "),s=0;s<o.length;s++)c(g,o[s]);e._i.push([n,i,p])},e.__SV=1)}(document,window.posthog||[]),posthog.init("phc_yoqeZFzoFCxYn2ecSQuR5LxTtWDoLKZ6aTJn2rWL5M8q",{api_host:"https://us.i.posthog.com",id:"default"})</script><link rel="stylesheet" href="/docs/assets/css/styles.983e41a2.css">
-<script src="/docs/assets/js/runtime~main.70d6c01f.js" defer="defer"></script>
+<script src="/docs/assets/js/runtime~main.98c69625.js" defer="defer"></script>
 <script src="/docs/assets/js/main.f5090c47.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -28,7 +28,7 @@
 <li>Using the Assistant in your Flows (including handling follow-up questions)</li>
 <li>Handling Voice Inputs and Responses</li>
 </ul>
-<p>To create or modify an assistant, see <a href="https://glific.github.io/docs/docs/Integrations/Creating%20and%20modifying%20assistants%20in%20Glific/" target="_blank" rel="noopener noreferrer">Creating and modifying AI assistants in Glific</a>.</p>
+<p>To create or modify an assistant, see <a href="https://glific.github.io/docs/docs/Integrations/AI%20Assistants/" target="_blank" rel="noopener noreferrer">Creating and modifying AI assistants in Glific</a>.</p>
 <hr>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="using-the-openai-assistant-in-floweditor">Using the OpenAI Assistant in Floweditor<a href="#using-the-openai-assistant-in-floweditor" class="hash-link" aria-label="Direct link to Using the OpenAI Assistant in Floweditor" title="Direct link to Using the OpenAI Assistant in Floweditor">​</a></h2>
 <p>The following sections explain how to use an assistant to answer questions or create conversations.</p>
@@ -69,10 +69,14 @@
 <p>In <code>question</code> parameter enter the flow variable containing the question asked by the user. In the given example <code>question</code> is the <code>result name</code>, hence provided <code>@result.question</code> in the question parameter.</p>
 </li>
 <li>
-<p>In <code>assistant_id</code> enter the assistant ID, copied as described in <a href="https://glific.github.io/docs/docs/Integrations/Creating%20and%20modifying%20assistants%20in%20Glific/" target="_blank" rel="noopener noreferrer">Creating and modifying AI assistants in Glific</a></p>
+<p>In <code>assistant_id</code> enter the assistant ID, copied as described in <a href="https://glific.github.io/docs/docs/Integrations/AI%20Assistants/" target="_blank" rel="noopener noreferrer">Creating and modifying AI assistants in Glific</a></p>
+</li>
+<li>
+<p><code>wait_time</code> is optional. It is the number of <strong>seconds</strong> Glific waits for the assistant to answer before it moves ahead in the flow. Leave it blank and Glific waits 60 seconds. Large knowledge bases or long answers can take longer, so set a higher value such as <code>120</code>. The maximum is 300 seconds (5 minutes). Read more in <a href="https://glific.github.io/docs/docs/Product%20Features/Flows/Flow%20Actions/Call%20a%20webhook/#wait-time-for-ai-function-webhooks" target="_blank" rel="noopener noreferrer">Call a webhook</a>.</p>
 <img width="" height="" alt="Screenshot 2025-12-02 at 9 18 23 AM" src="https://github.com/user-attachments/assets/880a4181-bd79-4d04-92aa-c0d502456bd5">
 </li>
 </ul>
+<p><img decoding="async" loading="lazy" alt="The filesearch-gpt Function Body with a wait_time of 180 seconds" src="/docs/assets/images/openai_filesearch_wait_time-ffb85d77d1acae973c5dd1383dbae827.png" width="655" height="560" class="img_ev3q"></p>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="step-4--display-the-assistants-response">Step 4:  Display the Assistant&#x27;s response<a href="#step-4--display-the-assistants-response" class="hash-link" aria-label="Direct link to Step 4:  Display the Assistant&#x27;s response" title="Direct link to Step 4:  Display the Assistant&#x27;s response">​</a></h4>
 <ul>
 <li>
@@ -128,10 +132,12 @@ This section explains how to use the <code>voice-filesearch-gpt</code> webhook f
 <ul>
 <li>For <code>contact </code> keep this value as <code>@contact</code> as mentioned in the screenshot.</li>
 <li><code>speech</code> is the result name which is storing the voice note sent by the user.</li>
-<li><code>assistant_id</code> is the assistant ID, copied as described in <a href="https://glific.github.io/docs/docs/Integrations/Creating%20and%20modifying%20assistants%20in%20Glific/" target="_blank" rel="noopener noreferrer">Creating and modifying AI assistants in Glific</a>.</li>
+<li><code>assistant_id</code> is the assistant ID, copied as described in <a href="https://glific.github.io/docs/docs/Integrations/AI%20Assistants/" target="_blank" rel="noopener noreferrer">Creating and modifying AI assistants in Glific</a>.</li>
 <li><code>source_langauge</code> is the expected language of the user.</li>
 <li><code>target_language</code> is the language that the response voice note needs to be in.</li>
+<li><code>wait_time</code> is optional. It is the number of <strong>seconds</strong> Glific waits for the response before it moves ahead in the flow. The default is 60 seconds. Voice takes longer than text, so <code>120</code> to <code>180</code> is a good starting point here. The maximum is 300 seconds (5 minutes). Read more in <a href="https://glific.github.io/docs/docs/Product%20Features/Flows/Flow%20Actions/Call%20a%20webhook/#wait-time-for-ai-function-webhooks" target="_blank" rel="noopener noreferrer">Call a webhook</a>.</li>
 </ul>
+<p><img decoding="async" loading="lazy" alt="The voice-filesearch-gpt Function Body with a wait_time of 180 seconds" src="/docs/assets/images/openai_voice_filesearch_wait_time-d23e0604dfcfa55124054931327afe77.png" width="655" height="560" class="img_ev3q"></p>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="step-4-display-the-text-response">Step 4: Display the text response<a href="#step-4-display-the-text-response" class="hash-link" aria-label="Direct link to Step 4: Display the text response" title="Direct link to Step 4: Display the text response">​</a></h4>
 <ul>
 <li>Create a <code>Send Message node</code>.</li>
