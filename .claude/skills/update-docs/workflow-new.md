@@ -31,10 +31,10 @@ Wait for confirmation.
 
 - Start with the page header block from [style-writing.md](style-writing.md#page-header) (read time, Level, Last Updated). Set Last Updated to the current month and year, then work out the read time once the page is written.
 - Use the template for the section from [style-page.md](style-page.md): a bold one-sentence summary, task-focused H2s (“Creating a template”, “Checking template status”), numbered steps, and a screenshot after each major step.
-- Take each screenshot with `gdocs shot` as you write the step it shows. Read each PNG.
+- Take each screenshot with `glific-browser shot` as you write the step it shows. Read each PNG.
 - Use `:::info Screenshot coming soon` only for states you can't capture on production. Never invent UI you didn't see.
 - Add cross-links both ways: from this page to related pages, and from the closest existing pages to this one.
 
 ## 5. Validate
 
-Run `gdocs lint`. Run `yarn build` if `node_modules/` exists. Then write the summary (SKILL.md Step 4).
+Run `glific-browser lint`. Run `yarn build` if `node_modules/` exists. Then write the summary (SKILL.md Step 4).

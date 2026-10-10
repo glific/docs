@@ -4,7 +4,7 @@
 #   pre  — PreToolUse: direct `playwright-cli` calls may only target the guarded
 #          "glific-docs" session and only use navigation/inspection commands.
 #          Everything that could open an unguarded browser, drop the guard,
-#          bypass redaction or leak tokens must go through gdocs.mjs.
+#          bypass redaction or leak tokens must go through glific-browser.mjs.
 #   post — PostToolUse: after any glific-docs browser command, check whether the
 #          read-only guard blocked a write and, if so, tell Claude to stop.
 #
@@ -29,13 +29,13 @@ allowed=" goto click dblclick hover snapshot find eval press type fill select ch
 
 deny() {
   echo "update-docs guard: $1" >&2
-  echo "Use: node .claude/skills/update-docs/scripts/gdocs.mjs <preflight|start|status|shot|blocked|stop>" >&2
+  echo "Use: node .claude/skills/update-docs/scripts/glific-browser.mjs <preflight|start|status|shot|blocked|stop>" >&2
   exit 2
 }
 
 if [ "$mode" = "pre" ]; then
   case "$cmd" in
-    *GLIFIC_PASSWORD*) deny "commands must not reference GLIFIC_PASSWORD; gdocs.mjs reads credentials itself." ;;
+    *GLIFIC_PASSWORD*) deny "commands must not reference GLIFIC_PASSWORD; glific-browser.mjs reads credentials itself." ;;
   esac
 
   while IFS= read -r inv; do
@@ -60,8 +60,8 @@ if [ "$mode" = "pre" ]; then
     [ "$sess" = "$session" ] || deny "playwright-cli must use -s=$session (the only read-only, guarded session). Got: '${sess:-default}'."
     case "$allowed" in *" $sub "*) continue ;; esac
     case "$sub" in
-      screenshot|pdf|video-*|tracing-*) deny "'$sub' is not allowed directly — use 'gdocs.mjs shot' so images are redacted." ;;
-      open|attach) deny "'$sub' would create an unguarded browser — use 'gdocs.mjs start'." ;;
+      screenshot|pdf|video-*|tracing-*) deny "'$sub' is not allowed directly — use 'glific-browser.mjs shot' so images are redacted." ;;
+      open|attach) deny "'$sub' would create an unguarded browser — use 'glific-browser.mjs start'." ;;
       *) deny "'playwright-cli $sub' is not allowed in the docs session (it can bypass the read-only guard or expose credentials)." ;;
     esac
   # Only invocations in command position (start, after ; & | ( ` or npx/env),
@@ -78,7 +78,7 @@ if [ "$mode" = "post" ]; then
     *) exit 0 ;;
   esac
   dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-  out="$(node "$dir/gdocs.mjs" blocked --quiet 2>&1)"
+  out="$(node "$dir/glific-browser.mjs" blocked --quiet 2>&1)"
   if [ $? -eq 3 ]; then
     printf '%s\n' "$out" >&2
     exit 2

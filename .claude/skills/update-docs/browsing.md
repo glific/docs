@@ -1,16 +1,16 @@
 # Browsing the live app
 
-One browser session, `glific-docs`, is opened by `gdocs preflight`/`gdocs start`. It is already logged in, guarded and set to a 1440×900 viewport. Drive it with `playwright-cli -s=glific-docs <command>`. The hook rejects any other session and any command not listed below.
+One browser session, `glific-docs`, is opened by `glific-browser preflight`/`glific-browser start`. It is already logged in, guarded and set to a 1440×900 viewport. Drive it with `playwright-cli -s=glific-docs <command>`. The hook rejects any other session and any command not listed below.
 
 ## Session lifecycle
 
 ```bash
-node .claude/skills/update-docs/scripts/gdocs.mjs status   # alive + guarded? (exit 1 = no, 3 = guard tripped)
-node .claude/skills/update-docs/scripts/gdocs.mjs start    # reopen + re-login if the session died (idle 1h)
-node .claude/skills/update-docs/scripts/gdocs.mjs stop     # at the end
+node .claude/skills/update-docs/scripts/glific-browser.mjs status   # alive + guarded? (exit 1 = no, 3 = guard tripped)
+node .claude/skills/update-docs/scripts/glific-browser.mjs start    # reopen + re-login if the session died (idle 1h)
+node .claude/skills/update-docs/scripts/glific-browser.mjs stop     # at the end
 ```
 
-If a command says the browser `is not open`, run `gdocs start`. Never use `playwright-cli open`.
+If a command says the browser `is not open`, run `glific-browser start`. Never use `playwright-cli open`.
 
 ## Allowed commands
 
@@ -31,14 +31,14 @@ Snapshot output contains real contact data. Use it to navigate. Don't copy names
 
 ```bash
 # full viewport
-node .claude/skills/update-docs/scripts/gdocs.mjs shot static/img/<feature>/<feature>_<what>.png
+node .claude/skills/update-docs/scripts/glific-browser.mjs shot static/img/<feature>/<feature>_<what>.png
 
 # cropped to one element (preferred for lists, forms, dialogs, cards)
-node .claude/skills/update-docs/scripts/gdocs.mjs shot static/img/<feature>/<feature>_<what>.png --target e42
-node .claude/skills/update-docs/scripts/gdocs.mjs shot static/img/<feature>/<feature>_<what>.png --target '[role="dialog"]'
+node .claude/skills/update-docs/scripts/glific-browser.mjs shot static/img/<feature>/<feature>_<what>.png --target e42
+node .claude/skills/update-docs/scripts/glific-browser.mjs shot static/img/<feature>/<feature>_<what>.png --target '[role="dialog"]'
 
 # extra redaction for free-text PII the automatic pass can't detect
-node .claude/skills/update-docs/scripts/gdocs.mjs shot static/img/flows/flows_list.png --target main --hide 'tbody td:first-child'
+node .claude/skills/update-docs/scripts/glific-browser.mjs shot static/img/flows/flows_list.png --target main --hide 'tbody td:first-child'
 ```
 
 - The output path must be under `static/img/`. Follow the naming and directory rules in [style-images.md](style-images.md).

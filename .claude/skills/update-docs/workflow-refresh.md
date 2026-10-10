@@ -44,4 +44,4 @@ Confirm the plan (SKILL.md Step 2).
 
 ## 5. Validate
 
-Run `gdocs lint`, Read every new PNG, and write the summary (SKILL.md Step 4).
+Run `glific-browser lint`, Read every new PNG, and write the summary (SKILL.md Step 4).

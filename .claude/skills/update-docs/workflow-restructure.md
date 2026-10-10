@@ -60,12 +60,12 @@ import TabItem from '@theme/TabItem';
 - Put the imports after the frontmatter and before the header block.
 - Use `git mv` for moves so history is kept. Update `_category_.json` where needed.
 - Update every inbound link that you found.
-- If the new layout needs new screenshots (e.g. one per tab), take them with `gdocs shot`.
+- If the new layout needs new screenshots (e.g. one per tab), take them with `glific-browser shot`.
 
 ## 5. Validate
 
-- `gdocs lint $(git ls-files 'docs/*.md' 'docs/**/*.md')`: this checks every page, including unchanged pages that link to moved files. Ignore failures that `main` already has; fix any that mention the paths you moved.
+- `glific-browser lint $(git ls-files 'docs/*.md' 'docs/**/*.md')`: this checks every page, including unchanged pages that link to moved files. Ignore failures that `main` already has; fix any that mention the paths you moved.
 - `grep -rn "<old path fragments>" docs src` must return nothing.
-- `gdocs lint` checks relative `.md` links in changed pages. `onBrokenLinks` is `ignore` in `docusaurus.config.js`, so the build won't catch broken links.
+- `glific-browser lint` checks relative `.md` links in changed pages. `onBrokenLinks` is `ignore` in `docusaurus.config.js`, so the build won't catch broken links.
 - Run `yarn build` if `node_modules/` exists, to catch MDX errors such as unclosed `<TabItem>`. Otherwise say that CI will check it.
 - In the summary, list every URL that changed.

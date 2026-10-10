@@ -2,7 +2,7 @@
 
 ## How images are made
 
-Every new or replaced screenshot is taken with `gdocs shot` from the live app (see `browsing.md`). It redacts PII and records the image for `gdocs lint`. Don't add images from anywhere else. A local screenshot tool, a copied GitHub asset or an AI-generated mock-up all fail the provenance lint, and they may contain real contact data.
+Every new or replaced screenshot is taken with `glific-browser shot` from the live app (see `browsing.md`). It redacts PII and records the image for `glific-browser lint`. Don't add images from anywhere else. A local screenshot tool, a copied GitHub asset or an AI-generated mock-up all fail the provenance lint, and they may contain real contact data.
 
 ## Storage policy
 
@@ -37,7 +37,7 @@ One directory per feature area under `static/img/`:
 | Integrations (Sheets) | `static/img/integrations/sheets/` |
 | WhatsApp Groups | `static/img/wa-groups/` |
 
-If a feature has no directory yet, `gdocs shot` creates it. Use a lowercase, hyphenated name. Check `ls static/img/` first so you don't create a near-duplicate.
+If a feature has no directory yet, `glific-browser shot` creates it. Use a lowercase, hyphenated name. Check `ls static/img/` first so you don't create a near-duplicate.
 
 ## File naming
 

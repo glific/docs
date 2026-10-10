@@ -35,8 +35,8 @@ Present a prioritised list of edits: a style guide decision (e.g. the canonical 
 
 ## 4. Apply
 
-Make the agreed edits page by page. Keep filenames and anchors unless the user approved renames. If you renamed any, update inbound links with `grep -rn`. Retake screenshots only where they are wrong, and only with `gdocs shot`. Update Last Updated on pages whose content changed.
+Make the agreed edits page by page. Keep filenames and anchors unless the user approved renames. If you renamed any, update inbound links with `grep -rn`. Retake screenshots only where they are wrong, and only with `glific-browser shot`. Update Last Updated on pages whose content changed.
 
 ## 5. Validate
 
-Run `gdocs lint`, then write a summary that includes the audit matrix before and after.
+Run `glific-browser lint`, then write a summary that includes the audit matrix before and after.

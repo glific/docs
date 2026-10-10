@@ -11,7 +11,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/skills/update-docs/scripts/pw-guard-hook.sh\" pre",
+            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/skills/update-docs/scripts/browser-guard-hook.sh\" pre",
             "timeout": 10
           }
         ]
@@ -23,7 +23,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/skills/update-docs/scripts/pw-guard-hook.sh\" post",
+            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/skills/update-docs/scripts/browser-guard-hook.sh\" post",
             "timeout": 60
           }
         ]

@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 /**
- * gdocs — read-only, redacting wrapper around `playwright-cli` for the
+ * glific-browser — read-only, redacting wrapper around `playwright-cli` for the
  * update-docs skill. Zero dependencies: Node built-ins + the preinstalled
  * `playwright-cli` binary only.
  *
- *   node .claude/skills/update-docs/scripts/gdocs.mjs <command> [args]
+ *   node .claude/skills/update-docs/scripts/glific-browser.mjs <command> [args]
  *
  * Commands:
  *   preflight                 Check env, CLI, browser, guard, redaction and login. Run first.
@@ -677,8 +677,8 @@ function preflight() {
 
 function status() {
   const e = env();
-  if (!sessionAlive()) { line(false, 'session', 'not open — run `gdocs start`'); return 1; }
-  if (!canary(e.url)) { line(false, 'read-only guard', 'MISSING — run `gdocs stop` then `gdocs start`'); return 1; }
+  if (!sessionAlive()) { line(false, 'session', 'not open — run `glific-browser start`'); return 1; }
+  if (!canary(e.url)) { line(false, 'read-only guard', 'MISSING — run `glific-browser stop` then `glific-browser start`'); return 1; }
   line(true, 'session', 'open and guarded');
   return blocked([]) === 3 ? 3 : 0;
 }
@@ -720,7 +720,7 @@ function blocked(args) {
   if (active.length) {
     console.log(`\nREAD-ONLY GUARD TRIPPED: ${active.length} write attempt(s) were blocked.\n` +
       'STOP. Tell the user which action caused this, then wait for their go-ahead.\n' +
-      'After reporting, clear with: gdocs blocked --ack');
+      'After reporting, clear with: glific-browser blocked --ack');
     return 3;
   }
   if (!args.includes('--quiet')) line(null, 'blocked', 'only passive background writes (blocked, safe to continue)');
@@ -745,13 +745,13 @@ function parseFlags(args) {
 function shot(args) {
   const { pos, flags } = parseFlags(args);
   const outArg = pos[0];
-  if (!outArg || !outArg.endsWith('.png')) { console.error('usage: gdocs shot <static/img/feature/name.png> [--target <ref|css>] [--mask <css>] [--hide <css>]'); return 2; }
+  if (!outArg || !outArg.endsWith('.png')) { console.error('usage: glific-browser shot <static/img/feature/name.png> [--target <ref|css>] [--mask <css>] [--hide <css>]'); return 2; }
   const out = path.resolve(ROOT, outArg);
   if (!out.startsWith(path.join(ROOT, 'static', 'img') + path.sep)) {
     console.error('screenshots must be written under static/img/');
     return 2;
   }
-  if (!sessionAlive() || !canary(env().url)) { line(false, 'session', 'not open or not guarded — run `gdocs start`'); return 1; }
+  if (!sessionAlive() || !canary(env().url)) { line(false, 'session', 'not open or not guarded — run `glific-browser start`'); return 1; }
   if (blocked(['--quiet']) === 3) return 3;
 
   fs.mkdirSync(path.dirname(out), { recursive: true });
@@ -800,7 +800,7 @@ function lint(files) {
     if (!fs.existsSync(abs)) continue;
     const sha = createHash('sha256').update(fs.readFileSync(abs)).digest('hex');
     if (!manifest[f] || manifest[f].sha256 !== sha) {
-      line(false, 'image provenance', `${f} was not produced by \`gdocs shot\` (unredacted?)`);
+      line(false, 'image provenance', `${f} was not produced by \`glific-browser shot\` (unredacted?)`);
       ok = false;
     }
   }
@@ -852,11 +852,11 @@ switch (cmd) {
     line(null, 'session', 'closed');
     break;
   default:
-    console.log('usage: gdocs <preflight|start|status|shot|blocked|lint|stop>');
+    console.log('usage: glific-browser <preflight|start|status|shot|blocked|lint|stop>');
     code = cmd ? 2 : 0;
 }
 } catch (err) {
-  console.error(`gdocs ${cmd}: ${scrub(err.message)}`);
+  console.error(`glific-browser ${cmd}: ${scrub(err.message)}`);
   code = 2;
 }
 process.exit(code);

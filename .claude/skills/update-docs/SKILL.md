@@ -11,16 +11,16 @@ Updates the Glific docs in this repo (`glific/docs`, Docusaurus) using the **liv
 The browser is logged in to a **real organisation's production account**. Two rules override everything else in this skill:
 
 1. **Never change anything in Glific.** Only look and take screenshots. A network guard blocks writes. If the guard trips, **stop at once and warn the user** (see [safety.md](safety.md)).
-2. **Never publish an unredacted screenshot.** Take every image with `gdocs shot`. It removes contact data, checks that nothing is left, and records the image so `gdocs lint` can check it later. Then look at each PNG yourself before you use it.
+2. **Never publish an unredacted screenshot.** Take every image with `glific-browser shot`. It removes contact data, checks that nothing is left, and records the image so `glific-browser lint` can check it later. Then look at each PNG yourself before you use it.
 
-Users don't need to install anything. The cloud environment provides `node`, `playwright-cli`, Chromium and these env vars: `GLIFIC_URL`, `GLIFIC_PHONE`, `GLIFIC_PASSWORD`, `PLAYWRIGHT_BROWSERS_PATH`. Never print, echo or read the credential values. `gdocs` reads them itself.
+Users don't need to install anything. The cloud environment provides `node`, `playwright-cli`, Chromium and these env vars: `GLIFIC_URL`, `GLIFIC_PHONE`, `GLIFIC_PASSWORD`, `PLAYWRIGHT_BROWSERS_PATH`. Never print, echo or read the credential values. `glific-browser` reads them itself.
 
-All commands below run from the repo root. `gdocs` is short for `node .claude/skills/update-docs/scripts/gdocs.mjs`.
+All commands below run from the repo root. `glific-browser` is short for `node .claude/skills/update-docs/scripts/glific-browser.mjs`.
 
 ## Step 0 — Preflight (always, before anything else)
 
 ```bash
-node .claude/skills/update-docs/scripts/gdocs.mjs preflight
+node .claude/skills/update-docs/scripts/glific-browser.mjs preflight
 ```
 
 This checks the env vars, `playwright-cli`, the browser launch and the read-only guard. The guard check sends a canary mutation that must be blocked. It also runs a redaction self-test and then logs in to Glific. Only a run that ends with `PREFLIGHT OK` passes.
@@ -72,11 +72,11 @@ Follow the workflow file for the intent. While you work:
 ## Step 4 — Validate and hand off
 
 ```bash
-node .claude/skills/update-docs/scripts/gdocs.mjs lint           # image provenance + /img refs
-node .claude/skills/update-docs/scripts/gdocs.mjs stop           # close the browser
+node .claude/skills/update-docs/scripts/glific-browser.mjs lint           # image provenance + /img refs
+node .claude/skills/update-docs/scripts/glific-browser.mjs stop           # close the browser
 ```
 
-- `lint` must pass. It checks image provenance, `/img/` refs and relative `.md` links in changed pages. A provenance failure means an image was not made by `gdocs shot`. Retake it.
+- `lint` must pass. It checks image provenance, `/img/` refs and relative `.md` links in changed pages. A provenance failure means an image was not made by `glific-browser shot`. Retake it.
 - If `node_modules/` exists, also run `yarn build` to catch MDX errors (broken links are ignored by the site config; `lint` covers them). Otherwise say that CI will run the build.
 - Finish with a summary: pages changed, screenshots added or replaced, anything that couldn't be captured and why, and any blocked write attempts (passive ones too). Don't commit or open a PR unless the user asks.
 
@@ -89,4 +89,4 @@ node .claude/skills/update-docs/scripts/gdocs.mjs stop           # close the bro
 | `browser launch — … not installed` | `@playwright/cli` and the installed Chromium are different versions | Re-run the environment setup script so both are `@latest` together. |
 | `read-only guard — canary … NOT blocked` | Unexpected playwright-cli behaviour | **Do not proceed.** Report it. |
 | `login — phone field …` / `page says: …` | Wrong phone format (`91XXXXXXXXXX`), wrong password, or a non-Indian dial code | Check `GLIFIC_PHONE` / `GLIFIC_PASSWORD`. |
-| `login — Timeout …waitForURL` | Slow first load or a changed login UI | Retry once with `gdocs start`. If it fails again, report it. |
+| `login — Timeout …waitForURL` | Slow first load or a changed login UI | Retry once with `glific-browser start`. If it fails again, report it. |
