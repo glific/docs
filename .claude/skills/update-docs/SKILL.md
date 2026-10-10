@@ -1,6 +1,6 @@
 ---
 name: update-docs
-description: Write, refresh, review or restructure Glific user docs in this repo, using screenshots and UI checks from the live (production) Glific app. It drives a read-only, auto-redacting playwright-cli browser. Use for "/update-docs ...", "refresh the X page", "write a new doc for X", "review docs for consistency", "restructure docs with tabs", or any docs change that needs current screenshots or must match the live UI.
+description: Generate, update, review or restructure Glific user-facing documentation in this repo (glific/docs), using the live (production) Glific app through a read-only, auto-redacting playwright-cli browser for UI checks and screenshots. Use when someone asks to document a feature, write a doc page, refresh or update existing docs, update docs after a glific-frontend PR ships, review docs for consistency, or restructure docs (e.g. with tabs). Also use for "/update-docs ...".
 argument-hint: <what to do, e.g. "refresh the analytics page with new navigation tabs">
 ---
 
@@ -32,7 +32,7 @@ This checks the env vars, `playwright-cli`, the browser launch and the read-only
 
 | Intent | Example | Browser? | Read |
 |---|---|---|---|
-| **Refresh** an existing page | `refresh the analytics page with new navigation tabs` | yes | [workflow-refresh.md](workflow-refresh.md) |
+| **Refresh** an existing page | `refresh the analytics page with new navigation tabs`, `update docs for glific-frontend#1234` | yes | [workflow-refresh.md](workflow-refresh.md) |
 | **New** page | `write a new doc page for HSM v2 page` | yes | [workflow-new.md](workflow-new.md) |
 | **Review** a set of pages for consistency | `review document structure for all webhooks and ensure consistency of writing` | optional, for spot-checks | [workflow-review.md](workflow-review.md) |
 | **Restructure** (tabs, merges, moves) | `restructure docs with tabs like ...` | optional | [workflow-restructure.md](workflow-restructure.md) |
@@ -42,11 +42,11 @@ If the request mixes intents, do them in this order: review/restructure plan →
 Always read these too:
 - [browsing.md](browsing.md): how to drive the session, take screenshots and find your way around Glific.
 - [safety.md](safety.md): what is blocked, the stop-and-warn protocol, and redaction limits.
-- The house style in the sibling `documentation` skill. It is the single source for docs conventions, so don't duplicate it here:
-  - `.claude/skills/documentation/sections.md`: which of the 8 sections content belongs in
-  - `.claude/skills/documentation/style-writing.md`: voice and audience (NGO staff, non-technical)
-  - `.claude/skills/documentation/style-page.md`: page templates
-  - `.claude/skills/documentation/style-images.md`: image directories, naming and `/img/` paths
+- The house style guides. They are the single source for docs conventions:
+  - [sections.md](sections.md): the 8 doc sections, where new pages go, numbering, and route → section mapping
+  - [style-writing.md](style-writing.md): audience (non-technical NGO staff), voice, UI labels, the **page header block**, step format and anti-patterns
+  - [style-page.md](style-page.md): page templates per section, sibling consistency, and when to use tabs
+  - [style-images.md](style-images.md): image directories, naming, framing, `/img/` paths and placeholders
 
 ## Step 2 — Plan, then confirm
 

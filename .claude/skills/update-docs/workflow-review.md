@@ -20,9 +20,11 @@ Build a matrix of the core pages and report it:
 |---|---|---|---|---|---|---|---|---|---|
 
 Check:
-- **Structure**: the right section template (`style-page.md`), the same H2 pattern across sibling pages, and an intro → steps → related-links order.
+- **Structure**: the right section template ([style-page.md](style-page.md)), the same H2 pattern across sibling pages (see "Sibling consistency"), and an intro → steps → related-links order.
+- **Images**: [style-images.md](style-images.md) naming, `/img/` paths, alt text, and placement after the step.
 - **Terminology**: one name per concept, matching the live UI label (e.g. "Call a webhook" vs "Webhook node" vs "API call"). Pick the term the UI uses.
-- **Voice**: `style-writing.md` (second person, imperative, plain language, no internal or technical jargon for Product Features pages).
+- **Header**: the standard block from [style-writing.md](style-writing.md#page-header). Flag legacy variants, wrong read times and stale Last Updated dates.
+- **Voice**: [style-writing.md](style-writing.md) (second person, imperative, plain language, "Select" not "Click", bold UI labels, no internal or technical jargon for Product Features pages).
 - **Accuracy**: spot-check the claims that most affect users against the live app (labels, menu paths, field names). Opening the flow editor isn't possible (see `safety.md`), so for flow node pages check the node lists and labels from the frontend/floweditor code instead.
 - **Duplication**: the same how-to explained on several pages. Suggest one canonical page with links to it.
 - **Links and images**: relative links that resolve, `/img/` paths that exist, and alt text present.

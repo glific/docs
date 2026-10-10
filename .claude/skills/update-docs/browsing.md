@@ -41,7 +41,7 @@ node .claude/skills/update-docs/scripts/gdocs.mjs shot static/img/<feature>/<fea
 node .claude/skills/update-docs/scripts/gdocs.mjs shot static/img/flows/flows_list.png --target main --hide 'tbody td:first-child'
 ```
 
-- The output path must be under `static/img/`. Follow the naming and directory rules in `.claude/skills/documentation/style-images.md`.
+- The output path must be under `static/img/`. Follow the naming and directory rules in [style-images.md](style-images.md).
 - Redaction changes the live DOM. After a shot, `reload` before you read real values again.
 - When you **replace** an existing image, keep the same filename so links don't break, unless the page is being restructured.
 - After every shot, **Read the PNG** and check it: no real names, numbers, message text, emails, keys or org-identifying details, and the right UI state is shown. If anything leaks, retake it with `--hide`/`--mask` or a tighter `--target`.

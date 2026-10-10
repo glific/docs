@@ -16,6 +16,7 @@ Pick the page or pages the request means. If there are several candidates, list 
 ## 2. Find what changed
 
 - Use the user's hint (e.g. "new navigation tabs").
+- **If the input is a PR** (`#1234`, `glific-frontend#1234`, or a PR URL): `gh pr view <n> --repo glific/glific-frontend` and `gh pr diff <n> --repo glific/glific-frontend`. Map the changed `src/containers/<Feature>/` paths to features, and through [sections.md](sections.md) to pages. One PR can affect several pages. List them in the plan. Only document what is live on production: if the change isn't visible in the live app yet, tell the user and stop.
 - Optionally, check recent frontend PRs for the feature: `gh pr list --repo glific/glific-frontend --state merged --search "<feature>" --limit 10`, then `gh pr view <n> --repo glific/glific-frontend`.
 - Open the route in the live app (see `browsing.md`). Use `snapshot` to list every tab, section, button label and empty state.
 
@@ -35,11 +36,11 @@ Confirm the plan (SKILL.md Step 2).
 ## 4. Update
 
 - Edit only what the diff calls for. Keep headings, anchors and filenames stable, because other pages link to them. Check with `grep -rn "<page-filename-or-anchor>" docs`.
-- Retake changed screenshots **with the same filenames**. Add new ones for new sections. Follow the naming in `.claude/skills/documentation/style-images.md`.
+- Retake changed screenshots **with the same filenames**. Add new ones for new sections. Follow the naming in [style-images.md](style-images.md).
 - If a page still uses old GitHub CDN images (`user-images.githubusercontent.com`) and you are replacing that screenshot, move it to `static/img/<feature>/` with a new local shot. Leave CDN images you don't touch as they are.
 - Use UI labels exactly as they appear: bold for buttons and tabs, and `>` for paths (**Settings** > **Organization**).
-- Set **Last Updated** in the header to the current month and year (e.g. `October 2026`). Adjust the read time if the length changed a lot.
-- Follow `style-writing.md`: plain language for NGO staff, imperative steps, and a screenshot after the step it shows.
+- Set **Last Updated** in the header to the current month and year (e.g. `October 2026`). Recalculate the read time. If the page uses a legacy header variant, replace it with the standard block from [style-writing.md](style-writing.md#page-header).
+- Follow [style-writing.md](style-writing.md): plain language for NGO staff, imperative steps, and a screenshot after the step it shows. Keep the page's template from [style-page.md](style-page.md).
 
 ## 5. Validate
 

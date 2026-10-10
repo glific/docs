@@ -1,19 +1,17 @@
 # Style: Page Structure
 
-Different sections use different templates. Match the template to the section type.
+Each section uses its own template. Pick the template that matches the section. `{HEADER}` means the header block from `style-writing.md` (read time, level, Last Updated).
 
 ---
 
 ## Template 1: Product Feature page (`4. Product Features/`)
 
 ```markdown
-###**{N} minute read &nbsp; {padding} &nbsp; `{Level}`**
-
----
+{HEADER}
 
 **{One-sentence summary of what this feature does.}**
 
-{1–2 sentences of context: when you'd use this, how it fits into Glific.}
+{1–2 sentences of context: when you'd use it and how it fits into Glific.}
 
 ## {First capability or action}
 
@@ -32,24 +30,23 @@ You can read more about related features here:
 ```
 
 **Rules:**
-- H2 headings are task-focused: "Creating a Flow", "Editing a Template", "Viewing Reports"
-- One screenshot per major action, placed after the step it shows
-- End with cross-links to related Product Feature pages
+- H2 headings name a task: "Creating a Flow", "Editing a Template", "Viewing Reports".
+- One screenshot per major action, placed after the step it shows.
+- End with links to related Product Feature pages.
+- If the feature has tabs in the UI, use one H2 per tab, in the same order as the UI.
 
 ---
 
 ## Template 2: Integration page (`5. Integrations/`)
 
 ```markdown
-###**{N} minute read &nbsp; {padding} &nbsp; `{Level}`**
-
----
+{HEADER}
 
 **{What this integration does and why you'd use it.}**
 
 ## Prerequisites
 
-- {List what the user needs before starting: API keys, accounts, etc.}
+- {What the user needs before starting: API keys, accounts, etc.}
 
 ## Setup
 
@@ -70,9 +67,7 @@ You can read more about related features here:
 ## Template 3: FAQ page (`8. FAQ/`)
 
 ```markdown
-###**{N} minute read &nbsp; {padding} &nbsp; `{Level}`**
-
----
+{HEADER}
 
 **{Restate the question as a one-sentence answer.}**
 
@@ -91,9 +86,7 @@ FAQ pages are short. If the answer needs more than 5 steps or 2 screenshots, it 
 ## Template 4: Use Case page (`7. Use Cases/`)
 
 ```markdown
-###**{N} minute read &nbsp; {padding} &nbsp; `{Level}`**
-
----
+{HEADER}
 
 **{The problem this use case solves, in one sentence.}**
 
@@ -103,7 +96,7 @@ FAQ pages are short. If the answer needs more than 5 steps or 2 screenshots, it 
 
 ## Solution
 
-{Walk through the solution. Reference existing Product Feature pages rather than re-explaining how each feature works.}
+{Walk through the solution. Link to existing Product Feature pages instead of explaining again how each feature works.}
 
 ## Steps
 
@@ -116,15 +109,13 @@ FAQ pages are short. If the answer needs more than 5 steps or 2 screenshots, it 
 ## Template 5: Pre Onboarding guide (`2. Pre Onboarding/`)
 
 ```markdown
-###**{N} minute read &nbsp; {padding} &nbsp; `{Level}`**
+{HEADER}
 
----
-
-**{What this guide helps the user accomplish.}**
+**{What this guide helps the user do.}**
 
 ## Prerequisites
 
-- {External account or info needed before starting.}
+- {External account or information needed before starting.}
 
 ## Steps
 
@@ -137,6 +128,10 @@ FAQ pages are short. If the answer needs more than 5 steps or 2 screenshots, it 
 
 ---
 
-## Read-time estimation
+## Sibling consistency
 
-Count images × 10 seconds + word count ÷ 200 wpm. Round to nearest minute. Minimum: 1 minute.
+Pages in the same folder (for example every `2. Flow Actions/` page) should share the same H2 pattern. Before you write or refresh one of them, read two siblings and copy their headings. Typical headings are "What is it used for", "How to use it" and "Example". `workflow-review.md` audits this across a whole set of pages.
+
+## Tabs inside a page
+
+Use Docusaurus tabs only when the reader picks **one** of several paths, for example a BSP, a platform or a setup method. Don't use them to split up content everyone should read. For the syntax, see `workflow-restructure.md`.

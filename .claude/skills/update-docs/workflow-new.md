@@ -15,7 +15,7 @@ Example: `/update-docs write a new doc page for HSM v2 page`
 
 ## 3. Placement plan → confirm
 
-Use `.claude/skills/documentation/sections.md` to pick the section. For `4. Product Features/`, check the existing numbered prefixes with `ls` and choose the next number, or use a sub-folder with a `_category_.json` if it has several pages.
+Use [sections.md](sections.md) to pick the section. For `4. Product Features/`, check the existing numbered prefixes with `ls` and choose the next number, or use a sub-folder with a `_category_.json` if it has several pages.
 
 ```
 Placement plan:
@@ -29,8 +29,8 @@ Wait for confirmation.
 
 ## 4. Write
 
-- Copy the header block (read time, Level, Last Updated table) from a recent sibling page in the same section, so the format matches what is live. Set Last Updated to the current month and year.
-- Use the template for the section from `.claude/skills/documentation/style-page.md`: a bold one-sentence summary, task-focused H2s (“Creating a template”, “Checking template status”), numbered steps, and a screenshot after each major step.
+- Start with the page header block from [style-writing.md](style-writing.md#page-header) (read time, Level, Last Updated). Set Last Updated to the current month and year, then work out the read time once the page is written.
+- Use the template for the section from [style-page.md](style-page.md): a bold one-sentence summary, task-focused H2s (“Creating a template”, “Checking template status”), numbered steps, and a screenshot after each major step.
 - Take each screenshot with `gdocs shot` as you write the step it shows. Read each PNG.
 - Use `:::info Screenshot coming soon` only for states you can't capture on production. Never invent UI you didn't see.
 - Add cross-links both ways: from this page to related pages, and from the closest existing pages to this one.
