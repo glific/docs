@@ -1,21 +1,20 @@
 <h4>
  <table>
   <tr>
-    <td><b>4 minutes read</b></td>
+    <td><b>3 minutes read</b></td>
     <td style={{ paddingLeft: '40px' }}><b>Level: Beginner</b></td>
-    <td style={{ paddingLeft: '40px' }}><b>Last Updated: October 2026</b></td>
+    <td style={{ paddingLeft: '40px' }}><b>Last Updated: July 2026</b></td>
   </tr>
 </table>
 </h4>
 
 # Data Analytics Page 
-The Data Analytics page (accessible from the left navigation under "Data Analytics") gives a bird's-eye view of how contacts are growing, how engaged they are, and how reliably messages are being delivered. The page is organized as a single dashboard with a shared control bar at the top and four tabs underneath: 
+The Data Analytics page (accessible from the left navigation under "Data Analytics") gives a bird's-eye view of how contacts are growing, how engaged they are, and how reliably messages are being delivered. The page is organized as a single dashboard with a shared control bar at the top and three tabs underneath: 
 - Reach & Growth,
-- Engagement Quality,
-- Messages Overview, and
+- Engagement Quality, and
 - Message Errors. 
 
-![Data Analytics dashboard with the Time and Time Grain controls and the four tabs](/img/analytics/analytics_dashboard_tabs.png)
+<img width="" height="398" alt="Screenshot 2026-07-08 at 4 17 55 PM" src="https://github.com/user-attachments/assets/8d3e7c1c-7568-491f-923f-9fe3fae6515a" />
 
 Every tab responds to the same global `Time` and `Time Grain` settings, so changing them once updates the charts across whichever tab you're viewing.
 
@@ -80,20 +79,6 @@ This tab answers "of the people I'm reaching, how many are actually engaging bac
 - Responded to Broadcast. (these are the users who responded to broadcast on the same day)
   
 Reading this chart top to bottom shows the engagement funnel — for example, only 17 out of 83 broadcast contacts responded the same day, which is a same-day response rate you could use to gauge broadcast effectiveness. This chart does reflect the Time filter, but note it is not time-grain-bucketed like the trend charts — it's a single snapshot of totals for the selected date range.
-
-## Messages Overview
-This tab answers "how many messages am I exchanging, and what kind are they?"
-
-![Messages Overview tab with the Messages Exchanged card, the service message notice and the Message Composition chart](/img/analytics/analytics_messages_overview.png)
-
-1. **The Messages Exchanged** card splits all messages in the selected time range into three types. The date under the title ("Data available since ...") shows the earliest date for which message data exists.
-- Inbound, (messages your contacts sent to you)
-- Template Outbound, (approved HSM template messages you sent, for example in broadcasts)
-- Service Outbound, (non-template messages you sent, such as replies from flows or staff within the 24-hour session window). This number is marked **Billable from 1st Oct**.
-
-2. **The service message notice** below the card explains that from 1st October 2026, Meta charges for service messages. It estimates the extra cost of the service messages sent in your selected time range at the rate for Indian numbers. For other countries, click **Whatsapp Business Platform Rates** to see Meta's pricing.
-
-3. **The Message Composition** stacked bar chart shows, for each time bucket in your selected range and grain, how many Service Outbound, Inbound and Template Outbound messages were exchanged. The number above each bar is the total for that bucket. Like the charts on the Message Errors tab, it has legend toggles, **All** / **Inv** buttons and a range slider underneath to zoom into part of the timeline. A large share of Service Outbound in a bar shows where most of your new service message costs would come from.
 
 ## Message Errors
 This tab answers "are messages actually getting delivered, and where are the failures?"
