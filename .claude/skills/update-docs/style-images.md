@@ -78,7 +78,7 @@ Put the screenshot **after** the step it shows, never before. Use one screenshot
 
 ## Missing screenshots
 
-If you can't capture a state on production (the flow editor, the simulator, success states after saving; see `safety.md`), or the feature isn't live yet:
+If you can't capture a state on production (the simulator, success states after saving, flow editor states that need an edit; see `safety.md`), or the feature isn't live yet:
 
 ```markdown
 :::info Screenshot coming soon

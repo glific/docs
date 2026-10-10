@@ -57,7 +57,8 @@ Plan (<intent>):
 - Pages: docs/<section>/<file>.md  (new | update | move → <new path>)
 - Screenshots: static/img/<feature>/<name>.png  (new | replace)  — N total
 - Live UI checked: <routes you will open>
-- Out of scope / can't capture: <e.g. flow editor — opening it locks the flow>
+- Flows opened in the editor: <flow names, or none> (each takes the edit lock while open, see safety.md)
+- Out of scope / can't capture: <e.g. simulator — it reserves the shared simulator contact>
 ```
 
 ## Step 3 — Do the work

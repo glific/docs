@@ -25,7 +25,7 @@ Check:
 - **Terminology**: one name per concept, matching the live UI label (e.g. "Call a webhook" vs "Webhook node" vs "API call"). Pick the term the UI uses.
 - **Header**: the standard block from [style-writing.md](style-writing.md#page-header). Flag legacy variants, wrong read times and stale Last Updated dates.
 - **Voice**: [style-writing.md](style-writing.md) (second person, imperative, plain language, "Select" not "Click", bold UI labels, no internal or technical jargon for Product Features pages).
-- **Accuracy**: spot-check the claims that most affect users against the live app (labels, menu paths, field names). Opening the flow editor isn't possible (see `safety.md`), so for flow node pages check the node lists and labels from the frontend/floweditor code instead.
+- **Accuracy**: spot-check the claims that most affect users against the live app (labels, menu paths, field names). For flow node pages, you may open one suitable flow in the editor to check node names and settings. Follow the flow editor rules in `safety.md` and release the lock afterwards.
 - **Duplication**: the same how-to explained on several pages. Suggest one canonical page with links to it.
 - **Links and images**: relative links that resolve, `/img/` paths that exist, and alt text present.
 

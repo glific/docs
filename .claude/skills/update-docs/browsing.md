@@ -65,3 +65,7 @@ Clicking **Create**/**Add** to photograph an empty form is fine. Then:
 - Don't type into form fields, except to show a field's validation or helper text, and then only with obviously fake text such as `Sample template`.
 - Leave with **Cancel**, `press Escape` or `go-back`. Never click Save, Submit, Send, Create, Delete, Confirm, Import, Upload, Sync, Start or Publish.
 - If a confirmation dialog appears unexpectedly, dismiss it (`press Escape` or click **Cancel**).
+
+## Flow editor
+
+Open it from the flow list (`goto <GLIFIC_URL>/flow`, then the flow's edit icon) and follow the **Flow editor** rules in `safety.md`. In short: use a suitable flow, only look, never select Take Over or Publish, and `goto <GLIFIC_URL>/flow` as soon as you have your shots so the lock is released. The canvas can show flow content such as message text, so check each PNG and use `--hide` on any node that contains real names or numbers.

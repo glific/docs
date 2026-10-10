@@ -133,8 +133,12 @@ function guardCode(glificHost) {
     /^\\/api\\/v1\\/session\\/name\\/?$/, /^\\/api\\/v1\\/get-embed-token\\/?$/];
   // Fired automatically by the UI; still blocked, but not a reason to stop.
   const PASSIVE = [/^\\/api\\/v1\\/session\\/tracker/, /\\bmarkContactMessagesAsRead\\b/, /\\bmarkNotificationAsRead\\b/];
-  // Queries with server-side side effects (they take or release edit locks).
-  const LOCKING_FIELDS = /\\b(flowGet|flowRelease|simulatorGet|simulatorRelease)\\b/;
+  // Queries with server-side side effects: the simulator reserves a shared simulator contact.
+  const SIDE_EFFECT_FIELDS = /\\b(simulatorGet|simulatorRelease)\\b/;
+  // The one exception to read-only: opening the flow editor. flowGet takes the docs
+  // account's edit lock on that flow; flowRelease (fired by the flow list) gives it back.
+  // flowGet with isForced (the "Take Over" button) would evict another user, so it stays blocked.
+  const FLOW_EDITOR_FIELDS = /\\b(flowGet|flowRelease)\\b/;
 
   const isGlific = h => !!GLIFIC_HOST && (h === GLIFIC_HOST || h.endsWith('.' + GLIFIC_HOST));
 
@@ -146,24 +150,32 @@ function guardCode(glificHost) {
       const q = op.query.replace(/#[^\\n]*/g, '');
       if (/\\bmutation\\b/.test(q)) return 'GraphQL mutation ' + (op.operationName || (q.match(/mutation\\s+(\\w+)/) || [])[1] || '');
       if (/\\bsubscription\\b/.test(q)) return 'GraphQL subscription over HTTP';
-      const lock = q.match(LOCKING_FIELDS);
-      if (lock) return 'side-effect query ' + lock[1] + ' (takes/releases an edit lock)';
+      const side = q.match(SIDE_EFFECT_FIELDS);
+      if (side) return 'side-effect query ' + side[1] + ' (reserves the simulator)';
+      if (/\\bflowGet\\b/.test(q)) {
+        const vars = op.variables && typeof op.variables === 'object' ? op.variables : {};
+        if (vars.isForced === true || /isForced\\s*:\\s*true/.test(q)) {
+          return 'flowGet with isForced ("Take Over") would remove another user from the flow editor';
+        }
+      }
     }
     return null;
   };
 
-  const record = async (why, req) => {
+  // Blocked and allowed-exception events go to separate cookies so frequent allowed
+  // events (flowGet re-fires on every tab focus) can never push a blocked one out.
+  const record = async (why, req, cookie = 'blocked') => {
     const body = req.postData() || '';
     if (body.includes('DocsGuardCanary')) return;
     const u = new URL(req.url());
     const passive = PASSIVE.some(r => r.test(u.pathname) || r.test(body));
     const entry = { at: new Date().toISOString(), method: req.method(), host: u.hostname, path: u.pathname, why, passive };
     try {
-      const prev = (await ctx.cookies(COOKIE_URL)).find(c => c.name === 'blocked');
+      const prev = (await ctx.cookies(COOKIE_URL)).find(c => c.name === cookie);
       let list = prev ? JSON.parse(decodeURIComponent(prev.value)) : [];
       list.push(entry);
       list = list.slice(-8);
-      await ctx.addCookies([{ name: 'blocked', value: encodeURIComponent(JSON.stringify(list)), url: COOKIE_URL }]);
+      await ctx.addCookies([{ name: cookie, value: encodeURIComponent(JSON.stringify(list)), url: COOKIE_URL }]);
     } catch (e) {}
   };
 
@@ -192,7 +204,15 @@ function guardCode(glificHost) {
     } else {
       why = method + ' ' + u.pathname + ' is a write';
     }
-    if (!why) return route.fallback();
+    if (!why) {
+      const body = method === 'POST' ? req.postData() || '' : '';
+      const lock = body.match(FLOW_EDITOR_FIELDS);
+      if (lock) {
+        const what = lock[1] === 'flowGet' ? ' (flow editor lock taken)' : ' (flow editor lock released)';
+        await record('allowed ' + lock[1] + what, req, 'allowed');
+      }
+      return route.fallback();
+    }
 
     await record(why, req);
     const origin = req.headers()['origin'];
@@ -211,7 +231,7 @@ function guardCode(glificHost) {
       const server = ws.connectToServer();
       ws.onMessage(msg => {
         const text = typeof msg === 'string' ? msg : '';
-        if (/\\bmutation\\b/.test(text) || LOCKING_FIELDS.test(text)) return;
+        if (/\\bmutation\\b/.test(text) || SIDE_EFFECT_FIELDS.test(text) || FLOW_EDITOR_FIELDS.test(text)) return;
         server.send(msg);
       });
     });
@@ -476,8 +496,8 @@ function shotCode({ out, target, hide, masks }) {
 }`;
 }
 
-const readBlockedCode = `async page => {
-  const c = (await page.context().cookies(${JSON.stringify(GUARD_COOKIE_URL)})).find(x => x.name === 'blocked');
+const readLogCode = name => `async page => {
+  const c = (await page.context().cookies(${JSON.stringify(GUARD_COOKIE_URL)})).find(x => x.name === ${JSON.stringify(name)});
   return c ? decodeURIComponent(c.value) : '[]';
 }`;
 
@@ -663,14 +683,34 @@ function status() {
   return blocked([]) === 3 ? 3 : 0;
 }
 
-function readBlocked() {
-  const r = runCode(readBlockedCode).result;
+function readLog(name) {
+  const r = runCode(readLogCode(name)).result;
   try { return Array.isArray(r) ? r : JSON.parse(r || '[]'); } catch { return []; }
+}
+
+// True when the last flow-editor lock event was flowGet with no flowRelease after it.
+function flowLockHeld() {
+  const allowed = readLog('allowed');
+  const last = allowed[allowed.length - 1];
+  return !!last && /flowGet/.test(last.why);
+}
+
+function releaseFlowLock() {
+  if (!flowLockHeld()) return;
+  // Loading the flow list fires flowRelease for this account's locks.
+  cli(['goto', `${env().url}/flow`], { quiet: true });
+  cli(['eval', 'new Promise(r => setTimeout(r, 3000))'], { quiet: true });
+  if (flowLockHeld()) line(false, 'flow editor lock', 'still held — open /flow in the session to release it');
+  else line(true, 'flow editor lock', 'released');
 }
 
 function blocked(args) {
   if (!sessionAlive()) { line(null, 'blocked', 'session not open'); return 0; }
-  const list = readBlocked();
+  const list = readLog('blocked');
+  if (!args.includes('--quiet')) {
+    for (const a of readLog('allowed')) console.log(`  allowed ${a.at} ${a.why}`);
+    if (flowLockHeld()) console.log('  NOTE    flow editor lock is held by the docs account — go back to /flow when done');
+  }
   if (args.includes('--ack')) { runCode(ackBlockedCode); line(null, 'blocked', `cleared ${list.length} entr${list.length === 1 ? 'y' : 'ies'}`); return 0; }
   if (!list.length) { if (!args.includes('--quiet')) line(true, 'blocked', 'no write attempts'); return 0; }
   const active = list.filter(b => !b.passive);
@@ -806,7 +846,11 @@ switch (cmd) {
   case 'shot': code = shot(args); break;
   case 'blocked': code = blocked(args); break;
   case 'lint': code = lint(args); break;
-  case 'stop': cli(['close'], { quiet: true }); line(null, 'session', 'closed'); break;
+  case 'stop':
+    if (sessionAlive()) releaseFlowLock();
+    cli(['close'], { quiet: true });
+    line(null, 'session', 'closed');
+    break;
   default:
     console.log('usage: gdocs <preflight|start|status|shot|blocked|lint|stop>');
     code = cmd ? 2 : 0;
