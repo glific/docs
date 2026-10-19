@@ -3,5 +3,31 @@
     "deny": [
       "Read(.env)"
     ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/skills/update-docs/scripts/browser-guard-hook.sh\" pre",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/skills/update-docs/scripts/browser-guard-hook.sh\" post",
+            "timeout": 60
+          }
+        ]
+      }
+    ]
   }
 }

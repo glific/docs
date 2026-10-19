@@ -1,0 +1,92 @@
+---
+name: update-docs
+description: Generate, update, review or restructure Glific user-facing documentation in this repo (glific/docs), using the live (production) Glific app through a read-only, auto-redacting playwright-cli browser for UI checks and screenshots. Use when someone asks to document a feature, write a doc page, refresh or update existing docs, update docs after a glific-frontend PR ships, review docs for consistency, or restructure docs (e.g. with tabs). Also use for "/update-docs ...".
+argument-hint: <what to do, e.g. "refresh the analytics page with new navigation tabs">
+---
+
+# update-docs
+
+Updates the Glific docs in this repo (`glific/docs`, Docusaurus) using the **live production Glific app** as the source of truth.
+
+The browser is logged in to a **real organisation's production account**. Two rules override everything else in this skill:
+
+1. **Never change anything in Glific.** Only look and take screenshots. A network guard blocks writes. If the guard trips, **stop at once and warn the user** (see [safety.md](safety.md)).
+2. **Never publish an unredacted screenshot.** Take every image with `glific-browser shot`. It removes contact data, checks that nothing is left, and records the image so `glific-browser lint` can check it later. Then look at each PNG yourself before you use it.
+
+Users don't need to install anything. The cloud environment provides `node`, `playwright-cli`, Chromium and these env vars: `GLIFIC_URL`, `GLIFIC_PHONE`, `GLIFIC_PASSWORD`, `PLAYWRIGHT_BROWSERS_PATH`. Never print, echo or read the credential values. `glific-browser` reads them itself.
+
+All commands below run from the repo root. `glific-browser` is short for `node .claude/skills/update-docs/scripts/glific-browser.mjs`.
+
+## Step 0 — Preflight (always, before anything else)
+
+```bash
+node .claude/skills/update-docs/scripts/glific-browser.mjs preflight
+```
+
+This checks the env vars, `playwright-cli`, the browser launch and the read-only guard. The guard check sends a canary mutation that must be blocked. It also runs a redaction self-test and then logs in to Glific. Only a run that ends with `PREFLIGHT OK` passes.
+
+- **If any check fails**, stop and show the user the `[FAIL]` lines. Explain the likely cause using [troubleshooting](#troubleshooting). Do not try to install anything, and do not work around the guard.
+- For a **docs-only** request that needs no browser (pure review or restructure), you may ask the user whether to continue without the live app. If you do, say in the final summary that nothing was checked against the live UI.
+
+## Step 1 — Classify the request
+
+| Intent | Example | Browser? | Read |
+|---|---|---|---|
+| **Refresh** an existing page | `refresh the analytics page with new navigation tabs`, `update docs for glific-frontend#1234` | yes | [workflow-refresh.md](workflow-refresh.md) |
+| **New** page | `write a new doc page for HSM v2 page` | yes | [workflow-new.md](workflow-new.md) |
+| **Review** a set of pages for consistency | `review document structure for all webhooks and ensure consistency of writing` | optional, for spot-checks | [workflow-review.md](workflow-review.md) |
+| **Restructure** (tabs, merges, moves) | `restructure docs with tabs like ...` | optional | [workflow-restructure.md](workflow-restructure.md) |
+
+If the request mixes intents, do them in this order: review/restructure plan → refresh/new content → screenshots.
+
+Always read these too:
+- [browsing.md](browsing.md): how to drive the session, take screenshots and find your way around Glific.
+- [safety.md](safety.md): what is blocked, the stop-and-warn protocol, and redaction limits.
+- The house style guides. They are the single source for docs conventions:
+  - [sections.md](sections.md): the 8 doc sections, where new pages go, numbering, and route → section mapping
+  - [style-writing.md](style-writing.md): audience (non-technical NGO staff), voice, UI labels, the **page header block**, step format and anti-patterns
+  - [style-page.md](style-page.md): page templates per section, sibling consistency, and when to use tabs
+  - [style-images.md](style-images.md): image directories, naming, framing, `/img/` paths and placeholders
+
+## Step 2 — Plan, then confirm
+
+Before you edit files, print a short plan and **wait for the user to confirm**:
+
+```
+Plan (<intent>):
+- Pages: docs/<section>/<file>.md  (new | update | move → <new path>)
+- Screenshots: static/img/<feature>/<name>.png  (new | replace)  — N total
+- Live UI checked: <routes you will open>
+- Flows opened in the editor: <flow names, or none> (each takes the edit lock while open, see safety.md)
+- Out of scope / can't capture: <e.g. simulator — it reserves the shared simulator contact>
+```
+
+## Step 3 — Do the work
+
+Follow the workflow file for the intent. While you work:
+
+- After **every** browser action the PostToolUse hook checks the guard. If it reports `READ-ONLY GUARD TRIPPED`, follow the stop-and-warn protocol in [safety.md](safety.md) before you do anything else.
+- Never click buttons that save, submit, send, delete, publish, start, import, upload, sync, assign or change state, even though the guard would block them. Open forms and dialogs only to photograph them, then close them with **Cancel**, **Escape** or by going back.
+- Write only what you saw in the live app. If the UI and the user's request disagree, ask.
+
+## Step 4 — Validate and hand off
+
+```bash
+node .claude/skills/update-docs/scripts/glific-browser.mjs lint           # image provenance + /img refs
+node .claude/skills/update-docs/scripts/glific-browser.mjs stop           # close the browser
+```
+
+- `lint` must pass. It checks image provenance, `/img/` refs and relative `.md` links in changed pages. A provenance failure means an image was not made by `glific-browser shot`. Retake it.
+- If `node_modules/` exists, also run `yarn build` to catch MDX errors (broken links are ignored by the site config; `lint` covers them). Otherwise say that CI will run the build.
+- Finish with a summary: pages changed, screenshots added or replaced, anything that couldn't be captured and why, and any blocked write attempts (passive ones too). Don't commit or open a PR unless the user asks.
+
+## Troubleshooting
+
+| Preflight failure | Likely cause | What to tell the user |
+|---|---|---|
+| `env — missing …` | Env vars not set in the cloud environment | Add `GLIFIC_URL`, `GLIFIC_PHONE`, `GLIFIC_PASSWORD` to the cloud environment's env settings. |
+| `playwright-cli — not on PATH` | Running locally, or the setup script didn't run | Use the cloud environment, or run the env setup script once. |
+| `browser launch — … not installed` | `@playwright/cli` and the installed Chromium are different versions | Re-run the environment setup script so both are `@latest` together. |
+| `read-only guard — canary … NOT blocked` | Unexpected playwright-cli behaviour | **Do not proceed.** Report it. |
+| `login — phone field …` / `page says: …` | Wrong phone format (`91XXXXXXXXXX`), wrong password, or a non-Indian dial code | Check `GLIFIC_PHONE` / `GLIFIC_PASSWORD`. |
+| `login — Timeout …waitForURL` | Slow first load or a changed login UI | Retry once with `glific-browser start`. If it fails again, report it. |
