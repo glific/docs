@@ -21,11 +21,10 @@ Allowed:
 - `POST /api` when **every** operation is a plain `query`.
 - Login and session upkeep: `POST /api/v1/session`, `/session/renew`, `/session/name`.
 - Analytics embed token: `POST /api/v1/get-embed-token`. Superset (`moonshine.projecttech4dev.org`) chart-data POSTs use a read-only guest token.
-- **The one write exception: opening the flow editor.** `flowGet` (without `isForced`) takes the docs account's edit lock on that flow, and `flowRelease` (fired when the flow list loads) gives it back. Both are logged as `allowed` in `glific-browser blocked`. While the lock is held, the org's staff can only open that flow in view-only mode. See "Flow editor" below.
+- **The one write exception: the flow editor lock.** `flowGet` takes the docs account's edit lock on a flow. With `isForced: true` (the **Take Over** button), it takes the lock from whoever holds it. `flowRelease` (fired when the flow list loads) gives the lock back. All of these are logged as `allowed` in `glific-browser blocked`, and Take Over is labelled `TAKE OVER`. While the docs account holds the lock, the org's staff can only open that flow in view-only mode. See "Flow editor" below.
 
 Blocked, and recorded:
 - Any GraphQL `mutation` or `subscription` over HTTP, multipart or upload requests, and requests without query text. This includes everything inside the flow editor that changes a flow: publish, reset counts, translate, import, and autosaved revisions (`POST /flow-editor/revisions`).
-- `flowGet` with `isForced: true`. That is the **Take Over** button, which would kick a staff member out of a flow they are editing.
 - Side-effect queries `simulatorGet` and `simulatorRelease`. They reserve the org's shared simulator contact.
 - Every other `POST`, `PUT`, `PATCH` or `DELETE` to the Glific host, including logout, the simulator, onboarding and registration (which sends an OTP).
 - WebSocket frames that carry a mutation.
@@ -51,11 +50,11 @@ Never try to "fix" a trip by changing the guard, the hook, the session or the sc
 You may open the flow editor to document it. It is the only place where the skill takes a server-side lock, so keep its impact small:
 
 1. **Prefer flows that staff aren't working on**: template flows, demo or sample flows, or old inactive flows. Ask the user which flow to use if none is obvious. Never pick a flow just because it is recently modified.
-2. **If the editor shows the "View Only Mode" banner**, someone else is editing that flow. Photograph the view-only editor or choose another flow. **Never select Take Over.** It is blocked anyway and would trip the guard.
+2. **If the editor shows the "View Only Mode" banner**, someone else is editing that flow. First photograph the view-only editor, or choose another flow. Use **Take Over** only if you need edit-mode screenshots of *that* flow. **Ask the user first** and name the flow: Take Over kicks the staff member out of the editor, and they may lose unsaved work. Release the lock straight after your shots.
 3. **Look, don't edit.** Don't drag, add, delete or edit nodes, and don't open node editors and change fields. Every change autosaves a revision, which is blocked and trips the guard. You may open a node's settings dialog to photograph it, then close it with **Cancel** or `press Escape`.
 4. **Never select** **Publish**, **Reset flow counts**, **Translate**, **Export**/**Import**, **Preview** (the simulator) or **Save**.
 5. **Release the lock as soon as you are done**: `goto <GLIFIC_URL>/flow` (loading the flow list fires `flowRelease`). `glific-browser blocked` shows `NOTE flow editor lock is held` until it is released, and `glific-browser stop` releases it automatically before closing.
-6. List every flow you opened in the final summary.
+6. List every flow you opened in the final summary, and every Take Over (with the flow name).
 
 ## Things you can't capture on production
 

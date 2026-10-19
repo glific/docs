@@ -135,10 +135,16 @@ function guardCode(glificHost) {
   const PASSIVE = [/^\\/api\\/v1\\/session\\/tracker/, /\\bmarkContactMessagesAsRead\\b/, /\\bmarkNotificationAsRead\\b/];
   // Queries with server-side side effects: the simulator reserves a shared simulator contact.
   const SIDE_EFFECT_FIELDS = /\\b(simulatorGet|simulatorRelease)\\b/;
-  // The one exception to read-only: opening the flow editor. flowGet takes the docs
-  // account's edit lock on that flow; flowRelease (fired by the flow list) gives it back.
-  // flowGet with isForced (the "Take Over" button) would evict another user, so it stays blocked.
+  // The one exception to read-only: the flow editor lock. flowGet takes the docs account's
+  // edit lock on that flow (with isForced — the "Take Over" button — it takes it from
+  // whoever holds it); flowRelease (fired by the flow list) gives it back.
   const FLOW_EDITOR_FIELDS = /\\b(flowGet|flowRelease)\\b/;
+  const isTakeOver = body => {
+    try {
+      return [].concat(JSON.parse(body)).some(op => (op && op.variables && op.variables.isForced === true)
+        || /isForced\\s*:\\s*true/.test((op && op.query) || ''));
+    } catch (e) { return false; }
+  };
 
   const isGlific = h => !!GLIFIC_HOST && (h === GLIFIC_HOST || h.endsWith('.' + GLIFIC_HOST));
 
@@ -152,12 +158,6 @@ function guardCode(glificHost) {
       if (/\\bsubscription\\b/.test(q)) return 'GraphQL subscription over HTTP';
       const side = q.match(SIDE_EFFECT_FIELDS);
       if (side) return 'side-effect query ' + side[1] + ' (reserves the simulator)';
-      if (/\\bflowGet\\b/.test(q)) {
-        const vars = op.variables && typeof op.variables === 'object' ? op.variables : {};
-        if (vars.isForced === true || /isForced\\s*:\\s*true/.test(q)) {
-          return 'flowGet with isForced ("Take Over") would remove another user from the flow editor';
-        }
-      }
     }
     return null;
   };
@@ -208,7 +208,8 @@ function guardCode(glificHost) {
       const body = method === 'POST' ? req.postData() || '' : '';
       const lock = body.match(FLOW_EDITOR_FIELDS);
       if (lock) {
-        const what = lock[1] === 'flowGet' ? ' (flow editor lock taken)' : ' (flow editor lock released)';
+        let what = ' (flow editor lock released)';
+        if (lock[1] === 'flowGet') what = isTakeOver(body) ? ' TAKE OVER (lock taken from another user)' : ' (flow editor lock taken)';
         await record('allowed ' + lock[1] + what, req, 'allowed');
       }
       return route.fallback();

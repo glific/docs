@@ -68,4 +68,4 @@ Clicking **Create**/**Add** to photograph an empty form is fine. Then:
 
 ## Flow editor
 
-Open it from the flow list (`goto <GLIFIC_URL>/flow`, then the flow's edit icon) and follow the **Flow editor** rules in `safety.md`. In short: use a suitable flow, only look, never select Take Over or Publish, and `goto <GLIFIC_URL>/flow` as soon as you have your shots so the lock is released. The canvas can show flow content such as message text, so check each PNG and use `--hide` on any node that contains real names or numbers.
+Open it from the flow list (`goto <GLIFIC_URL>/flow`, then the flow's edit icon) and follow the **Flow editor** rules in `safety.md`. In short: use a suitable flow, only look, never select Publish, select Take Over only after the user approves it, and `goto <GLIFIC_URL>/flow` as soon as you have your shots so the lock is released. The canvas can show flow content such as message text, so check each PNG and use `--hide` on any node that contains real names or numbers.
