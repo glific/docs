@@ -1,20 +1,21 @@
 <h4>
  <table>
   <tr>
-    <td><b>3 minutes read</b></td>
+    <td><b>5 minutes read</b></td>
     <td style={{ paddingLeft: '40px' }}><b>Level: Beginner</b></td>
-    <td style={{ paddingLeft: '40px' }}><b>Last Updated: July 2026</b></td>
+    <td style={{ paddingLeft: '40px' }}><b>Last Updated: October 2026</b></td>
   </tr>
 </table>
 </h4>
 
 # Data Analytics Page 
-The Data Analytics page (accessible from the left navigation under "Data Analytics") gives a bird's-eye view of how contacts are growing, how engaged they are, and how reliably messages are being delivered. The page is organized as a single dashboard with a shared control bar at the top and three tabs underneath: 
+The Data Analytics page (accessible from the left navigation under "Data Analytics") gives a bird's-eye view of how contacts are growing, how engaged they are, and how reliably messages are being delivered. The page is organized as a single dashboard with a shared control bar at the top and four tabs underneath: 
 - Reach & Growth,
-- Engagement Quality, and
+- Engagement Quality,
+- Messages Overview, and
 - Message Errors. 
 
-<img width="" height="398" alt="Screenshot 2026-07-08 at 4 17 55 PM" src="https://github.com/user-attachments/assets/8d3e7c1c-7568-491f-923f-9fe3fae6515a" />
+![Data Analytics dashboard with the control bar and the four tabs](/img/analytics/analytics_dashboard_tabs.png)
 
 Every tab responds to the same global `Time` and `Time Grain` settings, so changing them once updates the charts across whichever tab you're viewing.
 
@@ -79,6 +80,22 @@ This tab answers "of the people I'm reaching, how many are actually engaging bac
 - Responded to Broadcast. (these are the users who responded to broadcast on the same day)
   
 Reading this chart top to bottom shows the engagement funnel — for example, only 17 out of 83 broadcast contacts responded the same day, which is a same-day response rate you could use to gauge broadcast effectiveness. This chart does reflect the Time filter, but note it is not time-grain-bucketed like the trend charts — it's a single snapshot of totals for the selected date range.
+
+## Messages Overview
+This tab answers "how many messages am I sending and receiving, and what kind of messages are they?"
+
+![Messages Overview tab with the Messages Exchanged card, the service message cost notice and the Message Composition chart](/img/analytics/analytics_messages_overview.png)
+
+1. **The Messages Exchanged** card shows the total number of messages for the selected time range, split into three types. The date under the title ("Data available since ...") tells you how far back the data on this tab goes.
+- Inbound, (messages your contacts sent to you)
+- Template Outbound, (template (HSM) messages you sent, for example in broadcasts)
+- Service Outbound, (all other, non-template messages you sent, for example flow replies and chat replies within the 24-hour session window). This number is marked "Billable from 1st Oct".
+
+2. **The service message cost notice** below the card explains that from 1st October 2026, Meta charges for service messages. It gives an estimate of the extra cost the Service Outbound messages in your selected time range would have added, at the rate for Indian numbers. For numbers in other countries, click **Whatsapp Business Platform Rates** to see Meta's current prices.
+
+3. **The Message Composition** stacked bar chart shows, for each time bucket in your selected range and grain, how many messages were Service Outbound, Inbound and Template Outbound. The number above each bar is the total for that bucket. Like the charts on the Message Errors tab, the legend items can be toggled, the "All" / "Inv" buttons select or invert the series, and the range slider under the chart lets you zoom into a part of the timeline.
+
+Use this tab to see which kind of messages make up most of your volume. A large Service Outbound share means most of your traffic comes from flow and chat replies, which now count towards your Meta bill.
 
 ## Message Errors
 This tab answers "are messages actually getting delivered, and where are the failures?"
