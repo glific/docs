@@ -1,17 +1,18 @@
 <h4>
  <table>
   <tr>
-    <td><b>3 minutes read</b></td>
+    <td><b>4 minutes read</b></td>
     <td style={{ paddingLeft: '40px' }}><b>Level: Beginner</b></td>
-    <td style={{ paddingLeft: '40px' }}><b>Last Updated: July 2026</b></td>
+    <td style={{ paddingLeft: '40px' }}><b>Last Updated: October 2026</b></td>
   </tr>
 </table>
 </h4>
 
 # Data Analytics Page 
-The Data Analytics page (accessible from the left navigation under "Data Analytics") gives a bird's-eye view of how contacts are growing, how engaged they are, and how reliably messages are being delivered. The page is organized as a single dashboard with a shared control bar at the top and three tabs underneath: 
+The Data Analytics page (accessible from the left navigation under "Data Analytics") gives a bird's-eye view of how contacts are growing, how engaged they are, and how reliably messages are being delivered. The page is organized as a single dashboard with a shared control bar at the top and four tabs underneath: 
 - Reach & Growth,
-- Engagement Quality, and
+- Engagement Quality,
+- Messages Overview, and
 - Message Errors. 
 
 <img width="" height="398" alt="Screenshot 2026-07-08 at 4 17 55 PM" src="https://github.com/user-attachments/assets/8d3e7c1c-7568-491f-923f-9fe3fae6515a" />
@@ -79,6 +80,31 @@ This tab answers "of the people I'm reaching, how many are actually engaging bac
 - Responded to Broadcast. (these are the users who responded to broadcast on the same day)
   
 Reading this chart top to bottom shows the engagement funnel — for example, only 17 out of 83 broadcast contacts responded the same day, which is a same-day response rate you could use to gauge broadcast effectiveness. This chart does reflect the Time filter, but note it is not time-grain-bucketed like the trend charts — it's a single snapshot of totals for the selected date range.
+
+## Messages Overview
+This tab answers "how many messages are moving through my chatbot, and what type are they?"
+
+<img width="" height="" alt="Messages Overview tab" src="/img/data-analytics/data-analytics_messages_overview.png" />
+
+1. **Messages Exchanged** summarizes total message volume for the selected time range, split by type:
+
+| Inbound | Template Outbound | Service Outbound |
+|---|---|---|
+| 3,862 | 1,342 | 19,131 |
+
+- **Inbound** — messages received from contacts.
+- **Template Outbound** — HSM/template messages sent outside the 24-hour conversation window, typically used for broadcasts, reminders, and re-engagement campaigns.
+- **Service Outbound** — regular messages sent to a contact within an active 24-hour conversation window.
+
+The card also shows the date since which this data has been tracked (e.g., "Data available since 29 Mar") — this is a fixed tracking start date and doesn't change with your selected Time filter.
+
+2. Starting 1st October 2026, Meta charges for service messages. A notice below the Messages Exchanged table shows your estimated additional cost for the Service Outbound messages sent in the selected time range, calculated using WhatsApp's per-message rate for the relevant country (for example, ~USD 0.0014/message for Indian numbers). Select **WhatsApp Business Platform Rates** in the notice to check rates for other countries.
+
+3. **The Message Composition** stacked bar chart breaks down total messages per time bucket (based on your Time Grain setting) into the same three categories — Service Outbound, Inbound, and Template Outbound.
+
+Each color in the legend can be toggled — selecting a legend item isolates or hides that category, and the **All** / **Inv** (invert) buttons next to the legend let you quickly select all series or invert your current selection. Below the chart is a range-slider/brush control that lets you zoom into a narrower slice of the timeline without changing the global Time filter.
+
+Tall bars dominated by Service Outbound usually reflect heavy contact-initiated conversation traffic, while a spike in Template Outbound points to a broadcast or campaign sent that week.
 
 ## Message Errors
 This tab answers "are messages actually getting delivered, and where are the failures?"
