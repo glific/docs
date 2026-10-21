@@ -8,6 +8,8 @@
 </table>
 </h4>
 
+# AI Assistants
+
 # Overview
 The AI Assistants page (`AI toolkit` → `AI Assistant`) is where you build, test, evaluate, and publish assistants that get used into Glific flows via their assistant ID (asst_…). Everything you need lives inside a single assistant — from editing the prompt to evaluating it against Golden Q&As and taking a version live. 
 
