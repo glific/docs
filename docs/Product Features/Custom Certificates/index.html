@@ -6,7 +6,7 @@
 <title data-rh="true">Custom Certificates | Glific</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://glific.github.io/docs/docs/Product Features/Custom Certificates"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Custom Certificates | Glific"><meta data-rh="true" name="description" content="7 minutes read"><meta data-rh="true" property="og:description" content="7 minutes read"><link data-rh="true" rel="icon" href="/docs/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://glific.github.io/docs/docs/Product Features/Custom Certificates"><link data-rh="true" rel="alternate" href="https://glific.github.io/docs/docs/Product Features/Custom Certificates" hreflang="en"><link data-rh="true" rel="alternate" href="https://glific.github.io/docs/docs/Product Features/Custom Certificates" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://35GA1F1DHM-dsn.algolia.net" crossorigin="anonymous"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Product Features","item":"https://glific.github.io/docs/docs/category/product-features"},{"@type":"ListItem","position":2,"name":"Custom Certificates","item":"https://glific.github.io/docs/docs/Product Features/Custom Certificates"}]}</script><link rel="search" type="application/opensearchdescription+xml" title="Glific" href="/docs/opensearch.xml">
 <link rel="preconnect" href="https://us.i.posthog.com">
 <script>!function(t,e){var o,s,r,a;e.__SV||(window.posthog=e,e._i=[],e.init=function(n,i,p){function c(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(r=t.createElement("script")).type="text/javascript",r.async=!0,r.src=i.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(a=t.getElementsByTagName("script")[0]).parentNode.insertBefore(r,a);var g=e;for(void 0!==p?g=e[p]=[]:p="posthog",g.people=g.people||[],g.toString=function(t){var e="posthog";return"posthog"!==p&&(e+="."+p),t||(e+=" (stub)"),e},g.people.toString=function(){return g.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys onSessionId".split(" "),s=0;s<o.length;s++)c(g,o[s]);e._i.push([n,i,p])},e.__SV=1)}(document,window.posthog||[]),posthog.init("phc_yoqeZFzoFCxYn2ecSQuR5LxTtWDoLKZ6aTJn2rWL5M8q",{api_host:"https://us.i.posthog.com",id:"default"})</script><link rel="stylesheet" href="/docs/assets/css/styles.983e41a2.css">
-<script src="/docs/assets/js/runtime~main.98c69625.js" defer="defer"></script>
+<script src="/docs/assets/js/runtime~main.f3345a54.js" defer="defer"></script>
 <script src="/docs/assets/js/main.f5090c47.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -103,7 +103,7 @@ Use this <a href="https://console.developers.google.com/start/api?id=drive.googl
 <li>Certificate url is the link to the google slide template taken by copying the link.</li>
 </ol>
 <ul>
-<li>Ensure that the slide template does not end with “...slide=id.p1”</li>
+<li>Select the specific slide you want to use before copying the link, so the url ends with that slide’s id (for example “...slide=id.g33e0d0c1143_0_0” or “...slide=id.h5354e71374cd0ed6_14_0”), not “...slide=id.p”</li>
 <li>Ensure that the slide template is saved on the Google Drive linked to organization email id.</li>
 </ul>
 <ol start="10">
@@ -192,20 +192,28 @@ and assign it the Content Manager role.</li>
 <li>b. Use this condition to share a relevant message to inform the contact of certificate generation</li>
 </ul>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="3-error-1-url-ending-with-slideidp">3. “Error 1: URL ending with slide=id.p”<a href="#3-error-1-url-ending-with-slideidp" class="hash-link" aria-label="Direct link to 3. “Error 1: URL ending with slide=id.p”" title="Direct link to 3. “Error 1: URL ending with slide=id.p”">​</a></h4>
-<p>This error happens because the id after slide indicates the location of the slide in the google drive and if the location is not present, then the code is not able to perform the steps like create a copy and replace the placeholder text with the variables from the webhook.</p>
+<p>Glific needs the id of the specific slide to use as the certificate. A url ending with <code>slide=id.p</code> (or with no slide id at all) only points to the presentation, so Glific can&#x27;t tell which slide to copy and fill in.</p>
+<p>Any real slide id works, whatever it starts with. Older decks use ids like <code>slide=id.g33e0d0c1143_0_0</code>, and newer decks use ids like <code>slide=id.h5354e71374cd0ed6_14_0</code>.</p>
 <p><strong>Steps to resolve</strong></p>
 <ul>
-<li>a. Copy the root slide as slide 2 and slide 3</li>
-<li>b. Delete the slide 1 and 2</li>
-<li>c. Refresh the page</li>
-<li>d. See the slide url is now changed.</li>
-<li>e. Use this new url</li>
+<li>a. Open the presentation in Google Slides.</li>
+<li>b. Click the slide you want to use in the slide panel on the left.</li>
+<li>c. Copy the url from the browser address bar. It should now end with <code>slide=id.</code> followed by that slide’s id.</li>
+<li>d. Use this new url.</li>
 </ul>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="4-error-2-permission-issues">4. “Error 2: Permission Issues”<a href="#4-error-2-permission-issues" class="hash-link" aria-label="Direct link to 4. “Error 2: Permission Issues”" title="Direct link to 4. “Error 2: Permission Issues”">​</a></h4>
 <p><strong>Steps to resolve</strong></p>
 <ul>
 <li>a. Ensure that the design template is created in the google drive account linked to the org’s email id.</li>
 <li>b. Try by storing the template in a different location on the drive or on a different shared drive</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="5-failed-to-copy-slide-status-403--storagequotaexceeded">5. “Failed to copy slide. Status: 403 … storageQuotaExceeded”<a href="#5-failed-to-copy-slide-status-403--storagequotaexceeded" class="hash-link" aria-label="Direct link to 5. “Failed to copy slide. Status: 403 … storageQuotaExceeded”" title="Direct link to 5. “Failed to copy slide. Status: 403 … storageQuotaExceeded”">​</a></h4>
+<p>To create each certificate, Glific copies the template using the org’s Google Slides service account. If the service account can open the template file but not the folder it is in, the copy is saved in the service account’s own Drive, which quickly runs out of storage.</p>
+<p><strong>Steps to resolve</strong></p>
+<ul>
+<li>a. Make sure the template is inside a folder on a shared drive.</li>
+<li>b. Share that folder (not just the file) with the service account’s client email and give it the <strong>Content manager</strong> role, as described in step 10 of <a href="#1-create-import-template-design-in-google-slides">Create/ Import template design in Google Slides</a>.</li>
+<li>c. Run the flow again.</li>
 </ul>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="best-practices">Best practices<a href="#best-practices" class="hash-link" aria-label="Direct link to Best practices" title="Direct link to Best practices">​</a></h3>
 <p>Since this feature uses Google Drive and Google Slides APIs internally, be aware of their <a href="https://developers.google.com/workspace/slides/api/limits" target="_blank" rel="noopener noreferrer">rate limits</a>. Running this flow for a very large number of contacts (e.g., thousands) in one go may:</p>
