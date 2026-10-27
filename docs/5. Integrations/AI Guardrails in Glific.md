@@ -9,9 +9,9 @@
 </h4>
 
 # AI Guardrails in Glific
-- Guardrails are automatic safety checks that run around an AI Assistant in Glific.
-- AI Guardrails is one of the tools to make safe and responsible AI deployments.
-- Without AI guardrails you run a risk of sharing PII with the models, models answering to unsafe questions or questions which are not in your scope of work or models having a gender bias in their responses. 
+- AI Guardrails are automatic safety checks that run around an AI Assistant in Glific.
+- AI Guardrails is one of the tools to make safe and responsible AI chatbots.
+- Without AI guardrails there is a risk of chatbots sharing PII sent by contacts in their questions with the models or models answering to unsafe or abusive questions or questions which are not in your scope of work or the assistant having a gender bias in their responses. 
 - They sit at two points in a conversation: before a beneficiary’s message reaches the assistant, and before the assistant’s reply goes back to the beneficiary.
 - Each guardrail you switch on either quietly cleans up the text and lets the conversation continue, or stops the message entirely and sends a reply that you have written yourself.
 - You will find them on the Guardrails tab of any assistant: `AI toolkit > AI Assistant > Edit an assistant > Guardrails`.
