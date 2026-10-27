@@ -113,7 +113,7 @@ The presentation will open in a new window and automatically save in your Google
 
 9. Certificate url is the link to the google slide template taken by copying the link.
 
-- Ensure that the slide template does not end with “...slide=id.p1”
+- Select the specific slide you want to use before copying the link, so the url ends with that slide’s id (for example “...slide=id.g33e0d0c1143_0_0” or “...slide=id.h5354e71374cd0ed6_14_0”), not “...slide=id.p”
 - Ensure that the slide template is saved on the Google Drive linked to organization email id.
 
 10. Create the slides inside a folder located in the shared drive. Then, share that folder with the service account
@@ -207,15 +207,16 @@ The presentation will open in a new window and automatically save in your Google
 
 #### 3. “Error 1: URL ending with slide=id.p”
 
-This error happens because the id after slide indicates the location of the slide in the google drive and if the location is not present, then the code is not able to perform the steps like create a copy and replace the placeholder text with the variables from the webhook.
+Glific needs the id of the specific slide to use as the certificate. A url ending with `slide=id.p` (or with no slide id at all) only points to the presentation, so Glific can't tell which slide to copy and fill in.
+
+Any real slide id works, whatever it starts with. Older decks use ids like `slide=id.g33e0d0c1143_0_0`, and newer decks use ids like `slide=id.h5354e71374cd0ed6_14_0`.
 
 **Steps to resolve**
 
-- a. Copy the root slide as slide 2 and slide 3
-- b. Delete the slide 1 and 2
-- c. Refresh the page
-- d. See the slide url is now changed.
-- e. Use this new url
+- a. Open the presentation in Google Slides.
+- b. Click the slide you want to use in the slide panel on the left.
+- c. Copy the url from the browser address bar. It should now end with `slide=id.` followed by that slide’s id.
+- d. Use this new url.
 
 #### 4. “Error 2: Permission Issues”
 
@@ -223,6 +224,16 @@ This error happens because the id after slide indicates the location of the slid
 
 - a. Ensure that the design template is created in the google drive account linked to the org’s email id.
 - b. Try by storing the template in a different location on the drive or on a different shared drive
+
+#### 5. “Failed to copy slide. Status: 403 … storageQuotaExceeded”
+
+To create each certificate, Glific copies the template using the org’s Google Slides service account. If the service account can open the template file but not the folder it is in, the copy is saved in the service account’s own Drive, which quickly runs out of storage.
+
+**Steps to resolve**
+
+- a. Make sure the template is inside a folder on a shared drive.
+- b. Share that folder (not just the file) with the service account’s client email and give it the **Content manager** role, as described in step 10 of [Create/ Import template design in Google Slides](#1-create-import-template-design-in-google-slides).
+- c. Run the flow again.
 
 ### Best practices
 
