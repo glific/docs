@@ -19,9 +19,12 @@
 
 <img width="" height="" alt="Screenshot 2026-10-27 at 11 30 24 AM" src="https://github.com/user-attachments/assets/490db24b-7067-4e33-9095-395042b6b4b5" />
 
+## Watch how it works
+
 <iframe width="" height="" src="https://www.youtube.com/embed/INoWaHcz_eE?si=ps8VXJXb2bfQK750" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## How a guardrail behaves when it is triggered
+
 Every guardrail carries a badge that tells you how it acts when it is triggered. Click See how at the top of the tab to expand a diagram that explains both behaviours.
 - **Fixes and passes on (green)**: the conversation continues as normal and only the specific words or text which is flagged by the guardrail is hidden or reworded before being sent ahead to the assistant or to the user. 
 - **Blocks and sends set reply (amber)**: the conversation is stopped, the assistant never sees the message, and the beneficiary receives the reply you configured instead.
