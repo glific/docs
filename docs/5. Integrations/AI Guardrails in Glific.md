@@ -17,7 +17,7 @@
 - You will find them on the Guardrails tab of any assistant: `AI toolkit > AI Assistant > Edit an assistant > Guardrails`.
 - All four guardrails (Privacy Protection, Content Safety, Scope Control and Gender Bias)  are switched off when you start.
 
-<img width="" height="" alt="Screenshot 2026-10-27 at 11 30 24 AM" src="https://github.com/user-attachments/assets/490db24b-7067-4e33-9095-395042b6b4b5" />
+<img width="560" height="315" alt="Screenshot 2026-10-27 at 11 30 24 AM" src="https://github.com/user-attachments/assets/490db24b-7067-4e33-9095-395042b6b4b5" />
 
 ## Watch how it works
 
