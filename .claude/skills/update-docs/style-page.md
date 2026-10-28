@@ -25,7 +25,7 @@ Each section uses its own template. Pick the template that matches the section. 
 
 ---
 
-You can read more about related features here:
+Related features:
 - [{Related feature}]({../path/page.md})
 ```
 

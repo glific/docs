@@ -13,18 +13,28 @@ Secondary: **Implementation partners** who set up Glific for NGOs. They are more
 - One idea per sentence.
 - Explain what things do, not how they work internally.
 - If you can't avoid a Glific term such as "flow", "template" or "collection", explain it the first time you use it, or link to its page.
-- Use "you" and "your". Use active voice and the present tense.
+- Use neutral, direct language that explains the feature and what it does. Use active voice and the present tense.
 
 ## Voice
+
+Keep one consistent, neutral voice across the whole page, and across the docs. Don't switch between "I", "we", "they" and "you".
+
+- **Describe features in the third person**: "The **Messages Exchanged** card shows the total number of messages", not "This card shows you how many messages you sent".
+- **Write steps in the imperative**: "Select **Apply**", not "You need to click Apply".
+- **Name the subject instead of using a pronoun**: "contacts", "the organization", "staff", not "you", "your users", "they" or "we".
+- **No first person**, including in notes and feedback lines: "To share feedback, write to info@glific.org", not "We are working on this page, please reach out".
+- **No questions in the reader's voice**: "This tab shows whether messages are getting delivered", not "This tab answers 'are my messages getting delivered?'".
+- When you edit part of a page, fix any voice switches in the rest of it too, so the page reads consistently.
 
 | Don't | Do instead |
 |---|---|
 | "Click the button" | "Select **Create Flow**" |
 | "The user should navigate to" | "Open **Flows** from the left menu" |
-| "It is possible to" | "You can" |
+| "It is possible to" / "You can" | Say what the feature does: "The slider zooms into the timeline" |
 | "In order to" | "To" |
-| Passive voice | Active voice, second person, present tense |
+| Passive voice | Active voice, neutral third person for descriptions, imperative for steps, present tense |
 | "Please note that" | Just say it |
+| "I", "we", "our", "you", "your", "they" | The feature, UI element or person by name: "the dashboard", "contacts", "the organization" |
 
 ## UI labels
 
@@ -74,7 +84,7 @@ Use numbered steps for actions done in order. One action per step.
 ![Flows list](/img/flows/flows_list.png)
 
 2. Select **+ Create Flow**.
-3. Enter a name for your flow and select **Save**.
+3. Enter a name for the flow and select **Save**.
 ```
 
 ## Section intro pattern
@@ -82,7 +92,7 @@ Use numbered steps for actions done in order. One action per step.
 After the header, start with a **bold one-liner** that says exactly what the feature does:
 
 ```markdown
-**Flows let you build automated conversation sequences that run without staff involvement.**
+**Flows are automated conversation sequences that run without staff involvement.**
 ```
 
 Then add 1–2 sentences of context if needed. Then go straight into the steps or sub-sections.
