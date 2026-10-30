@@ -68,6 +68,7 @@ Follow the workflow file for the intent. While you work:
 - After **every** browser action the PostToolUse hook checks the guard. If it reports `READ-ONLY GUARD TRIPPED`, follow the stop-and-warn protocol in [safety.md](safety.md) before you do anything else.
 - Never click buttons that save, submit, send, delete, publish, start, import, upload, sync, assign or change state, even though the guard would block them. Open forms and dialogs only to photograph them, then close them with **Cancel**, **Escape** or by going back.
 - Write only what you saw in the live app. If the UI and the user's request disagree, ask.
+- Write in one neutral voice: third person for what a feature does, imperative for steps, and no "I", "we", "you" or "they". See the Voice section in [style-writing.md](style-writing.md#voice). Fix voice switches anywhere on a page you touch.
 
 ## Step 4 — Validate and hand off
 
@@ -76,6 +77,10 @@ node .claude/skills/update-docs/scripts/glific-browser.mjs lint           # imag
 node .claude/skills/update-docs/scripts/glific-browser.mjs stop           # close the browser
 ```
 
+- Check the voice of every changed page. This should print nothing, or only lines you have checked:
+  ```bash
+  grep -nwE "I|I'm|we|We|our|Our|you|You|your|Your|you're|you've|they|They|their" "docs/<page>.md"
+  ```
 - `lint` must pass. It checks image provenance, `/img/` refs and relative `.md` links in changed pages. A provenance failure means an image was not made by `glific-browser shot`. Retake it.
 - If `node_modules/` exists, also run `yarn build` to catch MDX errors (broken links are ignored by the site config; `lint` covers them). Otherwise say that CI will run the build.
 - Finish with a summary: pages changed, screenshots added or replaced, anything that couldn't be captured and why, and any blocked write attempts (passive ones too). Don't commit or open a PR unless the user asks.

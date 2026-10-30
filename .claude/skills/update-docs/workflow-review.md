@@ -24,7 +24,7 @@ Check:
 - **Images**: [style-images.md](style-images.md) naming, `/img/` paths, alt text, and placement after the step.
 - **Terminology**: one name per concept, matching the live UI label (e.g. "Call a webhook" vs "Webhook node" vs "API call"). Pick the term the UI uses.
 - **Header**: the standard block from [style-writing.md](style-writing.md#page-header). Flag legacy variants, wrong read times and stale Last Updated dates.
-- **Voice**: [style-writing.md](style-writing.md) (second person, imperative, plain language, "Select" not "Click", bold UI labels, no internal or technical jargon for Product Features pages).
+- **Voice**: [style-writing.md](style-writing.md) (one neutral voice with no switching between I/we/they/you, third person for descriptions, imperative for steps, plain language, "Select" not "Click", bold UI labels, no internal or technical jargon for Product Features pages).
 - **Accuracy**: spot-check the claims that most affect users against the live app (labels, menu paths, field names). For flow node pages, you may open one suitable flow in the editor to check node names and settings. Follow the flow editor rules in `safety.md` and release the lock afterwards.
 - **Duplication**: the same how-to explained on several pages. Suggest one canonical page with links to it.
 - **Links and images**: relative links that resolve, `/img/` paths that exist, and alt text present.
