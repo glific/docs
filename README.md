@@ -10,10 +10,10 @@ This website is built using [Docusaurus 2](https://docusaurus.io/), a modern sta
 ```bash
 cp .env.example .env
 ```
-2. Install yarn
+2. Install dependencies:
 
-```
-yarn 
+```bash
+yarn install
 ```
 
 ### Local Development
