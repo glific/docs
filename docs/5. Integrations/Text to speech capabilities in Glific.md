@@ -88,7 +88,21 @@ Google retired `gemini-2.5-pro-preview-tts`, `gemini-2.5-flash-preview-tts` and 
 
 ### Google (Gemini) Voices
 
-Glific defaults to the `en-in-csagent-9` voice. A different voice can be used by passing its exact name through the `voice` parameter. For the current list of supported voice names, reach out to the Glific team at support@glific.org.
+Glific defaults to the `en-in-csagent-9` voice. A different voice can be used by passing its exact name through the `voice` parameter.
+
+Here are voice suggestions for some of the supported languages:
+
+| Language | Voice Name | Characteristics | Gender | Best For |
+|---|---|---|---|---|
+| English (India) | `en-in-csagent-9` (Default) | Light, airy, precise | Female | General purpose, support messages |
+| Hindi | `hi-in-csagent-11` | Crisp, eager | Male | Welfare and outreach updates |
+| Bengali | `bn-in-assistant-1` | Conversational, casual | Female | Community and family messages |
+| Tamil | `ta-in-csagent-2` | Natural, clear | Male | Helpline and support messages |
+| Telugu | `te-in-csagent-5` | Warm, engaging | Female | Outreach and awareness messages |
+| Gujarati | `gu-in-concierge-1` | Warm, hearty, approachable | Male | Guidance and advisory messages |
+| Marathi | `mr-in-assistant-1` | Energetic, colorful, fast | Female | Lively community updates |
+
+Google Gemini provides many more prebuilt voices across accents and personas for these languages. Any voice name from the catalog can be passed through the `voice` parameter.
 
 Models and voices can be overridden from the webhook by explicitly passing additional parameters, for example:
 
