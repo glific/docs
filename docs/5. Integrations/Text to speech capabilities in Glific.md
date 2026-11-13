@@ -120,10 +120,6 @@ Models and voices can be overridden from the webhook by explicitly passing addit
 ```
 Please note: **`provider` and `model` must always be specified together.** If only one of the two is set, the webhook returns an error.
 
-
-<img width="619" height="436" alt="Screenshot 2026-04-27 at 12 02 08 PM" src="https://github.com/user-attachments/assets/c6a772b1-51f2-465e-8eb0-a29079165e94" />
-
-
 Here, the `model` can be set to any value from the table above, and the `voice` to any supported voice name.
 
 
