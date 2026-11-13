@@ -95,12 +95,19 @@ Here are voice suggestions for some of the supported languages:
 | Language | Voice Name | Characteristics | Gender | Best For |
 |---|---|---|---|---|
 | English (India) | `en-in-csagent-9` (Default) | Light, airy, precise | Female | General purpose, support messages |
+| English (India) | `en-in-csagent-1` | Natural, clear | Male | General purpose, support messages |
+| Hindi | `hi-in-csagent-4` | Crisp, eager | Female | Welfare and outreach updates |
 | Hindi | `hi-in-csagent-11` | Crisp, eager | Male | Welfare and outreach updates |
 | Bengali | `bn-in-assistant-1` | Conversational, casual | Female | Community and family messages |
+| Bengali | `bn-in-podcaster-1` | Conversational, natural | Male | News-style or informational updates |
+| Tamil | `ta-in-csagent-6` | Textured, resonant, soothing | Female | Helpline and support messages |
 | Tamil | `ta-in-csagent-2` | Natural, clear | Male | Helpline and support messages |
 | Telugu | `te-in-csagent-5` | Warm, engaging | Female | Outreach and awareness messages |
+| Telugu | `te-in-csagent-4` | Textured, resonant, soothing | Male | Outreach and awareness messages |
+| Gujarati | `gu-in-techagent-1` | Soft, polite, clear | Female | Guidance and advisory messages |
 | Gujarati | `gu-in-concierge-1` | Warm, hearty, approachable | Male | Guidance and advisory messages |
 | Marathi | `mr-in-assistant-1` | Energetic, colorful, fast | Female | Lively community updates |
+| Marathi | `mr-in-assistant-2` | Laid-back, encouraging, chill | Male | Lively community updates |
 
 Google Gemini provides many more prebuilt voices across accents and personas for these languages. Any voice name from the catalog can be passed through the `voice` parameter.
 
