@@ -120,6 +120,8 @@ Models and voices can be overridden from the webhook by explicitly passing addit
 ```
 Please note: **`provider` and `model` must always be specified together.** If only one of the two is set, the webhook returns an error.
 
+![The text_to_speech Function Body with provider, model and voice parameters set](/img/integrations/speech/text_to_speech_function_body.png)
+
 Here, the `model` can be set to any value from the table above, and the `voice` to any supported voice name.
 
 
