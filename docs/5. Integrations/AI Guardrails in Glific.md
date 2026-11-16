@@ -64,6 +64,8 @@ To learn more about how privacy protection was tested, and its accuracy results 
 - A set reply is required. If Content Safety is on with an empty reply, `Save Version` marks the guardrail in red and shows a warning until you add a reply or turn Content Safety off.
 - To learn more about how content safety was tested, and its accuracy results go [here](https://projecttech4devai.github.io/kaapi-docs/guardrails/content-safety)
 
+<img width="" height="" alt="Screenshot 2026-11-16 at 4 59 43 PM" src="https://github.com/user-attachments/assets/64023750-c523-418e-91dd-12b00f11f6c2" />
+
 
 ### Scope Control (blocks and sends set reply)
 - The assistant will not answer questions about the topics you list here. 
