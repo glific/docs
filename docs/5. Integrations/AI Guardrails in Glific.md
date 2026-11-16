@@ -56,7 +56,7 @@ Hides personal details like phone numbers, addresses and ID numbers so that they
 To learn more about how privacy protection was tested, and its accuracy results go [here](https://projecttech4devai.github.io/kaapi-docs/guardrails/privacy-protection)
 
 ### Content Safety (blocks and sends set reply)
-- Catches abusive or hurtful messages and sends your set reply instead. The message is not passed on to the assistant.
+- Catches abusive or hurtful incoming messages and sends your set reply instead. 
 - It checks for both known slurs and the overall tone of the message, so it also catches abuse that doesn't use a listed slur word.
 - This guardrail works only for inputs in Hindi, English and Hinglish.
 - Under `Configure`, `Set reply` is the message the beneficiary receives when this guardrail is triggered. The chip reads `Reply set` once you have written one, and `No reply set` until then.
