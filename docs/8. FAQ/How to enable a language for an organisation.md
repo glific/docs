@@ -90,10 +90,10 @@ After adding the translations, test the flow in each language to make sure it wo
 
 ## Available languages
 
-Glific currently supports around 20 languages, such as English, Hindi, Marathi, Punjabi, Bengali, Gujarati, Tamil, Telugu, Kannada, Malayalam, and Urdu. If a language is in the **Supported languages** list, follow the steps above to enable it. If it is not in the list, refer to the next section.
+Glific currently supports around 20 languages, such as English, Hindi, Marathi, Punjabi, Bengali, Gujarati, Tamil, Telugu, Kannada, Malayalam, and Urdu. To check if a language is available, open the **Supported languages** dropdown (step 4 above). If the language is in the dropdown, follow the steps above to enable it. If it is not in the dropdown, refer to the next section.
 
 ## Adding a language that is not in the list
 
-If a language is not in the **Supported languages** list, contact the Glific support team with the name of the language, and the team can enable it. See [Get Glific Support](https://glific.github.io/docs/docs/FAQ/Get%20Glific%20Support/).
+If a language is not in the **Supported languages** dropdown, contact the Glific support team with the name of the language, and the team can enable it. See [Get Glific Support](https://glific.github.io/docs/docs/FAQ/Get%20Glific%20Support/).
 
 HSM Templates can only be created in languages that Gupshup supports. Gupshup supports around 70 languages. See [Gupshup's list of supported languages](https://support.gupshup.io/hc/en-us/articles/360013321939-Which-languages-are-supported-for-message-templates). If Glific enables a language that Gupshup does not support, it can be used in flows and Interactive Messages, but not in HSM Templates.
