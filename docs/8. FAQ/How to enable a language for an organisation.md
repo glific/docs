@@ -60,7 +60,7 @@ The new language is now enabled. The content still needs to be translated before
 
 ## Why the default language matters
 
-The default language is the main language of an organisation's Glific account. Every flow is created in this language first, and translations for the other enabled languages are added to it.
+The default language is the main language of an organisation's Glific account. Every flow is created in this language first, and translations for the other enabled languages are added to it. Make sure the content in the default tab of the flow editor is written in the default language.
 
 In Glific, each user is saved as a contact. The default language is applicable to:
 
