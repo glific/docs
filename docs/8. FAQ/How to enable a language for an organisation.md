@@ -35,26 +35,26 @@ A new language is enabled when an NGO needs to reach its users in a language tha
 1. Select the profile name at the bottom of the left menu.
 2. Select **Settings**.
 
-   <img width="1999" height="1086" alt="image5" src="https://github.com/user-attachments/assets/14048d68-ced6-466e-b5bd-6bbd8d58e437" />
+   <img width="1999" alt="image5" src="https://github.com/user-attachments/assets/14048d68-ced6-466e-b5bd-6bbd8d58e437" />
 
 3. On the **Organization** page, find **Supported languages**. It lists every language already enabled for the organisation.
 4. Select the arrow (▼) on the right side of **Supported languages**.
 
-   <img width="1999" height="1077" alt="image2" src="https://github.com/user-attachments/assets/87790960-6042-46e7-840b-5a651af54028" />
+   <img width="1999" alt="image2" src="https://github.com/user-attachments/assets/87790960-6042-46e7-840b-5a651af54028" />
 
 5. Select the checkbox next to each language to enable.
 
-   <img width="1999" height="1108" alt="image1" src="https://github.com/user-attachments/assets/b64b93fd-77b9-48ec-84df-e9676c8e0b3e" />
+   <img width="1999" alt="image1" src="https://github.com/user-attachments/assets/b64b93fd-77b9-48ec-84df-e9676c8e0b3e" />
 
 6. Below **Supported languages**, find the **Default language** box. The language selected here must also be selected in **Supported languages**.
 
    For example, if the Default language is English, keep English selected in Supported languages. If English is removed from Supported languages, Glific shows the error "Default language needs to be an active language." and the changes are not saved.
 
-   <img width="1999" height="1086" alt="image3" src="https://github.com/user-attachments/assets/c5ed91c5-df62-46c0-acb9-275f1b43f04d" />
+   <img width="1999" alt="image3" src="https://github.com/user-attachments/assets/c5ed91c5-df62-46c0-acb9-275f1b43f04d" />
 
 7. Scroll down and select **Save**.
 
-   <img width="1999" height="1093" alt="image4" src="https://github.com/user-attachments/assets/540017e2-3837-447b-a99b-92382f134000" />
+   <img width="1999" alt="image4" src="https://github.com/user-attachments/assets/540017e2-3837-447b-a99b-92382f134000" />
 
 The new language is now enabled. The content still needs to be translated before users can receive messages in it. See [Translating flows and messages](#translating-flows-and-messages) below. To disable a language, follow steps 1 to 3 above, then select the **X** next to the language name in Supported languages and select **Save**.
 
