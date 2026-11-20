@@ -3,7 +3,7 @@
   <tr>
     <td><b>3 minutes read</b></td>
     <td style={{ paddingLeft: '40px' }}><b>Level: Advanced</b></td>
-    <td style={{ paddingLeft: '40px' }}><b>Last Updated: Oct 2026</b></td>
+    <td style={{ paddingLeft: '40px' }}><b>Last Updated: Nov 2026</b></td>
   </tr>
 </table>
 </h4>
@@ -35,7 +35,7 @@ Every guardrail carries a badge that tells you how it acts when it is triggered.
 These checks run before a message reaches the assistant. 
 
 ### Privacy Protection  (fixes and passes on)
-Hides personal details like phone numbers, addresses and ID numbers so that they are not saved or shown. This is the only guardrail with a detailed configuration panel.
+Hides personal details like phone numbers, addresses and ID numbers so that they are not saved or shown. This guardrail has the most detailed configuration panel.
 1. Click `Configure` to reveal two groups of detectors. The first group is on by default and covers twelve identifiers:
 - credit card number,
 - email address,
@@ -55,10 +55,16 @@ Hides personal details like phone numbers, addresses and ID numbers so that they
 
 To learn more about how privacy protection was tested, and its accuracy results go [here](https://projecttech4devai.github.io/kaapi-docs/guardrails/privacy-protection)
 
-### Content Safety (fixes and passes on)
-- Removes abusive or hurtful words from messages. This is a simple on or off switch with no extra settings.
-- To learn more about how content safety was tested, and its accuracy results go [here](https://projecttech4devai.github.io/kaapi-docs/guardrails/content-safety)
+### Content Safety (blocks and sends set reply)
+- Catches abusive or hurtful incoming messages and sends your set reply instead. 
+- It checks for both known slurs and the overall tone of the message, so it also catches abuse that doesn't use a listed slur word.
 - This guardrail works only for inputs in Hindi, English and Hinglish.
+- Under `Configure`, `Set reply` is the message the beneficiary receives when this guardrail is triggered. The chip reads `Reply set` once you have written one, and `No reply set` until then.
+- Write it in any one language and Glific automatically translates it to match the language the user wrote in, so a Hindi message gets the reply in Hindi.
+- A set reply is required. If Content Safety is on with an empty reply, `Save Version` marks the guardrail in red and shows a warning until you add a reply or turn Content Safety off.
+- To learn more about how content safety was tested, and its accuracy results go [here](https://projecttech4devai.github.io/kaapi-docs/guardrails/content-safety)
+
+<img width="" height="" alt="Screenshot 2026-11-16 at 4 59 43 PM" src="https://github.com/user-attachments/assets/64023750-c523-418e-91dd-12b00f11f6c2" />
 
 
 ### Scope Control (blocks and sends set reply)
@@ -86,6 +92,7 @@ These checks run before a reply is sent back to the beneficiary.
 4. Flip the toggle on the right of a guardrail to turn it on. An amber dot appears next to the tab name and an Unsaved changes badge appears in the header, which means your changes exist only in the browser at this point.
 5. If the guardrail shows a `Configure` chip, open it and set it up.
 - For `Privacy Protection`, tick the identifier types you want detected.
+- For `Content Safety`, write the set reply.
 - For `Scope Control`, add your disallowed topics and write the set reply.
 6. Repeat for the other guardrails you want, including Gender Neutrality in the assistant replies section.
 7. Click Save Version in the header. Saving creates a minor version and does not change what is live. 
@@ -98,4 +105,6 @@ These checks run before a reply is sent back to the beneficiary.
 ### Notes worth remembering
 1. Guardrail changes are versioned like the rest of the assistant configuration, so they never take effect mid conversation without a deliberate click on `Go Live`.
 2. The name, location and nationality detectors inside Privacy Protection are off by default.
-3. Write the scope control guardrail's set reply in the assistant’s voice, because when this guardrail is flagged, the set reply is translated to the user's language and sent back directly. The assistant is not called at all.
+3. Write the set reply for Content Safety and Scope Control in the assistant’s voice. When either guardrail is flagged, the set reply is translated to the user's language and sent back directly, and the assistant is not called at all.
+4. In `Try It Out`, when Content Safety blocks a message, the guardrail details label the set reply as `User received`, because it goes straight to the user.
+5. Content Safety used to remove abusive words and pass the message on. If you turned it on before November 2026, open the Guardrails tab, check that Content Safety is on, add a set reply, and save a new version to switch to the new behaviour.
