@@ -3,7 +3,7 @@
     <tr>
       <td><b>6 minutes read</b></td>
       <td style={{ paddingLeft: 40 }}><b>Level: Advanced</b></td>
-      <td style={{ paddingLeft: 40 }}><b>Last Updated: September 2026</b></td>
+      <td style={{ paddingLeft: 40 }}><b>Last Updated: November 2026</b></td>
     </tr>
   </table>
 </h3>
@@ -56,15 +56,15 @@ Glific pauses the flow at the `text_to_speech` node while the voice note is gene
 
 To wait longer, add a `wait_time` parameter, in **seconds**, to the `Function Body`.
 
-![The text_to_speech Function Body with a wait_time of 120 seconds](../../static/img/integrations/speech/text_to_speech_wait_time.png)
+![The text_to_speech Function Body with a wait_time of 120 seconds](/img/integrations/speech/text_to_speech_wait_time.png)
 
 The maximum is 300 seconds (5 minutes). Leave it blank and the default of 60 seconds applies. Read more in [Call a webhook](https://glific.github.io/docs/docs/Product%20Features/Flows/Flow%20Actions/Call%20a%20webhook/#wait-time-for-ai-function-webhooks).
 
-#### Default parameters for speech_to_text node 
-When only `text` parameter is passed the following default values of model and voice are used 
+#### Default parameters for text_to_speech node 
+When only the `text` parameter is passed, the following default values of model and voice are used 
 
-- model: gemini-2.5-flash-preview-tts (Google)
-- voice: Kore
+- model: gemini-3.8-flash-lite-tts (Google)
+- voice: en-in-csagent-9
 
 
 ## Variations in model and voice parameters 
@@ -79,32 +79,50 @@ Within Google Gemini's text to speech capabilities, following are the available 
 
 | Model Name | Description | 
 |---|---|
-| `gemini-2.5-flash-preview-tts` | Fast, efficient TTS model with good quality | 
-| `gemini-2.5-pro-preview-tts` | Higher quality model with enhanced voice naturalness | 
+| `gemini-3.8-flash-lite-tts` (Default) | Fastest, most lightweight model | 
+| `gemini-3.8-flash-tts` | Higher quality flash model with richer voice naturalness | 
+
+:::note
+Google retired `gemini-2.5-pro-preview-tts`, `gemini-2.5-flash-preview-tts` and `gemini-3.1-flash-tts-preview` on November 17, 2026. A flow that still names one of these older models no longer errors — it automatically uses the default model instead.
+:::
 
 ### Google (Gemini) Voices
 
-| Voice Name | Characteristics | Gender | Best For | 
-|---|---|---|---|
-| **Kore** (Default) | Clear, professional, engaging | Female | General purpose, professional content | 
-| **Orus** | Warm, friendly, approachable | Male | Conversational content, customer service | 
-| **Leda** | Neutral, calm, authoritative | Female | News, educational content, announcements | 
-| **Charon** | Deep, formal, articulate | Male | Formal documents, corporate content | 
+Glific defaults to the `en-in-csagent-9` voice. A different voice can be used by passing its exact name through the `voice` parameter.
 
-Glific defaults to `Kore` voice, but any of the above model and voices can be specifically called from the webhook by explicitly passing additional parameters of 
+Here are voice suggestions for some of the supported languages:
+
+| Language | Voice Name | Characteristics | Gender | Best For |
+|---|---|---|---|---|
+| English (India) | `en-in-csagent-9` (Default) | Light, airy, precise | Female | General purpose, support messages |
+| English (India) | `en-in-csagent-1` | Natural, clear | Male | General purpose, support messages |
+| Hindi | `hi-in-csagent-4` | Crisp, eager | Female | Welfare and outreach updates |
+| Hindi | `hi-in-csagent-11` | Crisp, eager | Male | Welfare and outreach updates |
+| Bengali | `bn-in-assistant-1` | Conversational, casual | Female | Community and family messages |
+| Bengali | `bn-in-podcaster-1` | Conversational, natural | Male | News-style or informational updates |
+| Tamil | `ta-in-csagent-6` | Textured, resonant, soothing | Female | Helpline and support messages |
+| Tamil | `ta-in-csagent-2` | Natural, clear | Male | Helpline and support messages |
+| Telugu | `te-in-csagent-5` | Warm, engaging | Female | Outreach and awareness messages |
+| Telugu | `te-in-csagent-4` | Textured, resonant, soothing | Male | Outreach and awareness messages |
+| Gujarati | `gu-in-techagent-1` | Soft, polite, clear | Female | Guidance and advisory messages |
+| Gujarati | `gu-in-concierge-1` | Warm, hearty, approachable | Male | Guidance and advisory messages |
+| Marathi | `mr-in-assistant-1` | Energetic, colorful, fast | Female | Lively community updates |
+| Marathi | `mr-in-assistant-2` | Laid-back, encouraging, chill | Male | Lively community updates |
+
+Google Gemini provides many more prebuilt voices across accents and personas for these languages. Any voice name from the catalog can be passed through the `voice` parameter.
+
+Models and voices can be overridden from the webhook by explicitly passing additional parameters, for example:
 
 ```
 "provider" : "google-native",
-"model" : "gemini-2.5-flash-preview-tts",
-"voice" : "Orus"
+"model" : "gemini-3.8-flash-tts",
+"voice" : "en-in-csagent-9"
 ```
-Please note: **`provider` and `model` must always be specified together.** If you set one, you must set the other — specifying only a provider or only a model will cause a webhook error.
+Please note: **`provider` and `model` must always be specified together.** If only one of the two is set, the webhook returns an error.
 
+![The text_to_speech Function Body with provider, model and voice parameters set](/img/integrations/speech/text_to_speech_function_body.png)
 
-<img width="619" height="436" alt="Screenshot 2026-04-27 at 12 02 08 PM" src="https://github.com/user-attachments/assets/c6a772b1-51f2-465e-8eb0-a29079165e94" />
-
-
-Here, the `model` or `voice` parameters can be mixed and matched from the values mentioned in the table above.
+Here, the `model` can be set to any value from the table above, and the `voice` to any supported voice name.
 
 
 #### Supported Languages

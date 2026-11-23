@@ -20,3 +20,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# update-docs skill (playwright-cli session output, snapshots, redaction manifest)
+.playwright-cli/
