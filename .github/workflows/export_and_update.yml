@@ -3,6 +3,7 @@ name: Consolidate and Update Documentation
 on:
   push:
     branches: [main]
+  pull_request:
 
 jobs:
   consolidate-and-update:
