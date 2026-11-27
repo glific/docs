@@ -42,19 +42,66 @@ if (!GLIFIC_PHONE || !GLIFIC_PASSWORD) {
   process.exit(1);
 }
 
-async function authenticate(page) {
+const DIAL_CODE = '91';
+
+// PhoneInput prepends the dial code asynchronously after mount and re-derives it
+// from whatever is already in the field, so GLIFIC_PHONE must be reduced to its
+// local part and the field must never be cleared before typing into it.
+function localPhone(raw) {
+  return raw.replace(/\D/g, '').slice(-10);
+}
+
+async function fillPhone(page, local) {
+  const phoneInput = page.locator('input[name="phoneNumber"]');
+  await phoneInput.waitFor({ state: 'visible' });
+
+  // Dial code lands after mount — wait for a leading "+<digit>" before typing,
+  // otherwise the value ends up with no dial code at all.
+  await page.waitForFunction(() => {
+    const el = document.querySelector('input[name="phoneNumber"]');
+    return !!el && /^\+\d/.test(el.value);
+  }, { timeout: 5000 });
+
+  await phoneInput.click();
+  await phoneInput.press('End');
+  await phoneInput.pressSequentially(local);
+
+  const value = await phoneInput.inputValue();
+  if (value !== `+${DIAL_CODE}${local}`) {
+    throw new Error(`Phone field shows "${value}", expected "+${DIAL_CODE}${local}"`);
+  }
+}
+
+async function authenticate(browser) {
   console.log('  Authenticating...');
-  await page.goto(`${GLIFIC_URL}/login`, { waitUntil: 'networkidle' });
-  await page.waitForSelector('[data-testid="AuthContainer"]', { timeout: 10000 });
+  const local = localPhone(GLIFIC_PHONE);
 
-  // PhoneInput renders a text input with name="phoneNumber"
-  await page.fill('input[name="phoneNumber"]', GLIFIC_PHONE);
-  await page.fill('input[name="password"]', GLIFIC_PASSWORD);
-  await page.click('[data-testid="SubmitButton"]');
+  let lastErr;
+  for (let attempt = 1; attempt <= 3; attempt += 1) {
+    const context = await browser.newContext({ ignoreHTTPSErrors: true });
+    const page = await context.newPage();
+    try {
+      await page.goto(`${GLIFIC_URL}/login`, { waitUntil: 'networkidle' });
+      await page.waitForSelector('[data-testid="AuthContainer"]', { timeout: 10000 });
 
-  // Wait for redirect to /chat after successful login
-  await page.waitForURL(`${GLIFIC_URL}/chat**`, { timeout: 15000 });
-  console.log('  Authenticated.');
+      await fillPhone(page, local);
+      await page.fill('input[name="password"]', GLIFIC_PASSWORD);
+      await page.click('[data-testid="SubmitButton"]');
+
+      // First load after a deploy can be slow.
+      await page.waitForURL(`${GLIFIC_URL}/chat**`, { timeout: 45000 });
+
+      const storageState = await context.storageState();
+      await context.close();
+      console.log('  Authenticated.');
+      return storageState;
+    } catch (err) {
+      lastErr = err;
+      await context.close();
+      console.warn(`  Login attempt ${attempt}/3 failed: ${err.message}`);
+    }
+  }
+  throw new Error(`Authentication failed after 3 attempts: ${lastErr.message}`);
 }
 
 async function runStep(page, step, outputDir) {
@@ -103,11 +150,16 @@ async function runRecipe(recipePath, recordVideo) {
 
   const browser = await chromium.launch({ headless: false });
 
+  // Log in once for the whole recipe; every flow's context opens already
+  // signed in via the captured storageState instead of re-authenticating.
+  const storageState = await authenticate(browser);
+
   for (const flow of recipe.flows) {
     // Each flow gets its own context so videos are saved per-flow
     const contextOptions = {
       viewport: { width: 1440, height: 900 },
       ignoreHTTPSErrors: true,
+      storageState,
     };
     if (recordVideo) {
       contextOptions.recordVideo = {
@@ -121,7 +173,6 @@ async function runRecipe(recipePath, recordVideo) {
 
     console.log(`  Flow: ${flow.name} — ${flow.description}`);
     try {
-      await authenticate(page);
       for (const step of flow.steps) {
         await runStep(page, step, imgDir);
       }
